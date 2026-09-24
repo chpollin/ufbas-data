@@ -1,0 +1,632 @@
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Digitale Edition des Urfehdebuches X, StaBS Basel, 1563-1569</title>
+        <author>Anna Reimann</author>
+        <author>Susanna Burghartz</author>
+        <author>Georg Vogeler</author>
+        <author>Sonia Calvi</author>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date>2017-01-18</date>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <p>Prof. Dr. Susanna Burghartz, Universität Basel, Departement Geschichte and Austrian Cente
+                    </p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Digital Born, Word to TEI Oxgarage</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application ident="TEI_fromDOCX" version="2.15.0" xml:id="docxtotei">
+          <label>DOCX to TEI</label>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <listChange>
+        <change>
+          <date>2017-01-19T13:29:59Z</date>
+          <name>Christopher Pollin</name>
+        </change>
+      </listChange>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>Digitale Edition des Urfehdebuches X, StaBS Basel, 1563-1569</head>
+        <p rend="bold">
+          <hi rend="bold"> (Beta-Version) <lb></lb> hg. von Susanna Burghartz, Sonia Calvi, Georg Vogeler </hi>
+        </p>
+        <p rend="bold">
+          <hi rend="bold">Das Projekt</hi>
+        </p>
+
+        <p>Die digitale Edition des Basler Urfehdebuchs X (Staatsarchiv Basel-Stadt,
+                    Ratsbücher O 10) umfasst Urfehdeeinträge der Stadt Basel aus den Jahren 1563 bis
+                    1569. Sie ist unter Leitung von Prof. Dr. Susanna Burghartz aus einer
+                    Transkriptionsübung im FS 2012<note n="1" place="foot">
+            <p rend="footnote text"> An der Transkriptionsübung im Frühjahrsemester
+                            2012 haben folgende Studierende mitgearbeitet: Laila Baur, Benedikt
+                            Egli, Gabriela Gehrig, Alexandra Isabelle Heini, Rosanna Rossi, Benjamin
+                            Siegrist, Remo Wasmer, Lynn Zimmermann.</p>
+
+          </note> und einer gemeinsam
+                    mit Sonia Calvi durchgeführten TEI-Kodierungsübung im Frühjahrsemester 2016<note n="2" place="foot">
+            <p rend="footnote text"> Die
+                            Kodierungsübung fand unter Leitung von Prof. Dr. Susanna Burghartz und
+                            Sonia Calvi, M.A. im Frühjahrsemester 2016 statt. Folgende Studierende
+                            haben an der TEI-Kodierung der Transkription mitgearbeitet: Rebecca
+                            Birrer, Andreas Bühler, Yvonne Fuchs, Natascha Hossli, Kevin Hütten,
+                            Fabienne Kümmerli, Luzia Kunz, Tomoko Latteier, Colestin Meier, Anna
+                            Reimann, Melina Schellenberg, Dr. iur. Beat Schmid, Marko Stamenkov,
+                            Isabelle Zeder.</p>
+
+          </note> am Departement Geschichte der Universität
+                    Basel entstanden. Zusätzliche Transkriptionsarbeiten hat Lynn Zimmermann
+                    übernommen, die Kollationierung der Transkription hat Andrea Rhyn besorgt. Die
+                    Korrektur der Kodierungen haben Sonia Calvi und Anna Reimann ausgeführt. Beat
+                    Schmid hat im Rahmen einer Seminararbeit weitere quellenkritische Untersuchungen
+                    zum Urfehdebuch X vorgelegt. Die Ergebnisse dieser Arbeit gehen in die
+                    folgenden, einleitenden Bemerkungen ein.<note n="3" place="foot">
+            <p rend="footnote text"> Die integrale Arbeit wird unter dem Titel
+                            <hi rend="italic" xml:space="preserve">Blumen und andere Zeugnisse von administrativem Handeln im Basler Urfehdebuch X</hi> hier
+                            als <ref target="/archive/objects/context:ufbas/datastreams/SCHMIDtADMINIStRAtIVESHANDELN2016/content">PDF</ref> zur Verfügung gestellt. Sie gibt einen Überblick über die
+                            Forschungslage und führt weitere Details zum Basler Urfehedewesen
+                            aus.</p>
+          </note>
+        </p>
+        <p>Die technische Leitung des Projektes lag bei Prof. Dr. Georg Vogeler (Universität
+                    Graz, GAMS), die technische Umsetzung besorgte Christopher Pollin.</p>
+        <p>
+          <hi rend="bold">Die Digitale Edition</hi>
+        </p>
+        <p>Die hier veröffentlichte Edition stellt das Urfehdebuch X (StaBS Ratsbücher O 10)
+                    mit Einträgen vom Januar 1563 bis zum Dezember 1569 digital aufbereitet zur
+                    Verfügung. So weit möglich wurden Aufbau und Struktur der Einträge auch in der
+                    digitalen Form genau wiedergegeben; jeder Eintrag ist zudem mit dem Digitalisat
+                    des Originals verlinkt. Gleichzeitig bietet die digitale Edition spezifische
+                    Möglichkeiten zur Auswertung über die Suchfunktion, die Verschlagwortung mittels
+                    verschiedener, relevanter Kategorien und über einen „Datenkorb“, der die Auswahl
+                    einzelner Urfehden erlaubt. (vgl. weiter unten)</p>
+        <p>Die einzelne Urfehde setzt sich im Urfehdebuch X bis auf wenige Ausnahmen aus den
+                    folgenden Elementen zusammen: </p>
+        <list type="unordered">
+          <item>
+            <hi rend="bold">Randnotiz</hi>: enthält den Namen eines Rats- oder
+                        Stadtknechtes bzw. eines Haftlokals und eine Ziffer, sie fehlt bei einzelnen
+                        Urfehden</item>
+          <item>
+            <hi rend="bold">Urfehdentitel</hi>: enthält Vor- und Nachname der
+                        angeklagten Person(en), teilweise mit zusätzlichen Informationen zu Beruf,
+                        Wohn- oder Herkunftsort, Bürgerstatus, Verwandtschaftsbeziehungen zu anderen
+                        Personen</item>
+          <item>
+            <hi rend="bold">Urfehdentext</hi>: enthält Informationen zur Tat und
+                        Anklage, zu Zeugen, Mittätern, Opfern, zur Strafe, zu mildernden oder
+                        erschwerenden Umständen, zur Haftentlassung und zum Urfehdeschwur, sowie
+                        damit verbundenen allfälligen Auflagen</item>
+          <item>
+            <hi rend="bold">Notariatsunterschrift</hi>: enthält die Beglaubigung der
+                        Urfehde durch den Stadtnotar oder dessen Stellvertreter</item>
+        </list>
+        <p>Diese Struktur wurde für das Layout der digitalen Edition weitgehend übernommen.
+                    Das Datum der Urfehde wurde zur besseren Orientierung besonders hervorgehoben. </p>
+        <p>Zusätzlich wurden für die digitale Edition in jeder Urfehde verschiedene <ref target="http://gams.uni-graz.at/o:ufbas.kategorien">Kategorien</ref>
+                    kodiert, die entsprechend abgefragt werden können: </p>
+        <p>Unter <hi rend="italic">Personen</hi> finden sich alle in einer Urfehde erwähnten
+                    Personen, die nach Möglichkeit zusätzlich mit ihrer Rolle im konkreten Fall
+                    (z.B. Täter, Opfer, Notar etc.) sowie wo vorhanden Angaben zu ihrem Beruf, zu
+                    ihrem Herkunfts- bzw. Wohnort, ihrem Zivilstand, ihrem Status/Amt und
+                    Informationen zu Verwandtschaftsbeziehungen erfasst worden sind. Neben den im
+                    Zusammenhang mit den Personen erwähnten <hi rend="italic">Orten</hi> (Herkunft,
+                    Wohnort) sind auch alle unabhängig von diesen vorkommenden Ortschaften als
+                    solche ausgezeichnet. Alle Ortsangaben sind, wo möglich, über einen Thesaurus
+                    mit den modernen Ortsnamen verbunden. Soweit Angaben zum Verfahren oder früheren
+                    Urfehden vorliegen, wurde dies ebenfalls kodiert. Alle <hi rend="italic">Tatbestände</hi> (<hi rend="color(0070C0)">link Tatbestände</hi>) und <hi rend="italic">Strafen</hi> (<hi rend="color(0070C0)">link Strafen)</hi>
+                    wurden mit Hilfe verschiedener Unterkategorien verschlagwortet, die aus den
+                    entsprechenden Kategorienlisten ersichtlich sind. Zusätzlich wurden in der
+                    Kategorie <hi rend="italic">Schlagworte</hi>
+                    (<hi rend="color(0070C0)" xml:space="preserve">link Schlagworte) </hi>Auffälligkeiten
+                    und bemerkenswerte weitere Sachverhalte kodiert.</p>
+
+        <p>Die im Urfehdebuch X vorhandenen Marginalien und Sonderzeichen wurden ebenfalls
+                    in die Edition aufgenommen und als solche markiert. Dazu gehören zum Beispiel
+                    Seitenmarkierungen mit dem + Zeichen, Angaben zum Jahreswechsel und weitere
+                    administrative Zeichen wie Kringel und Blumen. Detailliertere Informationen zu
+                    diesen Zeichen administrativen Handelns finden Sie im Text <ref target="http://gams.uni-graz.at/archive/objects/context:ufbas/datastreams/SCHMIDtADMINIStRAtIVESHANDELN2016/content">Blumen und andere Zeugnisse von administrativem Handeln im Basler
+                        Urfehdebuch X von Dr. iur. Beat Schmid.</ref>
+        </p>
+        <p>
+          <hi rend="bold">Transkriptionsrichtlinien</hi>
+        </p>
+        <p>Die vorliegende Edition richtet sich grundsätzlich nach den <ref target="http://www.staatsarchiv.bs.ch/ueber-uns/engagements/konzepte.html">Transkriptionsregeln des Staatsarchivs Basel-Stadt vom 11. April
+                    2012</ref>. Für die Gross- und Kleinschreibung fanden die <ref target="http://www.adfontes.uzh.ch/2250.php">Transkriptionsregeln von Ad
+                        Fontes</ref> Verwendung, wonach der gesamte Text bis auf den Satzanfang und
+                    Eigennamen klein geschrieben wird. Als Eigennamen gelten: Personennamen,
+                    Ortschaften, Länder, Strassen, Plätze, Flurnamen, Wochentage, Monate und Titel.
+                    Eindeutige Abkürzungen wurden aufgelöst, insbesondere gilt dies für die
+                    Notariatsunterschrift. Satzzeichen wurden, wo immer möglich, gemäss dem
+                    Originaltext übernommen. Bei unklaren Unterscheidungen zwischen
+                    Trennungsstrichen, Virgeln und Kommata wurde versucht, sinngemässe Satzzeichen
+                    zu setzen.</p>
+        <p>
+          <hi rend="bold">Zum Datenmodell</hi>
+        </p>
+
+        <p>Die oben beschriebene inhaltliche Struktur wurde in einen Graphen übersetzt, der
+                    sich um den einzelnen Eintrag gruppiert. Dem Eintrag sind die Angaben zum Täter
+                    (und evtl. vorhandenen Mittätern), zur Tat, zu den Opfern, dem Datum der
+                    Urfehde, Angaben zum Verfahren (Untersuchungshaft, Urfehdeeid, Verweise auf
+                    andere Urfehdeverfahren, Fristen, Begnadigungsdaten, Vorinstanz), zur Strafe
+                    sowie allgemeine Schlagwörter und erwähnte Orte und Personen zu geordnet. Die
+                    Personen sind mit ihren Namen (Vor-, Familien-, Beiname), Geschlecht,
+                    gesellschaftlichem Status, Beruf, Verwandtschaftsbeziehungen sowie Angaben zum
+                    Herkunfts- und Wohnort und beschrieben. Das Datenmodell trennt so konsequent wie
+                    möglich den transkribierten Text von der Datenstruktur selbst, denn letztere
+                    kann nur als Interpretation des Textes verstanden werden. Es folgt damit den
+                    Überlegungen, die Manfred Thaller 2012 in Hamburg präsentiert hat und die bei
+                    der digitalen Edition von Rechnungen in Anwendung gekommen sind.<note place="foot">
+            <p rend="footnote text">
+                        Manfred Thaller: What is a text within the Digital Humanities, or some of them, at least?, in: dh2012 - Book of Abstracts, Hamburg 2012 http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/beyond-embedded-markup; Vogeler, Georg: Digitale Edition von Wirtschafts- und Rechnungsbüchern. Gudrun Gleba and Niels Petersen (Hg.): Wirtschafts- und Rechnungsbücher des Mittelalters und der Frühen Neuzeit. Formen und Methoden der Rechnungslegung: Städte, Klöster, Kaufleute. Göttingen. Universitätsverlag Göttingen, S. 307-328; ders.: Warum werden mittelalterliche und frühneuzeitliche Rechnungsbücher eigentlich nicht digital ediert? In: Zeitschrift für digitale Geisteswissenschaften. Sonderband 1. 2015. Artikel 7. doi:10.17175/sb001_007; ders.: The Content of Accounts and Registers in their Digital Edition. XML/TEI, Spreadsheets, and Semantic Web Technologies, in: Konzeptionelle Überlegungen zur Edition von Rechnungen und Amtsbüchern des späten Mittelalters, hg. v. Jürgen Sarnowksy, Göttingen: V&amp;R unipress 2016, S. 13-41; Tomasek, Kathryn / Orlowska, Anna / Pindl, Kathrin / Anderson, Clifford / Eide, Øvind / Vogeler, Georg: Modeling semantically Enhanced Digital Edition of Accounts (MEDEA) for Discovery and Comparison on the Semantic Web, in: Digital Scholarship in the Humanities, 2017, im Review.
+                </p>
+
+          </note> Für alle
+                    inhaltlichen Beschreibung gibt es deshalb einen Bezug zu Textpassagen (<hi rend="Code_Zchn">g2o:inhalt</hi>) und von diesen zu Seitenangaben (<hi rend="Code_Zchn">g2o:isPartOf</hi>). Eine konsequentere Trennung der
+                    textlichen Einheit Eintrag von den darin dokumentierten Rechtsfällen war beim
+                    derzeitigen Forschungsstand noch nicht möglich. Alle textlichen und inhaltlichen
+                    Entitäten besitzen stabile Identifikatoren. </p>
+        <p>
+          <hi rend="bold">Kodierungsstandards</hi>
+        </p>
+
+        <p>Für die Kodierung der Transkription wurde die TEI in der Version P5 in der
+                    Version 3.0 eingesetzt. Die Bezüge zum Datenmodell entstehen durch Verweise im
+                    global einsetzbaren Attribut <hi rend="Code_Zchn">@ana</hi>. Neben den Bezügen
+                    auf das Datenmodell sind auch Geldbeträge mit <hi rend="Code_Zchn">
+                        &lt;measure&gt;</hi> kodiert. Abkürzungen wurden mit <hi rend="Code_Zchn">&lt;ex&gt;</hi> aufgelöst. Die Vermerke sind im Attribut <hi rend="Code_Zchn">@change</hi> einer nicht näher spezifizierbaren
+                    Nachtragsschicht zugeordnet. Im Attribut <hi rend="Code_Zchn">@rend</hi> sind
+                    vom normalen Textfluss abweichende optischen Erscheinungen näher beschrieben
+                    (Position von Anmerkungen am Rand: margin, hochgestellte Zeichen: super).
+                    Anmerkungen der Editoren sind mit der <hi rend="Code_Zchn">@resp=&quot;#editor&quot;</hi>
+                    markiert. Die Markierungen mit Kringeln oder blumenartigen Zeichen sind als <hi rend="Code_Zchn">&lt;metamark&gt;</hi> kodiert. Zeilenwechsel am Beginn von
+                    Überschriften oder Anmerkungen sind implizit zu ergänzen, denn sie sind im
+                    Textfluss der Absätze kodiert. Acht Hände (bezeichnet im <hi rend="Code_Zchn">@scribe</hi>-Attribut der Kodierung von Handwechseln (<hi rend="Code_Zchn">&lt;handShift&gt;</hi>) sind unterscheidbar, ohne dass sie näher
+                    identifiziert wurden, so dass auf eine entsprechen Kodierung in der Beschreibung
+                    der Quelle verzichtet wurde. Die Liste der identifizierbaren und referenzierten
+                    Orte ist im <hi rend="Code_Zchn">&lt;back&gt;</hi> des Textes erfasst. Die
+                    RDF-Repräsentation verwendet überwiegend ein für die Abbildung des Datenmodells
+                    im Projekt entwickeltes Vokabular aus dem Namensraum „<hi rend="Code_Zchn">http://gams.uni-graz.at/ufbas/#</hi>“, das in der <ref target="http://gams.uni-graz.at/o:ufbas.kategorien">Kategorienliste</ref>
+                    erläutert wird und als in TEI kodierte Taxonomie verfügbar ist. Die Abbildung
+                    dieser Kategorien in eine formale Ontologie, die in der historischen
+                    Kriminalitätsforschung weiterverwendet werden kann, bleibt ein
+                    Forschungsdesiderat, das mit den Mitteln, die dem Lehrprojekt zur Verfügung
+                    standen, nicht erreicht werden konnte.<note place="foot">  
+          <p rend="footnote text">
+                        Es ist zu hoffen, dass in der Zukunft gemeinsam mit verwandten Projekte wie etwa „The Proceedings of the Old Bailey, 1674-1913“ (http://www.oldbaileyonline.org/) oder der digitalen Erschliessung der Wiener Todesurteile des 18. Jahrhunderts (ein Projekt von Claudia Resch, vgl. http://www.oeaw.ac.at/acdh/de/node/493) an einer solchen Ontologie gearbeitet werden kann.
+                    </p>
+
+          </note>
+                    Die Beziehungen zwischen Sachaussagen und
+                    Text werden über die <hi rend="Code_Zchn">oa:hasTarget</hi>-Eigenschaft
+                    ausgedrückt. Ortsnamen sind mit <hi rend="Code_Zchn">skos:prefLabel</hi>
+                    kodiert.</p>
+        <p>
+          <hi rend="bold">Basistechnologien</hi>
+        </p>
+        <p>Die Daten werden im <ref target="http://www.fedora-commons.org/">FEDORA-Commons</ref> basierten Repository GAMS ( <ref target="http://gams.uni-graz.at">Geisteswissenschaftliches Asset Management
+                        System</ref> ) des
+                    <ref target="http://informationsmodellierung.uni-graz.at" xml:space="preserve">Zentrums für Informationsmodellierung der Universität Graz </ref>gehostet.
+                    Hier liegen sowohl die TEI- und RDF-Daten, als auch dazugehörige
+                    SPARQL-Anfragen. Das GAMS integriert zur Präsentation Cocoon-Services in das
+                    FEDORA-Repositorium und benutzt projektspezifische Content Models für die
+                    TEI-Daten und die Anfragen an die RDF-Datenbank. Das System verwendet als
+                    Triplestore die Open Source Software <ref target="http://blazegraph.com/">Blazegraph</ref> , die eine Volltextsuche in die Graphendatenbank
+                    integriert. Die RDF-Repräsentation ermöglicht es, sie als Linked Open Data mit
+                    Semantic Web Technologien abzufragen. </p>
+        <p>
+          <hi rend="bold" xml:space="preserve">Zur Entwicklung des Urfehdewesens </hi>
+        </p>
+
+        <p>Das Urfehdewesen entwickelte sich ab dem späten 14. Jahrhundert im
+                    deutschsprachigen Raum im Rahmen des Fehdewesens. In dieser frühen Phase wurde
+                    die Urfehde benutzt, um zwischen zwei zerstrittenen Parteien zu schlichten. Mit
+                    der sukzessiven Ablösung des Fehdewesens durch die obrigkeitliche
+                    Gerichtsbarkeit entwickelte sich die Urfehde seit der zweiten Hälfte des 15.
+                    Jahrhunderts von einem Bestandteil einer ausgleichenden Friedensvereinbarung zu
+                    einem asymmetrischen Eid des Verzichts auf Rache. Im 16. Jahrhundert entstand
+                    als Folge dieser Entwicklung im Rahmen des Gefängniswesens die sogenannte
+                    Haft-Urfehde, mit der ein aus dem Gefängnis Entlassener beschwor, an der
+                    Obrigkeit keine Rache für die Haft und die Verurteilung zu nehmen und keine
+                    Wiedergutmachung von ihr zu fordern. Die Urfehde verlor mit der wachsenden
+                    Festigung der obrigkeitlichen Gerichtsbarkeit an Bedeutung. Seit dem frühen 17.
+                    Jahrhundert fand der Begriff zunehmend als Synonym für die Strafe des
+                    Landesverweis Verwendung.<note n="5" place="foot">
+            <p rend="footnote text"> Vgl. allgemein Blauert, Andreas: „Urfehde“. In:
+                            Enzyklopädie der Neuzeit Online. Hrsg. von Friedrich Jaeger. 2014.
+                            Online unter:
+                            http://referenceworks.brillonline.com/entries/enzyklopaedie-der-neuzeit/urfehde-a4492000
+                            (Zugriff 20. Februar 2016).</p>
+          </note>
+        </p>
+
+        <p>Urfehden sind im Allgemeinen entweder als Urkunde (Urfehdebrief) oder als
+                    Urfehdeprotokoll in einem oft eigens für diesen Zweck angelegten Amtsbuch
+                    überliefert. Letztere machen seit dem späten 15. Jahrhundert die Mehrheit der
+                    überlieferten Urfehden aus.<note n="6" place="foot">
+            <p rend="footnote text"> Grundlegend: Blauert, Andreas: Das Urfehdewesen im
+                            deutschen Südwesten im Spätmittelalter und in der frühen Neuzeit.
+                            Tübingen 2000. Vgl. auch Ebel, Wilhelm, Die Rostocker Urfehden.
+                            Untersuchungen zur Geschichte des deutschen Strafrechts. Seestadt
+                            Rostock 1938; Bookmann, Andrea: Urfehde und ewige Gefangenschaft im
+                            mittelalterlichen Göttingen. Göttingen 1980; Hafner, Walter: Der Stadt
+                            Zürich geschworene Urfehden im Rahmen der spätmittelalterlichen
+                            Friedenswahrung und des städtischen Strafvollzugs. Lizentiatsarbeit 1986
+                            (ungedruckt). Specker, Hermann: Urfehden und Urteilssprüche. Eine neu
+                            erschlossene Urkundenabteilung im bernischen Staatsarchiv. In: Berner
+                            Zeitschrift für Geschichte und Heimatkunde 1961. S.
+                    137-151.</p>
+          </note>
+        </p>
+        <p>
+          <hi rend="bold" xml:space="preserve">Die Basler Urfehdebücher – Struktur und Entwicklung </hi>
+        </p>
+        <p>Urfehden sind in Basel im Zeitraum von 1397 bis 1789 in 42 Bänden gebunden
+                    überliefert. Frühere Urfehden sind als lose Blätter oder als Abschrift in den
+                    Ratsbüchern nur vereinzelt erhalten geblieben. Die unter den Signaturen StaBS
+                    Ratsbücher O 1 bis O 42 im Staatsarchiv Basel aufbewahrten Urfehdebücher liegen
+                    vollständig digitalisiert vor. Die beiden frühesten Urfehdebücher enthalten
+                    Einträge aus 46 bzw. 14 Jahren. Die folgenden Bücher umfassen meistens vier bis
+                    sechs Jahre. Bei den Einträgen handelt es sich um in deutscher Sprache verfasste
+                    Reinschriften der in Basel geschworenen Urfehden, die grösstenteils nach dem
+                    Datum des Urfehdeschwurs geordnet und in einem späteren Schritt zu Büchern
+                    gebunden worden sind. Die Urfehdebücher weisen Spuren von späteren Bearbeitungen
+                    auf; dazu gehören die nach dem Binden der Bücher hinzugefügte Folio-Nummerierung
+                    oder das spätere Erstellen von Personenverzeichnissen. </p>
+
+        <p>Bislang gibt es keine umfassende Gesamtdarstellung zum Urfehdewesen in Basel;
+                    allerdings wurden in verschiedenen Veröffentlichungen einzelne relevante Aspekte
+                    behandelt und Urfehden als Quellen beigezogen.<note place="foot">
+            <p rend="footnote text"> Zur Einführung in die frühneuzeitliche
+                            Rechtsgeschichte in Basel: Hagemann, Hans-Rudolf: Vielschichtiges Recht.
+                            Zivilrechtspflege im neuzeitlichen Basel. Basel 2009.</p>
+
+          </note> Unter
+                    anderem untersuchte Ernst Brenner die Entwicklung des Gefängnis- und Strafwesens
+                    in Basel.<note place="foot">
+            <p rend="footnote text">
+                            Brenner, Ernst: Rückblick auf die Entwicklung des Gefängnis- und
+                            Strafwesens in Basel. Basel 1891.</p>
+
+          </note> In der umfangreichen
+                    Geschichte der Stadt Basel von Rudolf Wackernagel finden sich Angaben zu den
+                    Rats- und Stadtknechten, die in die Urfehdeverfahren involviert waren.<note place="foot">
+            <p rend="footnote text"> Wackernagel,
+                            Rudolf: Geschichte der Stadt Basel. 3 Bände in 4 Teilen. Band II, Teil
+                            1. Basel 1911; vgl. zudem auch: Metzger, Karl: Die Verbrechen und ihre              
+              Straffolgen im Basler Recht des späten Mittelalters. Die Verbrechen und
+                            ihre Straffolgen im Allgemeinen. Basel 193.</p>
+
+          </note> Franz Egger hat
+                    die Aufgaben und Verantwortlichkeiten der Basler Oberstknechte insbesondere im
+                    Verlauf des 18. Jahrhunderts in einem Aufsatz untersucht.<note place="foot">
+            <p rend="footnote text"> Egger, Franz: Zeichen der
+                            Macht - Macht der Zeichen. Visualisierung obrigkeitlicher Ordnung im 18.
+                            Jahrhundert. Der Basler Oberstknecht und seine Amtsstäbe. In: Basler
+                            Zeitschrift für Geschichte und Altertumskund 102 (2002). S.
+                        159-190.</p>
+
+          </note> In seiner Arbeit zum Basler Rechtsleben im Mittelalter
+                    gibt Hans-Rudolf Hagemann einige Hinweise auf das Urfehdewesen.<note place="foot">
+            <p rend="footnote text"> Hagemann,
+                            Hans-Rudolf: Basler Rechtsleben im Mittelalter. Basel 1981.</p>
+
+          </note>
+                    Guy Marchal hat die spätmittelalterlichen Basler Urfehden auf die in den
+                    Verbannungsurteilen greifbaren Raumvorstellungen hin untersucht<note place="foot">
+            <p rend="footnote text"> Marchal, Guy P.:
+                            &quot;Von der Stadt&quot; und bis ins &quot;Pfefferland&quot;. Städtische Raum- und
+                            Grenzvorstellungen in Urfehden und Verbannungsurteilen oberrheinischer
+                            und schweizerischer Städte. In: Ders. (Hrsg.): Grenzen und
+                            Raumvorstellungen (11.-20. Jh.). Zürich 1996. S. 225-263. </p>
+
+          </note>,
+                    Katharina Simon-Muscheid hat sich mit den Urfehden in den Leistungsbüchern des
+                    spätmittelalterlichen Basels auseinandergesetzt<note place="foot">
+            <p rend="footnote text">Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels. In: Zeitschrift für historische Forschung 18 (1991). S. 1-31.</p>
+
+          </note>
+                    
+                   
+                    
+                    und Michael Segesser hat in
+                    seiner unveröffentlichten Lizentiatsarbeit «Wilhelm Tell zu Haft in Basel» die
+                    Urfehdeprotokolle der Jahre 1550 bis 1560 analysiert und dabei die
+                    Inhaftierungspraxis durch die Ratsknechte, das Anzeigeverhalten, die starke
+                    administrative Formalisierung der Urfehdeprotokolle, aber auch die Bedeutung
+                    reformatorischer Anliegen (Kampf gegen aussereheliche Sexualität, übles
+                    Haushalten oder die Teilnahme an fremden Kriegszügen) untersucht.<note place="foot">
+            <p rend="footnote text"> Engesser,
+                            Michael: Wilhelm Tell zu Haft in Basel. Der Stand des örtlichen
+                            Gefängniswesens um die Mitte des 16. Jahrhunderts, untersucht anhand von
+                            Urfehdeprotokollen aus der Zeit von 1550 bis 1560, unveröffentlichte
+                            Lizentiatsarbeit, Basel 2004.</p>
+          </note>
+        </p>
+        <p>
+          <hi rend="bold">Das Basler Urfehdebuch X</hi>
+        </p>
+
+        <p>Das hier digital edierte Basler Urfehdebuch X enthält Einträge für den Zeitraum
+                    vom 3. Januar 1563 bis zum 4. Dezember 1569. Die in ihm protokollierten Urfehden
+                    gehören zu den klassischen Haft-Urfehden, wie sie zwischen dem beginnenden 15.
+                    und dem frühen 17. Jahrhundert üblich waren. Mit grosser Wahrscheinlichkeit
+                    wurden die Urfehden noch im 16. Jahrhundert zu einem Buch gebunden. Das
+                    Personenverzeichnis wurde jedoch erst in der zweiten Hälfte des 18. Jahrhunderts
+                    angelegt und bei der Ersetzung des Einbandes im Jahr 1900 miteingebunden.<note place="foot">
+            <p> Schmid, Beat: Blumen und andere
+                            Zeugnisse von administrativem Handeln im Basler Urfehdebuch X.
+                            Seminararbeit bei Prof. Dr. Susanna Burghartz, Universität Basel, 2016
+                            (ungedruckt). S. 7.</p>
+          </note>
+        </p>
+        <p>Das Urfehdebuch X ist in seinem heutigen Erscheinungsbild folgendermassen
+                    gegliedert:</p>
+        <list type="unordered">
+          <item>
+            <hi rend="bold">Personenregister</hi>: geordnet nach Vornamen, keine
+                        Foliierung</item>
+          <item>
+            <hi rend="bold">Urfehdeeinträge</hi>: fast durchgehend nach dem Datum der
+                        Haftentlassung geordnet, fol. 1 recto - fol. 111 verso<note place="foot">
+              <p rend="footnote text"> Eine Ausnahme in der
+                                Ordnung nach der Datierung sind die vier Urfehden auf den Blättern 8
+                                recto bis 9 recto sowie ein protokolliertes Geständnis auf dem Blatt
+                                13 die aus dem Jahr 1567 stammen, obwohl zuvor und danach die
+                                Urfehden des Jahres 1563 resp. 1564 aufgezeichnet
+                        sind.</p>
+            </note>
+          </item>
+          <item>
+            <hi rend="bold">Register A-Z</hi>: leer, keine Foliierung</item>
+        </list>
+        <p>Das Personenregister und das A-Z Register wurde nicht in die digitale Edition
+                    aufgenommen.</p>
+        <p>Insgesamt finden sich im Urfehdebuch X 616 eigenständige Einträge; von diesen
+                    sind 597 vollständige Urfehden (drei davon undatiert), drei sind verschriftliche
+                    Geständnis-Urfehden, sieben Einträge sind Entwürfe für Urfehden (einer davon
+                    undatiert), zwei Urfehden wurden undatiert abgebrochen und von sieben
+                    Beschuldigten wurden Aussagen protokolliert (sechs davon undatiert) und ins
+                    Urfehdebuch aufgenommen. Die verschiedenen Einträge sind über den im Urfehdebuch
+                    X behandelten Zeitraum ungleichmässig verteilt; die folgende Grafik gibt
+                    Aufschluss über die Verteilung nach Monaten.</p>
+        <figure>
+          <graphic ana="about" rend="inline" url="http://gams.uni-graz.at/context:ufbas/NUM_ENTRY">
+            <desc>Anzahl Urfehdeeinträge pro Monat im Urfehdebuch X, 1563-1569</desc>
+          </graphic>
+        </figure>
+        <p></p>
+        <p>
+          <hi rend="bold">Der städtische Notar</hi>
+        </p>
+
+        <p>Für den grössten Teil der Einträge in das Urfehdebuch X zeichnet der städtische
+                    Notar Niclaus Im Hoff verantwortlich. Entsprechend folgt die übergrosse Mehrheit
+                    der Urfehden einem einheitlichen Schema.<note n="16" place="foot">
+            <p rend="footnote text"> Für eine genaue Analyse der Schreiberhände im
+                            Urfehdenbuch X vgl. Schmid, Blumen und andere Zeugnisse, 2016, S. 28,
+                            Anhang 5.</p>
+
+          </note> Es handelt sich bei diesen Einträgen mit Sicherheit
+                    um Reinschriften, erfolgten doch kaum Korrekturen oder Ergänzungen.<note n="17" place="foot">
+            <p rend="footnote text"> Dafür sprechen
+                            laut Beat Schmid ebenfalls kleinere Verschiebungen in der Ordnung nach
+                            der Datierung und die Entwürfe für Urfehden auf dem Notizzettel fol.
+                            32v. Ebd., S. 11.</p>
+
+          </note> Nach Im Hoffs Tod übernahm Johann Strosser
+                    die Notariatsaufgaben und führte eine im Vergleich zu seinem Vorgänger leicht
+                    veränderte Struktur der Aufzeichnungen ein. Neu wurden die Namen der aus dem
+                    Gefängnis Entlassenen nicht mehr als Titel über den Eintrag gesetzt, sondern                
+    firmierten als Randnotiz. Bemerkenswert ist auch, dass Strosser die Urfehden
+                    nicht mehr einzeln unterschrieb. Vielmehr fasste er die zwölf von ihm
+                    verantworteten Einträge, die sich über mehrere Wochen erstrecken, unter einem
+                        Titel<note n="18" place="foot">
+            <p rend="footnote text">
+                            StaBS, Ratsbücher O 10, fol. 111: «Nach abgang Herren Niclausen Im Hoff,
+                            deß geschworenen Nottarien seligen hab ich hieunderschribner Nottarius
+                            harnach volgendt uß miner gn. Herren gefangneschafft mit der urfecht
+                            befürteren helffen wie nachvolgt. ./.»</p>
+          </note> auf fol. 109 recto
+                    zusammen und beglaubigte sie gesamthaft auf fol. 111 verso als letztem Eintrag
+                    des Bandes. Damit liegt ein weiterer Hinweis darauf vor, dass es sich bei den
+                    Urfehden im vorliegenden Band um eine Reinschrift handelt.</p>
+
+        <p>Von dem oben beschriebenen Schema weichen lediglich einige wenige Einträge des
+                    Urfehdebuch X grundlegend ab. Dazu gehören sechs undatierte Aussagen von
+                    Beschuldigten auf den Blättern 3 recto bis 4 recto, die nur teilweise früheren
+                    oder späteren Urfehden zugeordnet werden können, keine Randnotiz enthalten und
+                    nicht notariell beglaubigt sind. Auf Blatt 32adas zwischen fol. 32 und 33
+                    eingefügt wurde, finden sich Entwürfe für Urfehden.<note n="19" place="foot">
+            <p rend="footnote text">Schmid, Blumen und andere Zeugnisse, 2016, S. 9 (Anm. 35).</p>
+
+          </note> Diese stammen aus den Monaten Januar und Februar 1564, sind
+                    aber zwischen Einträge aus dem Jahr 1565 gelegt worden. Im weiteren Verlauf des
+                    Urfehdenbuch X finden sich zudem drei längere verschriftliche Geständnisse: die
+                    &quot;verschribne urphet&quot; von Claus Specht (fol. 33 verso bis 34 verso), das
+                    Geständnis von Martin Ludin (fol. 50 verso bis 51 recto) und dasjenige von Mathy
+                    Gütinger (fol. 102 verso bis 104 recto). Der Urfehdeeintrag von Lienhart Wyss
+                    auf fol. 69 recto bricht mitten im Text ab. Die darauffolgenden fünf Seiten
+                    wurden aus dem Buch herausgetrennt und haben wahrscheinlich Urfehden im Zeitraum
+                    vom November 1566 bis Juni 1567 enthalten, von denen nur noch einige durch
+                    Abschriften auf den Blättern 8 und 9, die vermutlich aus dem 18. Jahrhundert
+                    stammen, erhalten geblieben sind.<note place="foot">
+            <p rend="footnote text"> Ebd. S. 11.</p>
+          </note>
+        </p>
+
+        <p>Beat Schmid konnte in seiner Untersuchung zu den Marginalien in Urfehdebuch X
+                    zeigen, dass sie ein System zur Abrechnung und Verteilung für die sog. Turnlöse
+                    enthalten, welche den Turmwächtern bei der Entlassung eines Gefangenen zustand.
+                    Anspruchsberechtigt waren der Oberste Knecht von Basel sowie die ihm
+                    untergeordneten Rats- und Stadtknechte, die für die Gefängnisse und die
+                    Gefangenen zuständig waren.<note place="foot">
+            <p rend="footnote text"> Ebd. S. 13 ff.</p>
+          </note> Konkret nennt
+                    Urfehdebuch X die folgenden. <note place="foot">
+            <p rend="footnote text"> Ebd., S. 14/ 15. Für Informationen zu den
+                            einzelnen Knechten vgl. die Anm. 58 bis 66.</p>
+          </note>Die folgende
+                    Tabelle aller im Urfehdebuch X erwähnten Stadt- und Ratsknechte ist leicht
+                    abgeändert dieser Arbeit entnommen.</p>
+        <table rend="rules">
+          <row>
+            <cell rend="Text_Seminararbeit">
+              <hi rend="bold" xml:space="preserve">Name </hi>
+            </cell>
+            <cell rend="Text_Seminararbeit">
+              <hi rend="bold">Funktion</hi>
+            </cell>
+            <cell rend="Text_Seminararbeit">
+              <hi rend="bold">Erste Nennung</hi>
+            </cell>
+            <cell rend="Text_Seminararbeit">
+              <hi rend="bold">Letzte Nennung</hi>
+            </cell>
+            <cell rend="Text_Seminararbeit">
+              <hi rend="bold">Anzahl Nennungen</hi>      
+      </cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Heinrich Brucker</cell>
+            <cell rend="Text_Seminararbeit">Oberstknecht</cell>
+            <cell rend="Text_Seminararbeit">01.02.1563</cell>
+            <cell rend="Text_Seminararbeit">19.09.1569</cell>
+            <cell rend="Text_Seminararbeit">150 </cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Ambrosius Steck</cell>
+            <cell rend="Text_Seminararbeit">Ratsknecht</cell>
+            <cell rend="Text_Seminararbeit">03.01.1563</cell>
+            <cell rend="Text_Seminararbeit">27.11.1563</cell>
+            <cell rend="Text_Seminararbeit">6 </cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Michel Köferlj / Köferlin</cell>
+            <cell rend="Text_Seminararbeit">Ratsknecht</cell>
+            <cell rend="Text_Seminararbeit">08.07.1564</cell>
+            <cell rend="Text_Seminararbeit">03.04.1566</cell>
+            <cell rend="Text_Seminararbeit">102</cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Pauli Bylger</cell>
+            <cell rend="Text_Seminararbeit">Ratsknecht</cell>
+            <cell rend="Text_Seminararbeit">01.05.1566</cell>
+            <cell rend="Text_Seminararbeit">Nov. 1566</cell>
+            <cell rend="Text_Seminararbeit">24 </cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Hanss Rorer</cell>
+            <cell rend="Text_Seminararbeit">Ratsknecht</cell>
+            <cell rend="Text_Seminararbeit">04.07.1567</cell>
+            <cell rend="Text_Seminararbeit">12.02.1569</cell>
+            <cell rend="Text_Seminararbeit">80 </cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Jocob Ylidorffer</cell>
+            <cell rend="Text_Seminararbeit">Ratsknecht</cell>
+            <cell rend="Text_Seminararbeit">27.04.1569</cell>
+            <cell rend="Text_Seminararbeit">19.09.1569</cell>
+            <cell rend="Text_Seminararbeit">16 </cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Uolin / Uolj Rack</cell>
+            <cell rend="Text_Seminararbeit">Ratsknecht</cell>
+            <cell rend="Text_Seminararbeit">22.02.1563</cell>
+            <cell rend="Text_Seminararbeit">18.08.1569</cell>
+            <cell rend="Text_Seminararbeit">152</cell>
+          </row>
+          <row>
+            <cell rend="Text_Seminararbeit">Heinrich Veldbach</cell>
+            <cell rend="Text_Seminararbeit">Ratsknecht</cell>
+            <cell rend="Text_Seminararbeit">06.11.1564</cell>
+            <cell rend="Text_Seminararbeit">07.02.1568</cell>
+            <cell rend="Text_Seminararbeit">4</cell>
+          </row>
+        </table>
+        <p>
+          <hi rend="bold">Hinweise zur Arbeit mit dem Urfehdebuch X</hi>
+        </p>
+
+        <p>Die digitale Edition gibt eine vollständige Transkription des gesamten
+                    Urfehdebandes X. Sie erlaubt die Volltextsuche, auch mit regulären Ausdrücken,
+                    und kann so für die qualitative Auswertung genutzt werden. Daneben lässt sich
+                    über die in den Kategorien abgebildete Datenstruktur und Verschlagwortung eine
+                    erste quantitative Analyse durchführen. Der Datenkorb erlaubt die Auswahl
+                    einzelner Kategorien samt Möglichkeiten etwa zur zeitlich gezielten
+                    Einschränkung, aber auch die Auswahl spezifischer Einzeleinträge. Die mit dem
+                    Datenkorb und den andere Abfragen in der Anwendung ausgwählten Daten können als
+                    Tabellen heruntergeladen werden. Diese enthalten alle die URI des jeweiligen
+                    Eintrags, so dass die Tabellen in ein relationales Datenbanksystem überführt
+                    werden können. Für komplexere Auswertungen empfehlen sich entweder XML basierte
+                    Auswertungsmethoden (XPath)<note place="foot">
+            <p rend="footnote text">XSL/XQuery Prozessoren gibt viele. In den DH hat die Closed Source Anwendung „Oxygen“ der Firma SyncRo-Soft auf Grund ihrer sehr guten Unterstützung für die TEI weite Verbreitung gefunden. OpenSource-Produkte wie XMLCopy (http://gams.uni-graz.at/archive/objects/o:ufbas.1563/datastreams/TEI_SOURCE/content) oder Plugin für jEdit bieten auch XPath-Unterstützung, meist aber nur in der Version 1.0 des Standards. Komplexere Ergebnisse lassen sich mit den XML-Verarbeitungsstandards XSLT und XQuery erzielen, die beide von Oxygen sehr gut unterstützt werden.</p>
+          </note> oder RDF basierte (SPAQRL)
+                    <note place="foot">Z.B. über Webservices wie http://linkeddata.uriburner.com/sparql/, dem die RDF-URL der digitalen Edition übergeben werden kann.<p rend="footnote text">Die gleiche Anfrage an den RDF-Datensatz würde lauten: 
+                        <hi rend="Code_Zchn">PREFIX g2o:&lt;http://gams.uni-graz.at/ontology/#&gt;
+                        PREFIX oa:&lt;http://www.w3.org/ns/oa#&gt;
+                        PREFIX skos:&lt;http://www.w3.org/2004/02/skos/core#&gt; 
+                        PREFIX uf:&lt;http://gams.uni-graz.at/ufbas/#&gt;
+                                        select distinct * 
+                                        where { ?täter a uf:PersonTäter ; uf:gender uf:female; ?eigenschaft ?beschreibung . }</hi>
+              <lb></lb>
+                     Vgl. auch <ref target="goo.gl/jrUKEH">LINK</ref>
+            </p>
+
+          </note>, die auf die frei zur
+                    Verfügung stehenden Daten angewendet werden können: so kann z.B. mit dem
+                    XPath-Ausdruck <hi rend="Code_Zchn">//*[@ana=&quot;#uf_PersonTäter&quot;][./*/@ana=&quot;#uf_female&quot;]</hi> nach
+                    weiblichen Tätern gesucht werden. Darüber hinaus sollte beachtet werden, dass
+                    es sich bei den hier vorliegenden Urfehden um nachträgliche Reinschriften
+                    handelt, die zudem erst im Nachhinein zusammengebunden wurden. So ist nicht
+                    immer deutlich zu unterscheiden, ob die Schwankungen in der Zahl der geleisteten
+                    Urfehden in realen Schwankungen des delinquenten Verhaltens, in Schwankungen der
+                    Aufschreibepraxis des städtischen Notars bzw. Gerichts oder im vorübergehenden
+                    Zusammenbruchs geordneter Alltags- und Verwaltungsstrukturen etwa während der
+                    grossen Pestwelle 1563/64 begründet liegen.</p>
+        <p>
+          <hi rend="bold">Bibliographie</hi>
+        </p>
+        <p> Blauert, Andreas: Das Urfehdewesen im deutschen Südwesten im Spätmittelalter und in der frühen Neuzeit. Tübingen 2000.</p>
+        <p>Blauert, Andreas: „Urfehde“. In: Enzyklopädie der Neuzeit Online. Hrsg. von Friedrich Jaeger. 2014. Online unter: http://referenceworks.brillonline.com/entries/enzyklopaedie-der-neuzeit/urfehde-a4492000 (Zugriff 20. Februar 2016).</p>
+        <p>Bookmann, Andrea: Urfehde und ewige Gefangenschaft im mittelalterlichen Göttingen. Göttingen 1980.</p>
+        <p>Brenner, Ernst: Rückblick auf die Entwicklung des Gefängnis- und Strafwesens in Basel. Basel 1891.</p>
+        <p>Ebel, Wilhelm, Die Rostocker Urfehden. Untersuchungen zur Geschichte des deutschen Strafrechts. Seestadt Rostock 1938.</p>
+        <p>Egger, Franz: Zeichen der Macht - Macht der Zeichen. Visualisierung obrigkeitlicher Ordnung im 18. Jahrhundert. Der Basler Oberstknecht und seine Amtsstäbe. In: Basler Zeitschrift für Geschichte und Altertumskund 102 (2002). S. 159-190.</p>
+        <p>Engesser, Michael: Wilhelm Tell zu Haft in Basel. Der Stand des örtlichen Gefängniswesens um die Mitte des 16. Jahrhunderts, untersucht anhand von Urfehdeprotokollen aus der Zeit von 1550 bis 1560, unveröffentlichte Lizentiatsarbeit, Basel 2004.</p>
+        <p>Hafner, Walter: Der Stadt Zürich geschworene Urfehden im Rahmen der spätmittelalterlichen Friedenswahrung und des städtischen Strafvollzugs. Lizentiatsarbeit 1986 (ungedruckt).</p>
+        <p>Hagemann, Hans-Rudolf: Basler Rechtsleben im Mittelalter. Basel 1981.</p>
+        <p>Hagemann, Hans-Rudolf: Vielschichtiges Recht. Zivilrechtspflege im neuzeitlichen Basel. Basel 2009.</p>
+        <p>Marchal, Guy P.: &quot;Von der Stadt&quot; und bis ins &quot;Pfefferland&quot;. Städtische Raum- und Grenzvorstellungen in Urfehden und Verbannungsurteilen oberrheinischer und schweizerischer Städte. In: Ders. (Hrsg.): Grenzen und Raumvorstellungen (11.-20. Jh.). Zürich 1996. S. 225-263.</p>
+        <p>Metzger, Karl: Die Verbrechen und ihre Straffolgen im Basler Recht des späten Mittelalters. Die Verbrechen und ihre Straffolgen im Allgemeinen. Basel 1931.</p>
+
+        <p>Schmid, Beat: Blumen und andere Zeugnisse von administrativem Handeln im Basler Urfehdebuch X. Seminararbeit bei Prof. Dr. Susanna Burghartz, Universität Basel, 2016 (ungedruckt). <ref target="http://gams.uni-graz.at/archive/objects/context:ufbas/datastreams/SCHMIDtADMINIStRAtIVESHANDELN2016/content">http://gams.uni-graz.at/archive/objects/context:ufbas/datastreams/SCHMIDtADMINIStRAtIVESHANDELN2016/content</ref>.</p>
+        <p>Simon-Muscheid, Katharina: Gewalt und Ehre im spätmittelalterlichen Handwerk am Beispiel Basels. In: Zeitschrift für historische Forschung 18 (1991). S. 1-31.</p>
+        <p>Specker, Hermann: Urfehden und Urteilssprüche. Eine neu erschlossene Urkundenabteilung im bernischen Staatsarchiv. In: Berner Zeitschrift für Geschichte und Heimatkunde 1961. S. 137-151.</p>
+        <p>Thaller, Manfred: What is a text within the Digital Humanities, or some of them, at least?, in: dh2012 - Book of Abstracts, Hamburg 2012 http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/beyond-embedded-markup.</p>
+        <p>Tomasek, Kathryn / Orlowska, Anna / Pindl, Kathrin / Anderson, Clifford / Eide, Øvind / Vogeler, Georg: Modeling semantically Enhanced Digital Edition of Accounts (MEDEA) for Discovery and Comparison on the Semantic Web, in: Digital Scholarship in the Humanities, 2017, im Review.</p>
+        <p>Vogeler, Georg: Digitale Edition von Wirtschafts- und Rechnungsbüchern. Gudrun Gleba and Niels Petersen (Hg.): Wirtschafts- und Rechnungsbücher des Mittelalters und der Frühen Neuzeit. Formen und Methoden der Rechnungslegung: Städte, Klöster, Kaufleute. Göttingen: Universitätsverlag Göttingen 2015, S. 307-328.</p>
+        <p>Vogeler, Georg.: Warum werden mittelalterliche und frühneuzeitliche Rechnungsbücher eigentlich nicht digital ediert? In: Zeitschrift für digitale Geisteswissenschaften. Sonderband 1. 2015. Artikel 7. doi:10.17175/sb001_007.</p>
+        <p>Vogeler, Georg: The Content of Accounts and Registers in their Digital Edition. XML/TEI, Spreadsheets, and Semantic Web Technologies, in: Konzeptionelle Überlegungen zur Edition von Rechnungen und Amtsbüchern des späten Mittelalters, hg. v. Jürgen Sarnowksy, Göttingen: V&amp;R unipress 2016, S. 13-41.</p>
+        <p>Wackernagel, Rudolf: Geschichte der Stadt Basel. 3 Bände in 4 Teilen. Band II, Teil 1. Basel 1911.</p>
+      </div>
+    </body>
+  </text>
+</TEI>

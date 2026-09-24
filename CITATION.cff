@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Please cite the edition as below."
+type: dataset
+title: "Die Urfehdebücher der Stadt Basel – digitale Edition. Urfehdebuch X (1563–1569), data"
+license: CC-BY-NC-SA-4.0
+url: "https://gams.uni-graz.at/ufbas"
+repository-code: "https://github.com/chpollin/ufbas-data"
+identifiers:
+  - type: other
+    value: "hdl:11471/1010.2"
+    description: "Handle of the edition in GAMS"
+authors:
+  - family-names: Burghartz
+    given-names: Susanna
+  - family-names: Calvi
+    given-names: Sonia
+  - family-names: Vogeler
+    given-names: Georg
+preferred-citation:
+  type: data
+  title: "Die Urfehdebücher der Stadt Basel – digitale Edition"
+  authors:
+    - family-names: Burghartz
+      given-names: Susanna
+    - family-names: Calvi
+      given-names: Sonia
+    - family-names: Vogeler
+      given-names: Georg
+  year: 2016
+  publisher:
+    name: "Universität Graz, GAMS"
+  url: "https://hdl.handle.net/11471/1010.2.1"

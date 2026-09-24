@@ -1,0 +1,1267 @@
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#" xmlns:cei="http://www.cei.lmu.de/ns/1.0" xmlns:crm="http://www.cidoc-crm.org/cidoc-crm" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" xmlns:g2o="http://gams.uni-graz.at/ontology/#" xmlns:gl="http://www.xbrl.org/GLTaxonomy/" xmlns:oa="http://www.w3.org/ns/oa#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:uf="http://gams.uni-graz.at/ufbas/#" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xml:base="http://www.w3.org/2002/07/owl">
+  <Ontology></Ontology>
+  
+  
+  <AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#range"></AnnotationProperty>
+  
+  
+  <rdfs:Datatype rdf:about="http://gams.uni-graz.at/ufbas/#female"></rdfs:Datatype>
+  
+  <rdfs:Datatype rdf:about="http://gams.uni-graz.at/ufbas/#male"></rdfs:Datatype>
+  
+  <rdfs:Datatype rdf:about="rdfs:Literal"></rdfs:Datatype>
+  
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasBeiname">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Beiname"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasBeruf">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Beruf"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasDatum">
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasDatumBegnadigung">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasDatum"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"></rdfs:range>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#DatumBegnadigung"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasDatumFrist">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasDatum"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#DatumFrist"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasDatumTat">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasDatum"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#DatumTat"></rdfs:range>
+  </ObjectProperty>
+   
+ <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasDatumUrfehde">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasDatum"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#DatumUrfehde"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasEingangsnotiz">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Eingangsnotiz"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasNotarialSubscription">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#NotarialSubscription"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasOrt">
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Ort"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasOrtHerkunft">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasOrt"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Ort"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasOrtWohnort">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasOrt"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Ort"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasPerson">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasPerson"></rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasPersonMittäter">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasPerson"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasPersonOpfer">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasPerson"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasPersonTäter">
+    <rdfs:subPropertyOf rdf:resource="http://gams.uni-graz.at/ufbas/#hasPerson"></rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasStatus">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Status"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasStrafe">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasTat">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasUntersuchungshaft">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Untersuchungshaft"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasUrfehdeeid">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Urfehdeeid"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasVerwandtschaftsgrad">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Verwandtschaftsgrad"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasVorinstanz">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Vorinstanz"></rdfs:range>
+  </ObjectProperty>
+  
+  <ObjectProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasZivilstand">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range rdf:resource="http://gams.uni-graz.at/ufbas/#Zivilstand"></rdfs:range>
+  </ObjectProperty>
+  
+  
+  <DatatypeProperty rdf:about="http://gams.uni-graz.at/ufbas/#gender">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://gams.uni-graz.at/ufbas/#female"></rdf:Description>
+          <rdf:Description rdf:about="http://gams.uni-graz.at/ufbas/#male"></rdf:Description>
+        </unionOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </DatatypeProperty>
+  
+  <DatatypeProperty rdf:about="http://gams.uni-graz.at/ufbas/#hasRoleName">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+  </DatatypeProperty>
+  
+  <DatatypeProperty rdf:about="http://gams.uni-graz.at/ufbas/#persName">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:domain>
+  </DatatypeProperty>
+  
+  <DatatypeProperty rdf:about="http://www.tei-c.org/ns/1.0/#when">
+    <rdfs:domain rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"></rdfs:domain>
+  </DatatypeProperty>
+  
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#AnderesUrfehdeverfahren">
+    <rdfs:comment xml:lang="de">Hinweis auf ein weiteres Urfehdeverfahren einer anderen Person</rdfs:comment>
+    <rdfs:label xml:lang="de">AnderesUrfehdeverfahren</rdfs:label>
+    <rdfs:label xml:lang="en">OtherProceedings</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Beiname">
+    <rdfs:comment xml:lang="de">Name, mit dem eine Person von ihrer Umgebung benannt wird</rdfs:comment>
+    <rdfs:label xml:lang="de">Beiname</rdfs:label>
+    <rdfs:label xml:lang="en">Surname</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Beruf">
+    <rdfs:comment xml:lang="de">Beruf</rdfs:comment>
+    <rdfs:label xml:lang="de">Beruf</rdfs:label>
+    <rdfs:label xml:lang="en">Profession</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Datum">
+    <rdfs:label xml:lang="de">Datum</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#DatumBegnadigung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Zeitpunkt, zu welchem eine Person begnadigt wurde</rdfs:comment>
+    <rdfs:label xml:lang="en">DateAmnesty</rdfs:label>
+    <rdfs:label xml:lang="de">DatumBegnadigung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#DatumFrist">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Dauer oder Ablaufdatum einer Frist</rdfs:comment>
+    <rdfs:label xml:lang="en">DateDeadline</rdfs:label>
+    <rdfs:label xml:lang="de">DatumFrist</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#DatumTat">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Zeitpunkt, zu welchem die Tat verübt wurde</rdfs:comment>
+    <rdfs:label xml:lang="en">Date</rdfs:label>
+    <rdfs:label xml:lang="de">DatumTat</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#DatumUrfehde">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Zeitpunkt, zu welchem die Urfehde geschworen wurde</rdfs:comment>
+    <rdfs:label xml:lang="en">DateUrfehde</rdfs:label>
+    <rdfs:label xml:lang="de">DatumUrfehde</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Eingangsnotiz">
+    <rdfs:comment xml:lang="de">Eine bemerkung zu einem Eintrag</rdfs:comment>
+    <rdfs:comment xml:lang="en">A remark to entry.</rdfs:comment>
+    <rdfs:label xml:lang="en">Remark</rdfs:label>
+    <rdfs:label xml:lang="de">Eingangsnotiz</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Eintrag">
+    <rdfs:comment xml:lang="en">The main textual entity in the register denoting the act
+            &apos;Urfehde&apos;.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Top</rdfs:comment>
+    <rdfs:label xml:lang="de">Eintrag</rdfs:label>
+    <rdfs:label xml:lang="en">Entry</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#FrüheresUrfehdeverfahren">
+    <rdfs:comment xml:lang="de">Hinweis auf ein vorangegangenes und abgeschlossenes Urfehdeverfahren, in dem die selbe Person belangt wurde</rdfs:comment>
+    <rdfs:label xml:lang="en">EarlyProceedings</rdfs:label>
+    <rdfs:label xml:lang="de">FrüheresUrfehdeverfahren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#NotarialSubscription">
+    <rdfs:comment xml:lang="de">Beglaubigung der Urfehde durch den Notar</rdfs:comment>
+    <rdfs:label xml:lang="de">NotarialSubscription</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Ort">
+    <rdfs:label xml:lang="de">Ort</rdfs:label>
+    <rdfs:label xml:lang="en">Place</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#OrtHerkunft">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Ort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Herkunftsort</rdfs:comment>
+    <rdfs:label xml:lang="en">Place of origin</rdfs:label>
+    <rdfs:label xml:lang="de">OrtHerkunft</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#OrtTatort">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Ort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Tatort</rdfs:comment>
+    <rdfs:label xml:lang="en">Crime scene</rdfs:label>
+    <rdfs:label xml:lang="de">OrtTatort</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#OrtWohnort">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Ort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Wohnort</rdfs:comment>
+    <rdfs:label xml:lang="en">Residence</rdfs:label>
+    <rdfs:label xml:lang="de">OrtWohnort</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Person">
+    <rdfs:comment xml:lang="en">Any kind of person named</rdfs:comment>
+    <rdfs:comment xml:lang="de">Jede vorkommende Person</rdfs:comment>
+    <rdfs:label xml:lang="de">Person</rdfs:label>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonAnwesende">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Person, die bei der Tat anwesend ist, aber keine Aussage dazu macht</rdfs:comment>
+    <rdfs:label xml:lang="en">PersonPresent</rdfs:label>
+    <rdfs:label xml:lang="de">PersonAnwesende</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonHehler">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Person, die mit Diebesgut handelt</rdfs:comment>
+    <rdfs:label xml:lang="en">PersonReceiver</rdfs:label>
+    <rdfs:label xml:lang="de">PersonHehler</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonKläger">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Kläger</rdfs:comment>
+    <rdfs:label xml:lang="en">PersonPlaintiff</rdfs:label>
+    <rdfs:label xml:lang="de">PersonKläger</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonMittäter">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Mittäter (kann in weiterem Urfehdeverfahren belangt werden), als Mittäter Beschuldigter</rdfs:comment>
+    <rdfs:label xml:lang="en">Accomplice</rdfs:label>
+    <rdfs:label xml:lang="de">PersonMittäter</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonNotar">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Beglaubigt die Urfehde</rdfs:comment>
+    <rdfs:label xml:lang="en">personNotary</rdfs:label>
+    <rdfs:label xml:lang="de">PersonNotar</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonOpfer">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Opfer</rdfs:comment>
+    <rdfs:label xml:lang="en">PersonVictim</rdfs:label>
+    <rdfs:label xml:lang="de">PersonOpfer</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonTäter">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Täter, Tatverdächtiger</rdfs:comment>
+    <rdfs:label xml:lang="en">PersonOffender</rdfs:label>
+    <rdfs:label xml:lang="de">PersonTäter</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#PersonZeuge">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Person"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Zeuge</rdfs:comment>
+    <rdfs:label xml:lang="en">PersonWitness</rdfs:label>
+    <rdfs:label xml:lang="de">PersonZeuge</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Schlagwort">
+    <rdfs:label xml:lang="en">Keyword</rdfs:label>
+    <rdfs:label xml:lang="de">Schlagwort</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortAndrohungTodesstrafe">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Androhung der Todesstrafe im Falle der Übertretung der Urfehde (ausgenommen Hinrichtungen mit Schwert oder durch Ertränken, siehe
+            seperate Kategorien)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordDeathPenalty</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortAndrohungTodesstrafe</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortArmut">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Arme, Armut</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordPoverty</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortArmut</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortAufdenHalswachsen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Androhung einer Leibesstrafe</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordAufdenHalswachsen</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortAufdenHalswachsen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortAuffällig">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Allgemeiner Hinweis auf einen interessanten oder auffälligen Sachverhalt</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordConspicuous</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortAuffällig</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBannherren">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Mitglieder der Banngerichte</rdfs:comment>
+    <rdfs:label xml:lang="en">Keywordbannherren</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortBannherren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBehinderung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf eine behinderte Person</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordDisability</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortBehinderung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBettelvogt">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf den Bettelvogt (zuständig für die auswärtigen Bettler)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordeBeggarsReeve</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortBettelvogt</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBettler">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Betteln, Bettler</rdfs:comment>
+    <rdfs:label xml:lang="en">Keywordbeggar</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortBettler</rdfs:label>
+  </Class> 
+ 
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBlutvogt">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf den Blutvogt</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordBlutvogt</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortBlutvogt</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBürgermeister">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf die Bürgermeister</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordMayor</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortBürgermeister</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBürgerrecht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Bürgerrechtsfragen/-verfahren (z.B. Einbürgerung)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordCivilRight</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortBürgerrecht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortDienstmagd">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Dienstmagd</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordServant</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortDienstmagd</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortEhegerichtEherichter">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Ehegericht/Eherichter</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordMarriageCourt</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortEhegerichtEherichter</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortErbstreit">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Streit um Erbe</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordInheritanceDispute</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortErbstreit</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortErtränken">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Bestrafung durch Ertränken</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordDrown</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortErtränken</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortFoltern">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Folterung (meist vor dem Urfehdeeid)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordTorture</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortFoltern</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortFrauenarbeit">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf gewerbliche, spezifische Frauenarbeit</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordWomenWork</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortFrauenarbeit</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortFühren">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Bestrafung durch Führen (meist gefesselt, galt als ehrenrührig)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordLead</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortFühren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortGefängnis">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf ein bestimmtes Gefängnis/Haftlokal</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordPrison</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortGefängnis</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortGeldleihe">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Geldleihe (meist im Kontext mit Juden erwähnt)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordMoneyLending</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortGeldleihe</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortHalseisen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Bestrafung mit Halseisen</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordNeckIron</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortHalseisen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortHeimlicheHerren">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung der Heimlichen Herren</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordHeimlicheHerren</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortHeimlicheHerren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortJuden">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung von Juden</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordJew</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortJuden</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortKeinGeständnis">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Fall, in dem explizit kein Geständnis abgelegt wird</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordNoConfession</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortKeinGeständnis</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortKnecht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Knecht (analog zu Dienstmagd)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordServant</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortKnecht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortLadenherren">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung der Ladenherren</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordLadenherren</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortLadenherren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortLohnVerdienst">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Angaben zu Lohn oder Verdienst</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordReward</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortLohnVerdienst</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortLonherren">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung der Lonherren</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordLonherren</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortLonherren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortMeerwunder">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung eines Meerwunders</rdfs:comment>
+    <rdfs:label xml:lang="en">Keywordmiracle</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortMeerwunder</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortMeineid">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf einen Meineid</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordFalseOath</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortMeineid</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortMitgift">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Angaben zu Mitgift</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordDowry</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortMitgift</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortNachbar">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Nachbarn</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordNeighbour</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortNachbar</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortObersterKnecht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung des Obersten Knechts</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordSupremeServant</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortObersterKnecht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortProstitution">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Prostitution</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordProstitution</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortProstitution</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortRat">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung des (Kleinen) Rats, eines spezifischen Ratsherrn</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordCouncil</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortRat</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortRatsknecht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung eines Ratsknechts</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordCouncilServant</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortRatsknecht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortRuten">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Bestrafung mit Ruten</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordRods</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortRuten</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchulden">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Schulden (die nicht als Tatbestand verfolgt werden)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordDebts</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSchulden</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchultheiss">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf einen Schultheiss</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordSchultheiss</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSchultheiss</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchwemmen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Bestrafung durch Schwemmen</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordWatering</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSchwemmen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchwert">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Todesstrafe durch Schwert</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordSword</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSchwert</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSiebnerherren">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf die Verhörrichter (Siebnerherren)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordSiebnerherren</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSiebnerherren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSiegelbrief">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Erwähnung eines besiegelten Briefes/Urkunde</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordSealLetter</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSiegelbrief</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSpinnen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf die Tätigkeit des Spinnens (spezifische Unterschichtsfrauenarbeit)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordSpin</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSpinnen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSpital">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf das Spital (Alters- und Armenversorgung)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordHospital</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortSpital</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortStadtgericht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf das Stadtgericht (= andere Gerichtsinstanz)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordCouncilCourt</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortStadtgericht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortStadtknecht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf einen Stadtknecht</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordCouncilServants</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortStadtknecht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortStadtwechsel">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf den Stadtwechsel (städtische Bank)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordChange</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortStadtwechsel</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortUnehelichesKind">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf ein uneheliches Kind (= ehrenrührig)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordIllegitimateChild</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortUnehelichesKind</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortUnschuldig">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Explizite Feststellung der Unschuld im Urfehdeverfahren</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordInnocent</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortUnschuldig</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortWelsche">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweis auf Fremde, meist italienischer oder französischer Herkunft</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordWelsche</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortWelsche</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortWirtshaus">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Wirtshaus (Wirtshäuser spielen als Kommunikationsorte eine grosse Rolle)</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordInn</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortWirtshaus</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortZoll">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Zoll/Zollstelle</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordTariff</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortZoll</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortZunft">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hinweise im Zusammenhang mit Zünften</rdfs:comment>
+    <rdfs:label xml:lang="en">KeywordGuild</rdfs:label>
+    <rdfs:label xml:lang="de">SchlagwortZunft</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Status">
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:comment xml:lang="de">Amt (Rat, Vogt, Meister etc.), akademischer Titel, sonstiger Titel (Majestät, Junker, Herzog etc.), rechtlicher Status (Bürger,
+            Hintersasse, Jude, Zigeuner, ev. Fremder)</rdfs:comment>
+    <rdfs:label xml:lang="en">Rank</rdfs:label>
+    <rdfs:label xml:lang="de">Status</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Strafe">
+    <rdfs:comment xml:lang="de">Alles, was im Urfehdeeid als Urteil oder Strafe festgelegt wird</rdfs:comment>
+    <rdfs:label xml:lang="en">Punishment</rdfs:label>
+    <rdfs:label xml:lang="de">Strafe</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeAmtsentlassung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Entlassung aus einem Amt</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentRemoval</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeAmtsentlassung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeAusnahme">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Einschränkungen und Bedingungen für Gültigkeit/Anwendung der Strafe</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentException</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeAusnahme</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeAusweisung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbannung aus einem bestimmten Gebiet (meist Stadt Basel oder Basler Herrschaftsgebiet)</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentExpulsion</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeAusweisung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeEntschuldigung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Öffentliche oder persönliche Entschuldigung beim Opfer</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentExcuse</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeEntschuldigung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeEntschädigungRückzahlung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Entschädigungszahlung/Rückzahlung von Schulden</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentRepayment</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeEntschädigungRückzahlung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeErmahnung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Ermahnung betreffend zukünftigem Verhaltens</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentWarning</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeErmahnung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeGefängnis">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Absitzen einer Gefängnisstrafe nach dem Urfehdeeid</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentPrison</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeGefängnis</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeGeldstrafe">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Zahlung einer Geldstrafe an die Obrigkeit</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentFine</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeGeldstrafe</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeHausarrest">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Hausarrest</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentArrest</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeHausarrest</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeKörperstrafe">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Körperliche Bestrafung</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentCorporalPunishment</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeKörperstrafe</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeMilderung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Umstände, die zu einer mildernden Strafe führen (z.B. Alter, Fürbitten etc.)</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentModeration</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeMilderung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeStrafandrohung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Strafe, die im Falle einer Übertretung der Urfehde angedroht wird</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentThreatOfPunishment </rdfs:label>
+    <rdfs:label xml:lang="de">StrafeStrafandrohung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeStrafumwandlung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Umwandlung einer Strafe in eine andere (meist Geld in Haft)</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentCommutation</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeStrafumwandlung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeUrteilohneStrafe">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Urteil, das keine Strafe beinhaltet</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentWithoutPunishment</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeUrteilohneStrafe</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbot">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbote aller Art (ausgenommen Spielverbot, Tanzverbot, Waffenverbot und Wirtshausverbot, siehe separate Kategorien)</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentProhibition</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeVerbot</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotSpiel">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbot des unrechtmässigen (Glück)Spiels</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentProhibitionGambling</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeVerbotSpiel</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotTanz">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbot des Tanzens</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentProhibitionDance</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeVerbotTanz</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotWaffen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbot des Waffentragens</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentProhibitionWeapon</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeVerbotWaffen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotWirtshaus">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbot des Wirtshausbesuches</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentProhibitionInn</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeVerbotWirtshaus</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeWeisungananderesGericht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Urteil, das den behandelten Fall an ein anderes Gericht verweist</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentCaseAnotherCourt</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeWeisungananderesGericht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#StrafeWiedergutmachung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Wiedergutmachung am Opfer (ausgenommen Entschädigungszahlung/Rückzahlung, siehe separate Katergorie)</rdfs:comment>
+    <rdfs:label xml:lang="en">PunishmentReparation</rdfs:label>
+    <rdfs:label xml:lang="de">StrafeWiedergutmachung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Tat">
+    <rdfs:comment xml:lang="de">Straftat</rdfs:comment>
+    <rdfs:label xml:lang="en">Offence</rdfs:label>
+    <rdfs:label xml:lang="de">Tat</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatAlkoholmissbrauch">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Übermässiger Alkoholkonsum, Trunkenheit etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceAlcoholAbuse</rdfs:label>
+    <rdfs:label xml:lang="de">TatAlkoholmissbrauch</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatArbeitsverweigerung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verweigerung eines Arbeitsauftrages</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceRefusalToWork</rdfs:label>
+    <rdfs:label xml:lang="de">TatArbeitsverweigerung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatAusdemHausfordern">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Täter fordert Opfer auf, den geschützten Rechtsbereich des Hauses zu verlassen</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceTresspass</rdfs:label>
+    <rdfs:label xml:lang="de">TatAusdemHausfordern</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBeihilfe">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Beihilfe zu einer Straftat (ausgenommen Mord, siehe separate Kategorie)</rdfs:comment>
+    <rdfs:label xml:lang="en">Offence</rdfs:label>
+    <rdfs:label xml:lang="de">TatBeihilfe</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBeihilfeMord">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Beihilfe zu Mord</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceAccessoryToMurder</rdfs:label>
+    <rdfs:label xml:lang="de">TatBeihilfeMord</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBeleidigungVerleumdung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Beleidigung oder Verleumdung</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceInsult</rdfs:label>
+    <rdfs:label xml:lang="de">TatBeleidigungVerleumdung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBestechung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Bestechung mit Geld</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceBribe</rdfs:label>
+    <rdfs:label xml:lang="de">TatBestechung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBetrug">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Betrug im Umgang mit Geld, Preis, Gewicht u.ä.</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceFraud</rdfs:label>
+    <rdfs:label xml:lang="de">TatBetrug</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBetteln">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Betteln</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceBegging</rdfs:label>
+    <rdfs:label xml:lang="de">TatBetteln</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBewaffneteAuseinandersetzung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Konflikt, in welchem Waffen eingesetzt werden</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceArmedConflict</rdfs:label>
+    <rdfs:label xml:lang="de">TatBewaffneteAuseinandersetzung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBrandstiftung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Brandstiftung</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceArson</rdfs:label>
+    <rdfs:label xml:lang="de">TatBrandstiftung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBruchEheversprechen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Bruch der Verlobung/des Heiratsversprechens</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceBreachEngagement</rdfs:label>
+    <rdfs:label xml:lang="de">TatBruchEheversprechen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatBöswilligesVerlassen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Mutwilliges Verlassen der Familie</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceAbandonFamily</rdfs:label>
+    <rdfs:label xml:lang="de">TatBöswilligesVerlassen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatDiebstahl">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Diebstahl von Geld, Sachwerten, Gegenständen</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceTheft</rdfs:label>
+    <rdfs:label xml:lang="de">TatDiebstahl</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatDrohung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbale Bedrohung</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceThreat</rdfs:label>
+    <rdfs:label xml:lang="de">TatDrohung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatEhebruch">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Ehebruch</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceAdultery</rdfs:label>
+    <rdfs:label xml:lang="de">TatEhebruch</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatEinbruch">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Einbruch/Einbruchdiebstahl</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceBurglary</rdfs:label>
+    <rdfs:label xml:lang="de">TatEinbruch</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatGotteslästerung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Fluchen, Gotteslästerung</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceBlasphemy</rdfs:label>
+    <rdfs:label xml:lang="de">TatGotteslästerung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatHehlerei">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Handel mit gestohlener Ware</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceReceiving</rdfs:label>
+    <rdfs:label xml:lang="de">TatHehlerei</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatInzest">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Sexuelle Beziehung mit Verwandten (Eltern, Kinder, Geschwister, Neffen, Nichten etc.)</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceIncest</rdfs:label>
+    <rdfs:label xml:lang="de">TatInzest</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatKörperverletzung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Mutwillige Verletzung eines anderen</rdfs:comment>
+    <rdfs:label xml:lang="en">OffencePersonalInjury</rdfs:label>
+    <rdfs:label xml:lang="de">TatKörperverletzung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatLeichtfertigkeit">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unmoralisches sexuelles Verhalten (das nicht in eine der anderen Kategorien passt); leichtfertiger, unmoralischer Umgang mit
+            Eheversprechen oder Ehe</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceLevity</rdfs:label>
+    <rdfs:label xml:lang="de">TatLeichtfertigkeit</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatMord">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Absichtliche, heimtückische Tötung eines anderen</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceMurder</rdfs:label>
+    <rdfs:label xml:lang="de">TatMord</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatMordversuch">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Versuchte absichtliche, heimtückische Tötung eines anderen</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceAttemptedMurder</rdfs:label>
+    <rdfs:label xml:lang="de">TatMordversuch</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatMüssiggang">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unmoralischer (und arbeitsscheuer) Lebenswandel, der nicht auf die Sicherung des eigenen Auskommens gerichtet ist, z.T. in Verbindung
+            mit Vagieren</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceIdleness</rdfs:label>
+    <rdfs:label xml:lang="de">TatMüssiggang</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatOrdnungsstörung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Störung der öffentlichen Ordnung</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceDisorder</rdfs:label>
+    <rdfs:label xml:lang="de">TatOrdnungsstörung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatSachbeschädigung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Sachbeschädigung (von Gegenständen, Immobilien etc.)</rdfs:comment>
+    <rdfs:label xml:lang="en">OffencePropertyDamage</rdfs:label>
+    <rdfs:label xml:lang="de">TatSachbeschädigung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatSchlägerei">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Körperliche Auseinandersetzung zwischen zwei oder mehr Tätern</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceFight</rdfs:label>
+    <rdfs:label xml:lang="de">TatSchlägerei</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatSchulden">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Schulden machen (meist jenseits der eigenen finanziellen Möglichkeiten)</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceDebts</rdfs:label>
+    <rdfs:label xml:lang="de">TatSchulden</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatSelbstmordversuch">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Selbstmordversuch</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceAttemptedSuicide</rdfs:label>
+    <rdfs:label xml:lang="de">TatSelbstmordversuch</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatSpielen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unerlaubtes (Glücks)Spiel</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceGamble</rdfs:label>
+    <rdfs:label xml:lang="de">TatSpielen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatTotschlag">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Tötung eines anderen</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceHomicide</rdfs:label>
+    <rdfs:label xml:lang="de">TatTotschlag</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUebertretungUrfehde">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Missachtung eines früheren gegen dieselbe Person ergangenen Urfehdeurteils</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceInfringement </rdfs:label>
+    <rdfs:label xml:lang="de">TatÜbertretungUrfehde</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUeblesHaushalten">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Vernachlässigung des Haushalts und der Familie</rdfs:comment>
+    <rdfs:label xml:lang="de">TatÜblesHaushalten</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUnerlaubterKriegsdienst">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Kriegsdienst trotz explizitem Verbot</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceForbiddenMilitaryService</rdfs:label>
+    <rdfs:label xml:lang="de">TatUnerlaubterKriegsdienst</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUngehorsam">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Widerstand/Widersetzlichkeit gegen eine konkrete obrigkeitliche Anweisung (ausgenommen frühere Urfehde, siehe separate
+            Kategorie)</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceDisobedience</rdfs:label>
+    <rdfs:label xml:lang="de">TatUngehorsam</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUngetreueAmtsführung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Nicht pflichtgemässe Ausführung eines Amtes</rdfs:comment>
+    <rdfs:label xml:lang="en">Offence</rdfs:label>
+    <rdfs:label xml:lang="de">TatUngetreueAmtsführung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUnrechtmässigesEheversprechen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Abgabe eines unrechtmässigen Eheversprechens</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceForbiddnAdministration</rdfs:label>
+    <rdfs:label xml:lang="de">TatUnrechtmässigesEheversprechen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUnterlasseneHilfeleistung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unterlassung oder Verweigerung einer Hilfeleistung</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceNeglectedSupport</rdfs:label>
+    <rdfs:label xml:lang="de">TatUnterlasseneHilfeleistung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatUnzucht">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unerlaubte sexuelle Beziehung (ausgenommen Ehebruch bei Verheirateten, siehe separate Kategorie)</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceFornication</rdfs:label>
+    <rdfs:label xml:lang="de">TatUnzucht</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatVagieren">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Nichtsesshafte, vagierende Lebensweise</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceWandering</rdfs:label>
+    <rdfs:label xml:lang="de">TatVagieren</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatVerbaleAuseinandersetzung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verbaler Streit zwischen zwei oder mehr Tätern</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceVerbalAltercation</rdfs:label>
+    <rdfs:label xml:lang="de">TatVerbaleAuseinandersetzung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatVerstossArbeitsvorschriften">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Verstösse gegen Arbeitsvorschriften oder Zunftzwänge</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceBreachWorkRules</rdfs:label>
+    <rdfs:label xml:lang="de">TatVerstossArbeitsvorschriften</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatVeruntreuung">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unterschlagung oder Hinterziehung von Geld</rdfs:comment>
+    <rdfs:label xml:lang="en">Offence</rdfs:label>
+    <rdfs:label xml:lang="de">TatVeruntreuung</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatVorteilsnahme">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unrechtmässiges Verschaffen eines Vorteils</rdfs:comment>
+    <rdfs:label xml:lang="en">OffencePersonalAdvantage</rdfs:label>
+    <rdfs:label xml:lang="de">TatVorteilsnahme</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatVortäuschungFalscherTatsachen">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Vortäuschung falscher Tatsachen</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceUnderFalsePretences</rdfs:label>
+    <rdfs:label xml:lang="de">TatVortäuschungFalscherTatsachen</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatWiderstandgegenObrigkeit">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Allgemeiner Widerstand gegen Amtsträger/Obrigkeit (kann auch politisch motiviert sein; Widersetzlichkeit gegen konkrete Anweisung wird
+            als Ungehorsam kategorisiert)</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceResistance</rdfs:label>
+    <rdfs:label xml:lang="de">TatWiderstandgegenObrigkeit</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatWilderei">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Unrechtmässiges Jagen von Wild</rdfs:comment>
+    <rdfs:label xml:lang="en">OffencePoaching</rdfs:label>
+    <rdfs:label xml:lang="de">TatWilderei</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#TatZechprellerei">
+    <rdfs:subClassOf rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"></rdfs:subClassOf>
+    <rdfs:comment xml:lang="de">Nichtbezahlen der (Wirtshaus)Zeche</rdfs:comment>
+    <rdfs:label xml:lang="en">OffenceBill-dodging</rdfs:label>
+    <rdfs:label xml:lang="de">TatZechprellerei</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Untersuchungshaft">
+    <rdfs:comment xml:lang="de">Inhaftierung des Täters vor dem Urfehdeeid</rdfs:comment>
+    <rdfs:label xml:lang="en">Custody</rdfs:label>
+    <rdfs:label xml:lang="de">Untersuchungshaft</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Urfehdeeid">
+    <rdfs:comment xml:lang="de">Erwähnung des Urfehdeeides</rdfs:comment>
+    <rdfs:label xml:lang="en">Oath of truce</rdfs:label>
+    <rdfs:label xml:lang="de">Urfehdeeid</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Verwandtschaftsgrad">
+    <rdfs:comment xml:lang="de">Verwandtschaftsbeziehung einer Person zu einer anderen (Tochter, Enkel, Ehemann, Schwiegersohn/-tochter/-vater/-mutter
+            etc.)</rdfs:comment>
+    <rdfs:label xml:lang="en">Degree of relationship</rdfs:label>
+    <rdfs:label xml:lang="de">Verwandtschaftsgrad</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Vorinstanz">
+    <rdfs:comment xml:lang="de">Instanz, die den Fall zuvor behandelt und die Untersuchungshaft der entsprechenden Person veranlasst hat</rdfs:comment>
+    <rdfs:label xml:lang="en">Previous instance</rdfs:label>
+    <rdfs:label xml:lang="de">Vorinstanz</rdfs:label>
+  </Class>
+  
+  <Class rdf:about="http://gams.uni-graz.at/ufbas/#Zivilstand">
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:comment xml:lang="de">Familienstand (ledig, verheiratet, verwittwet, geschieden)</rdfs:comment>
+    <rdfs:label xml:lang="en">Marital status</rdfs:label>
+    <rdfs:label xml:lang="de">Zivilstand</rdfs:label>
+  </Class>
+  
+  <rdf:Description rdf:about="http://gams.uni-graz.at/ufbas/#forename">
+    <rdfs:range rdf:datatype="rdfs:Literal"></rdfs:range>
+  </rdf:Description>
+</rdf:RDF>
