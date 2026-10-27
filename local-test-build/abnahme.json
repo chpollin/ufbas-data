@@ -1,0 +1,66 @@
+{
+  "question": "op-ufbas-oberflaeche",
+  "title": "Offene Punkte der Oberfläche",
+  "project": "Urfehdebücher der Stadt Basel, Präsentationsschicht",
+  "base": "http://127.0.0.1:8771",
+  "compare": "https://gams.uni-graz.at",
+  "widths": [2000, 1440, 390],
+  "pages": [
+    { "name": "home", "label": "Startseite", "path": "/context:ufbas" },
+    { "name": "edition", "label": "Edition", "path": "/o:ufbas.1563", "axeWidths": [1440] },
+    { "name": "search", "label": "Suchergebnis „wyn“", "path": "/archive/objects/query:ufbas.search/methods/sdef:Query/get?params=%241%7Cwyn%3B%242%7C%7B%20%3Finhalt%20bds%3Asearch%20%22wyn%22%20.%20%3Finhalt%20bds%3AmatchAllTerms%20%22true%22%20.%20%7D" },
+    { "name": "kategorien", "label": "Kategorien", "path": "/o:ufbas.kategorien" },
+    { "name": "about", "label": "Projektbeschreibung", "path": "/archive/objects/context:ufbas/methods/sdef:Context/get?mode=about" }
+  ],
+  "items": [
+    {
+      "id": "kennung",
+      "wording": "Kennung „Eintrag-N“ im Eintragskopf",
+      "state": "Umgesetzt. Der Kopf zeigt Datum und Folio als Link auf den Eintrag, die Kennung steht nur noch in der Adresse (#Eintrag-N).",
+      "recommendation": "So lassen, Kennung weglassen, Datum als Link.",
+      "page": "edition",
+      "selector": ".entry-head"
+    },
+    {
+      "id": "handy-leiste",
+      "wording": "Leiste auf dem Handy",
+      "state": "Entwurf auf dem Branch entwurf-oberflaeche (2026-10-26): Werkzeuge in einer Leiste unten, Suche hinter der Lupe, Zitiervorschlag zugeklappt, Text im ersten Bildschirm. Zweite Runde offen.",
+      "recommendation": "Schalterzeile in einer Zeile, Inhaltsverzeichnis hinter „Einträge nach Datum“ aufklappbar, wie in der Leiste zwischen 75 und 86rem.",
+      "page": "edition",
+      "widths": [390],
+      "selector": [".site-nav", ".edition-side"]
+    },
+    {
+      "id": "suchtreffer",
+      "wording": "Suchtreffer mit Unterstreichungen",
+      "state": "Vorschlag, nicht umgesetzt. Treffer zeigen den Auszug mit hervorgehobenem Suchwort und die getroffenen Kategorien als Chips darunter, ohne die Unterstreichungen der Edition.",
+      "recommendation": "Beim jetzigen Stand bleiben. Im kurzen Auszug konkurrierten fünf Linienarten mit der Trefferhervorhebung, die Chips nennen die Kategorien im Text, und der Datumslink öffnet den Eintrag in der Edition mit den Markierungsschaltern.",
+      "page": "search",
+      "selector": ".result-list > li:first-child"
+    },
+    {
+      "id": "logos",
+      "wording": "Logodateien für Institut und Universität Graz",
+      "state": "Offen, braucht Dateien. Im Kopf steht das Logo der Universität Graz als farbiges JPEG auf dem grünen Band, im Fuß das ZIM-Logo aus /templates/ unter dem neuen Institutsnamen.",
+      "recommendation": "Aktuelles Logo des Instituts für Digitale Geisteswissenschaften in Weiß für den Fuß und das Logo der Universität Graz in der Negativform für das grüne Band, beide im Projektordner img/ abgelegt.",
+      "page": "home",
+      "selector": [".site-logos", ".footer-logos"]
+    },
+    {
+      "id": "platzhalter",
+      "wording": "Platzhalter und „(Beta-Version)“ in der Projektbeschreibung",
+      "state": "Umgesetzt. Die drei Platzhalter sind Links auf ihre Kategoriegruppen (ADR-26), „(Beta-Version)“ bleibt (ADR-27).",
+      "recommendation": "Die drei Platzhalter mit unverändertem Wortlaut als Links auf ihre Kategoriegruppen darstellen, als abgeleitete Linkschicht wie bei ADR-10. „(Beta-Version)“ bleibt stehen, weil ABOUT nicht geändert wird (ADR-16).",
+      "page": "about",
+      "selector": [{ "contains": "Beta-Version", "within": "p, h1, h2, h3" }, { "contains": "link Tatbestände", "within": "p" }]
+    },
+    {
+      "id": "kategorien-einleitung",
+      "wording": "Einleitungssatz der Kategorienseite",
+      "state": "Entschieden, der Satz bleibt (ADR-28).",
+      "recommendation": "Stehen lassen, weil der Satz Inhalt der TEI ist und die Überarbeitung keinen Inhalt ändert.",
+      "page": "kategorien",
+      "selector": ".page-intro"
+    }
+  ]
+}

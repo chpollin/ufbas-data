@@ -1,0 +1,8 @@
+{
+  "search-navbar-dieb": "%241%7CDieb%3B%242%7C%7B%20%3Finhalt%20bds%3Asearch%20%22Dieb*%22%20.%20%3Finhalt%20bds%3AmatchAllTerms%20%22true%22%20.%20%7D",
+  "search-regex-or": "%241%7CDieb%20Hans%3B%242%7CFILTER(!(!(regex(concat(%22%20%22%2C%20str(%3Finhalt)%2C%20%22%20%22)%2C%20%22%5B%5Ea-zA-Z0-9%C3%A4%C3%B6%C3%BC%C3%84%C3%96%C3%9C%C3%9F%C5%BF%5D(Dieb)%5B%5Ea-zA-Z0-9%C3%A4%C3%B6%C3%BC%C3%84%C3%96%C3%9C%C3%9F%C5%BF%5D%22%2C%20%22i%22))%20%26%26%20!regex(concat(%22%20%22%2C%20str(%3Finhalt)%2C%20%22%20%22)%2C%20%22%5B%5Ea-zA-Z0-9%C3%A4%C3%B6%C3%BC%C3%84%C3%96%C3%9C%C3%9F%C5%BF%5D(Hans)%5B%5Ea-zA-Z0-9%C3%A4%C3%B6%C3%BC%C3%84%C3%96%C3%9C%C3%9F%C5%BF%5D%22%2C%20%22i%22)))",
+  "search-regex-plus": "%241%7Czunff%252Bt%3B%242%7CFILTER(regex(concat(%22%20%22%2C%20str(%3Finhalt)%2C%20%22%20%22)%2C%20%22%5B%5Ea-zA-Z0-9%C3%A4%C3%B6%C3%BC%C3%84%C3%96%C3%9C%C3%9F%C5%BF%5D(zunff%252Bt)%5B%5Ea-zA-Z0-9%C3%A4%C3%B6%C3%BC%C3%84%C3%96%C3%9C%C3%9F%C5%BF%5D%22%2C%20%22i%22))",
+  "search-date-only": "%241%7C~%3B%242%7C%20%3Feintrag%20uf%3AhasDatumUrfehde%20%3Fd%20.%20%3Fd%20tei%3Awhen%20%3Fdatum%20.%20FILTER(%3Fdatum%20%3E%3D%20%221565%22%20%26%26%20%3Fdatum%20%3C%3D%20%221565~%22)",
+  "search-wyn": "%241%7Cwyn%3B%242%7C%7B%20%3Finhalt%20bds%3Asearch%20%22wyn%22%20.%20%3Finhalt%20bds%3AmatchAllTerms%20%22true%22%20.%20%7D",
+  "search-wyn-or": "%241%7Cwyn%20win%3B%242%7C%7B%20%7B%20%3Finhalt%20bds%3Asearch%20%22wyn%22%20.%20%3Finhalt%20bds%3AmatchAllTerms%20%22true%22%20.%20%7D%20UNION%20%7B%20%3Finhalt%20bds%3Asearch%20%22win%22%20.%20%7D%20%7D"
+}

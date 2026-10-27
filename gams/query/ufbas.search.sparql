@@ -1,0 +1,48 @@
+PREFIX ufbas-ont:<https://gams.uni-graz.at/o:ufbas.ontology#>
+PREFIX ufbas-kat:<http://gams.uni-graz.at/ufbas/#>
+PREFIX gams:<http://gams.uni-graz.at/o:gams-ontology#>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+PREFIX bds:<http://www.bigdata.com/rdf/search#>
+
+# Quick search and advanced search, on the refactored RDF of the domain ontology.
+# $1 = the positive search terms as typed, or "~" for a search by date range only
+# $2 = the fragment of js/buildquery.js on the entry text ?inhalt and its Urfehde date
+#      ?datum: a full-text match with bds:search or a FILTER of regular expressions, as
+#      alternative a place of the place list named $1, which finds every spelling of the
+#      place, then a MINUS per excluded term and a FILTER on the date range. Excluded terms
+#      and date range so hold for the place name as well.
+# The hits are found first, and the offenders and the categories whose annotated text
+# contains $1 are fetched only for them.
+SELECT ?url ?datum ?inhalt ?täter ("$1" AS ?query) ?kategorie ?label ?text
+WHERE {
+  {
+    SELECT DISTINCT ?url ?inhalt ?datum
+    WHERE {
+      ?url a ufbas-ont:Entry ;
+        gams:textualContent ?inhalt .
+      OPTIONAL {
+        ?s gams:isPartOf ?url .
+        ?t ufbas-ont:derivedFrom ?s ;
+          ufbas-ont:category ufbas-kat:DatumUrfehde ;
+          ufbas-ont:dateAsCoded ?datum .
+      }
+      $2
+    }
+  }
+  OPTIONAL {
+    ?url ufbas-ont:documents ?p .
+    ?p ufbas-ont:hasOffender ?o .
+    ?o ufbas-ont:nameAsWritten ?täter .
+  }
+  OPTIONAL {
+    ?k gams:isPartOf ?url ;
+      ufbas-ont:category ?kategorie ;
+      gams:textualContent ?text .
+    FILTER(CONTAINS(?text, '$1'))
+    OPTIONAL { ?kategorie skos:prefLabel ?label . }
+  }
+}
+# entries of one date and the offenders of one entry in the order of the book, which the
+# numbers of their IRIs follow, so the rows of an entry stay together
+ORDER BY ?datum <http://www.w3.org/2001/XMLSchema#integer>(STRAFTER(STR(?url), "Eintrag-"))
+  <http://www.w3.org/2001/XMLSchema#integer>(REPLACE(STR(?o), "^.*-", ""))

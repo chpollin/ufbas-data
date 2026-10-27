@@ -1,0 +1,41 @@
+PREFIX ufbas-ont:<https://gams.uni-graz.at/o:ufbas.ontology#>
+PREFIX ufbas-kat:<http://gams.uni-graz.at/ufbas/#>
+PREFIX gams:<http://gams.uni-graz.at/o:gams-ontology#>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+
+# The entries of one category, on the refactored RDF of the domain ontology.
+# $1 = the category IRI in angle brackets, for example <http://gams.uni-graz.at/ufbas/#TatDiebstahl>
+# A row per annotated span of the category with its text. The gender tokens are no span
+# category but the gender of a person, which the concept names by skos:exactMatch.
+SELECT DISTINCT ?url ?inhalt ?datum ?täter ("$1" AS ?query) ?label ?text ($1 AS ?kategorie)
+WHERE {
+  {
+    ?s ufbas-ont:category $1 .
+  }
+  UNION
+  {
+    $1 skos:exactMatch ?value .
+    ?person ufbas-ont:gender ?value ;
+      ufbas-ont:derivedFrom ?s .
+  }
+  ?s gams:isPartOf ?url ;
+    gams:textualContent ?text .
+  ?url a ufbas-ont:Entry ;
+    gams:textualContent ?inhalt .
+  OPTIONAL { $1 skos:prefLabel ?label . }
+  OPTIONAL {
+    ?d gams:isPartOf ?url .
+    ?t ufbas-ont:derivedFrom ?d ;
+      ufbas-ont:category ufbas-kat:DatumUrfehde ;
+      ufbas-ont:dateAsCoded ?datum .
+  }
+  OPTIONAL {
+    ?url ufbas-ont:documents ?p .
+    ?p ufbas-ont:hasOffender ?o .
+    ?o ufbas-ont:nameAsWritten ?täter .
+  }
+}
+# entries of one date and the offenders of one entry in the order of the book, which the
+# numbers of their IRIs follow, so the rows of an entry stay together
+ORDER BY ?datum <http://www.w3.org/2001/XMLSchema#integer>(STRAFTER(STR(?url), "Eintrag-"))
+  <http://www.w3.org/2001/XMLSchema#integer>(REPLACE(STR(?o), "^.*-", ""))

@@ -4,9 +4,9 @@
 # ///
 """Inventory UFBAS TEI without changing source bytes (standalone script).
 
-Usage: uv run scripts/analyze_tei.py data/ufbas.1563.xml --output generated/tei-analysis.json
+Usage: uv run scripts/analyze_tei.py tei/ufbas.1563.xml --output generated/tei-analysis.json
 Strict parsing deliberately overrides recover mode at the validation boundary.
-Entities and DTD loading are disabled. See knowledge/data.md for interpretation.
+Entities and DTD loading are disabled. See knowledge/tei-analysis.md for interpretation.
 """
 
 import argparse

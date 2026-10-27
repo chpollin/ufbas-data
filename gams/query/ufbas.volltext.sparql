@@ -1,0 +1,51 @@
+PREFIX ufbas-ont:<https://gams.uni-graz.at/o:ufbas.ontology#>
+PREFIX ufbas-kat:<http://gams.uni-graz.at/ufbas/#>
+PREFIX gams:<http://gams.uni-graz.at/o:gams-ontology#>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+PREFIX bds:<http://www.bigdata.com/rdf/search#>
+
+# The full-text search of 2017, kept for old links, on the refactored RDF of the domain
+# ontology. $1 = the search terms, all of which the entry text has to contain, or the name
+# of a place of the place list, which finds every spelling of the place. Offenders and the
+# categories whose annotated text contains $1 are fetched only for the hits.
+SELECT ?url ?datum ?inhalt ?täter ("$1" AS ?query) ?kategorie ?label ?text
+WHERE {
+  {
+    SELECT DISTINCT ?url ?inhalt ?datum
+    WHERE {
+      ?url a ufbas-ont:Entry ;
+        gams:textualContent ?inhalt .
+      OPTIONAL {
+        ?s gams:isPartOf ?url .
+        ?t ufbas-ont:derivedFrom ?s ;
+          ufbas-ont:category ufbas-kat:DatumUrfehde ;
+          ufbas-ont:dateAsCoded ?datum .
+      }
+      {
+        ?inhalt bds:search '$1' .
+        ?inhalt bds:matchAllTerms "true" .
+      }
+      UNION
+      {
+        ?url ufbas-ont:mentionsPlace ?ort .
+        ?ort ufbas-ont:placeName '$1' .
+      }
+    }
+  }
+  OPTIONAL {
+    ?url ufbas-ont:documents ?p .
+    ?p ufbas-ont:hasOffender ?o .
+    ?o ufbas-ont:nameAsWritten ?täter .
+  }
+  OPTIONAL {
+    ?k gams:isPartOf ?url ;
+      ufbas-ont:category ?kategorie ;
+      gams:textualContent ?text .
+    FILTER(CONTAINS(?text, '$1'))
+    OPTIONAL { ?kategorie skos:prefLabel ?label . }
+  }
+}
+# entries of one date and the offenders of one entry in the order of the book, which the
+# numbers of their IRIs follow, so the rows of an entry stay together
+ORDER BY ?datum <http://www.w3.org/2001/XMLSchema#integer>(STRAFTER(STR(?url), "Eintrag-"))
+  <http://www.w3.org/2001/XMLSchema#integer>(REPLACE(STR(?o), "^.*-", ""))

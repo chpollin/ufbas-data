@@ -1,0 +1,82 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Die Urfehdebücher der Stadt Basel – digitale Edition. Impressum</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Institut für Digitale Geisteswissenschaften, Universität Graz. Überarbeitet 2026.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>born digital</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>Impressum</head>
+        <div>
+          <head>Die Edition</head>
+          <div>
+            <head>Herausgeber, Projektleitung</head>
+            <p>Susanna Burghartz, Departement Geschichte, Universität Basel<lb/>
+            Georg Vogeler, Institut für Digitale Geisteswissenschaften, Universität Graz</p>
+          </div>
+          <div>
+            <head>Mitarbeit</head>
+            <p>Vgl. die <ref target="?mode=about">Projektbeschreibung</ref></p>
+          </div>
+          <div>
+            <head>Veröffentlichung</head>
+            <p>Veröffentlicht 2017 in der Reihe GAMS als Nummer 1010.2</p>
+            <p>Permalink <ref target="https://gams.uni-graz.at/ufbas">gams.uni-graz.at/ufbas</ref><lb/>
+            Handle <ref target="https://hdl.handle.net/11471/1010.2">hdl:11471/1010.2</ref></p>
+          </div>
+          <div>
+            <head>Zitiervorschlag</head>
+            <p>Urfehdenbuch X der Stadt Basel (1563–1569), in: Die Urfehdebücher der Stadt Basel – digitale Edition, hg. v. Susanna Burghartz, Sonia Calvi und Georg Vogeler Basel/Graz 2016 (zuletzt verändert am 31.1.2017): <ref target="https://hdl.handle.net/11471/1010.2.1">hdl:11471/1010.2.1</ref>.</p>
+          </div>
+        </div>
+        <div>
+          <head>Umsetzung</head>
+          <div>
+            <head>Datenmodellierung, Webentwicklung und Design 2017</head>
+            <p>Christopher Pollin, Institut für Digitale Geisteswissenschaften, Universität Graz</p>
+            <p>Ursprüngliches Layout von der Internetagentur <ref target="https://wukonig.com/">wukonig.com</ref> auf Basis von Bootstrap</p>
+          </div>
+          <div>
+            <head>Überarbeitung 2026</head>
+            <p>Christopher Pollin, Institut für Digitale Geisteswissenschaften, Universität Graz</p>
+            <p>Konzeption, Gestaltung und technische Umsetzung der überarbeiteten Präsentationsschicht. Text und Daten der Edition sind unverändert.</p>
+          </div>
+          <div>
+            <head>Technische Infrastruktur, Umsetzung und Publikation</head>
+            <p>GAMS – Geisteswissenschaftliches Asset Management System<lb/>
+            <ref target="https://digital-humanities.uni-graz.at">Institut für Digitale Geisteswissenschaften</ref>, Universität Graz</p>
+          </div>
+          <div>
+            <head>Symbole</head>
+            <p>TEI-Emblem des <ref target="https://tei-c.org/about/logos/">TEI Consortium</ref> (CC BY 4.0), RDF-Symbol des <ref target="https://www.w3.org/RDF/icons/">W3C</ref></p>
+          </div>
+        </div>
+        <div>
+          <head>Rechtliches</head>
+          <div>
+            <head>Lizenz</head>
+            <p>Text und Daten der Edition stehen unter der Lizenz <ref target="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de">CC BY-NC-SA 4.0</ref>, der Code der Präsentationsschicht unter der MIT-Lizenz.</p>
+          </div>
+          <div>
+            <head>Information gemäß §&#160;5 E-Commerce-Gesetz</head>
+            <p>Die Informationen und Dienste auf dieser Seite werden zur Verfügung gestellt von der Universität Graz, Universitätsplatz 3, 8010 Graz, Österreich.</p>
+          </div>
+          <div>
+            <head>Kontakt</head>
+            <p>Institut für Digitale Geisteswissenschaften, Elisabethstraße 59, 3. Stock, 8010 Graz<lb/>
+            E-Mail <ref target="mailto:dh@uni-graz.at">dh@uni-graz.at</ref>, Tel. +43 316 380 5790</p>
+          </div>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

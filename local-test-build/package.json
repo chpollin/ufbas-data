@@ -1,0 +1,24 @@
+{
+  "name": "ufbas-local-test-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local rendering and checks for the UFBAS GAMS presentation layer",
+  "type": "module",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "build": "node build.mjs",
+    "test": "node test/run.mjs",
+    "browser": "node test/browser.test.mjs",
+    "compare": "node compare-production.mjs"
+  },
+  "dependencies": {
+    "saxon-js": "^2.7.0",
+    "xslt3": "^2.7.0"
+  },
+  "devDependencies": {
+    "axe-core": "^4.13.0",
+    "jsdom": "^24.0.0",
+    "oxigraph": "^0.5.11",
+    "rdf-validate-shacl": "^0.6.5"
+  }
+}

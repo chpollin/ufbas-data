@@ -1,0 +1,1517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Urfehdebuch der Stadt Basel 1563 bis 1569, Teil Coelestin</title>
+                <editor>Coelestin Meier</editor>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    <date>___</date>
+                </edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:ufbas.coelestin</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>StABS</repository>
+                        <collection>Ratsbücher</collection>
+                        <idno>Ratsbücher O 10</idno>
+                        <msName>Urfehdenbuch X</msName>
+                    </msIdentifier>
+                    <msContents>
+                        <p><origDate from="1563-01-03" to="1569-12-04"/></p>
+                    </msContents>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Projekt <ref target="context:ufbas" type="context">"Digitale Edition - Urfehdebücher der Stadt Basel</ref>, Übung Universität Basel, Departement Geschichte, Frühjahrsemester 2016, Leitung: Susanna Burghartz u. Sonia Calvi</p>
+            </projectDesc>
+            <include xmlns="http://www.w3.org/2001/XInclude" href="kategorien.xml" xpointer="kategorien">
+                <fallback
+                    href="http://gams.uni-graz.at/archive/objects/o:ufbas.kategorien/datastreams/TEI_SOURCE/content"
+                    xpointer="kategorien"/>
+            </include>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <listChange>
+                    <change xml:id="Nachtrag"/>
+                </listChange>
+            </creation>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            
+            
+            
+            
+            
+            
+            
+            
+            <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#144"/>
+          
+<div ana="#uf_Eintrag">
+            
+           <note rend="margin" ana="#uf_Eingangsnotiz"> <placeName ana="#uf_SchlagwortGefängnis">Toubhüslj</placeName> – <num>1</num></note>
+            
+          
+                <head><metamark rend="Kringel">°</metamark> <persName ana="#uf_PersonTäter"> <forename ana="#uf_female">Adelheit</forename> <surname>Buocherj</surname> von <placeName ana="#uf_OrtHerkunft" ref="Heimiswil">Heymiswyl by <lb/>
+            Burtolff</placeName> glegen</persName></head><lb/>
+            
+            
+            <p>Demnach dise <term ana="#uf_SchlagwortProstitution">gmeyne mëtz</term> <seg ana="#uf_FrüheresUrfehdeverfahren">vor acht tagen inn mindren Basell<lb/>
+            gfangen glegen</seg>, hatt sy uber dasselb uff Sontag <seg ana="#uf_TatUnzucht #uf_TatÜbertretungUrfehde">verschynen den knaben<lb/>
+            Meygen usstheylt und ein gantz schandtlich wyldt leben ghept</seg>, und wie<lb/>
+            ein redt gangen soll sy die <term ana="#uf_SchlagwortAuffällig">grafnëgelin</term> den lüthen abgehowen haben,<lb/>
+            <seg ana="#uf_Untersuchungshaft">desshalben sy ins <term ana="#uf_SchlagwortGefängnis">Thoubhüslin</term> gleyt</seg>, und <date ana="#uf_DatumUrfehde" when="1566-06-17" calendar="Julian">uff Mentag den 17 des Broch<lb break="no"/>
+                monats ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeiner urphet gnediglichen wider ussglossen</seg>,<lb/>
+            <seg ana="#uf_StrafeAusweisung"> hatt dorby ouch geschworen, das sy sich von statt und landt<lb/>
+            Basell hinweg thuon und darin onerloupt niemer mer komen solle<lb/></seg>
+                <seg ana="#uf_StrafeStrafandrohung">by peen des <term ana="#uf_SchlagwortHalseisen">halssysens</term> und <term ana="#uf_SchlagwortSchwemmen">schwemens</term>.</seg><lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">
+                
+               <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num></note> 
+                
+             <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Gallj</forename> <surname>Kouffhans</surname> von <placeName ana="#uf_OrtHerkunft" ref="Liestal">Liechstall</placeName></persName></head><lb/>
+                
+                <p>Diewyl dieser <term ana="#uf_SchlagwortAuffällig">junger knab</term>, sampt ettlichen siner gsellen, den lüthen<lb/>
+                im feldt, hinond wider schaden zuofügen, <seg ana="#uf_TatSchlägerei">wie dann <persName ana="#uf_PersonZeuge"><forename ana="#uf_male">Steffan</forename> <roleName ana="#uf_Beruf">der<lb/>
+                kornmesser</roleName></persName> disen und sine gsellen <placeName ana="#uf_OrtTatort">im garten hüsslin</placeName> gfunden, und das<lb/>
+                sy im käfen abbrochen</seg>, <seg ana="#uf_Untersuchungshaft">ist er inn gfenckniss gleyt</seg> und uff <lb/>
+                <date ana="#uf_DatumUrfehde" when="1566-06-17" calendar="Julian">Mentag den 17 Brochmonats ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeiner urphet gnediglichen<lb/>
+                wider ussglossen</seg>, <seg ana="#uf_StrafeErmahnung"> und darby ernstlichen gwarnet, das er sich böser<lb/>
+                gsellschafft abthuon, und sinem <persName> <term ana="#uf_Verwandtschaftsgrad">vetterer</term> dem Riehenberger</persName> gehorsam<lb/>
+                sin solle.</seg><lb/></p>
+                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+                
+                
+             
+                
+                
+                
+                
+                
+                
+                
+            
+<div ana="#uf_Eintrag">
+                <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num></note> 
+            
+                <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Zschan</forename> <surname>Bouson</surname>, von <placeName ana="#uf_OrtHerkunft" ref="Lausanne">Losanna</placeName></persName></head><lb/>
+    
+    <p>Diewyl er <date ana="#uf_DatumTat" when="1566-06-14" calendar="Julian">uff Frytag nechstverschynen</date>, <seg ana="#uf_TatDiebstahl"> <placeName ana="#uf_OrtTatort">am Kornmerckt</placeName> <persName ana="#uf_PersonOpfer #uf_female">einer<lb/>
+            frowen</persName> inn seckell griffen, und ettlich gelt erwütscht, das er<lb/>
+            wider lossen fallen </seg>, wie er daran ergriffen, <seg ana="#uf_Untersuchungshaft">ist er inn gfenckniss<lb/>
+            gleyt</seg>, und nochdem er durch <term ana="#uf_SchlagwortSiebnerherren">die Syben herren</term> verhört, hatt<lb/>
+            man in <date ana="#uf_DatumUrfehde" when="1566-06-19" calendar="Julian">uff Mittwochen den 19 des Brochmonats ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit<lb/>
+                gmeyner urphet gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeAusweisung">hatt dorby ouch ge<lb break="no"/>
+            schworen, das er sich von statt und landt Basell hinweg thuon,<lb/>
+            und darin onerloupt nit wider kommen solle.</seg> <seg ana="#uf_StrafeStrafandrohung">By peen der <term ana="#uf_SchlagwortRuten">ruoten</term><lb/>
+            und des <term ana="#uf_SchlagwortHalseisen">halsysens</term>.</seg><lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+            
+            
+            
+            
+            
+          
+            
+   
+            
+<div ana="#uf_Eintrag">
+    
+            <note rend="margin" ana="#uf_Eingangsnotiz"><placeName ana="#uf_SchlagwortGefängnis">Eselthurn</placeName> – <num>2</num></note>
+            
+                <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Hans</forename> <surname>Göüschell</surname>, <roleName ana="#uf_Beruf">der nochrichter</roleName></persName> und<lb/>
+            
+                    <metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Michell</forename> <surname>Vollmer</surname>, <roleName ana="#uf_Beruf">der nochrichter</roleName> von<placeName ana="#uf_OrtHerkunft" ref="Rheinfelden">Rinfelden</placeName></persName></head><lb/>
+                
+                <p><seg ana="#uf_TatUngetreueAmtsführung">Alsdann uff hüttigen tag zwen under plosem hymell berech<lb break="no"/>
+            tiget, haben diese nochrichter dieselben zwen armen menschen, by<lb/>
+            den stricken erwütscht, vor und ee, der vogt die umbfrog volls<lb/>
+            gethon</seg>, desshalben sy beydt vor Steinen thor uff der Walldstatt,<lb/>
+            so baldt sy die zwen mit dem schwert gerichtet, <seg ana="#uf_Untersuchungshaft">gfencklichen<lb/>
+            angnommen, und inn <placeName ana="#uf_SchlagwortGefängnis">Eselthurn</placeName> glegt</seg>. Sindt aber uff den oben desselben<lb/>
+            tags, uff <date ana="#uf_DatumUrfehde" when="1566-06-20" calendar="Julian">Donstag den 20 Junij anno 66</date>, <seg ana="#uf_Urfehdeeid">mit gmeiner urphet gnediglichen<lb/>
+                wider ussglossen</seg> <seg ana="#uf_StrafeGeldstrafe">und yeder umb <measure type="currency" quantity="1" unit="lbd">ein pfundt</measure>, gstrofft</seg>.<lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#145"/>
+            
+            
+            
+<div ana="#uf_Eintrag">
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <metamark rend="Blume"> &#10020;</metamark> Nüwe zal der gfangnen</note>
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortStadtknecht">Uolin Rack</persName>– <num>1</num></note>
+            
+            
+                <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_female">Barbell</forename> <surname>Gersterj</surname> von <placeName ana="#uf_OrtHerkunft" ref="Bettigen">Bettkhen</placeName></persName></head><lb/>
+                
+            <p><seg ana="#uf_TatUnzucht"> Alsdann sy ettwas reden mit <persName ana="#uf_PersonMittäter"><forename ana="#uf_male">Hemman</forename> <surname>Fellmann</surname></persName> von Normalingen<lb/>
+            belangen die ee, getriben</seg>, darumb dann die <seg ana="#uf_Vorinstanz">Bannherren</seg> sy harin<lb/>
+                gewyssen, und gemelter Hemman sich erclagt, das er iren nützit ver<lb break="no"/>
+            heyssen noch ettwas mit iren zeschaffen ghept, und gange aber sy<lb/>
+            eines kindt schwanger. Und nochdem sy verhört und anzeigt<lb/>
+                das sin fürgeben worhafft, sy habe sich mit einem andren ver<lb break="no"/>
+                griffen, <seg ana="#uf_StrafeGeldstrafe">ist sy umb <measure type="currency" quantity="5" unit="lbd">5 lb</measure> gstrofft</seg>, <seg ana="#uf_Untersuchungshaft">und übernacht inn gfangenschafft<lb/>
+            gleyt</seg>, hatt uff <date ana="#uf_DatumUrfehde" when="1566-06-26" calendar="Julian">Mittwochen den 26ten Junij</date> <seg ana="#uf_Urfehdeeid">den innhalt gmeiner<lb/>
+            urphet gethon</seg>, und hiemit wider ledig glossen.<lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num><lb/>
+                    <persName ana="#uf_SchlagwortStadtknecht">Uolj</persName> – <num>1</num><lb/>
+                    <persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> – <num>2</num></note>
+            
+                <head>  <metamark rend="Kringel">°</metamark> <persName ana="#uf_PersonTäter"><forename ana="#uf_male">Jocob</forename> <surname>Murer</surname> von <placeName ana="#uf_OrtHerkunft" ref="Moudon">Mylden</placeName></persName> und <persName ana="#uf_PersonTäter"><forename ana="#uf_female">Elsbeth</forename><lb/>
+                    <metamark rend="Kringel">°</metamark> <surname>Friderich</surname> von <placeName ana="#uf_OrtHerkunft" ref="Willisau">Willissouw</placeName></persName> sin <roleName ana="#uf_Verwandtschaftsgrad">eefrow</roleName>,<lb/>
+                        <metamark rend="Kringel">°</metamark> <persName ana="#uf_PersonTäter"><forename ana="#uf_male">Hans</forename> <surname>Nicko</surname> von <placeName ana="#uf_OrtHerkunft" ref="Vouvry">Lavodry uss Walliss</placeName></persName><lb/>
+                    <metamark rend="Kringel">°</metamark> ___ und <persName ana="#uf_PersonTäter"><forename ana="#uf_female">Anna</forename> <surname>Friderich</surname> von <placeName ana="#uf_OrtHerkunft" ref="Willisau">Willissouw</placeName> </persName> sin <roleName ana="#uf_Verwandtschaftsgrad">frow</roleName>,<lb/>
+            taglöner und hubenstricker</head><lb/>
+            
+            <p><seg ana="#uf_TatDiebstahl">Demnoch einem uff dem <placeName ana="#uf_OrtTatort" ref="Ramlinsburg">hoff Rammlisperg inn Wallenburger vogty</placeName><lb/>
+            inns huss geprochen und by sechs moss ancken entwert worden,<lb/>
+                ist derselb dem sollichs begegnet, diewyl diss völcklin doselbst für<lb break="no"/>
+            zogen, inen nochgeylt, die crëtzen ersuocht und ettlichen ancken<lb/>
+            by inen funden</seg>, <seg ana="#uf_Untersuchungshaft">und desshalben sy zu <placeName ref="Bubendorf">Buobendorff</placeName> gfencklichen<lb/>
+            annemmen lossen.</seg> Nochdem und aber sy durch die <term ana="#uf_SchlagwortSiebnerherren">Sybenherren</term><lb/>
+            verhört, und sy bericht geben, das sy von einem zuo Schwertz<lb/>
+            by <placeName ref="Willisau">Willissouw</placeName>, genant <persName ana="#uf_PersonAnwesende">der Hincket Schnyder</persName> zwo moss ancken<lb/>
+            erkoufft, sindt sy uff <date ana="#uf_DatumUrfehde" when="1566-06-27" calendar="Julian">Mittwochen den 27ten Junij ditz 66 jors</date><lb/>
+            <seg ana="#uf_Urfehdeeid">mit gmeyner urphet gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeAusweisung">habent dorby<lb/>
+            ouch sampt und sonders geschworen, das sy sich von statt und<lb/>
+            landt Basell hinweg thuon, und darin onerloupt nit kommen sollen.</seg><lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+         
+            
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"><placeName ana="#uf_SchlagwortGefängnis">Toubhüslin</placeName> – <num>2</num></note>
+           
+                <head><metamark rend="Kringel">°</metamark> <persName ana="#uf_PersonTäter"><forename ana="#uf_male">Michell</forename> <surname>Meüchlj</surname> von Hochen Krey</persName>, und<lb/>
+            <persName ana="#uf_PersonTäter"><forename ana="#uf_female">Mergelin</forename> <surname>Ackermënnj</surname> von <placeName ana="#uf_OrtHerkunft" ref="Rottweil">Rotwyl</placeName></persName>.</head><lb/>
+            
+            <p><seg ana="#uf_TatBetteln">Diewyl dies zwey biderben lüthen das allmuossen abgnommen</seg><lb/>
+            <seg ana="#uf_TatVagieren">mir einandren umbher ziechen</seg> <seg ana="#uf_TatUnzucht">schnuory tryben</seg>, und gedochter<lb/>
+            Michell, ein kindt oder sechsse doheimen sitzen hatt, und mit diser<lb/>
+            trüllen im landt umbher vast jorund tag zogen, zebettlen,<lb/>
+            sind sy <seg ana="#uf_Untersuchungshaft">ins <placeName ana="#uf_SchlagwortGefängnis">Thoubhüslin</placeName> gleyt</seg> und uff <date ana="#uf_DatumUrfehde" when="1566-07-08" calendar="Julian">Mentag den 8 Julij<lb/>
+            ditz 66 jars</date> <seg ana="#uf_Urfehdeeid">mit gmeyner urphet gnediglichen wider ussglossen</seg>,<seg ana="#uf_StrafeAusweisung"> habent<lb/>
+            darby ouch sampt und sonders geschworen, das sy sich von statt<lb/>
+            und landt Basell hinweg thuon und darin onerloupt nit kommen noch<lb/>
+            sich finden lossen sollen</seg>, <seg ana="#uf_StrafeStrafandrohung">oder inen werde ettwas <term ana="#uf_SchlagwortAufdenHalswachsen">uff den hals wachsen</term><lb/>
+            das inen zeschwer sin werde.</seg></p><lb/>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+        
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#146"/>
+            
+<div ana="#uf_Eintrag">
+            
+            <note rend="margin" change="#Nachtrag">+</note>
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"><placeName ana="#uf_SchlagwortGefängnis">Thoubhüslin</placeName> – <num>1</num></note> 
+            
+            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_female">Adelheit</forename> <surname>Buorgerj</surname> von <placeName ana="#uf_OrtHerkunft" ref="Heimiswil">Heymiswyl
+                by Burtolff  glegen</placeName></persName></head><lb/>
+            
+         <p><seg ana="#uf_FrüheresUrfehdeverfahren">Demnoch und sy kurtzlichen von statt und landt Basell ver<lb break="no"/>
+            wysen</seg>, <seg ana="#uf_TatÜbertretungUrfehde">und über denselben eydt onlerloupt wider harin kommen</seg>,<lb/>
+            <seg ana="#uf_Untersuchungshaft">ist sy ins <placeName ana="#uf_SchlagwortGefängnis">Thoubhüslin</placeName> gleyt</seg>, und uff<date ana="#uf_DatumUrfehde" when="1566-07-08" calendar="Julian"> Mentag den 8 Julij ditz 66 jors</date><lb/>
+        <seg ana="#uf_Urfehdeeid">mit gmeyner urphet gnediglichen wider ussglossen</seg>,<seg ana="#uf_StrafeAusweisung"> hatt dorby ouch ge<lb break="no"/>
+            schworen, das sy sich von statt und landt Basell hinweg thuon,<lb/>
+            und nit darin kommen solle</seg>, <seg ana="#uf_StrafeStrafandrohung">dann wo sy wyther ergriffen, werde man<lb/>
+            sy ins <term ana="#uf_SchlagwortHalseisen">halsysen</term> stellen und <term ana="#uf_SchlagwortSchwemmen">schwemen</term></seg>.</p><lb/>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">            
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"><placeName ana="#uf_SchlagwortGefängnis">Thoubhüslin</placeName> – <num>1</num></note>
+            
+    <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Philipp</forename> <surname>Kürner</surname>, <persName><forename ana="#uf_male">Wolff</forename> <surname>Kürner</surname> des <roleName ana="#uf_Beruf">metzgers</roleName></persName><lb/>
+        seligen, gelossner <roleName ana="#uf_Verwandtschaftsgrad">son</roleName></persName>.</head><lb/>
+            
+            <p><seg ana="#uf_TatOrdnungsstörung">Diewyl <term ana="#uf_SchlagwortAuffällig">diser junger knab</term>, sich zuo böser gsellschafft gethon, mit dem<lb/>
+            jungen Lamprechten, so den lüthen inn gütren schaden zuogfügt, umbher<lb/>
+            zogen.</seg> <seg ana="#uf_Untersuchungshaft">Ist er gfencklichen angnommen</seg>, <seg ana="#uf_StrafeErmahnung">und nochdem er sich erpotten<lb/>
+                er welle <persName>Meister <forename ana="#uf_male">Jocob</forename> <surname>Finiger</surname> dem <roleName ana="#uf_Beruf">metzger</roleName> sinem <roleName ana="#uf_Status">vogt</roleName> </persName>, gehörig und<lb/>
+            gehorsam sin, und sich der bösen gsellschaft abthuon,</seg> hatt man in,<lb/>
+            uff <date ana="#uf_DatumUrfehde" when="1566-07-10" calendar="Julian">Mittwoch den 10 Julij, ditz 66 jors,</date> <seg ana="#uf_Urfehdeeid">mit gmeiner urphet<lb/>
+            gnediglichen wider ussglossenn</seg>.</p><lb/>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+          
+       
+            
+     
+          
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">
+                
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num></note>
+            
+            <head><metamark rend="Kringel">°</metamark> <persName ana="#uf_PersonTäter"><forename ana="#uf_male">Hansjocob</forename> <surname>Lamprecht</surname> von <placeName ana="#uf_OrtHerkunft" ref="Basel">Basell</placeName></persName></head><lb/>
+            
+            <p><seg ana="#uf_StrafeKörperstrafe">Ist im <term ana="#uf_SchlagwortHalseisen">halsysen</term> gstanden und mit <term ana="#uf_SchlagwortRuten">ruoten ussgehouwen</term> worden</seg>,<lb/>
+            <seg ana="#uf_TatSachbeschädigung #uf_TatEinbruch">von wegen das er den lüthen inn gütren schaden zuogfügt, die<lb/>
+            heg verwüstet, und ettliche garten hüslin uffbrochen</seg>, also das nützit<lb/>
+            sichers vor in gsin, dem <persName ana="#uf_PersonOpfer #uf_male">alten würt Zuor Kannen</persName> <seg ana="#uf_TatDrohung">ein schar ab<lb/>
+            einem pfluog gschlagen, uff den pfluog gsessen und gseit, es stële ein<lb/>
+            dieb dem andren, dessglichen das er dem uff Bruoder Holtz tröwt,<lb/>
+            wenn er in verclage, welle er im ein roten hanen uffs huss setzen</seg>,<lb/>
+            hatt uff <date ana="#uf_DatumUrfehde" when="1566-07-11" calendar="Julian">Donstag den 11ten Julij, ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">den innhalt<lb/>
+            gmeyner urphet</seg>, <seg ana="#uf_StrafeAusweisung">darby ouch geschworen, das er sich den nechsten<lb/>
+            fünff myl wegs schyben wys, von statt und landt Basell,<lb/>
+            hinweg thuon, und darin onerloupt niemer mer kommen noch sich<lb/>
+            finden lassen solle.</seg><seg ana="#uf_StrafeStrafandrohung"> Mit dem anhang, wo er über disen eydt ergriffen<lb/>
+            das man ab im, on wythere berechtigung, mit dem <term ana="#uf_SchlagwortSchwert">schwert</term><lb/>
+            richten werde.</seg></p><lb/>            
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname><lb/>
+                <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+            
+            
+      
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">
+                
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num><lb/>
+            <persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num></note>
+            
+            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Uolj</forename> <surname>Haberman</surname> von <placeName ana="#uf_OrtHerkunft" ref="Solothurn">Solothurn</placeName></persName> und<lb/>
+                <metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"> <forename ana="#uf_female">Catharina</forename> <surname>Fry</surname> von <placeName ana="#uf_OrtHerkunft" ref="Delémont">Telsperg</placeName></persName></head><lb/>
+            
+            <p><seg ana="#uf_Vorinstanz #uf_SchlagwortEhegerichtEherichter">Die Herren Eerichter</seg> haben sy beyde <seg ana="#uf_Untersuchungshaft">übernacht inn gfenckniss lossen legen</seg><lb/>
+                <seg ana="#uf_StrafeGeldstrafe">und yedes umb <measure type="currency" quantity="5" unit="lbd">5 lb</measure> gstrofft</seg>,<seg ana="#uf_TatUnzucht"> von wegen der bübery so sy mitein<lb break="no"/>
+            andren inn <placeName ana="#uf_SchlagwortWirtshaus">Her Lienhart Schencken huss</placeName>, by dem sy gedient, getryben,</seg><lb/>
+            
+                <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#147"/>
+            
+            
+            sindt uff <date ana="#uf_DatumUrfehde" when="1566-07-17" calendar="Julian">Mittwochen den 17 des Julij ditz 66. jars</date>, mit gmeyner<lb/>
+            urphet gnediglichen wider ussglossen.</p><lb/>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num><lb/>
+            <persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> – <num>1</num></note>
+            
+            <head><metamark rend="Kringel">°</metamark> <persName ana="#uf_PersonTäter"><forename ana="#uf_male">Blesj</forename> <surname>Schante de Mole</surname> von <placeName ana="#uf_OrtHerkunft" ref="Grandson">Granson</placeName></persName><lb/>
+            und <persName ana="#uf_PersonTäter"><forename>Peter</forename> <surname>Scholitan</surname> von <placeName ana="#uf_OrtHerkunft" ref="St.Florin">Sant Florin<lb/>
+                by Morse glegen</placeName></persName></head><lb/>
+            
+            <p><seg ana="#uf_TatEinbruch">Demnoch zuo <placeName ana="#uf_OrtTatort" ref="Waldenburg">Waldenburg</placeName> einem <seg ana="#uf_TatEinbruch #uf_TatDiebstahl">ein spycher uffgebrochen und<lb/>
+                ettliche cleider darus entwert</seg>, und diese zwen taglöner doselbst<lb/>
+            gsechen, das sy zwen röck, von einem höwhüslin, inn ein anders<lb/>
+            getragen.</seg> <seg ana="#uf_Untersuchungshaft">Sindt sy gfencklichen angnommen</seg>, und harin gfürt,<lb/>
+            <seg ana="#uf_SchlagwortKeinGeständnis">diewyl und aber sy an der marter beharret das sy nützit darvon<lb/>
+            wüssen,</seg> hatt man sy uff <date ana="#uf_DatumUrfehde" when="1566-07-29" calendar="Julian">Mentag den 29 Julij ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit<lb/>
+            gmeyner urphet wider ledig glossen.</seg> <seg ana="#uf_StrafeAusweisung">Darby sy ouch geschworen<lb/>
+            haben, das sy sich von statt und landt Basell hinweg thuon,<lb/>
+            und dorin onerloupt nit kommen sollen.</seg></p><lb/>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+            
+           
+   
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">           
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortRatsknecht">Bylher</persName> – <num>1</num></note>
+            
+            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Cuonrat</forename> <surname>Lengwyler</surname> <roleName ana="#uf_Beruf">der müller knecht</roleName><lb/>
+            an <placeName ana="#uf_OrtWohnort">Steinen</placeName></persName></head><lb/>
+    
+            <p><seg ana="#uf_TatVerstossArbeitsvorschriften">Alsdann er den eydt mit andren müllern wie der pruch, hatt<lb/>
+            sollen thuon, ist er nit erschynen, sonder wie er anzeigt dasselb<lb/>
+            inn vergess gstellt.</seg> <seg ana="#uf_Untersuchungshaft">Desshalben er inn gfenckniss gleyt</seg>, und<lb/>
+            uff <date ana="#uf_DatumUrfehde" when="1566-07-16" calendar="Julian">Zinstag den 16 des Julij, ditz 66 jars</date> <seg ana="#uf_Urfehdeeid">mit gmeyner urphet<lb/>
+            gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeErmahnung">hatt darby ouch geschworen, das er<lb/>
+            sich zuom Substituten verfügen, und den eydt wie ander er<lb break="no"/>
+            statten solle.</seg><lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s<lb/>
+              </roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+          
+            
+        
+         
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">     
+            
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>2</num></note>
+            
+    
+            <head><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Thenge</forename> <surname>Cuonj</surname></persName> und<lb/>
+             <persName ana="#uf_PersonTäter"><forename ana="#uf_female">Barbell</forename> <surname>Wëltj</surname> von <placeName ana="#uf_OrtHerkunft" ref="Arisdorf">Aristorff</placeName></persName>.</head><lb/>
+            
+            <p><seg ana="#uf_Vorinstanz #uf_SchlagwortEhegerichtEherichter">Die Herren Eerichten</seg> <seg ana="#uf_Untersuchungshaft">haben sy beide übernacht inn gfenckniss lossen<lb/>
+                legen</seg> und <seg ana="#uf_StrafeGeldstrafe">inn umb <measure type="currency" quantity="5" unit="lbd">5 lb</measure> sodann sy umb <measure type="currency" quantity="2" unit="fl">zwen gulden</measure> gstrofft</seg>,<lb/>
+            von wegen das sy <seg ana="#uf_TatUnzucht">schimpflichen mit der ee umbgangen, und schnuory<lb/>
+            getryben</seg>. Sindt uff <date ana="#uf_DatumUrfehde" when="1566-07-31" calendar="Julian">Mittwoch den letzten Julij anno 66</date> <seg ana="#uf_Urfehdeeid">mit gmeyner<lb/>
+            urphet gnediglichen wider ussglossen</seg>.</p><lb/>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+            
+     
+     
+ 
+  
+            
+            
+            
+ <div ana="#uf_Eintrag">
+             <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num></note>
+           
+             
+     <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Walther</forename> <surname>Merean</surname> <roleName ana="#uf_Beruf">der seëer</roleName></persName></head><lb/>
+            
+            
+        <p><seg ana="#uf_Vorinstanz #uf_SchlagwortEhegerichtEherichter">Die Herren Eerichter </seg><seg ana="#uf_StrafeGefängnis #uf_StrafeGeldstrafe">haben in dry tag und dry nëcht mit gfenckniss<lb/>
+        und umb <measure type="currency" quantity="10" unit="lbd">10 lb </measure>gestrofft</seg>, <seg ana="#uf_TatUnzucht">von wegen das er sin basen zuor ee<lb/>
+        gnommen und sy eines kindts geschwengert.</seg> Ist uff <date ana="#uf_DatumUrfehde" when="1566-08-01" calendar="Julian">Donstag den ersten<lb/>
+        Augstmonats ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet gnediglichen wider<lb/>
+        ussglossen</seg>, <seg ana="#uf_StrafeErmahnung">und im dorby anzeigt, das zwüschen im und <persName ana="#uf_PersonAnwesende"><forename ana="#uf_female">Anna</forename><lb/>
+        <surname>Sur</surname></persName> kein ee könnte sin, sonder das er sich von iren thuon, und sich<lb/>
+        mit iren nit wyter vermischen solle.</seg><lb/></p>
+             <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+           
+            <!-- fixme: ist anna jetzt mittäterin, oder wie?-->
+            <!-- fixme: ist seeer beruf?-->
+            
+            
+            
+            <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#148"/>
+           <note rend="margin" change="#Nachtrag">+</note>
+
+<div ana="#uf_Eintrag">
+    
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <placeName ana="#uf_SchlagwortGefängnis">Eselthurn</placeName> – <num>1</num></note>
+
+    <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Jocob</forename> <surname>Reller</surname> <roleName ana="#uf_Beruf">der volterer</roleName></persName></head>
+             
+            <p> 
+             Diewyl er uff <date ana="#uf_DatumTat" when="1566-07-22" calendar="Julian">Sambstag verschynen</date>, <seg ana="#uf_TatUngetreueAmtsführung">die <term ana="#uf_SchlagwortSiebnerherren">Sybenherren</term> uff dem<lb/>
+            Thurn lossen warten, und nit gwartet sines diensts</seg>, <seg ana="#uf_Untersuchungshaft">ist er inn<lb/>
+            gfenckniss gleyt</seg>, und uff <date ana="#uf_DatumUrfehde" when="1566-07-24" calendar="Julian">Mentag den 24 Julij ditz 66 jors</date>, <seg ana="#uf_Urfehdeeid">mit<lb/>
+            gmeiner urphet wider ledig glossen</seg>. <seg ana="#uf_StrafeErmahnung">Dorby ouch anzeigt, das<lb/>
+            er hinfürter flyssiger warten solle.</seg><lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName><lb/>
+        s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+            
+            
+            
+            
+<div ana="#uf_Eintrag">
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> -<num>1</num></note>
+   
+
+    <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Jocob</forename> <surname>Kron</surname> <roleName ana="#uf_Beruf">der gärtner</roleName></persName></head><lb/>
+
+
+            <p>Demnach und er ettliche mal, <seg ana="#uf_TatÜblesHaushalten">von wegen sines unfridsamen<lb/>
+                lebens, so er und sin eefrow, miteinandren füren</seg>, für die <seg ana="#uf_Vorinstanz #uf_SchlagwortBannherren">Bann<lb break="no"/>
+                herren</seg> beschickt, <seg ana="#uf_TatUngehorsam">und dieselb früntliche warnung, wenig an im er<lb break="no"/>
+                schossen, sonder sin wyss, glich wider an die handt gnommen</seg>, so ers<lb/>
+                vorhin gelossen, <seg ana="#uf_TatVerbaleAuseinandersetzung">und dermossen ein toben und wüten gegen siner <persName ana="#uf_PersonOpfer">ee<lb break="no"/>
+                frowen</persName> tryben</seg>, das es siner <term ana="#uf_SchlagwortNachbar">nochburschafft</term> überlegen. <seg ana="#uf_Untersuchungshaft">Ist er inn<lb/>
+                gfenckniss gleyt</seg>, und derselben uff dess <persName>Meygers von Oberwyler<lb/>
+                und Ettingen</persName> underthenige pitt, gnediglichen wider erlossen, uff <date ana="#uf_DatumUrfehde" when="1566-08-03" calendar="Julian">Sambstag<lb/>
+                den dritten Augstmonats, ditz 66 jars</date> <seg ana="#uf_Urfehdeeid">hatt den innhalt gmeyner<lb/>
+                urphet</seg>, dorby ouch geschworen, <seg ana="#uf_StrafeErmahnung">das er hinfürter mit siner eefrowen<lb/>
+                fridsam und tugentlich leben, und sich anderst halten und tragen<lb/>
+                solle.</seg> <seg ana="#uf_StrafeStrafandrohung">Oder im werde ettwas<term ana="#uf_SchlagwortAufdenHalswachsen"> uff den hals wachsen</term>, das im zeschwër<lb/>
+                sin werde.</seg><lb/></p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+          
+
+            
+            
+            
+            
+<div ana="#uf_Eintrag">       
+        
+    <note rend="margin" ana="#uf_Eingangsnotiz"><placeName ana="#uf_SchlagwortGefängnis">Wasserthurn</placeName> – <num>1</num></note>
+
+                <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Jocob</forename> <surname>Lor</surname> von <placeName ana="#uf_OrtHerkunft" ref="Genf">Jenff</placeName>
+                <roleName ana="#uf_Beruf">der pfyfer</roleName>, zuo <placeName ana="#uf_OrtWohnort" ref="Bettigen">Betticken</placeName> sesshafft</persName></head><lb/>                
+                
+                
+                <p><seg ana="#uf_TatEhebruch">Demnach und er sich von siner eefrowen, zuo einer von <placeName ref="Grenzach">Crentzach</placeName><lb/>
+                    gethon, by derselben zwey kinder im eebruch überkommen</seg>, <seg ana="#uf_TatUnzucht">und noch<lb break="no"/>
+                malen mit einer einer mëtzen umbher zogen.</seg> <seg ana="#uf_Untersuchungshaft">Ist er inn gfenckniss dess<lb/>
+                Spalenthurns</seg> <seg ana="#uf_StrafeGefängnis">und demnoch acht tag und acht nëcht inn Wasserthurn<lb/>
+                gleyt</seg>, hatt uff <date ana="#uf_DatumUrfehde" when="1566-08-05" calendar="Julian">Mentag den fünfften Augstmonats ditz 66 jors</date> <seg ana="#uf_Urfehdeeid">den<lb/>
+                innhalt gmeyner urphet</seg>, <seg ana="#uf_StrafeErmahnung">dorby ouch geschworen, das er sich sollicher<lb/>
+                lastern abthuon, sine güter buwen, und husshalten solle wie einem<lb/>
+                eeman zuostot. Dessglichen sich des krämer wercks zuo statt<lb/>
+                und landt abthuon</seg>, <seg ana="#uf_StrafeVerbot">und uss dem landt nit hinweg ziechen<lb/>
+                solle, one vorwüssen und bewilligung der Oberkeit.</seg></p><lb/>
+                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+
+<div ana="#uf_Eintrag"> 
+    
+    <note rend="margin" ana="#uf_Eingangsnotiz"><placeName ana="#uf_SchlagwortGefängnis">Toubhüslj</placeName> -<num>1</num><lb/>
+                    <persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> -<num>1</num></note>
+                    
+                    
+                    
+    <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Bernhart</forename> <surname>Müller</surname></persName> und<lb/>
+                    
+        <metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename>Hans</forename> <surname>Müller</surname> <roleName ana="#uf_Verwandtschaftsgrad">gebrüder</roleName> von <placeName ana="#uf_OrtHerkunft" ref="Muttenz">Muttentz</placeName></persName></head><lb/>
+                    
+                    
+                    <p>Alsdann uff <date ana="#uf_DatumTat" when="1566-08-04">Sontag verschynen</date> iren nün von Muttentz, harin<lb/>
+                    inn die statt kommen, ein obentrunck thon, ein kamren Zuom<lb/>
+                    Plouwen Mann entlent, und als iren ettlich für den Falcken kommen,<lb/>
+                    haben sy inn unserer <placeName ana="#uf_OrtTatort #uf_SchlagwortRat">Gnedigen Herren keller</placeName>, noch ein moss wyns<lb/>
+                    truncken, angfangen balgen, <seg ana="#uf_TatKörperverletzung">und als <persName ana="#uf_PersonOpfer"><roleName ana="#uf_Status">Meister</roleName> <forename ana="#uf_male">Jerg</forename> <surname>Spörlin</surname> der<lb/>
+                    
+                    
+                <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#149"/>
+                    
+             
+                        <note rend="margin" change="#Nachtrag">+</note>
+                    
+                    <roleName ana="#uf_Beruf #uf_SchlagwortRat">rhatsher</roleName></persName> kommen, und gsagt, es were kein balg huss do, sindt sy an in<lb/>
+                     geroten, also das einer von Muttentz noch dem Ratsherren geschlagen</seg> <add rend="margin Verweiszeichen">und geredt, er seche weder mine herren, noch in, nit an</add><lb/>
+                    und als er noch den stattknechten gschickt, und sy disen zweyen,<lb/>
+                    noch geylt, <seg ana="#uf_TatWiderstandgegenObrigkeit">hatt einer under disen, under<placeName ana="#uf_OrtTatort"> Eschamer Thor</placeName>, sin gwer<lb/>
+                    halber uss der scheyden zuckt, und gluogt, ob der tägen gëng sige</seg>,<lb/>
+                    <seg ana="#uf_Untersuchungshaft">desshalben sy inn Eschamer Vorstatt ergriffen und ingleyt</seg>,<lb/>
+                    und wie sy der stattknecht gfürt, hatt bemelter Bernhart, zuo Jocoben<lb/>
+                    dem stubenheitzer gseyt, du fürst mich wie ein schelm und<lb/>
+                    dieb. Sindt uff <date ana="#uf_DatumUrfehde" when="1566-08-07" calendar="Julian">Mittwoch den 7 des Augstmonats ditz 66 jars</date><lb/>
+                    <seg ana="#uf_Urfehdeeid">mit gmeyner urphet, gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeGeldstrafe">habent dorby sampt<lb/>
+                        und sonders geschworen, das ir yeder <measure type="currency" quantity="5" unit="lbd" >5 lb</measure> zuor stroff, unsren<lb/>
+                    Gnedigen Herren oder dem obervogt erlegen sollen</seg>, dorby hatt ouch<lb/>
+                    Bernhart Müller sich bekant, das er von bemeltem stattknecht,<lb/>
+                    nützit anders dann alle eer, liebs und guots wüsse.<lb/></p>
+                    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+                    
+                    
+                
+
+
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag"> 
+           
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num></note>
+                    
+                    
+                     <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Philipp</forename> <surname>Stamm</surname> von <placeName ana="#uf_OrtHerkunft" ref="Brugg">Bruck</placeName>
+                    zuo <placeName ana="#uf_OrtWohnort" ref="Muttenz">Muttentz</placeName> <roleName ana="#uf_Beruf">by <persName><forename ana="#uf_male">Lienhart</forename> <surname>Ürby</surname></persName> dienend</roleName></persName>,</head><lb/>
+                    
+                   
+                   <p> Alsdann er <date ana="#uf_DatumTat" when="1566-08-04" calendar="Julian">uff Sontag verschynen</date>, mit iren nünen, von<lb/>
+                    Muttentz, inn des Spyrers huss zoben zert, und iren sechs<lb/>
+                    wider heym gangen, und imme einer under dem thor begegnet,<lb/>
+                    hatt dieser gseyt, du byren broter wenn zalst mich, also <seg ana="#uf_TatSchlägerei">das<lb/>
+                    sy über einander zuckt</seg>, <seg ana="#uf_Untersuchungshaft">desshalben diser inn gfenckniss kommen</seg>,<lb/>
+                       und uff <date ana="#uf_DatumUrfehde" when="1566-08-07" calendar="Julian" >Mittwoch den 7 des Augstmonats ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeiner<lb/>
+                    urphet, gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeErmahnung">hatt dorby ouch geschworen, wann<lb/>
+                    man in dess freffelshalb beschicken, das er sich stellen und erstatten<lb/>
+                    solle was im uffgleit wirt.</seg></p><lb/>
+                     <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+
+
+
+
+
+
+  <div ana="#uf_Eintrag"> 
+                    
+                    
+                    
+      <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num></note>
+                    
+                <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Isaac</forename> <surname>Kestenholtz</surname>
+                    von <placeName ana="#uf_OrtHerkunft" ref="Waldenburg">Waldenburg</placeName></persName></head><lb/>
+                    
+                    <p><seg ana="#uf_Vorinstanz #uf_SchlagwortEhegerichtEherichter">Die Herren Eerichter</seg> <seg ana="#uf_Untersuchungshaft">haben in inn gfenckniss lossen legen</seg> und<lb/>
+                        <seg ana="#uf_StrafeGeldstrafe">in umb <measure type="currency" quantity="10" unit="lbd">10 lb</measure> so dann <measure type="currency" quantity="5" unit="lbd">5 lb</measure>, die er für <persName ana="#uf_PersonAnwesende"><forename ana="#uf_female">Coleta</forename> von <placeName ana="#uf_OrtHerkunft" ref="Lausanne">Losanna</placeName></persName><lb/>
+                    erleyt, gestrofft</seg>, <seg ana="#uf_TatUnzucht">von wegen das er mit bemelter Coleta, schnuory<lb/>
+                    inn <placeName ana="#uf_OrtTatort">sines <persName ana="#uf_Verwandtschaftsgrad">bruoders</persName> huss</placeName>, getryben</seg>, <seg ana="#uf_TatUnrechtmässigesEheversprechen">über das er vor jor und tagen,<lb/>
+                    <persName ana="#uf_PersonAnwesende">Heinj Biderbs tochter</persName> Zuo Berenwyl by Langenbruck, die ee zuogseyt</seg>.<lb/>
+                    Ist uff <date ana="#uf_DatumUrfehde" when="1566-08-09" calendar="Julian">Fritag den 9ten Augstmonats ditz 66 jars</date>,<seg ana="#uf_Urfehdeeid"> mit gmeyner<lb/>
+                    urphet gnediglichen wider ussglossenn</seg>.<lb/></p>
+                    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<div ana="#uf_Eintrag"> 
+ 
+                    
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num></note>
+                    
+                     <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Paulj</forename> <surname>Bylger</surname> der <roleName ana="#uf_Beruf">rhatsknecht</roleName></persName></head><lb/>
+                    
+                    <p>Demnach und unser <seg ana="#uf_Vorinstanz #uf_SchlagwortRat">Gnedig Herren</seg> in, uss gnaden an das<lb/>
+                     rhatknechts ampt kommen lossen, und man sich zuo im ver<lb break="no"/>
+                    sëchen, er würde sich der liederlichen gsellschafft abthuon,<lb/>
+                    so ist doch er mit sinem liederlichen husshalten fürgefaren,<lb/>
+                    
+                        <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#150"/>
+                        
+                        <note rend="margin" change="#Nachtrag">+-</note>
+                        
+                    saltz, stockvisch, häring und wyn, uff borg gnommen, sich<lb/>
+                    an unnütze gsellschafft gehenckt, ettwan onerloupt inn die<lb/>
+                    dörffer zogen zefüllen, <seg ana="#uf_TatUngetreueAmtsführung">sines diensts nit acht ghept</seg>, <seg ana="#uf_TatAlkoholmissbrauch">und<lb/>
+                    innsonderheit diewyl er sich dermossen mit wyn überladen<lb/>
+                     das er uff dem Höwberg an der gassen glegen wie ein onver<lb break="no"/>
+                    nünfftig thier.</seg> <seg ana="#uf_Untersuchungshaft">Ist er inn gfenckniss gleyt</seg> und uff <date ana="#uf_DatumUrfehde" when="1566-08-12" calendar="Julian">Mentag<lb/>
+                    den 12ten Augstmonats ditz 66 jors</date> <seg ana="#uf_Urfehdeeid">mit gmeyner urphet<lb/>
+                    gnediglichen wider ussglossen,</seg> <seg ana="#uf_StrafeErmahnung">hatt darby ouch geschworen,<lb/>
+                    das er sich hinfürter der liederlichen onnützen gsellschafft<lb/>
+                    als <persName ana="#uf_PersonAnwesende"><forename ana="#uf_male">Symon</forename> <surname>Helden</surname></persName>, <persName ana="#uf_PersonAnwesende"><forename ana="#uf_male">Daniel</forename> dess <roleName ana="#uf_Beruf">glasers</roleName></persName>, <persName ana="#uf_PersonAnwesende"><forename ana="#uf_male">Hanss</forename> <surname>Jocoben</surname></persName> ob,<lb/>
+                    und anderer, entschlagen und abthuon, und dess tëmpffens<lb/>
+                    und füllens, so er bisshar frü und spot getryben, müssigen,<lb/>
+                    und anderst husshallten, dorzuo onerloupt unserer Gnedigen<lb/>
+                    Herren, oder dess obersten knechts vorwüssen nit uss der statt<lb/>
+                    inn die dörffer ziechen.</seg> Dessglichen solle er sich yetzt glich<lb/>
+                    inn thurn heym verfügen und warten biss er wyther,<lb/>
+                    durch unser Gnedig Herren beschickt wirt, und was im als<lb break="no"/>
+                    dann wyter anzeigt, wie er sich halten, das er demselben<lb/>
+                    trüwlichen nochkommen solle.</p><lb/>
+                    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+            
+          
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag"> 
+                
+          
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>2</num></note>
+                    
+    <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Damian</forename> <surname>Nodler</surname> der <roleName ana="#uf_Beruf">metzger</roleName></persName> und <persName ana="#uf_PersonTäter"><forename ana="#uf_female">Elssbeth</forename>
+        <metamark rend="Kringel">°</metamark><surname>Bieglin</surname> sin <roleName ana="#uf_Verwandtschaftsgrad">eefrow</roleName>.</persName></head><lb/>
+                    
+                    <p><seg ana="#uf_TatVerbaleAuseinandersetzung #uf_TatÜblesHaushalten" >Demnach und disse beyde eegemëcht ein guote zyt jaren, mitein-
+                    ander ein zänckisch unfridsam leben gfürt, einander geschmëcht
+                    und geschendt</seg>, dermossen das es iren nochburen überlegen gsin,
+                    <seg ana="#uf_Untersuchungshaft">sindt sy inn gfenckniss gley</seg>. Nochdem und aber sy sich begeben
+                    das sy beide hinfürter miteinandren früntlichen und fridsam huss-
+                    halten, hatt man sy der gfenckniss, uff <date ana="#uf_DatumUrfehde" when="1566-08-12" calendar="Julian">Mentag den 12 Augst-
+                    monats, ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">gnediglichen, mit gmeyner urphot wider
+                    erlossen</seg>. <seg ana="#uf_StrafeErmahnung">Darby sy ouch sampt und sonders geschworen haben, das
+                    sy hinfürter miteinandren fridsam leben und von iren zënkischen
+                    wesen abston, und husshalten sollen, wie eelüthen gebürt</seg>. <seg ana="#uf_StrafeStrafandrohung">Oder man
+                    werde sy von statt und landt verwysen.</seg> Dessglichen hatt bemelte Elss-
+                    beth, diewyl sy ires mans muoter fründen schmëchlichen zuogeredt, be-
+                    kannt, das sy von inen nützit dann alle eer, liebs und guots
+                    wüsse.</p>
+    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+
+
+
+<div ana="#uf_Eintrag"> 
+
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num></note>
+                    
+                    
+            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Peter</forename> <surname>Lamparter</surname> zu <placeName ana="#uf_OrtWohnort" ref="Muttenz">Muttentz</placeName> wonend,
+                    von <placeName ana="#uf_OrtHerkunft" ref="Kaiserstuhl">Keyserstuol</placeName></persName></head><lb/>
+                    
+                    
+                    <p><seg ana="#uf_TatWiderstandgegenObrigkeit">Demnoch und er, ouch darby gsin, als iren ettlich <placeName ana="#uf_SchlagwortWirtshaus">Zuom Falcken</placeName><lb/>
+                    mit <persName ana="#uf_PersonOpfer"><roleName ana="#uf_Status">Meister</roleName> <forename ana="#uf_male">Jergen</forename> <surname>Spörlin</surname> dem <roleName ana=" #uf_Beruf #uf_SchlagwortRat">Rhatsherren</roleName></persName> balget, und diser ouch<lb/>
+                    geredt, er sëche weder in, noch unsere Herren nit an, wann er schon ein<lb/>
+                    
+                    <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#151"/>
+                    
+                        <note rend="margin" change="#Nachtrag">+</note>
+                        
+                    bur sige, so sige er wol als erlich als ein Herr und sich gar lëtz<lb/>
+                        gestellt,</seg> <seg ana="#uf_Untersuchungshaft">ist er inn gfenckniss gleyt</seg>, und <measure type="currency" quantity="5" unit="lbd">5 lb</measure> gestrofft, und uff<lb/>
+                    <date ana="#uf_DatumUrfehde" when="1566-08-10" calendar="Julian">Sambstag den 10 des Augstmonats ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeiner urphet<lb/>
+                    gnediglichen wider ussglossen</seg>, hatt dorby ouch geschworen, das er die<lb/>
+                    bemelte stroff unsren <term ana="#uf_SchlagwortRat">Gnedigen Herren</term> ussrichten solle.</p><lb/>
+                     <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+        
+
+
+
+
+
+
+
+<div ana="#uf_Eintrag"> 
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num></note>
+                    
+             <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Wilhelm</forename> <surname>Hönger</surname> von <placeName ana="#uf_OrtHerkunft" ref="Zürich">Zürich</placeName> der <roleName ana="#uf_Beruf">student</roleName></persName></head><lb/>
+                    
+                    <p>Die <seg ana="#uf_Vorinstanz #uf_SchlagwortEhegerichtEherichter">Herren Eerichter</seg> <seg ana="#uf_Untersuchungshaft">haben in lossen inn gfenckniss legen</seg><lb/>
+                    <seg ana="#uf_TatBruchEheversprechen #uf_TatVortäuschungFalscherTatsachen">von wegen, <persName ana="#uf_PersonOpfer"><forename ana="#uf_female">Catharina</forename> <surname>Jeüchtenhammerj</surname> uss <placeName ana="#uf_OrtHerkunft" ref="Kleinbasel">minderen Basell</placeName></persName><lb/>
+                    die in der ee angesprochen, und als er examiniert und befrogt,<lb/>
+                    ob er vorhin mit einer andren behafftet, er ouch anzeigt das<lb/>
+                     er einer zuo Zürich die ee verheissen, und aber dieselb nit be<lb break="no"/>
+                    nampssen wellen. Wie man nun den Eerichtern von Zürich<lb/>
+                    geschriben, und sich erfunden, das er die onworheit fürgeben, und<lb/>
+                    sollichs allein gseyt, domit er von bemelter Catharina ledig<lb/>
+                    wurde,</seg> ist er uff <date ana="#uf_DatumUrfehde" when="1566-08-12" calendar="Julian">Mentag den 12ten Augstmonats ditz 66 jars</date><lb/>
+                    <seg ana="#uf_Urfehdeeid">mit gmeiner urphet, gnediglichen wider ussglossenn</seg>. <seg ana="#uf_StrafeErmahnung">Hatt darby<lb/>
+                    ouch geschworen das er von der statt Basell nit wychen solle, er<lb/>
+                     sige dann gütlich oder rechtlich mit gemelter Jeüchtenhammerj über<lb break="no"/>
+                    kommen.</seg><lb/></p>
+                    <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+
+            
+            
+            
+<div ana="#uf_Eintrag">          
+            
+                        
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num></note>
+                        
+                        <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Johannes</forename> <surname>Eblinger</surname><lb/>
+                        <roleName ana="#uf_Beruf">Predicant</roleName> zuo <placeName ana="#uf_OrtHerkunft" ref="Benken">Bencken</placeName></persName></head><lb/>
+                        
+                        <p><seg ana="#uf_Vorinstanz #uf_SchlagwortAuffällig">Die Herren Deputaten und Rector der universitet</seg>, <seg ana="#uf_Untersuchungshaft">haben in<lb/>
+                         lossen inn gfenckniss legen</seg>, von wegen das er gon<placeName ana="#uf_OrtTatort" ref="Witterswil"> Wyters<lb break="no"/>
+                        wyler inn Solothurn pieth</placeName> uff die <term ana="#uf_SchlagwortAuffällig">kylbe</term> gangen, <seg ana="#uf_TatAlkoholmissbrauch">doselbst sich<lb/>
+                        mit wyn überladen, und ein ergerlich leben gfürt.</seg> Ist uff<lb/>
+                        Mentag den <date ana="#uf_DatumUrfehde" when="1566-08-12">12ten Augstmonats ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet<lb/>
+                        gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeErmahnung">hatt darby ouch geschworen, das er<lb/>
+                        sich solliches übertrinckens abthuon</seg> <seg ana="#uf_StrafeVerbotWirtshaus">und sonderlichen der würtzhüsern<lb/>
+                        sich gëntzlichen abthuon solle.</seg><lb/></p>
+                         <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+          
+
+
+
+
+<div ana="#uf_Eintrag">  
+
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num></note>
+                        
+                    <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Lucas</forename> <surname>Carpio</surname> von <placeName ana="#uf_OrtHerkunft" ref="Basel">Basell</placeName>, der <roleName ana="#uf_Beruf">student</roleName></persName></head><lb/>
+                        
+                        <p><seg ana="#uf_FrüheresUrfehdeverfahren">Als dann er hievor im <term ana="#uf_SchlagwortGefängnis">Kärckel zuon Augustineren</term> gfangen<lb/>
+                        glegen von wegen sines übertrinckens und onrüwigen lebens</seg>,<lb/>
+                        <seg ana="#uf_TatÜbertretungUrfehde #uf_TatAlkoholmissbrauch">so hatt doch er umb dieselb stroff wenig geben, sonnder hatt<lb/>
+                        uff der Rinbrucken ein ungestüm wildt wësen anghept dessglichen<lb/>
+                            ouch im collegio.</seg> Desshalben er uff erkantniss <seg ana="#uf_Vorinstanz #uf_SchlagwortAuffällig"><persName>Herren Rectors</persName><lb/>
+                        und der <persName>vier decanen</persName></seg>, <seg ana="#uf_Untersuchungshaft">zwen tag und zwo nëcht inn gfenckniss</seg><lb/>
+                        gleyt, und uff <date ana="#uf_DatumUrfehde" when="1566-08-13" calendar="Julian">Zinstag den 13 des Augstmonats ditz 66 jors</date><lb/>
+                       <seg ana="#uf_Urfehdeeid"> mit gmeyner urphet gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeAusweisung">darby er<lb/>
+                        ouch geschworen hatt, das er sin wonung usserthalb des collegijs<lb/>
+                        haben, allein die lectiones darinnen hören und dannenthin<lb/>
+                        
+                            <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#152"/>
+                            <note rend="margin" change="#Nachtrag">+</note>
+                            
+                        sich glych wider heym verfügen solle, hiemit er ouch sines<lb/>
+                        stipendiums geurloupt ist.</seg></p><lb/>
+                        <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+            <!-- fixme: ist das eine Uebertretung Urfehde? und kann man strafe mit Auweisung codieren? --> 
+
+
+     
+            
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">           
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> – <num>1</num></note>
+                        
+                     <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Theus</forename> <surname>Häl</surname> <roleName ana="#uf_Beruf">der metzger</roleName> von <placeName ana="#uf_OrtHerkunft" ref="Basel">Basell</placeName></persName></head><lb/>
+                        
+                        <p><seg ana="#uf_FrüheresUrfehdeverfahren">Demnach und er vormalen inn siner urphet geschworen, das er<lb/>
+                        kein gwer by noch an im tragen, und innerthalb dem Ëtter nit<lb/>
+                        schiessen solle.</seg> <seg ana="#uf_TatÜbertretungUrfehde #uf_TatKörperverletzung #uf_TatBewaffneteAuseinandersetzung">So hatt er über sollichs, <persName ana="#uf_PersonOpfer"><forename ana="#uf_male">Jocoben</forename> <surname>Wetzell</surname></persName>, inn<lb/>
+                        der vogell hüttenen, mit hagel geschütz vornen inn die brust<lb/>
+                        geschediget, das man vermeynt, er hette in zetodt geschossen.</seg><lb/>
+                        <seg ana="#uf_Untersuchungshaft">Desshalben er inn gfenckniss gleyt</seg> und uff <date ana="#uf_DatumUrfehde" when="1566-08-24" calendar="Julian">Sambstag den<lb/>
+                        24 Augstmonats ditz 66 jors</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet, gnediglichen<lb/>
+                        wider ussglossen</seg>. <seg ana="#uf_StrafeErmahnung">Hatt dorby ouch geschworen, das er sin vordrige<lb/>
+                        urphet, die im vorgelessen worden, stet und vest halten</seg> <seg ana="#uf_StrafeVerbotWaffen">und<lb/>
+                        hinfürter der büchssen sich aller dingen, gentzlichen entschlagen, abthuon<lb/>
+                        und müssigen solle.</seg> <seg ana="#uf_StrafeStrafandrohung">Dann wo er sich der büchsen wyther under<lb break="no"/>
+                        ziechen, werde man in von statt und landt verwyssen.</seg><lb/>
+                       <seg ana="#uf_StrafeEntschädigungRückzahlung"> Desglichen solle er sich onverzug zuo Jocoben Wetzell verfügen<lb/>
+                        im den scherer zevorderst abrichten, und demnoch mit im<lb/>
+                        umb den schmertzen und schaden überkommen.</seg><lb/></p>
+                            <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+         
+
+
+
+
+
+
+ <div ana="#uf_Eintrag">   
+
+                    
+                    
+                    
+     <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num>1</num></note>
+                    
+                <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_female">Barbell</forename> <surname>Schweygert</surname> von <placeName ana="#uf_OrtHerkunft" ref="Backnang">Backena
+                    uss dem Würtemberger landt</placeName></persName>, zeigt an sy
+                    habe ein <persName><roleName ana="#uf_Verwandtschaftsgrad">eeman</roleName> genant <forename ana="#uf_male">Hanss</forename> <surname>Eck</surname> ein <roleName ana="#uf_Beruf">gürtler</roleName></persName>.</head><lb/>
+                    
+                    <p>Demnach und sy alhar inn die Cleine Statt kommen, und inn<lb/>
+                    der <placeName ana="#uf_SchlagwortWirtshaus">herberg Zuom Bären</placeName> inkert, und der würtin zwen sylberin<lb/>
+                    becher geben, ist ein argwon uff sy gfallen, <seg ana="#uf_Untersuchungshaft">und als man zuo iren<lb/>
+                    griffen, und sy inn gfangenschafft glegt</seg>, <seg ana="#uf_TatDiebstahl #uf_TatVortäuschungFalscherTatsachen">hatt sy bekannt, das sy<lb/>
+                    sechs sylberin becher, einem messerschmidt zuo <placeName ana="#uf_OrtTatort" ref="Schaffhausen">Schaffhussen</placeName><lb/>
+                    entwert. Desshalben gon Schaffhussen geschriben worden, und als man<lb/>
+                    von siben becheren geschriben, hatt sy ze letst anzeigt, das sy<lb/>
+                        denselben dem <term ana="#uf_SchlagwortJuden">juden</term> zuo <placeName ref="Tiengen">Tiengen</placeName> umb <measure type="currency" quantity="25" unit="bz">25 batzen</measure> versetzt.</seg> Diewyl<lb/>
+                    und aber sy fürgeben, das sy mit einem kindt schwanger gange,<lb/>
+                    ist sy uff <date ana="#uf_DatumUrfehde" when="1566-08-26" calendar="Julian">Mentag den 26ten Augstmontas ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit ge<lb break="no"/>
+                    meyner urphet gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeAusweisung">hatt dorby ouch ge<lb break="no"/>
+                    schworen, das sy sich von statt und landt Basell hinweg<lb/>
+                    thuon und darin onerloupt niemer mer kommen, noch sich finden lassen solle.</seg></p><lb/>
+                       <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+
+              
+                  
+
+
+
+
+
+
+
+
+
+
+<div ana="#uf_Eintrag">          
+
+    <note rend="nargin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> – <num>1</num></note>
+                        
+                        <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Berchtold</forename> <surname>Schmidt</surname>
+                        <roleName ana="#uf_Beruf">der mülj reder macher</roleName>, zuo <placeName ana="#uf_OrtHerkunft" ref="Liestal">Liechstall</placeName></persName></head><lb/>
+                        
+                        <p><seg ana="#uf_FrüheresUrfehdeverfahren">Asldann ein <seg ana="#uf_Vorinstanz #uf_SchlagwortRat">Ersamer Rhat zuo <placeName ref="Liestal">Liechstall</placeName></seg>, in von wegen,<lb/>
+                        das er an verbottnen orten onerloupt holtz gehouwen, umb 5 lb<lb/>
+                        und fünff schilling gestrofft,</seg> <seg ana="#uf_TatUngehorsam">hatt er sich wider dieselbe erkantniss<lb/>
+                        gesetzt und geredt, sy haben im ein unbilliche urtell gebenn,</seg><lb/>
+                        
+                         <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#153"/>
+                        <note rend="margin" change="#Nachtrag">+</note>
+    
+                        und als dieser handell für unser <seg ana="#uf_SchlagwortRat">Gnedig Herren</seg> kommen, und <persName>her <roleName ana="#uf_Beruf">schult<lb break="no"/>
+                        heiss</roleName> von <placeName ref="Liestal">Liestal</placeName></persName> hierob verhört, <seg ana="#uf_TatDiebstahl">und dorby anzeigt worden, das er<lb/>
+                        ouch zwey cloffter eichin holtz, solle uffgesetzt und gemacht han</seg>,<lb/>
+                        <seg ana="#uf_Untersuchungshaft">ist er inn gfenckniss gleyt</seg>, und uff <date ana="#uf_DatumUrfehde" when="1566-09-02" calendar="Julian">Mentag den andren Septembris<lb/>
+                        ditz 66 jors</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet, gnediglichen wider ussglossen</seg>,<lb/>
+                        <seg ana="#uf_StrafeGeldstrafe">hatt dorby ouch geschworen, das er unssren Gnedigen Herren<lb/>
+                            <measure type="currency" quantity="5" unit="lbd">5 lb</measure> zuor stroff, so dann einen Ersamen Rhat zuo Liechstall<lb/>
+                            <measure type="currency" quantity="5" unit="lbd">fünff pfundt</measure> und <measure type="currency" quantity="5" unit="ß-w">fünff schilling</measure>, uff das fürderlichst erlegen solle</seg><lb/>
+                        <seg ana="#uf_StrafeEntschuldigung">und vor Rhat, zuo Liechstall, sich bekennen solle das er inen<lb/>
+                        gwalt und unrecht thon, und einem Ersamen Rhat daselbst<lb/>
+                        noch notturfft widerreden solle.</seg> <seg ana="#uf_StrafeErmahnung">Dessglichen das er hinfürter<lb/>
+                        aller höltzer, so unseren Gnedigen Herren zuostendig, sich müssigen,<lb/>
+                        und kein stumppen weder gross noch clein houwen, one eines<lb/>
+                        Ersamen Rhats, oder des Herren Schultheissen wüssen und willen</seg>.</p><lb/>
+                        <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+        
+
+
+
+
+
+
+
+<div ana="#uf_Eintrag">    
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> – <num>1</num></note>
+                        
+                        <head><metamark rend="Kringel">°</metamark> <persName ana="#uf_PersonTäter"><forename ana="#uf_male">Hans</forename> <surname>Brucker</surname> von <placeName ana="#uf_OrtHerkunft" ref="Wylen">Wylen, by Stein
+                        ob Schaffhussen, Züricher pieth</placeName></persName>.</head><lb/>
+                        
+                        <p>Demnach und er uff <date ana="#uf_DatumTat" when="1566-09-06" calendar="Julian">Frytag nechstverschynen</date>, am Kornmerckt,<lb/>
+                        <persName ana="#uf_PersonOpfer #uf_female">Ludj Harnisters stiefftochter</persName>, <seg ana="#uf_TatDiebstahl">ein seckell halber abgehouwen,<lb/>
+                        dorinnen zwen gulden gsin, und damit darvon wellen</seg>, ist er<lb/>
+                        daran ergriffen. <seg ana="#uf_Untersuchungshaft">Desshalben er inn gfenckniss gleyt.</seg> Nochdem er<lb/>
+                        aber durch die <term ana="#uf_SchlagwortSiebnerherren">Sybenherren</term> besybnet und an der <term ana="#uf_SchlagwortFoltern">marter erhalten</term><lb/>
+                        das er sonst nützit entwert, ouch anzeigt, das er uff dem<lb/>
+                        Schwartzwaldt inn der ërndt gsin, habe har inn herbst wellen,<lb/>
+                        und das im dry gsellen, under Loufemberg im holtz begegnet,<lb/>
+                        do haben die zwen zuo im gseyt, das der ein gëllt by im habe, er<lb/>
+                        sige ein narr, haben in also überredt, das er mit inen gewettet<lb/>
+                        und gespylt, und im vier gulden abgewonnen. Hatt man in<lb/>
+                        uff <date ana="#uf_DatumUrfehde" when="1566-09-09" calendar="Julian">Mentag den 9ten Septembris ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner<lb/>
+                        urphet gnediglichen wider ussglossen.</seg> <seg ana="#uf_StrafeAusweisung">Darby er ouch geschworen,<lb/>
+                        das er sich von statt und landt Basell hinweg thuon, und<lb/>
+                        darin onerloupt niemer mehr kommen solle.</seg></p><lb/>
+                        <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+<div ana="#uf_Eintrag">                         
+                       
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortRatsknecht">Pauli Bylger</persName> – <num>1</num></note>
+                            
+                            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Jocob</forename> <surname>Mëtzler</surname> von <placeName ana="#uf_OrtHerkunft" ref="Schnetzenhausen">Schnetzenhusen, am
+                            Bodensee, inn die Landtvogty Ravenspurg
+                            gehörig</placeName>, ein <roleName ana="#uf_Beruf">wagner knecht</roleName>.</persName></head><lb/>
+                            
+                            <p>Demnach und er uff <date ana="#uf_DatumTat" when="1566-09-09" calendar="Julian">Mentag noch Sant Verenen tag nechstver<lb/>
+                            schynen</date> <seg ana="#uf_TatAlkoholmissbrauch">sich mit wyn überladen</seg>, <seg ana="#uf_TatOrdnungsstörung">heym zogen tobet und gewütet,<lb/>
+                            ettliche böse schwür ussgossen</seg>, <seg ana="#uf_TatSachbeschädigung">und im spittal gegen sines meisters<lb/>
+                            huss über, ettlich schyben zerprochen, und sich gantz wyldt gestellt</seg><lb/>
+                            <seg ana="#uf_Untersuchungshaft">ist er gfencklichen angnommen</seg>, und als in der stattknecht angriffen<lb/>
+                            hatt er im schmëchlichen zuogeredt, er sige nit würdig das er<lb/>
+                            in füre. Nachdem nun die kuntschafft verhört, hatt man in uff<lb/>
+                            sin underthenige pitt, uff <date ana="#uf_DatumUrfehde" when="1566-09-11" calendar="Julian">Mittwochen den 11ten Septembris ditz 66<lb/>
+                            jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeiner urphet, gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeEntschädigungRückzahlung">das er<lb/>
+                            hie wider wercken möge, dorby er ouch geschworen, das er die<lb/>
+                            
+                                <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#154"/>
+                                <note rend="margin" change="#Nachtrag">+</note>
+                               
+                            schyben im spittal, so er zerprochen wider machen, und den<lb/>
+                            costen dieser thurnlösj und der kuntschafft halb uff geloffen abrichten<lb/>
+                            solle</seg>, <seg ana="#uf_StrafeEntschuldigung">hatt hiemit auch sich bekant, das er den stattknecht<lb/>
+                            onbillichen geschmëcht, er wüsse nützit anders von im denn alles<lb/>
+                            guots.</seg></p>
+                                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName><lb/>
+                                    s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+           
+           
+           
+           
+           
+           
+<div ana="#uf_Eintrag">            
+           
+                            
+    <note rend="margin" ana="#uf_Eingangsnotiz"><placeName ana="#uf_SchlagwortGefängnis">Thoubhüslin</placeName> – <num>1</num></note>
+                            
+                        <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_female">Elssbeth</forename> <surname>Trölerj</surname>
+                            von <placeName ana="#uf_OrtHerkunft">Bern</placeName></persName></head><lb/>
+                            
+                            <p><seg ana="#uf_TatAlkoholmissbrauch">Diewyl diese <term ana="#uf_SchlagwortProstitution">gmeyne metz</term> uff dem heyssen stein gsessen und<lb/>
+                            mit wyn überladen gsin</seg>, <seg ana="#uf_Untersuchungshaft">ist sy ins <term ana="#uf_SchlagwortGefängnis">Thoubhüslin</term> gleyt</seg> und uff<lb/>
+                            <date ana="#uf_DatumUrfehde" when="1566-09-25" calendar="Julian">Mittwochen den 25ten Septembris ditz 66 jars</date> <seg ana="#uf_Urfehdeeid">mit gmeyner urphet<lb/>
+                            gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeAusweisung">hatt dorby auch geschworen das sy sich<lb/>
+                            von statt und landt Basell hinweg thuon und darin onerloupt nit<lb/>
+                            kommen soll</seg> <seg ana="#uf_StrafeStrafandrohung">by peen des <term ana="#uf_SchlagwortHalseisen">halsysens</term> und <term ana="#uf_SchlagwortSchwemmen">schwemmens</term>.</seg></p><lb/>
+                              <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+
+
+
+
+
+ <div ana="#uf_Eintrag">
+                                
+     <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> - <num>1</num></note>
+                            
+                            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Jocob</forename> <surname>Vögtlj</surname> uff
+                            einem hoff genant inn <placeName ana="#uf_OrtWohnort" ref="Zullwil">Rotteris
+                            by Gylgenberg</placeName> sesshafft</persName></head>
+                            
+                            <p><seg ana="#uf_TatSpielen">Demnach und er vor <placeName ana="#uf_OrtTatort">Spalen thor</placeName> an offner strass, mit ettlichen<lb/>
+                            taglöneren, inn alle drü gespylt</seg>, ist er durch die <term ana="#uf_SchlagwortStadtknecht">stattknecht</term> ergriffen<lb/>
+                            <seg ana="#uf_Untersuchungshaft">und inn gfenckniss gleyt</seg>, und uff <date ana="#uf_DatumUrfehde" when="1566-09-23" calendar="Julian">Mentag den 23ten Septembris<lb/>
+                            ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet gnediglichen wider ussglossen</seg>,<lb/>
+                            <seg ana="#uf_StrafeGeldstrafe">und der stroff der <measure type="currency" quantity="5" unit="lbd">fünff pfunden</measure> gelossen</seg>.</p><lb/>
+                            <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+           
+           
+           
+           
+           
+           
+           
+    
+    
+<div ana="#uf_Eintrag">
+           
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> - <num>1</num></note>
+                            
+                            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Sigmundt</forename> <surname>Rüwelj</surname>
+                            von <placeName ana="#uf_OrtHerkunft" ref="Karsau">Carsouw by Bücken glegen</placeName></persName></head><lb/>
+                            
+                            <p>Diewyl dieser <term ana="#uf_SchlagwortAuffällig">junger gsell</term> so nit uber sechszechen jar alt, <seg ana="#uf_TatVagieren">ein tag oder<lb/>
+                            acht hie inn der statt umbher zogen, den Kuontzen gejagt,<lb/>
+                            und sich dess goucklens angnommen</seg> <seg ana="#uf_Untersuchungshaft">ist er inn gfenckniss gleyt</seg>, und<lb/>
+                            uff <date ana="#uf_DatumUrfehde" when="1566-09-23" calendar="Julian">Mentag den 23 Septembris diss 66 jars</date> <seg ana="#uf_Urfehdeeid">mit gmeyner urphet<lb/>
+                            gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeAusweisung">hatt darby auch geschworen, das er<lb/>
+                            sich von statt und landt Basell hinweg thuon, und darin onerloupt<lb/>
+                            nit kommen solle.</seg><lb/></p>
+                            <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+         
+   
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag">           
+
+    <note rend="margin" ana="#uf_Eingangsnotiz">  <persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> - <num>1</num></note>
+                            
+                            <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_female">Agnes</forename> <surname>Ysenmannj</surname>
+                            von <placeName ana="#uf_OrtHerkunft" ref="Lauwil">Luwyl</placeName></persName></head><lb/>
+                            
+                            <p>Die <seg ana="#uf_Vorinstanz #uf_SchlagwortEhegerichtEherichter">Herren Eerichter</seg> haben sy <seg ana="#uf_Untersuchungshaft">inn gfenckniss lossen legen</seg>, <seg ana="#uf_StrafeGeldstrafe">und umb<lb/>
+                            <measure type="currency" quantity="5" unit="lbd">5 lb</measure> gestrofft</seg>, <seg ana="#uf_TatUnrechtmässigesEheversprechen">von wegen das sy <persName ana="#uf_PersonOpfer"><forename ana="#uf_male">Ruodolffen</forename> <surname>Hëner</surname> von <placeName ana="#uf_OrtHerkunft" ref="Bretzwil">Brëtzwyl</placeName></persName><lb/>
+                            der ee angesprochen do aber sy gross eines kindts schwanger, und dasselb<lb/>
+                            kindt by einem, so der kügen hütet und <persName>Stoffell von Lanssen genant</persName><lb/>
+                            wirt, überkommen, und domit bemelten Ruodolffen Hëner betriegen wellen,<lb/>
+                            wie sy dann im examen bekantlich gsin.</seg> Ist uff <date ana="#uf_DatumUrfehde" when="1566-09-25" calendar="Julian">Mittwochen den 25<lb/>
+                            Septembris ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeiner urphet gnediglichen wider ledig<lb/>
+                            glossen.</seg></p><lb/>
+                             <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+
+
+
+
+
+                  
+            
+            
+            
+            <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#155"/>
+            <note rend="margin" change="#Nachtrag">+</note>
+
+<div ana="#uf_Eintrag"> 
+
+
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> - <num>2</num></note>
+                                
+                                 <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Balthassar</forename> <surname>Schmidt</surname> von <placeName ana="#uf_OrtHerkunft" ref="Gipf">Gipff uss dem
+                                Frickthal</placeName></persName>, und <persName ana="#uf_PersonTäter"><forename ana="#uf_female">Rosin</forename> <surname>Schmid</surname> sin <roleName ana="#uf_Verwandtschaftsgrad">eefrow</roleName></persName></head><lb/>
+                                
+                               <p> <seg ana="#uf_TatGotteslästerung">Disses par eelüth, so zuo Riehen sesshafft gsin, sindt von wegen<lb/>
+                                der widerteüffery <seg ana="#uf_Untersuchungshaft">inn gfenckniss glegen</seg></seg>, <seg ana="#uf_TatWiderstandgegenObrigkeit">diewyl sy aber uff irer<lb/>
+                                wyss verharret, und kein urphet wellen thuon</seg>, <seg ana="#uf_StrafeGeldstrafe">ist inen ire cleider<lb/>
+                                und darzuo acht pfundt und vierzechen schilling an müntz über<lb break="no"/>
+                                antwort</seg>, und hiemit inen, unserer Gnedigen Herren ordnung,<lb/>
+                                durch <persName><forename ana="#uf_male">Melchior</forename> <surname>Kruog</surname> </persName>den Substituten vorgelessen, und mit allem<lb/>
+                                ernst anzeigt worden, <seg ana="#uf_StrafeAusweisung">das sy sich den nechsten von statt und<lb/>
+                                landt Basell hinweg thuon, und darin onerloupt nit kommen<lb/>
+                                sollen</seg>, <seg ana="#uf_StrafeStrafandrohung">dann wo sy hierüber ergriffen, werde man sy <term ana="#uf_SchlagwortSchwemmen">schwemmen</term><lb/>
+                                und die ordnung an inen erstatten.</seg> Acten <date when="1566-09-27" calendar="Julian">Fritag den 27 Septem<lb break="no"/>
+                                bris, anno domini 66</date>.</p>
+                                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+            <!-- fixme: kein Datum urfehde, da die Urfehde verweigert wurde.. entlassung? was ist jetzt das ana von date? -->
+
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+<div ana="#uf_Eintrag">            
+                      
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> - <num>1</num></note>
+                                
+                                <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Felix</forename> <surname>Walther</surname> von <placeName ana="#uf_OrtHerkunft">Zürich</placeName>
+                                der <roleName ana="#uf_Beruf">Knecht <term ana="#uf_SchlagwortWirtshaus">Zuor Cronen</term></roleName></persName></head><lb/>
+                                
+                                <p>Alsdann ettlich steinmetzen, einandren Zuor Cronen geschlagen<lb/>
+                                und ein wyldt wessen ghept, und <seg ana="#uf_TatUngetreueAmtsführung">unser <term ana="#uf_SchlagwortRat">Gnedig Herren</term> dem<lb/>
+                                obersten Knecht befolchen, das man in beschicken und bericht von<lb/>
+                                im entpfachen solte, ist er nit erschynen</seg>, <seg ana="#uf_TatUngehorsam">sonder hatt zuo antwort<lb/>
+                                geben, man gange im wol als billich noch, als er inen</seg>, <seg ana="#uf_Untersuchungshaft">desshalben<lb/>
+                                er übernacht inn gfenckniss gleyt</seg>, und uff <date ana="#uf_DatumUrfehde" when="1566-10-06" calendar="Julian">Sontag den 6ten<lb/>
+                                Octobris ditz 66 jors</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet gnediglichen wider<lb/>
+                                ussglossen</seg>.<lb/></p>
+                                
+                                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+<div ana="#uf_Eintrag">      
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <persName ana="#uf_SchlagwortStadtknecht">Uolin</persName> - <num>1</num></note>
+                                
+                                 <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Mathias</forename> <surname>Meyger</surname>
+                                der <roleName ana="#uf_Beruf">student</roleName>, so yetzt <roleName ana="#uf_Beruf">Provisor uff Burg</roleName> gsin</persName></head><lb/>
+                                
+                               <p> <seg ana="#uf_Vorinstanz"><persName>Doctor Basilius Amerbach Rector</persName>, und die vier Herren Decani<lb/>
+                                einer erwürdigen universitet zuo Basell</seg>, <seg ana="#uf_Untersuchungshaft">haben (ergänzt: in) lossen uff <term ana="#uf_SchlagwortGefängnis">Sant<lb/>
+                                Albans thurn</term> inn gfenckniss legen</seg>, <seg ana="#uf_TatBewaffneteAuseinandersetzung">von wegen das er und<lb/>
+                                sonst ein student genant  [...] einandren nachts<lb/>
+                                zuo unzyten, by dess RichenHhoff, mit plossen gweren, muotwilliger<lb/>
+                                wyss geiagt</seg>, <seg ana="#uf_TatSachbeschädigung">inn die stein gehouwen</seg>, <seg ana="#uf_TatOrdnungsstörung">und die <term ana="#uf_SchlagwortNachbar">nochburen</term> on-
+                                ruwig gmacht</seg>. Ist uff <date ana="#uf_DatumUrfehde" when="1566-10-07" calendar="Julian">Mentag den 7 des Octobris ditz 66 jars</date><lb/>
+                                <seg ana="#uf_Urfehdeeid">mit gmeyner urphet gnediglichen wider ussglossen</seg>.<lb/></p>
+                                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName><lb/>
+                                s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+
+
+
+
+
+
+
+
+ <div ana="#uf_Eintrag"> 
+     <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortObersterKnecht">Brucker</persName> – <num></num>1</note>
+                                
+                                 <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Urban</forename> <surname>Ritter</surname> von <placeName ana="#uf_OrtHerkunft" ref="St.Gallen">Sant Gallen</placeName>
+                                ein <roleName ana="#uf_Beruf">müller knecht</roleName>, by Lienhart Sagenmüller
+                                dienend</persName></head>
+                                
+                               <p> Demnach und er uff einen Sontag sinem bruoder das gleydt<lb/>
+                                geben, und sonst zwen so auch sine bruoder, von Sant Jocob,<lb/>
+                                wider harin kert, und iren dry gegen der nacht inen<lb/>
+                                zwüschen dem Grëndell und dem Käppelin begegnet mit<lb/>
+                                <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#156"/>
+                                    <note rend="margin" change="#Nachtrag">+</note>
+                                sägessen, <seg ana="#uf_TatSchlägerei">ist bemelter Urban sampt sinen brüdern, mit denselben<lb/>
+                                drygen, die inen zuor statt uss begegnet, zuo unfriden kommen, das<lb/>
+                                sy zesammen geschlagen</seg>, darunder dann der <persName ana="#uf_PersonOpfer">knecht Zuom Rupff</persName><lb/>
+                                übel verwundet worden. <seg ana="#uf_Untersuchungshaft">Desshalben disser yetzt gfencklichen angnommen</seg><lb/>
+                                und uff <date ana="#uf_DatumUrfehde" when="1566-10-07" calendar="Julian">Mentag den 7 des Octobris ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet<lb/>
+                                gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeEntschädigungRückzahlung">hatt darby ouch geschworen, so in<lb/>
+                                der knecht Zuom Rupff oder andere, mit recht anlangen wurden,<lb/>
+                                das er inen eines rechtens solle sin.</seg><lb/></p>
+                                 <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName><lb/>
+                                  s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+      
+      
+      
+      
+      
+<div ana="#uf_Eintrag"> 
+      
+      
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"> <placeName ana="#uf_SchlagwortGefängnis">Thoubhüsslin</placeName> - <num>1</num></note>
+                               
+                              <head><metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_female">Verena</forename> <surname>Hertzogin</surname> von <placeName ana="#uf_OrtHerkunft" ref="Zug">Zug</placeName></persName></head>
+                                
+                                <p>Diewyl diese <term ana="#uf_SchlagwortProstitution">gmeyne mëtz</term> bym <placeName ana="#uf_SchlagwortWirtshaus #uf_OrtTatort">Wynhuss Zuom Keller an den Spalen</placeName><lb/>
+                                 <seg ana="#uf_TatAlkoholmissbrauch">uff der gassen glegen, gantz vollen wyns gsin</seg>, ist sy ins <term ana="#uf_SchlagwortGefängnis">Thoub<lb break="no"/>
+                                hüsslin</term> gleyt, und uff <date ana="#uf_DatumUrfehde" when="1566-10-19" calendar="Julian">Samstag den 19 des Octobris ditz 66<lb/>
+                                jars</date>, <seg ana="#uf_Urfehdeeid">mit gmeyner urphet, gnediglichen wider ussglossen</seg>, <seg ana="#uf_StrafeAusweisung">hatt darby<lb/>
+                                ouch geschworen, das sy sich von statt und landt Basell hinweg<lb/>
+                                 thuon, und darin onerloupt nit wider kommen solle</seg>, <seg ana="#uf_StrafeStrafandrohung">by peen des <term ana="#uf_SchlagwortHalseisen">halss<lb break="no"/>
+                                yssens</term> und <term ana="#uf_SchlagwortSchwemmen">schwemmens</term>.</seg><lb/></p>
+                                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName><lb/>
+                                s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+
+          
+            
+            
+            
+            
+            
+            
+<div ana="#uf_Eintrag"> 
+               
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> - <num>1</num></note>
+                               
+                                <head><metamark rend="Kringel">°</metamark><persName><forename ana="#uf_male">Veltin</forename> von <placeName ana="#uf_OrtHerkunft" ref="Glarus">Glaris</placeName> bürtig
+                                <term ana="#uf_SchlagwortAuffällig">hatt kein zuonammen wellen anzeigen</term>,
+                                ein <term ana="#uf_SchlagwortAuffällig">sechszechen jeriger knab</term></persName></head><lb/>
+                                
+                                <p><seg ana="#uf_StrafeKörperstrafe">Ist in <term ana="#uf_SchlagwortHalseisen">halsyssen</term> gestanden und mit <term ana="#uf_SchlagwortRuten">ruoten</term> ussgehouwen</seg>, von<lb/>
+                                wegen, das er <persName ana="#uf_PersonOpfer #uf_female">dess schindlers tochter zuo >Sant Alban, so <roleName ana="#uf_Beruf">ein<lb/>
+                                dienstmagt</roleName></persName>, <seg ana="#uf_TatDiebstahl">ein seckell abgeschnitten, darinnen <measure type="currency" quantity="5.5" unit="lbd">fünffthalb pfundt</measure><lb/>
+                                gsin</seg>, und als dieselb tochter in <term ana="#uf_SchlagwortWirtshaus">Zuor Tannen</term> gefunden und in darumb<lb/>
+                                angesprochen, hatt er sy geschnuoret, und gsagt sy liege. Biss der seckel<lb/>
+                                by im ergriffen, davon er harnoch gemelten <persName>Wolffgangen Schuomacher</persName><lb/>
+                                dry dick pfennig zuobehalten geben. Hatt uff <date ana="#uf_DatumUrfehde" when="1566-10-21" calendar="Julian">Mentag den 21ten<lb/>
+                                 Octobris ditz 66 jars</date>, <seg ana="#uf_Urfehdeeid">den innhalt gmeiner urphet</seg>, <seg ana="#uf_StrafeAusweisung">dorby ouch ge<lb break="no"/>
+                                schworen, das er sich den nechsten fünff myl wegs von statt und<lb/>
+                                landt Basell, hinweg thuon, und darin onerloupt nit kommen solle</seg>,<lb/>
+                                <seg ana="#uf_StrafeStrafandrohung">by <term ana="#uf_SchlagwortAuffällig">verlierung sines lybs und lebens</term></seg>.<lb/></p>
+                                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+
+            
+
+
+
+
+
+<div ana="#uf_Eintrag"> 
+
+    <note rend="margin" ana="#uf_Eingangsnotiz"><persName ana="#uf_SchlagwortRatsknecht">Bylger</persName> - <num>2</num></note>
+                                
+                            <head><metamark rend="Kringel">°</metamark><lb/>
+                                <metamark rend="Kringel">°</metamark><persName ana="#uf_PersonTäter"><forename ana="#uf_male">Wolffgang</forename> <surname>Schumacher</surname></persName> und <persName ana="#uf_PersonTäter"><forename ana="#uf_female">Gladina</forename>
+                                <surname>Fabrj</surname> sin <roleName ana="#uf_Verwandtschaftsgrad">eefrow</roleName>, beyde von <placeName ana="#uf_OrtHerkunft">Newys</placeName></persName>.</head><lb/>
+                                
+                               <p> Alsdann <seg ana="#uf_FrüheresUrfehdeverfahren">obgenanter Veltin von Glaris</seg>, ein seckell abgehowen<lb/>
+                                und gemelten Wolffgangen dry dick pfennig davon zuobehalten geben,<lb/>
+                                und Gladina sin eefrow, den seckell anfencklich dem jungen knaben<lb/>
+                                abgnommen, <seg ana="#uf_TatVorteilsnahme ">sindt sy verargwont, als ob sy in underwyssen hetten</seg>,<lb/>
+                                <seg ana="#uf_Untersuchungshaft">desshalben sy inn gfenckniss gleyt</seg>, und uff <date ana="#uf_DatumUrfehde" when="1566-10-21">Mentag den 21 Octobris<lb/>
+                                nochdem obgenanter Veltin sy beyde, entschlagen und ledig gsagt,<lb/>
+                                disses 66 jors</date>, <seg ana="#uf_Urfehdeeid"><seg ana="#uf_StrafeAusweisung">mit gmeyner urphet wider ussglossen</seg>. Habent darby<lb/>
+                                ouch geschworen, das sy sich von statt und landt Basell hinweg <lb/>
+                                
+                                
+                                    <pb facs="http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#156"/>
+                                    <note rend="margin" change="#Nachtrag">+</note>
+                                
+                                thuon, und darin onerloupt nit wider kommen noch sich finden<lb/>
+                                lossen sollen,</seg> <seg ana="#uf_StrafeStrafandrohung">by peen dess <term ana="#uf_SchlagwortHalseisen">halsysens</term>, der <term ana="#uf_SchlagwortRuten">ruoten</term> und <term ana="#uf_SchlagwortSchwemmen">schwemmens</term>.</seg></p><lb/>
+                                <p ana="#uf_NotarialSubscription"><persName ana="#uf_PersonNotar"><forename ana="#uf_male">Niclaus</forename> <surname>Im Hoff</surname> <roleName ana="#uf_Beruf">Not<ex>ariu</ex>s</roleName></persName>s<ex>ub</ex>s<ex>crip</ex>s<ex>it</ex></p><lb/></div>
+                                
+      
+            
+    <!-- fixme:  Ortschaft newys ist unklar.. -->
+            <!-- fixme:  verdacht auf Anstiftung zum Diebstahl?? -->
+            
+        </body>
+        <back>
+            <listPlace>
+                <place xml:id="Kleinbasel">
+                    <placeName>Kleinbasel</placeName>
+                </place>
+                <place xml:id="Liestal">
+                    <placeName>Liestal</placeName>
+                    </place>
+                <place xml:id="Lausanne">
+                    <placeName>Lausanne</placeName>
+                </place>
+                <place xml:id="Bettigen">
+                    <placeName>Bettigen</placeName>
+                 </place>
+                <place xml:id="Ramlinsburg">
+                     <placeName>Ramlinsburg</placeName>
+                </place>
+                <place xml:id="Bubendorf">
+                    <placeName>Bubendorf</placeName>
+                </place>
+                <place xml:id="Willisau">
+                    <placeName>Willisau</placeName>
+                </place>
+                <place xml:id="Heimiswil">
+                    <placeName>Heimiswil</placeName>
+                </place>
+                <place xml:id="Moudon">
+                    <placeName>Moudon</placeName>
+                </place>
+                <place xml:id="Vouvry">
+                    <placeName>Vouvry</placeName>
+                </place>
+                <place xml:id="Solothurn">
+                    <placeName>Solothurn</placeName>
+                </place>
+                <place xml:id="Delémont">
+                    <placeName>Delémont</placeName>
+                </place>
+                <place xml:id="Rottweil">
+                    <placeName>Rottweil</placeName>
+                </place>
+                <place xml:id="Rheinfelden">
+                    <placeName>Rheinfelden</placeName>
+                </place>
+                <place xml:id="Grandson">
+                    <placeName>Grandson</placeName>
+                </place>
+                <place xml:id="St.Florin">
+                    <placeName>St.Florin</placeName>
+                </place>
+                <place xml:id="Waldenburg">
+                    <placeName>Waldenburg</placeName>
+                </place>
+                <place xml:id="Genf">
+                    <placeName>Genf</placeName>
+                </place>
+                <place xml:id="Grenzach">
+                    <placeName>Grenzach</placeName>
+                </place>
+                <place xml:id="Muttenz">
+                    <placeName>Muttenz</placeName>
+                </place>
+                <place xml:id="Brugg">
+                    <placeName>Brugg</placeName>
+                </place>
+                <place xml:id="Kaiserstuhl">
+                    <placeName>Kaiserstuhl</placeName>
+                </place>
+                <place xml:id="Zürich">
+                    <placeName>Zürich</placeName>
+                </place>
+                <place xml:id="Benken">
+                    <placeName>Benken</placeName>
+                </place>
+                <place xml:id="Witterswil">
+                    <placeName>Witterswil</placeName>
+                </place>
+                <place xml:id="Basel">
+                    <placeName>Basel</placeName>
+                </place>
+                <place xml:id="Backnang">
+                    <placeName>Backnang</placeName>
+                </place>
+                <place xml:id="Tiengen">
+                    <placeName>Tiengen</placeName>
+                </place>
+                <place xml:id="Schaffhausen">
+                    <placeName>Schaffhausen</placeName>
+                </place>
+                <place xml:id="Arisdorf">
+                    <placeName>Arisdorf</placeName>
+                </place>
+                <place xml:id="Wylen">
+                    <placeName>Wylen</placeName>
+                </place>
+                <place xml:id="Schnetzenhausen">
+                    <placeName>Schnetzenhausen</placeName>
+                </place>
+                <place xml:id="Zullwil">
+                    <placeName>Zullwil</placeName>
+                </place>
+                <place xml:id="Karsau">
+                    <placeName>Karsau</placeName>
+                </place>
+                <place xml:id="Lauwil">
+                    <placeName>Lauwil</placeName>
+                </place>
+                <place xml:id="Bretzwil">
+                    <placeName>Bretzwil</placeName>
+                </place>
+                <place xml:id="Gipf">
+                    <placeName>Gipf</placeName>
+                </place>
+                <place xml:id="St.Gallen">
+                    <placeName>St.Gallen</placeName>
+                </place>
+                <place xml:id="Zug">
+                    <placeName>Zug</placeName>
+                </place>
+                <place xml:id="Glarus">
+                    <placeName>Glarus</placeName>
+                </place>
+                
+                
+                
+                
+                
+                <!-- fixme: lavodry nicht klar bestimmbar. was tu ich jetzt? -->
+                <!-- fixme: St.Florin gibts in Lichtenstein. steht jeodhc "by Morse glegen" ... es gibt einen Moorsee in Österreich-->
+                <!-- fixme: jenff= Genf?-->
+                <!-- fixme: Zullwil: Ruine Gilgenberg steht in Zullwil-->
+                <!-- fixme: Zullwil: karau: im Text steht "carsouw bi bücken glegen"... habe kein bücken in der nähe von karsau gefunden-->
+                
+            </listPlace>
+        </back>
+    </text>
+</TEI>

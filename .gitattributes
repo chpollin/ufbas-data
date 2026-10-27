@@ -1,2 +1,3 @@
-# The published datastreams are kept byte for byte as GAMS serves them.
+# The published datastreams are kept byte for byte as GAMS serves them. The rule covers
+# all files, so Git converts no line endings, and every other file is kept with LF.
 * -text

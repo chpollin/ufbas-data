@@ -1,103 +1,116 @@
 ---
 title: Data
 project:
-  name: Urfehdebücher der Stadt Basel data
+  name: Urfehdebücher der Stadt Basel
   repository: https://github.com/chpollin/ufbas-data
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Datengrundlage
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/data
 status: draft
-created: 2026-10-27
+created: 2026-09-23
 updated: 2026-10-27
+authors: [Christopher Pollin]
+generated-with: Claude Code (Claude Opus 5.5)
+topics: ["[[TEI XML]]", "[[RDF]]", "[[SKOS]]"]
+related: [domain.md, architecture.md, specification.md, ../snapshots/exploration-rdf-2017-2026-09-29.md]
+knowledge-sources:
+  standards:
+    TEI P5: https://tei-c.org/guidelines/p5/
+    Web Annotation Vocabulary: https://www.w3.org/ns/oa
+    SKOS: https://www.w3.org/2004/02/skos/core
 ---
 
 # Data
 
-The published TEI encodes Urfehdebuch X, archival reference StABS Ratsbücher O 10, as a whole-book diplomatic transcription with inline annotations and a place register. The manuscript description gives the period 1563-01-03 to 1569-12-04. Assertions below concern the downloaded edition, not the historical completeness or accuracy of its testimony.
+The whole book is one TEI document, the `TEI_SOURCE` of `o:ufbas.1563`, kept as `tei/ufbas.1563.xml`, with the category taxonomy as a second TEI document, `o:ufbas.kategorien` in `tei/ufbas.kategorien.xml`. Both files are identical to the published datastreams and are the ingest source of their objects, which carry their PID in `idno[@type='PID']`. The ingest transformation `gams/ufbas-TORDF.xsl` turned every annotated span into the RDF published in 2017. `gams/ufbas-TORDF-ontology.xsl` derives the refactored RDF of the domain ontology from the same TEI, which the search queries and the Exploration view read once the operator's re-ingest has published it. What the entries, categories and marginal notes mean is in [domain.md](domain.md).
 
-## Source and reproduction
+## Sources
 
-[TEI_SOURCE](https://gams.uni-graz.at/archive/objects/o:ufbas.1563/datastreams/TEI_SOURCE/content) was retrieved on 2026-10-27 into [data/ufbas.1563.xml](../data/ufbas.1563.xml), without serialisation or line-ending conversion. Its SHA-256 is `8b3aaac90296eae8f347df396ad1d0777ea47a8aa5aada536b8a207aafbee1af`. It is byte-identical to the earlier package copy [tei/ufbas.1563.xml](../tei/ufbas.1563.xml). The repository's CC BY-NC-SA 4.0 licence continues to apply to the data.
+- Edition TEI. The transcription comes from a Basel course in 2012, the encoding from a course in 2016 whose TEI part files are kept in `source-material/course-2016/`. The edition combined them into one document and inherited their slips (see [Data quality](#data-quality)). Content licence CC BY-NC-SA 4.0.
+- Taxonomy. `o:ufbas.kategorien` is canonical. `source-material/kategorien.xml` and `kategorien.skos.xml` are older SVN states. Compared by category id with `tei/ufbas.kategorien.xml`, `kategorien.xml` lacks `uf_SchlagwortAndrohungTodesstrafe`, `uf_SchlagwortMeerwunder` and `uf_TatWiedertaeuferei`, and `kategorien.skos.xml` lacks `uf_TatWiedertaeuferei` and has two group concepts of its own, `Personeneigenschaften` and `Verfahrensseigenschaften`.
+- RDF. The `RDF` datastream of `o:ufbas.1563`, produced at ingest by `ufbas-TORDF.xsl` in 2017. With the update the `TORDF` of `cirilo:ufbas` becomes `ufbas-TORDF-ontology.xsl`, and the re-ingest replaces the datastreams of both TEI objects with the refactored RDF ([architecture.md](architecture.md#ingest)).
+- Schema. The `ONTOLOGY` datastream of `o:ufbas.schema`, an OWL and RDFS declaration of the `uf:` vocabulary from 2017, which the transformation does not reference.
 
-Run the standalone inventory with its inline dependency metadata:
+This repository, ufbas-data, packages these datastreams byte for byte as GAMS served them on 2026-09-24 in `tei/` and `rdf/`, together with the derived exploration and facsimile datasets in `derived/`, under CC BY-NC-SA 4.0 ([README.md](../README.md#files)). A new release copies the current datastreams and datasets there. The analysis of the TEI retrieved again on 2026-10-27 is [tei-analysis.md](tei-analysis.md). The older repository https://github.com/chpollin/Overhaul-UFBAS holds an LLM experiment of 2023 with transformed copies and an earlier ontology draft.
 
-```powershell
-uv run scripts/analyze_tei.py data/ufbas.1563.xml --self-check --output generated/tei-analysis.json
-```
+## Edition TEI
 
-The generated JSON is the source of truth for counts and anomaly lists. It records the source hash, source line numbers, element IDs, attributes and example XML. It is a reproducible output and is excluded from version control. Strict parsing succeeds with external entity expansion disabled. No RELAX NG, ODD or Schematron validation has been performed. The script deliberately uses strict parsing at this validation boundary, overriding the general recovery default.
+The text is transcribed diplomatically with `lb`, `ex`, marginal notes (`note[@rend='margin']`), additions, deletions and hand shifts. Each entry is `div[@ana='#uf_Eintrag']` with `xml:id="Eintrag-N"`. Inside it `@ana` on `persName`, `placeName`, `roleName`, `forename`, `seg`, `term`, `date`, `note` and `p` points to categories, and each annotated element carries an `xml:id` of the form `<Category>-N`. Dates carry `@when` and `@calendar="Julian"`, durations `@dur`, amounts are `measure` with `@quantity`, `@unit` and `@type="currency"`, and `placeName/@ref` points into the place list `back/listPlace`, whose entries carry a modern name only.
 
-The existing presentation repository has a broader data description at `ZIMLAB/ufbas/knowledge/data.md` and domain interpretations in `knowledge/domain.md`. They guided example selection. Only findings independently checked in this TEI are asserted here.
+Page breaks carry `pb/@facs` with a URL of the former image viewer, `http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#N`. The image number `N` is no folio number, since the images include two unfoliated pages (`@n="kA"`), the inserted leaf 32a (`@n="32ar"`, `"32av"`) and a gap of two images after fol. 99v. The edition page counts the page breaks without `@n` from the first one, fol. 1r, and shows `@n` where it exists. This count agrees with every folio the editors cite in their cross-reference notes and with fol. 69r and fol. 3r of the About page. Until 2026-09-24 the page showed `N - 18`, which was wrong on every page.
 
-## Structure and analytical units
+The former viewer no longer answers. The Digitaler Lesesaal of the Staatsarchiv holds the volume as record 315538 and answers every non-interactive request with a proof-of-work block. Its IIIF manifest, saved once from a browser on 2026-09-24, is kept as `source-material/dls-manifest-245856.json`. It has 315 canvases, and canvas `N` shows the image `Ratsbuecher_O_10_NNNN` for every `N`, which continues the former image numbers (checked at images 19 and 30 against the TEI, the first text page and a blank page). The images are served outside the block from a public object store as IIIF Image API 2 level 0, with the full image, 2048px tiles and a 100px thumbnail per page, under paths with random hash prefixes that only the manifest gives, and with the content type `application/binary`. The rights statement is StABS gemeinfrei. The permalinks of the Lesesaal address the volume only. `data/ufbas-facsimile.json` carries the image service per image number, derived from the manifest ([testing.md](testing.md#facsimile-dataset)). An older copy of the images without images 23 to 50 is the HTR ground truth set on Zenodo (doi:10.5281/zenodo.5153263).
 
-The root is `TEI` in `http://www.tei-c.org/ns/1.0`. The header describes title, publication, manuscript and encoding context. `text/body` carries entries and intervening headings, page breaks and marginal material. `text/back/listPlace` carries normalised place labels.
+The TEI does not encode the type of an entry. Five rules reproduce the special types the About page counts (Urfehdbrief, Aussage, Entwurf, abgebrochen, and two fragments that continue another entry), listed in `research-artefacts/entry-types.tsv`, which `ufbas-TORDF-ontology.xsl` reproduces as `ufbas-ont:entryType`. The About page counts 597 regular Urfehden where the TEI holds 604, and no criterion reproducing 597 was found.
 
-An ordinary entry is `div[@ana="#uf_Eintrag"]` with an `xml:id`, a heading naming the accused, narrative paragraphs and often a notarial subscription. The body also contains unmarked divisions, including annual headings and a substantive proceeding immediately after `Eintrag-188`. They must be inspected before defining extraction coverage.
+## Category taxonomy
 
-`Eintrag-132` contains `p[@ana="#uf_Eintrag"][@xml:id="Eintrag-133"]`. This paragraph narrates the proceeding introduced by its parent's heading. Treating every entry marker as a separate independent record would duplicate its narrative, while selecting only marked divisions would conceal this inconsistency. An entry marker count therefore does not establish the number of historical proceedings.
+`teiHeader/encodingDesc/classDecl/taxonomy[@xml:id='Urfehdekodierung']` holds nested `category` elements with `catDesc/term` and `catDesc/gloss`. The groups Person, Ort, Tat, Strafe, Datum and Schlagwort have subcategories, and flat categories cover person attributes, procedure and the parts of a record. The group nodes themselves are never used as annotations. Several glosses carry coding rules, for example Ungehorsam against a concrete order versus Widerstand gegen Obrigkeit in general.
 
-`pb/@facs` points to page images, including breaks inside entries. A page break may precede an entry as a body sibling, so an entry's initial page must be obtained from document order. The source retains `lb`, `lb[@break="no"]`, `ex`, `add`, `del`, scribal changes and marginal notes. These distinctions matter to a readable text export. The inventory's whitespace-collapsed snippets are diagnostic previews and do not constitute a transcription export.
+## RDF
 
-## Annotation and examples
+The RDF published in 2017 uses `uf: http://gams.uni-graz.at/ufbas/#`, `g2o: http://gams.uni-graz.at/ontology/#`, `oa:`, `skos:` and `tei:`.
 
-`@ana` is a whitespace-separated set of tokens. `Eintrag-2` contains a term marked `#uf_SchlagwortFrauenarbeit #uf_SchlagwortSpinnen`. Exact-string matching would miss either category. Most `#uf_…` identifiers have no definition in this document. Their labels and hierarchy belong to the separate [category TEI](../tei/ufbas.kategorien.xml), whose contents have not been validated in this investigation. Absence of a category definition from the edition alone does not establish a broken category reference.
+- Every annotated element becomes a span resource `o:ufbas.1563#<xml:id>` with `g2o:inhalt` (text), `g2o:appears-on` (page, a generated identifier) and `g2o:isPartOf`.
+- Every annotation becomes a resource typed `uf:<Category>` with the URI `#<Category>-<xml:id>` and `oa:hasTarget` to its span. Nested annotations are linked with `uf:has<Category>` from the nearest annotated ancestor, and every entry is `uf:Eintrag` with one such link per annotation.
+- Persons carry `uf:forename`, `uf:surname` and `uf:gender`, dates `tei:when` as plain literals. Normalised places are `uf:Ort` nodes with `skos:prefLabel`, shared by all their occurrences.
 
-In `Eintrag-0`, separate spans identify the accused, an accomplice and a victim, a fraud allegation, disobedience, detention, the oath and an admonition. This permits a record of co-occurring annotations with their original spans. It does not by itself justify assigning each offence or sanction to a particular named person.
+The model conflates annotation and entity, encodes the category a second time in the property name, creates a second `uf:Person` node for every person, and drops durations, amounts, the Julian calendar, folio and facsimile, hand shifts and additions. The editorial notes survive only as part of the entry text. Its SKOS carries the misspelled `skos:defintion` and no concept scheme, and `source-material/kategorien.skos.xml` uses the nonexistent `skos:Schema`. `g2o:` is an undocumented predecessor of the GAMS ontology `o:gams-ontology` (namespace `http://gams.uni-graz.at/o:gams-ontology#`, version 0.2 of 2021-07-06), whose `textualContent` and `isPartOf` take the place of `g2o:inhalt` and `g2o:isPartOf`. For `g2o:appears-on` it has no term.
 
-In `Eintrag-2`, `#uf_OrtHerkunft` marks an origin and `#uf_OrtWohnort` marks a residential association. The text also contains `#uf_TatAlkoholmissbrauch`, `#uf_Untersuchungshaft`, `#uf_Urfehdeeid` and `#uf_StrafeAusweisung`. The oath date has `when="1563-01-19"` and `calendar="Julian"`. A record can retain both the encoded date and its source wording. Calendar conversion requires an explicit rule.
+The refactored RDF of `ufbas-TORDF-ontology.xsl` replaces this model with the domain ontology of [domain.md](domain.md#domain-ontology). Its data use only terms of `data/ontology/ufbas.ontology.ttl` of gams-www and the GAMS ontology, its concept scheme spells `skos:definition` correctly and has a `skos:ConceptScheme`, and `test/rdf-ontology.test.mjs` and `test/skos.test.mjs` hold it to the TEI ([testing.md](testing.md#guarantees)).
 
-A `persName/@xml:id` anchors a textual mention. No cross-entry identity relation is supplied by those identifiers. Nested person mentions occur, for example in `Eintrag-3`, where a spouse is named inside the accused person's description. Descendant text or gender annotations cannot safely be attributed wholesale to the outer person.
+## RDF as source of the Exploration view
 
-`placeName/@ref` can link a historical spelling to `back/listPlace/place/@xml:id`. Roles such as origin, residence and offence location are distinct analytical relations. The place register supplies names and editorial notes, without a general coordinate model.
+The Exploration view reads the refactored RDF through `query:ufbas.exploration` (ADR-21), whose text is `gams/query/ufbas.exploration.sparql`. It answers one row per entry with the entry IRI, the earliest coded Urfehde date, the category ids of every span of the entries of its proceeding, the offenders as gender and name text, and the places of origin of the offenders in the place list. A fragment documents the proceeding of the entry it continues and has no row of its own, so its categories count for that entry (ADR-12). The query needs no chains, since every span carries its categories through `ufbas-ont:category` and belongs to its entry through `gams:isPartOf`.
 
-## Verified irregularities and limitations
+`test/exploration-rdf.test.mjs` runs the query text with Oxigraph on the refactored RDF that `ufbas-TORDF-ontology.xsl` derives from `tei/`, and compares every value the view shows with the TEI reference below. It accepts no difference, so a change of the query, of the derivation or of the TEI shows as a failure and is documented here before the view shows it.
 
-- XML IDs are unique in this source. Some local place references nevertheless have no target, including `#Modon`, `#Sursee` and `#Stuttgart`. The generated report enumerates every occurrence.
-- `placeName-564` uses `ana="#Ormalingen"` for the reading “Normalingen”, although place links normally use `@ref`. A whitespace tokeniser would accept the token, but its intended role still needs interpretation.
-- `Urfehdeeid-228` is an empty annotated `seg`. Empty gender-marked forenames and other empty annotations also occur. Annotation presence and recoverable annotated text are separate observations.
-- Annotated elements occur outside marked entries. An entry-only pipeline needs an explicit coverage report for them.
-- Oath dates go backwards in document order. This establishes that source order cannot be assumed chronological. It does not establish that each reversal is a dating error.
-- Calendar values include `Julian` and `#Julian`. Other dates have no calendar attribute. Absence must remain distinguishable from an explicit Julian value.
-- A currency measure spells `type="curreny"`. Other currency measures omit quantity or unit. The untyped “zwen sester kernen” is a grain quantity, so missing currency metadata there is not itself an error. The report's measure review candidates require this semantic distinction.
-- Monetary quantities also occur in loans and the narrative of an allegation, as in `Eintrag-0`. Summing every currency measure would conflate loans, disputed values and sanctions. Conversion across historical units remains outside this inventory.
+From 2026-09-29 to 2026-10-21 the view read the RDF of 2017. Its nested links, its shared place nodes and its gender rule lost some keywords, one offender with the mixed gender composition of the entry, and victim and other person roles, and gave two offenders a gender from another person's forename. The query of that time and the losses are recorded in [exploration-rdf-2017-2026-09-29.md](../snapshots/exploration-rdf-2017-2026-09-29.md). The published RDF keeps them until the re-ingest.
 
-## Research possibilities
+The TEI reference is built by `local-test-build/exploration-data.xsl` (XSLT 2.0, JSON written as text), run by `local-test-build/make-exploration-data.mjs` on the two TEI documents. It holds `categories` (every category with a term, with `id`, `term`, `gloss` and the `group` of its top-level ancestor or `Weitere`) and `entries` (per entry `id`, Urfehde `date`, `folio`, `offenders` with `label` and `gender`, and `annotations` with `category` and `text`), with a fragment merged into the entry it continues. Labels follow `uf:label` of `ufbas-object.xsl` and leave out deleted text. The tests derive it in memory, and the script writes it to `local-test-build/build/` for the ufbas-data package.
 
-The source supports exploration of annotated offence and sanction co-occurrence, coded oath dates, references to origin and residence, and the relation of diplomatic text to page images. These are descriptions of the edition's recorded material. Claims about crime prevalence, individual careers, causal relationships or complete populations require additional source criticism and identity work.
+Its gender rule differs from the derivation. `exploration-data.xsl` reads the tokens of the person and of its own forenames together, and `#uf_male` among them wins. `ufbas-TORDF-ontology.xsl` takes the token on the person where there is one and the tokens of its own forenames only otherwise. Both agree on the gender composition of every entry, which `test/rdf-ontology.test.mjs` and `test/exploration-rdf.test.mjs` compare, so the difference shows in no current value (inference from the passing tests). It would show for a person coded `#uf_female` with a forename coded `#uf_male`.
 
-An initial derived record could retain source hash, entry anchor, source order, page context, original date attributes, annotation tokens and span anchors. Person mentions and place mentions would remain separate linked records. This is a proposal pending agreement on the research question.
+## Data quality
 
-## Test strategy for discussion
+The refactoring changes no content, so every finding below stays as published. Derived layers mark them, and they stay documented here (ADR-16).
 
-The following checks separate computational contracts from source observations. They are not yet an accepted processing specification.
+Dates whose `@when` contradicts the written date, checked with the Julian weekday of the written form:
 
-| Layer | Proposed check | Example and expected treatment |
-|---|---|---|
-| Ingest | Verify source hash for this fixed fixture, XML well-formedness, TEI namespace and required body | Corrupt XML fails. A changed upstream hash triggers review rather than an assertion of historical error. |
-| Inventory | Repeated runs produce identical reports, preserve source bytes and retain anomaly anchors | Missing place targets remain listed, even when strict parsing succeeds. |
-| Segmentation | Each source span is covered once or reported as unassigned | The paragraph `Eintrag-133` inside `Eintrag-132` and the unmarked proceeding after `Eintrag-188` form mandatory regression cases. Their extraction policy still needs agreement. |
-| Text rendering | Preserve inline text and tails and apply explicit line-break and editorial rules | `ge<lb break="no"/>botten` in `Eintrag-0` should render as “gebotten” in a reading text. Ordinary line breaks, expansions and deletions require separately agreed expectations. |
-| Annotation | Split multi-token values, retain empty spans, resolve categories against the category file | The dual category in `Eintrag-2` yields both tokens. `Urfehdeeid-228` remains a recorded empty annotation. |
-| Person scope | Keep nested mentions and their attributes distinct | The spouse mention in `Eintrag-3` must not supply attributes to the accused person. |
-| Dates and places | Preserve original values and classify unresolved or uncertain data | A backwards date remains recorded. An unresolved place yields a visible unresolved link. |
-| Exports | Maintain traceability and reconciliation with source coverage | Every exported assertion points to a source anchor, and no unexplained source span silently disappears. |
+- Urfehde dates where the written weekday fits the written date. `Eintrag-155` "Donstag den 24 May ditz 65 jors" coded 1565-04-25, `Eintrag-232` "Mittwoch den 24 Octobris ditz 65 jors" coded 1565-11-24, `Eintrag-257` "Sambstag den 5ten Jenners ditz 66 iors" coded 1566-01-01, `Eintrag-266` "Sambstag den 16 Hornungs ditz 66ten jars" coded 1566-02-14, `Eintrag-270` "Mittwochen den 20 tag Hornungs diss 66 jors" coded 1566-02-22, `Eintrag-476` "Mittwochen den 26 Meygens ditz 68 jars" coded 1568-04-26.
+- `Eintrag-505` on fol. 91r among the entries of 1568 has one Urfehde date, "Sambstag den 7 Augustj ditz 68 jars" coded 1563-08-07. The same wording in `Eintrag-506` is coded 1568-08-07. An earlier reading of two dates in `Eintrag-505` was wrong.
+- `Eintrag-513` "Donstag den nündten Septembris" coded 1568-09-15, where the Julian weekday confirms the written 1568-09-09.
+- `Eintrag-535` "ersten tag Jenners ditz 68 jars" and `Eintrag-536` "Mentag den 17 Jenners ditz 68 jars" write the year 68 among the entries of January 1569 and are coded 1569. `Eintrag-622` writes "den 30ten Novembris" coded 1569-11-28.
+- `Eintrag-102` and `Eintrag-490`, where written weekday and date disagree with each other, so the manuscript may be wrong.
+- `Eintrag-103`, `Eintrag-111`, `Eintrag-143`, `Eintrag-318`, `Eintrag-328`, `Eintrag-438`, `Eintrag-453`, `Eintrag-563` and `Eintrag-584`, where the written weekday fits neither the written nor the coded date, for example `Eintrag-143` "Mittwochen den 15 May ditz 65 jars" coded 1565-05-15, a Tuesday in the Julian calendar.
+- `DatumTat-36` "heyligen Wienacht tag" coded 1656-12-25 for 1565-12-25, digits transposed. `DatumFrist-19` "biss Sambstag nechstkünfftig" coded 1667-10-18 for 1567-10-18. `DatumTat-37` "uff den Nüwen Jors tag" coded 1566-01-10, after the Urfehde of 1566-01-04. `DatumTat-23` "Mentag nach dem Nüwen Jar" coded 1565-01-03 before an Urfehde of 1564-01-26.
 
-For later processing, use a small human-reviewed reference set drawn from these real examples and ordinary entries. Include multi-person entries, page-spanning entries and editorial additions. Expected results should be written independently of the transformation. Regression checks should exercise the actual extractor. Pure utility checks may use synthetic inputs for malformed XML and other boundary failures.
+`ufbas-TORDF-ontology.xsl` writes the contradictions it can decide by rule as `ufbas-ont:dateConflict` with a `ufbas-ont:dateSuggested` beside the coded value, and `test/rdf-ontology.test.mjs` holds the list to this section. Its weekday rule found `Eintrag-513` on 2026-10-21 and marks it so. The nine entries of the last item, found in the same session, carry no conflict in the derived data.
 
-The optional `--self-check` exercises repeatability, unchanged source bytes, documented source anomalies and rejection of malformed XML, a wrong namespace and DTD declarations against the frozen source hash. It does not implement segmentation, text rendering, schema validation or a historical accuracy test.
+Markup:
 
-## Open questions
+- The Urfehde of a gatekeeper after `Eintrag-188` stands in a `div` without `ana` and `xml:id`, so every count by entry leaves it out. A `p` inside `Eintrag-132` carries `ana="#uf_Eintrag"` and `xml:id="Eintrag-133"`, although it is the text of `Eintrag-132`. Both slips are already in the 2016 course files.
+- Twenty marginal notes are encoded without `#uf_Eingangsnotiz`, twelve of them with guard names, and the category of a guard is sometimes wrong (Köferlj as Stadtknecht, Rorer as Oberster Knecht).
+- `placeName-564` carries `#Ormalingen` in `@ana`, one `@ref` reads `" #Liestal"`, and references to Modon, Dietisberg, Rapperwil, Intzlingen, Bülach, Laufen, Sursee, Oberderdingen, Appenzell, Stuttgart and Birmenstorf point to ids missing from the place list.
+- The group node Person is used as a category four times (`Person-499`, `Person-1484`, `Person-1488`, `Person-1491`), the other group nodes never. `uf_Eintrag` and `uf_Eingangsnotiz` have no `catDesc`.
+- Some annotated elements are empty, among them `Urfehdeeid-228`, `TatUnrechtmässigesEheversprechen-7` and several gender-coded forenames, so their spans carry no text.
+- Some `measure` elements lack `@quantity` ("hundert gulden, oder ettlich mehr", "ettliche müntz", "5 lb") or `@unit` ("zwentzig toppell fierer"), one reads `type="curreny"` and one has no type. One date reads `calendar="#Julian"`.
+- Some annotated elements stand outside any entry, the Urfehde after `Eintrag-188` and some subscriptions, so every derivation by entry leaves them out. Some marginal notes write the count as plain text ("-1") or as "c".
+- `Eintrag-439` breaks off, so its proceeding has no part.
+- For `Eintrag-176` and `Eintrag-376` the reading of the RDF of 2017 ([exploration-rdf-2017-2026-09-29.md](../snapshots/exploration-rdf-2017-2026-09-29.md)) that a forename of another person gives the offender a gender is doubtful. In 176 "Peterhans" is coded as surname with `#uf_male` and "Helg" as forename, which looks like a swap, and in 376 the inner `persName` "Hans Anthonj" appears to be the offender's own forenames (open question).
+- Currency units. `kr` stands for Kronen, a reading as Kreuzer would be wrong. `d-st` holds pounds in Stebler money, `d` is also used for Dickpfennig, and `lbd` also for gulden ([domain.md](domain.md#money)).
+- "Michell" Nollinger in `Eintrag-274` is tagged `#uf_female`. Some offenders carry no gender.
+- The edition TEI holds em spaces (U+2003). SaxonJS matches them with `\s` in a regular expression and Saxon for Java does not, so a derivation that relies on `\s` gives different texts in the two processors (finding of `local-test-build/saxon-check.mjs` on 2026-10-21). `ufbas-TORDF-ontology.xsl` therefore names the whitespace characters of XML where it would use `\s`.
+- `@rend` of marginal notes also reads `nargin` and `marigin`, and the editorial notes write uncertain readings in three spellings ("Lesung unsicher", "unsichere Lesung", "Unsichere Lesung"), which stay as published.
+- Several Strafe categories are applied inconsistently, above all Urteil ohne Strafe, Wiedergutmachung and Entschädigung ([domain.md](domain.md#sanctions)).
 
-- Which question should determine the first export, offence and sanction patterns, spatial relations, or close reading with page context?
-- Should `Eintrag-133` remain a separately addressable fragment within its parent, and how should the unmarked proceeding receive a derived identifier?
-- Which reading-text rules should govern line breaks, expansions, additions, deletions and editorial notes?
-- Which missing fields and unresolved references should block an export, and which should remain explicit findings alongside it?
-- Which category definitions and edition guidelines should be checked before interpreting sanctions, gender or monetary amounts?
-- Who will review the expected outputs of the reference set before they become the acceptance basis?
+Structure:
 
-## Related
-
-- [Knowledge index](INDEX.md)
-- [Analysis journal](journal.md)
-- [Package documentation](../README.md)
+- Offence and sanction are annotated per entry, so in entries with several offenders a sanction cannot be assigned to a person.
+- Persons carry no identifiers. Other proceedings of a person are named only in editorial notes.
+- Places carry no coordinates or authority identifiers, and many offence places are not normalised.
+- Occupation, status and the names in the marginal notes are not normalised.

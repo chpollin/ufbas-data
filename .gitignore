@@ -1,3 +1,7 @@
 generated/
 __pycache__/
 .ruff_cache/
+
+# Written by Cirilo into the folders it ingests from (tei/)
+ingest.log
+mets.xml

@@ -1,0 +1,26 @@
+PREFIX uf:<http://gams.uni-graz.at/ufbas/#>
+PREFIX oa:<http://www.w3.org/ns/oa#>
+PREFIX g2o:<http://gams.uni-graz.at/ontology/#>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+PREFIX tei:<http://www.tei-c.org/ns/1.0>
+PREFIX cei:<http://www.cei.uni-muenchen.de/ns/1.0#>
+PREFIX rdfs:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ("$1" as ?query ) ?beziehung ?kategorie ?label
+WHERE {
+    {?x a $1 .
+      { ?x ?beziehung ?val .
+        ?val a ?kategorie . 
+        MINUS { ?val a skos:Concept }
+        MINUS { ?x oa:hasTarget ?val }
+        MINUS { ?x a ?val }
+      }
+    UNION
+      { ?x ?beziehung ?kategorie .
+        ?kategorie a skos:Concept .
+        MINUS { ?x a ?kategorie }
+      }
+    }
+    OPTIONAL {
+        ?kategorie skos:prefLabel ?label .
+    }
+}

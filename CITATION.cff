@@ -2,7 +2,10 @@ cff-version: 1.2.0
 message: "Please cite the edition as below."
 type: dataset
 title: "Die Urfehdebücher der Stadt Basel – digitale Edition. Urfehdebuch X (1563–1569), data"
-license: CC-BY-NC-SA-4.0
+license:
+  - CC-BY-NC-SA-4.0
+  - MIT
+  - CC-BY-4.0
 url: "https://gams.uni-graz.at/ufbas"
 repository-code: "https://github.com/chpollin/ufbas-data"
 identifiers:

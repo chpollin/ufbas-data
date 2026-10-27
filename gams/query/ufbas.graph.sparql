@@ -1,0 +1,53 @@
+PREFIX uf:<http://gams.uni-graz.at/ufbas/#>
+PREFIX oa:<http://www.w3.org/ns/oa#>
+PREFIX g2o:<http://gams.uni-graz.at/ontology/#>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+PREFIX tei:<http://www.tei-c.org/ns/1.0>
+
+SELECT DISTINCT ?tat ?strafe ?geschlecht ?forename ?surname ?beruf ?datum ?ort ("$1" as ?query) ?eintrag ?url
+WHERE {
+  
+  ?eintrag a uf:Eintrag ;
+        oa:hasTarget ?url .
+  ?eintrag ?a ?b.
+  #?b a <http://gams.uni-graz.at/ufbas/#SchlagwortArmut>.
+  ?b a $1.
+  
+  
+    OPTIONAL
+  	{
+      ?eintrag uf:hasDatumUrfehde ?datumUrfehde.
+	  ?datumUrfehde tei:when ?datum.
+  	}
+	OPTIONAL
+	{
+    ?eintrag uf:hasPersonTäter ?täter.
+     OPTIONAL{?täter uf:forename ?forename.}
+     OPTIONAL{?täter uf:gender ?geschlecht.}
+     OPTIONAL{?täter uf:surname  ?surname.}
+     OPTIONAL
+    {
+	  ?täter uf:hasBeruf ?beruf_help.
+	  ?beruf_help oa:hasTarget ?beruf_target.
+	  ?beruf_target g2o:inhalt ?beruf
+ 	}
+    OPTIONAL
+    {
+	  ?täter ?hasOrt ?ort_help.
+	  FILTER regex(str(?hasOrt), "hasOrt")
+	  ?ort_help skos:prefLabel ?ort}       
+  	}
+      OPTIONAL
+  	{
+      ?eintrag ?tat ?tat_concept.
+      FILTER regex(str(?tat), "hasTat")
+  	}
+        OPTIONAL
+  	{
+      ?eintrag ?strafe ?strafe_concept.
+      FILTER regex(str(?strafe), "hasStrafe")
+  	}
+  
+}
+
+

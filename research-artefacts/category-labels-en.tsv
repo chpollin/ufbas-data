@@ -1,0 +1,162 @@
+id	group	term_de	label_en	note
+uf_Eintrag	uf_Eintrag		entry	No catDesc in the TEI. Label of the ontology class Entry.
+uf_Eingangsnotiz	uf_Eingangsnotiz		marginal note	No catDesc in the TEI. Literally entry note. Label of the ontology class MarginalNote (the Turmlöse claim after Schmid 2016).
+uf_Person	uf_Person	Person	person	
+uf_PersonTäter	uf_Person	Täter	offender	As the ontology role. The gloss includes the suspect.
+uf_PersonMittäter	uf_Person	Mittäter	accomplice	As the ontology role.
+uf_PersonOpfer	uf_Person	Opfer	victim	
+uf_PersonKläger	uf_Person	Kläger	plaintiff	Complainant is an alternative where no suit before a court is meant.
+uf_PersonZeuge	uf_Person	Zeuge	witness	
+uf_PersonAnwesende	uf_Person	Anwesend bei Tat	person present at the offence	The ontology role says person present.
+uf_PersonHehler	uf_Person	Hehler	receiver of stolen goods	
+uf_PersonNotar	uf_Person	Notar	notary	
+uf_male	uf_male	Mann	male	The term is Mann, the gloss male forename. The category marks the gender of a forename, so the label follows the ontology value male.
+uf_female	uf_female	Frau	female	The term is Frau, the gloss female forename. As uf_male.
+uf_Beiname	uf_Beiname	Beiname	byname	As the ontology property. o:ufbas.schema says Surname, which is wrong (knowledge/domain.md).
+uf_Beruf	uf_Beruf	Beruf	occupation	
+uf_Zivilstand	uf_Zivilstand	Zivilstand	marital status	
+uf_Status	uf_Status	Status	status	Covers office, title and legal status (citizen, Hintersasse, Jew). Rank or standing would be narrower.
+uf_Verwandtschaftsgrad	uf_Verwandtschaftsgrad	Verwandtschaftsgrad	kinship relation	Literally degree of kinship, but the gloss means the relation (daughter, husband, son-in-law).
+uf_Ort	uf_Ort	Ort	place	
+uf_OrtHerkunft	uf_Ort	Herkunft	place of origin	
+uf_OrtWohnort	uf_Ort	Wohnort	place of residence	
+uf_OrtTatort	uf_Ort	Tatort	place of the offence	
+uf_Vorinstanz	uf_Vorinstanz	Vorinstanz	prior instance	As the ontology class. The gloss means the authority that dealt with the case before and had the person detained, so referring authority may read more clearly.
+uf_FrüheresUrfehdeverfahren	uf_FrüheresUrfehdeverfahren	Früheres Urfehdeverfahren	earlier Urfehde proceeding	A closed earlier proceeding against the same person.
+uf_AnderesUrfehdeverfahren	uf_AnderesUrfehdeverfahren	Anderes Urfehdeverfahren	other Urfehde proceeding	A further proceeding against another person.
+uf_Untersuchungshaft	uf_Untersuchungshaft	Untersuchungshaft	detention before the oath	Pre-trial detention is the literal rendering but modern. The gloss defines it as detention of the offender before the Urfehde oath.
+uf_Tat	uf_Tat	Tat	offence	As the ontology class.
+uf_TatAlkoholmissbrauch	uf_Tat	Alkoholmissbrauch	drunkenness	Alcohol abuse would be the literal but anachronistic rendering.
+uf_TatArbeitsverweigerung	uf_Tat	Arbeitsverweigerung	refusal to work	
+uf_TatAusdemHausfordern	uf_Tat	Aus dem Haus fordern	calling someone out of their house	A breach of the peace of the house (Hausfrieden). The English legal term is uncertain.
+uf_TatBewaffneteAuseinandersetzung	uf_Tat	Bewaffnete Auseinandersetzung	armed fight	
+uf_TatBeihilfe	uf_Tat	Beihilfe zu XY	aiding and abetting	The term reads Beihilfe zu XY, a placeholder for the offence aided.
+uf_TatBeihilfeMord	uf_Tat	Beihilfe zu Mord	aiding and abetting murder	
+uf_TatBeleidigungVerleumdung	uf_Tat	Beleidigung, Verleumdung	insult, defamation	
+uf_TatBestechung	uf_Tat	Bestechung	bribery	
+uf_TatBetrug	uf_Tat	Betrug	fraud	
+uf_TatBetteln	uf_Tat	Betteln	begging	
+uf_TatBöswilligesVerlassen	uf_Tat	Böswilliges Verlassen	malicious desertion	The term of early modern marriage law (desertio malitiosa).
+uf_TatBrandstiftung	uf_Tat	Brandstiftung	arson	
+uf_TatBruchEheversprechen	uf_Tat	Bruch des Eheversprechens	breach of promise of marriage	
+uf_TatDiebstahl	uf_Tat	Diebstahl	theft	
+uf_TatDrohung	uf_Tat	Drohung	threat	
+uf_TatEhebruch	uf_Tat	Ehebruch	adultery	
+uf_TatEinbruch	uf_Tat	Einbruch	burglary	Housebreaking is the older English term.
+uf_TatGotteslästerung	uf_Tat	Gotteslästerung	blasphemy	The gloss includes cursing (Fluchen), so blasphemy and swearing may fit better.
+uf_TatHehlerei	uf_Tat	Hehlerei	receiving stolen goods	
+uf_TatInzest	uf_Tat	Inzest	incest	
+uf_TatKörperverletzung	uf_Tat	Körperverletzung	bodily injury	Assault is an alternative, but the gloss requires an injury.
+uf_TatLeichtfertigkeit	uf_Tat	Leichtfertigkeit	lewdness	Leichtfertigkeit is a source term for loose sexual conduct, and the gloss adds frivolous dealing with marriage promises. No English word covers both.
+uf_TatMord	uf_Tat	Mord	murder	Mord is treacherous killing, as against Totschlag.
+uf_TatMordversuch	uf_Tat	Mordversuch	attempted murder	
+uf_TatMüssiggang	uf_Tat	Müssiggang	idleness	
+uf_TatOrdnungsstörung	uf_Tat	Ordnungsstörung	disturbance of public order	
+uf_TatSachbeschädigung	uf_Tat	Sachbeschädigung	damage to property	
+uf_TatSchlägerei	uf_Tat	Schlägerei	brawl	
+uf_TatSchulden	uf_Tat	Schulden	incurring debts	
+uf_TatSelbstmordversuch	uf_Tat	Selbstmordversuch	attempted suicide	
+uf_TatSpielen	uf_Tat	Spielen	gambling	The gloss means unlawful play, games of chance in particular.
+uf_TatTotschlag	uf_Tat	Totschlag	homicide	Totschlag is open killing, as against treacherous Mord. Manslaughter is close but carries the common-law sense of a lesser offence.
+uf_TatÜbertretungUrfehde	uf_Tat	Übertretung Urfehde	breach of Urfehde	
+uf_TatÜblesHaushalten	uf_Tat	Übles Haushalten	bad householding	Neglect of household and family, after the gloss. Mismanaging the household is a plainer alternative.
+uf_TatUnerlaubterKriegsdienst	uf_Tat	Unerlaubter Kriegsdienst	forbidden military service	Probably foreign mercenary service (Reislaufen) against a ban, which the gloss does not say.
+uf_TatUngehorsam	uf_Tat	Ungehorsam	disobedience	
+uf_TatUngetreueAmtsführung	uf_Tat	Ungetreue Amtsführung	misconduct in office	
+uf_TatUnrechtmässigesEheversprechen	uf_Tat	Unrechtmässiges Eheversprechen	unlawful promise of marriage	
+uf_TatUnterlasseneHilfeleistung	uf_Tat	Unterlassene Hilfeleistung	failure to render assistance	
+uf_TatUnzucht	uf_Tat	Unzucht	fornication	The taxonomy means illicit sexual relations other than adultery. In the source unzucht also means breaches of the peace (knowledge/domain.md).
+uf_TatVagieren	uf_Tat	Vagieren	vagrancy	
+uf_TatVerbaleAuseinandersetzung	uf_Tat	Verbale Auseinandersetzung	verbal quarrel	
+uf_TatVerstossArbeitsvorschriften	uf_Tat	Verstoss gegen Arbeitsvorschriften	breach of trade or guild regulations	
+uf_TatVeruntreuung	uf_Tat	Veruntreuung	embezzlement	
+uf_TatVortäuschungFalscherTatsachen	uf_Tat	Vortäuschung falscher Tatsachen	false pretences	
+uf_TatVorteilsnahme	uf_Tat	Vorteilsnahme	obtaining an unlawful advantage	Vorteilsnahme is today a term for officials accepting benefits, while the gloss is general.
+uf_TatWiedertaeuferei	uf_Tat	Wiedertäuferei	Anabaptism	
+uf_TatWiderstandgegenObrigkeit	uf_Tat	Widerstand gegen Obrigkeit	resistance to authority	
+uf_TatWilderei	uf_Tat	Wilderei	poaching	
+uf_TatZechprellerei	uf_Tat	Zechprellerei	leaving a tavern bill unpaid	
+uf_Schlagwort	uf_Schlagwort	Schlagworte	keywords	The term is plural, Schlagworte.
+uf_SchlagwortAndrohungTodesstrafe	uf_Schlagwort	Androhung Todesstrafe	threat of the death penalty	
+uf_SchlagwortArmut	uf_Schlagwort	Armut	poverty	
+uf_SchlagwortAufdenHalswachsen	uf_Schlagwort	Auf den Hals wachsen	threat of corporal punishment (auf den Hals wachsen)	A formula of the source. The gloss says threat of a corporal punishment, while the idiom points to the neck and so to capital punishment (inference).
+uf_SchlagwortAuffällig	uf_Schlagwort	Auffällig	notable	
+uf_SchlagwortBannherren	uf_Schlagwort	Bannherren	Bannherren	Office name kept. Parish officials of the church discipline (knowledge/domain.md).
+uf_SchlagwortBehinderung	uf_Schlagwort	Behinderung	disability	
+uf_SchlagwortBettelvogt	uf_Schlagwort	Bettelvogt	beggars' bailiff (Bettelvogt)	The official in charge of foreign beggars, after the gloss.
+uf_SchlagwortBettler	uf_Schlagwort	Bettler	beggar	
+uf_SchlagwortBlutvogt	uf_Schlagwort	Blutvogt	Blutvogt	Office name kept. The official of the blood jurisdiction. Who held it in the 1560s is open (knowledge/domain.md).
+uf_SchlagwortBürgerrecht	uf_Schlagwort	Bürgerrecht	citizenship	
+uf_SchlagwortBürgermeister	uf_Schlagwort	Bürgermeister	burgomaster	
+uf_SchlagwortDienstmagd	uf_Schlagwort	Dienstmagd	maidservant	
+uf_SchlagwortEhegerichtEherichter	uf_Schlagwort	Ehegericht, Eherichter	marriage court, marriage judges	
+uf_SchlagwortErbstreit	uf_Schlagwort	Erbstreit	inheritance dispute	
+uf_SchlagwortErtränken	uf_Schlagwort	Ertränken	execution by drowning	
+uf_SchlagwortFoltern	uf_Schlagwort	Foltern	torture	
+uf_SchlagwortFühren	uf_Schlagwort	Führen	being led bound	A shaming punishment, the offender led through the town, usually bound, after the gloss. Literal leading says nothing in English.
+uf_SchlagwortFrauenarbeit	uf_Schlagwort	Frauenarbeit	women's work	
+uf_SchlagwortGefängnis	uf_Schlagwort	Gefängnis	prison	A particular prison or place of custody. In a marginal note a place name stands for a tower complex (knowledge/domain.md).
+uf_SchlagwortGeldleihe	uf_Schlagwort	Geldleihe	moneylending	
+uf_SchlagwortHalseisen	uf_Schlagwort	Halseisen	iron collar (Halseisen)	The iron collar of the pillory.
+uf_SchlagwortJuden	uf_Schlagwort	Juden	Jews	
+uf_SchlagwortKeinGeständnis	uf_Schlagwort	Kein Geständnis	no confession	
+uf_SchlagwortHeimlicheHerren	uf_Schlagwort	Heimliche Herren	Heimliche Herren	Office name kept, literally secret lords. Probably the Dreizehnerrat (knowledge/domain.md, inference).
+uf_SchlagwortKnecht	uf_Schlagwort	Knecht	manservant	Analogous to Dienstmagd after the gloss. The council servants have their own categories.
+uf_SchlagwortLadenherren	uf_Schlagwort	Ladenherren	Ladenherren	Office name kept. Keepers of the city chest (knowledge/domain.md).
+uf_SchlagwortLohnVerdienst	uf_Schlagwort	Lohn, Verdienst	wages, earnings	
+uf_SchlagwortLonherren	uf_Schlagwort	Lonherren	Lohnherren	Office name kept, spelled Lonherren in the TEI. Probably the heads of the city building office (Lohnamt), which knowledge/domain.md does not yet confirm.
+uf_SchlagwortMeerwunder	uf_Schlagwort	Meerwunder	sea monster	Meerwunder, a marvel or monster of the sea. The context of the entry should decide.
+uf_SchlagwortMeineid	uf_Schlagwort	Meineid	perjury	
+uf_SchlagwortMitgift	uf_Schlagwort	Mitgift	dowry	
+uf_SchlagwortNachbar	uf_Schlagwort	Nachbar	neighbour	
+uf_SchlagwortObersterKnecht	uf_Schlagwort	Oberster Knecht	chief council servant (Oberstknecht)	The head of the council servants (knowledge/domain.md).
+uf_SchlagwortProstitution	uf_Schlagwort	Prostitution	prostitution	
+uf_SchlagwortRat	uf_Schlagwort	Rat	council	The Small Council or one of its members, after the gloss.
+uf_SchlagwortRatsknecht	uf_Schlagwort	Ratsknecht	council servant (Ratsknecht)	Lived on the towers and guarded prisoners (knowledge/domain.md).
+uf_SchlagwortRuten	uf_Schlagwort	Ruten	flogging with rods	
+uf_SchlagwortSchulden	uf_Schlagwort	Schulden	debts	Debts not prosecuted as an offence, unlike uf_TatSchulden.
+uf_SchlagwortSchultheiss	uf_Schlagwort	Schultheiss	Schultheiss	Office name kept. The presiding judge of the city court. Mayor or reeve would mislead.
+uf_SchlagwortSchwemmen	uf_Schlagwort	Schwemmen	ducking	Punishment by dipping in the river, after the gloss.
+uf_SchlagwortSchwert	uf_Schlagwort	Schwert	execution by the sword	
+uf_SchlagwortSiebnerherren	uf_Schlagwort	Siebnerherren	Siebnerherren	Office name kept. The investigating judges in criminal cases (knowledge/domain.md).
+uf_SchlagwortSiegelbrief	uf_Schlagwort	Siegelbrief	sealed letter	A sealed letter or charter.
+uf_SchlagwortSpinnen	uf_Schlagwort	Spinnen	spinning	
+uf_SchlagwortSpital	uf_Schlagwort	Spital	hospital (Spital)	The Spital as institution of care for the old and poor. Hospital in its early modern sense.
+uf_SchlagwortStadtgericht	uf_Schlagwort	Stadtgericht	city court	
+uf_SchlagwortStadtknecht	uf_Schlagwort	Stadtknecht	city servant (Stadtknecht)	Subordinate to the Ratsknechte (knowledge/domain.md).
+uf_SchlagwortStadtwechsel	uf_Schlagwort	Stadtwechsel	municipal exchange bank (Stadtwechsel)	
+uf_SchlagwortUnehelichesKind	uf_Schlagwort	UnehelichesKind	illegitimate child	The TEI term is written without a space.
+uf_SchlagwortUnschuldig	uf_Schlagwort	Unschuldig	innocent	
+uf_SchlagwortWelsche	uf_Schlagwort	Welsche	Romance-speaking foreigners (Welsche)	Strangers, mostly of Italian or French origin, after the gloss.
+uf_SchlagwortWirtshaus	uf_Schlagwort	Wirtshaus	tavern	
+uf_SchlagwortZoll	uf_Schlagwort	Zoll	toll	Toll or toll station.
+uf_SchlagwortZunft	uf_Schlagwort	Zunft	guild	
+uf_Urfehdeeid	uf_Urfehdeeid	Urfehdeeid	oath of Urfehde	As the ontology class.
+uf_Strafe	uf_Strafe	Strafe	sanction	As the ontology class. The group also holds modalities and outcomes, so punishment would be too narrow.
+uf_StrafeAmtsentlassung	uf_Strafe	Amtsentlassung	dismissal from office	
+uf_StrafeAusweisung	uf_Strafe	Ausweisung	banishment	
+uf_StrafeEntschädigungRückzahlung	uf_Strafe	Entschädigung, Rückzahlung	compensation, repayment	
+uf_StrafeEntschuldigung	uf_Strafe	Entschuldigung	apology	
+uf_StrafeErmahnung	uf_Strafe	Ermahnung	admonition	
+uf_StrafeGefängnis	uf_Strafe	Gefängnisstrafe	imprisonment	Imprisonment served after the oath, after the gloss.
+uf_StrafeGeldstrafe	uf_Strafe	Geldstrafe	fine	
+uf_StrafeHausarrest	uf_Strafe	Hausarrest	house arrest	
+uf_StrafeKörperstrafe	uf_Strafe	Körperstrafe	corporal punishment	
+uf_StrafeStrafandrohung	uf_Strafe	Strafandrohung	threatened punishment	The punishment threatened for a breach of the Urfehde.
+uf_StrafeAusnahme	uf_Strafe	Strafausnahme	exception to the sanction	The gloss means limits and conditions of the sanction, so conditions of the sanction may fit better.
+uf_StrafeMilderung	uf_Strafe	Strafmilderung	mitigation of the sanction	
+uf_StrafeStrafumwandlung	uf_Strafe	Strafumwandlung	commutation of the sanction	
+uf_StrafeUrteilohneStrafe	uf_Strafe	Urteil ohne Strafe	judgment without sanction	
+uf_StrafeVerbot	uf_Strafe	Verbot	prohibition	
+uf_StrafeVerbotSpiel	uf_Strafe	Spielverbot	ban on gambling	
+uf_StrafeVerbotTanz	uf_Strafe	Tanzverbot	ban on dancing	
+uf_StrafeVerbotWaffen	uf_Strafe	Waffenverbot	ban on bearing arms	
+uf_StrafeVerbotWirtshaus	uf_Strafe	Wirtshausverbot	ban on visiting taverns	
+uf_StrafeWeisungananderesGericht	uf_Strafe	Weisung an anderes Gericht	referral to another court	
+uf_StrafeWiedergutmachung	uf_Strafe	Wiedergutmachung	amends to the victim	Restitution is an alternative, but the gloss excludes payments, which uf_StrafeEntschädigungRückzahlung codes.
+uf_Datum	uf_Datum	Datum	date	
+uf_DatumTat	uf_Datum	Datum der Tat	date of the offence	
+uf_DatumUrfehde	uf_Datum	Datum der Urfehde	date of the Urfehde	
+uf_DatumFrist	uf_Datum	Datum einer Frist	deadline	Duration or end date of a deadline, after the gloss.
+uf_DatumBegnadigung	uf_Datum	Datum der Begnadigung	date of pardon	
+uf_NotarialSubscription	uf_NotarialSubscription	Notariatsunterschrift	notarial subscription	

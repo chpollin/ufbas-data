@@ -1,0 +1,25 @@
+ufbas_entry	ufbas_date	ufbas_person	ufbas_fine	srbas_object	srbas_entry	srbas_text	srbas_amount	assessment
+Eintrag-46	1564-08-01	Mathis Dyel / Hans Weygolt	20 fl each, half remitted	o:depcha.srbas.1564	bs_Strafen-1	Mathis Diel ... unnd Johans Weiggelt	25 lb	match; 20 fl = 25 lb -> 1 fl = 25 ß
+Eintrag-105	1565-01-30	Lienhart Burckhart	5 lb	o:depcha.srbas.1564	bs_Strafen-4	Lienhart Burckart	5 lb	match
+Eintrag-160	1565-05-28	Claus Specht	10 gulden	o:depcha.srbas.1564	bs_Strafen-13	Claus Spechden	12 lb 10 ß	match; 1 fl = 25 ß
+Eintrag-100	1565-01-24	Jocob Sylberberg	40 gulden	o:depcha.srbas.1564	bs_Strafen-3	Jacob Silberberg	25 lb	person match, amount differs (40 fl = 50 lb at 25 ß)
+Eintrag-182	1565-07-16	Jerg Sutinger	10 lb	o:depcha.srbas.1565	bs_Strafen-4	Jorg Sutinger von Ard	10 lb	match; plus bs_AllgemeinEmpfangen-6 12 ß costs refunded to the Brett
+Eintrag-187	1565-08-06	Hans Münch	5 ß	o:depcha.srbas.1565	bs_Strafen-5	Hans Munchen, dem schumacher	5 lb	person match, amount differs (ß vs lb)
+Eintrag-188	1565-08-06	Hans Scheidtbach	5 lb	o:depcha.srbas.1565	bs_Strafen-6	Hans Scheidbachen	5 lb	match
+Eintrag-192	1565-08-15	Hans Brombach	5 lb	o:depcha.srbas.1565	bs_Strafen-7	Hanns Brombachen	5 lb	match
+Eintrag-245	1565-11-28	Peter Brotbeck	10 lb	o:depcha.srbas.1565	bs_Strafen-23	Peter Brotbecken, dem rebman	10 lb	match
+Eintrag-270	1566-02-22	Gorgius Thussman	60 lb; 1 lb 1 d before return	o:depcha.srbas.1566	bs_Strafen-29	Gorgius Tuszman eynunggellt	1 lb 1 d	match on the 1 lb 1 d Einung only
+Eintrag-388	1567-09-06	Moritz Bumann	10 lb stebler	o:depcha.srbas.1567	bs_Strafen-7	Moritzen Buwman	10 lb	match; lb stebler = lb
+Eintrag-407	1567-10-16	Mathyss Müslin	5 lb	o:depcha.srbas.1567	bs_Strafen-33	Mathysz Muslin	5 lb	match
+Eintrag-457	1568-04-03	Samuel Bechtlj	10 lb stebler	o:depcha.srbas.1567	bs_Strafen-11	Samuel Bächtlin	10 lb	match
+Eintrag-464	1568-05-03	Junker Mathys München von Löwenburg	50 gulden rhynisch	o:depcha.srbas.1567	bs_Strafen-13	junker Mathysz Munchen von Louwenburg	62 lb 10 ß	match; 1 fl = 25 ß
+Eintrag-470	1568-05-16	Balthassar Hërlin	5 lb stebler	o:depcha.srbas.1567	bs_Strafen-17	Balthasar Herlin vonn Straszpurg	5 lb	match
+Eintrag-472	1568-05-17	Daniel Huober	40 lb (Friedbruch) and 61 lb 1 d	o:depcha.srbas.1567	bs_Strafen-27	Daniel Hubern stroff eines fridenbruchs halben	20 lb	person and offence match, amount differs (partial payment or remission, unverified)
+Eintrag-477	1568-05-26	Niclaus Ostertag	5 lb stebler	o:depcha.srbas.1567	bs_Strafen-18	Clausz Ostertag	5 lb	match
+Eintrag-485	1568-06-13	Arbogast Zwinglj	10 lb	o:depcha.srbas.1567	bs_Strafen-21	Arbogast Zwinglin, dem meszerschmidt	10 lb	match
+Eintrag-491	1568-06-28	Blesin Schöllj	5 lb	o:depcha.srbas.1567	bs_Strafen-19	Bläsin Schollin	5 lb	match
+Eintrag-516	1568-09-23	Hans Buolacher	5 lb Stebler	o:depcha.srbas.1568	bs_Strafen-3	Hans Bulacher	5 lb	match
+Eintrag-525	1568-10-30	Jerg Brunysen	10 lb	o:depcha.srbas.1568	bs_Strafen-4	Jorg Brunysen	10 lb	match
+Eintrag-545	1569-04-01	Benedict / Bastean Sotzin, Barthlome Rosalin	5 lb each	o:depcha.srbas.1568	bs_Strafen-7,-8,-9	Barthlome Rosalin 10 lb; Benedict Sotzin 5 lb; Baschen Sotzin 5 lb	see text	Sotzin match; Rosalin amount differs
+Eintrag-560	1569-04-27	Wendlj Schmidt	5 lb	o:depcha.srbas.1568	bs_Strafen-13	Wendlin Schmid	5 lb	match
+Eintrag-584	1569-05-09	Mathys Gütinger	100 lb stebler	o:depcha.srbas.1568	bs_Strafen-15	Mathis Guttinger, dem lepkucher	100 lb	match

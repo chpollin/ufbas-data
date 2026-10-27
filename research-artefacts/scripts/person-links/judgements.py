@@ -1,0 +1,106 @@
+# Judgements from reading both entries of each sampled pair (sample_xref.txt, sample_names.txt).
+# Writes judgements_xref.tsv and judgements_names.tsv and prints the tallies.
+import csv
+import sys
+from collections import Counter
+
+sys.stdout.reconfigure(encoding="utf-8")
+
+XREF = [
+    ("S01", "Eintrag-22", "Eintrag-23", "Hanns Karrer", "consistent", "same name and origin Neusinen; testifies under torture 1567-05-05, own proceeding 1567-05-10"),
+    ("S02", "Eintrag-597", "Eintrag-598", "Adam Walder", "confirmed", "target: 'obgemellten Adam Walder'"),
+    ("S03", "Eintrag-504", "Eintrag-499", "Lienhart Ehinger", "consistent", "husband named in the wife's head, target 'der soldner' two weeks earlier; source anchor was the wife's outer persName before the innermost-persName fix"),
+    ("S04", "Eintrag-552", "Eintrag-568", "Bastean Cuonrat", "consistent", "same name and office stattknecht"),
+    ("S05", "Eintrag-142", "Eintrag-158", "Sara Buwmannj", "confirmed", "same couple and affair, two weeks apart"),
+    ("S06", "Eintrag-506", "Eintrag-499", "Lienhart Ehinger", "consistent", "'Lienhart Ehinger dess soldners eefrow' vs 'der soldner'; anchor fixed as S03"),
+    ("S07", "Eintrag-523", "Eintrag-524", "Ulrich Eberlj", "confirmed", "same affair (Haller with Eberlj's wife)"),
+    ("S08", "Eintrag-50", "Eintrag-49", "Clera von Sant Uban", "confirmed", "same case, 'obgenanter Clera'"),
+    ("S09", "Eintrag-397", "Eintrag-398", "Georg Geer", "confirmed", "same case, 'obgenante Barbell Mettlerj'"),
+    ("S10", "Eintrag-287", "Eintrag-278", "Jocob Meyger", "confirmed", "same wife Mergelj Dieterich von Sissach"),
+    ("S11", "Eintrag-320", "Eintrag-313", "Adelheit Buorgerj", "consistent", "surname variant Buorgerj/Buocherj, identical origin, banished then returned"),
+    ("S12", "Eintrag-586", "Eintrag-236", "Lienhart Ehinger", "plausible", "same name; 'der soldner' 1569 vs 'des botten son' 1565; nothing confirms or contradicts"),
+    ("S13", "Eintrag-438", "Eintrag-397", "Barbell Mettlerj", "confirmed", "same dispute with the schaffner zuo Sant Claren"),
+    ("S14", "Eintrag-502", "Eintrag-505", "Anna Hodell", "confirmed", "'obgenanter Anna Hodell siner basen'; side finding: Eintrag-505 @when 1563-08-07, text 'ditz 68 jars'"),
+    ("S15", "Eintrag-306", "Eintrag-308", "Stoffel Hodell", "confirmed", "husband 'zuo Muttentz', target settled at Muttenz; anchor fixed as S03"),
+    ("S16", "Eintrag-307", "Eintrag-386", "Stoffel Hodell", "consistent", "stepfather 1566, returns to Muttenz against his oath 1567"),
+    ("S17", "Eintrag-502", "Eintrag-505", "Ludj Hodell", "confirmed", "same affair"),
+    ("S18", "Eintrag-234", "Eintrag-233", "Lux Wolff", "confirmed", "same story (Ursula Wydenmannj, Penthelj)"),
+    ("S19", "Eintrag-241", "Eintrag-234", "Ursula Wydenmannj", "confirmed", "returns to Penthelin's house after banishment"),
+    ("S20", "Eintrag-204", "Eintrag-203", "Caspar Fürfelder", "confirmed", "'obgemelten Caspar Fürfelder', same date and place"),
+    ("S21", "Eintrag-276", "Eintrag-179", "Jocob Schwartz", "consistent", "same name and office stattknecht"),
+    ("S22", "Eintrag-40", "Eintrag-42", "Anna Schlacherin", "confirmed", "target refers to the house of Claus Koch from the source"),
+    ("S23", "Eintrag-72", "Eintrag-189", "Bastean Schmidt", "consistent", "same name, occupation, residence"),
+    ("S24", "Eintrag-536", "Eintrag-403", "Hans Jocob Ehinger", "confirmed", "source 'wider sin vordrige urphet', same name and occupation"),
+    ("S25", "Eintrag-328", "Eintrag-297", "Jocob Keller", "consistent", "same name and occupation, three months apart"),
+    ("S26", "Eintrag-466", "Eintrag-467", "Fridlin Lüdj", "confirmed", "'obemeltem Fridlin Lüdj'"),
+    ("S27", "Eintrag-300", "Eintrag-298", "Margreth Reinhartin", "confirmed", "same affair with Isaac Gelthuser"),
+    ("S28", "Eintrag-65", "Eintrag-61", "Claus Fry", "confirmed", "Niclaus Fry, husband of Regula Meygerj; source cites her urphet 'hieensyt'"),
+    ("S29", "Eintrag-240", "Eintrag-56", "Augustin Steck", "consistent", "official, 'her vogt' in both"),
+    ("S30", "Eintrag-451", "Eintrag-492", "Ruodolff Ritter", "consistent", "same name and occupation, bad housekeeping in both"),
+    ("S31", "Eintrag-220", "Eintrag-223", "Barbell Ortolff", "confirmed", "'Barblen Ortolff, hieensyt geschriben'"),
+    ("S32", "Eintrag-486", "Eintrag-488", "Symon Müller", "confirmed", "'obgemeltem Symon', same theft"),
+    ("S33", "Eintrag-549", "Eintrag-550", "Lienhart Erlibach", "confirmed", "same affair with Küngolt Këntzig"),
+    ("S34", "Eintrag-484", "Eintrag-486", "Symon Müller", "confirmed", "'harnochgeschriben', same theft"),
+    ("S35", "Eintrag-447", "Eintrag-448", "Stoffel Gyr", "confirmed", "'harnochgemellt', same case"),
+    ("S36", "Eintrag-441", "Eintrag-438", "Barbell Mettlerj", "confirmed", "'vormalen verwysen', same heading"),
+]
+
+NAMES = [
+    ("E01", "Eintrag-18", "Eintrag-117", "Claus Dietler", "same", "stattknecht, same date, near-identical text (possibly a double record, unverified)"),
+    ("E02", "Eintrag-508", "Eintrag-615", "Hans (Friderich) Müller", "different", "'genant Gerster' vs 'von Franckfortt am Mein'; compound forename cut to first token"),
+    ("E03", "Eintrag-48", "Eintrag-276", "Michel Köferlj", "same", "rhatsknecht in both (office holder)"),
+    ("E04", "Eintrag-397", "Eintrag-546", "Georg Geer / Jergen Ger", "undecidable", "schaffner zuo Sant Claren vs 'gulden schriber'"),
+    ("E05", "Eintrag-438", "Eintrag-546", "Jergen Ger", "undecidable", "as E04"),
+    ("E06", "Eintrag-134", "Eintrag-213", "Hans (Jocob) Meyger", "different", "messerschmidt vs Anabaptist von Riechen; compound forename"),
+    ("E07", "Eintrag-251", "Eintrag-374", "Margreth Meygerj", "different", "von Nidereckenen (widow) vs von Zürich (husband Jeremias Falck)"),
+    ("E08", "Eintrag-105", "Eintrag-130", "Lienhart Gebhart", "same", "Meister, rhatsfründt, three months apart"),
+    ("E09", "Eintrag-195", "Eintrag-249", "Hans Jocob Lamprecht", "same", "son of the fryat Hans Lamprecht in both"),
+    ("E10", "Eintrag-268", "Eintrag-375", "Hans/Johannes Weber", "same", "provisor zuo Sant Peter in both"),
+    ("E11", "Eintrag-472", "Eintrag-508", "Hans Friderich Müller", "undecidable", "von Basell vs 'genant Gerster'; no contradiction"),
+    ("E12", "Eintrag-179", "Eintrag-600", "Jocob Schwartz", "same", "stattknecht in both"),
+    ("E13", "Eintrag-480", "Eintrag-600", "Jocob Schwartz", "same", "stattknecht in both"),
+    ("E14", "Eintrag-472", "Eintrag-615", "Hans (Friderich) Müller", "different", "von Basell vs von Franckfortt; compound forename"),
+    ("E15", "Eintrag-86", "Eintrag-109", "Margreth Kellerj", "different", "von Münster uss Lutzern pieth vs von Elcken"),
+    ("E16", "Eintrag-252", "Eintrag-282", "Peter Schürer", "same", "stattknecht in both"),
+    ("E17", "Eintrag-52", "Eintrag-55", "Bryda Melj", "same", "von Buss, Thoman Wyss in both"),
+    ("E18", "Eintrag-273", "Eintrag-282", "Peter Schürer", "same", "stattknecht in both"),
+    ("E19", "Eintrag-28", "Eintrag-294", "Hans (Jocob) Meiger", "different", "von Colm/Birmistorff vs messerschmidt; compound forename"),
+    ("E20", "Eintrag-213", "Eintrag-537", "Hans Meyger", "different", "von Riechen vs von Schliengen"),
+    ("F01", "Eintrag-79", "Eintrag-256", "Martin Spreng/Sprenger", "undecidable", "trummenschlacher vs sybmacher who drums"),
+    ("F02", "Eintrag-422", "Eintrag-614", "Hans Pfender", "different", "von Strassburg vs von Füllingen"),
+    ("F03", "Eintrag-93", "Eintrag-181", "Marx Eschj/Eschli", "same", "zymerman, timber on the Rhine, 'vormals inn siner urphet'"),
+    ("F04", "Eintrag-229", "Eintrag-541", "Barbell Fry / Uffry", "different", "von Waltzhuot vs von Fryburg"),
+    ("F05", "Eintrag-446", "Eintrag-522", "Marx Rieher/Riecher", "same", "der scherer in both"),
+    ("F06", "Eintrag-203", "Eintrag-372", "Hans Philipps Offenburg", "same", "vogt zuo Varnsperg in both (official)"),
+    ("F07", "Eintrag-388", "Eintrag-450", "Hans Jacob Hiltprandt", "same", "vogt zuo Waldenburg in both (official)"),
+    ("F08", "Eintrag-598", "Eintrag-621", "Adam Walder/Waldner", "same", "Glattfelden/Blattfellden, same year, theft"),
+    ("F09", "Eintrag-446", "Eintrag-565", "Marx Rieher/Riecher", "same", "der scherer in both"),
+    ("F10", "Eintrag-77", "Eintrag-256", "Martin Spreng/Sprenger", "undecidable", "as F01"),
+    ("V01", "Eintrag-374", "Eintrag-394", "Hans Germüller", "same", "genant Beckenhensslin in both"),
+    ("V02", "Eintrag-236", "Eintrag-534", "Lienhart Ehinger", "undecidable", "des botten son vs der soldner (the editors link this person via Eintrag-586)"),
+    ("V03", "Eintrag-207", "Eintrag-472", "Hans Jacob Ottendorff", "undecidable", "cattle owner vs metzger; no contradiction"),
+    ("V04", "Eintrag-203", "Eintrag-561", "Hans Vögtlj", "doubtful", "zuo Rotenfluo vs von Muttentz; first persName has no place element, so the filter did not fire"),
+    ("V05", "Eintrag-249", "Eintrag-396", "Hans Jocob Lamprecht", "same", "von Basell, 'vormalen ... verwysen'"),
+    ("V06", "Eintrag-252", "Eintrag-273", "Peter Schürer", "same", "stattknecht in both"),
+    ("V07", "Eintrag-213", "Eintrag-261", "Hans/Johannes Meyger", "different", "Anabaptist von Riechen vs prepositus of the college"),
+    ("V08", "Eintrag-268", "Eintrag-468", "Michel Tagsperger", "undecidable", "mummery 1566 vs tischmacher 1568; no contradiction"),
+    ("V09", "Eintrag-51", "Eintrag-440", "Hans Oltinger", "same", "huofschmidt in both"),
+    ("V10", "Eintrag-258", "Eintrag-275", "Fridlin Hodell", "same", "same slander suit with the Müller of Aristorff"),
+    ("V11", "Eintrag-185", "Eintrag-406", "Peter Ferner", "same", "wynmann in both"),
+    ("V12", "Eintrag-331", "Eintrag-336", "Jerg Spörlin", "same", "rhatsherr, same incident Zum Falcken"),
+    ("V13", "Eintrag-564", "Eintrag-579", "Salome Byrloff", "same", "daughter of Jocob Byrloff, husband Thoman Meyger in both"),
+    ("V14", "Eintrag-289", "Eintrag-316", "Hans Göüschell", "same", "nochrichter in both"),
+    ("V15", "Eintrag-406", "Eintrag-573", "Peter Ferner", "same", "wynmann, 'vormalen ouch ... gfangen glegen'"),
+    ("V16", "Eintrag-197", "Eintrag-276", "Michel Köferlj", "same", "rhatsknecht in both (office holder)"),
+    ("V17", "Eintrag-499", "Eintrag-534", "Lienhart Ehinger", "same", "der soldner in both"),
+    ("V18", "Eintrag-80", "Eintrag-440", "Hans Oltinger", "same", "huofschmidt in both"),
+    ("V19", "Eintrag-506", "Eintrag-534", "Lienhart Ehinger", "same", "dess soldners / der soldner"),
+    ("V20", "Eintrag-282", "Eintrag-374", "Hans Germüller", "same", "genant Becken Hänsslj / Beckenhensslin"),
+]
+
+for fname, rows in (("judgements_xref.tsv", XREF), ("judgements_names.tsv", NAMES)):
+    with open(fname, "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t")
+        w.writerow(["case", "a", "b", "name", "verdict", "evidence"])
+        w.writerows(rows)
+    print(fname, sorted(Counter((r[0][0], r[4]) for r in rows).items()))

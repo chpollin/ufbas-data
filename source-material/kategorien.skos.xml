@@ -1,0 +1,803 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cei="http://www.cei.lmu.de/ns/1.0" xmlns:crm="http://www.cidoc-crm.org/cidoc-crm" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fedora-rels-ext="info:fedora/fedora-system:def/relations-external#" xmlns:g2o="http://gams.uni-graz.at/ontology/#" xmlns:gl="http://www.xbrl.org/GLTaxonomy/" xmlns:oa="http://www.w3.org/ns/oa#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:uf="http://gams.uni-graz.at/ufbas/#" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
+    <skos:Schema rdf:about="http://gams.uni-graz.at/o:ufbas.kategorien">
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Eintrag"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Person"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Ort"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Datum"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+        <skos:hasTopConcept rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+    </skos:Schema>
+    <skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+    <skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+    <skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Eintrag" />
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Eingangsnotiz">
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Person">
+		<skos:prefLabel xml:lang="de">Person</skos:prefLabel>
+		<skos:defintion xml:lang="de">Person</skos:defintion>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonTäter">
+		<skos:prefLabel xml:lang="de">Täter</skos:prefLabel>
+		<skos:defintion xml:lang="de">Täter Täter, Tatverdächtiger</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonMittäter">
+		<skos:prefLabel xml:lang="de">Mittäter</skos:prefLabel>
+		<skos:defintion xml:lang="de">Mittäter Mittäter (kann in weiterem Urfehdeverfahren belangt werden), als Mittäter Beschuldigter</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonOpfer">
+		<skos:prefLabel xml:lang="de">Opfer</skos:prefLabel>
+		<skos:defintion xml:lang="de">Opfer Opfer</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonKläger">
+		<skos:prefLabel xml:lang="de">Kläger</skos:prefLabel>
+		<skos:defintion xml:lang="de">Kläger Kläger</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonZeuge">
+		<skos:prefLabel xml:lang="de">Zeuge</skos:prefLabel>
+		<skos:defintion xml:lang="de">Zeuge Zeuge</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonAnwesende">
+		<skos:prefLabel xml:lang="de">Anwesend bei Tat</skos:prefLabel>
+		<skos:defintion xml:lang="de">Anwesend bei Tat Person, die bei der Tat anwesend ist, aber keine Aussage dazu macht</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonHehler">
+		<skos:prefLabel xml:lang="de">Hehler</skos:prefLabel>
+		<skos:defintion xml:lang="de">Hehler Person, die mit Diebesgut handelt</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#PersonNotar">
+		<skos:prefLabel xml:lang="de">Notar</skos:prefLabel>
+		<skos:defintion xml:lang="de">Notar Beglaubigt die Urfehde</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Person" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#male">
+		<skos:prefLabel xml:lang="de">Mann</skos:prefLabel>
+		<skos:defintion xml:lang="de">Mann Männlicher Vorname</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#female">
+		<skos:prefLabel xml:lang="de">Frau</skos:prefLabel>
+		<skos:defintion xml:lang="de">Frau Weiblicher Vorname</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Beiname">
+		<skos:prefLabel xml:lang="de">Beiname</skos:prefLabel>
+		<skos:defintion xml:lang="de">Beiname Name, mit dem eine Person von ihrer Umgebung benannt wird</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Beruf">
+		<skos:prefLabel xml:lang="de">Beruf</skos:prefLabel>
+		<skos:defintion xml:lang="de">Beruf Beruf</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Zivilstand">
+		<skos:prefLabel xml:lang="de">Zivilstand</skos:prefLabel>
+		<skos:defintion xml:lang="de">Zivilstand Familienstand (ledig, verheiratet, verwittwet, geschieden)</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Status">
+		<skos:prefLabel xml:lang="de">Status</skos:prefLabel>
+		<skos:defintion xml:lang="de">Status Amt (Rat, Vogt, Meister etc.), akademischer Titel, sonstiger Titel (Majestät, Junker, Herzog etc.), rechtlicher Status (Bürger, Hintersasse, Jude, Zigeuner, ev. Fremder)</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Verwandtschaftsgrad">
+		<skos:prefLabel xml:lang="de">Verwandtschaftsgrad</skos:prefLabel>
+		<skos:defintion xml:lang="de">Verwandtschaftsgrad Verwandtschaftsbeziehung einer Person zu einer anderen (Tochter, Enkel, Ehemann, Schwiegersohn/-tochter/-vater/-mutter etc.)</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Personeneigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Ort">
+		<skos:prefLabel xml:lang="de">Ort</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ort</skos:defintion>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#OrtHerkunft">
+		<skos:prefLabel xml:lang="de">Herkunft</skos:prefLabel>
+		<skos:defintion xml:lang="de">Herkunft Herkunftsort</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Ort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#OrtWohnort">
+		<skos:prefLabel xml:lang="de">Wohnort</skos:prefLabel>
+		<skos:defintion xml:lang="de">Wohnort Wohnort</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Ort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#OrtTatort">
+		<skos:prefLabel xml:lang="de">Tatort</skos:prefLabel>
+		<skos:defintion xml:lang="de">Tatort Tatort</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Ort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Vorinstanz">
+		<skos:prefLabel xml:lang="de">Vorinstanz</skos:prefLabel>
+		<skos:defintion xml:lang="de">Vorinstanz Instanz, die den Fall zuvor behandelt und die Untersuchungshaft der entsprechenden Person veranlasst hat</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#FrüheresUrfehdeverfahren">
+		<skos:prefLabel xml:lang="de">Früheres Urfehdeverfahren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Früheres Urfehdeverfahren Hinweis auf ein vorangegangenes und abgeschlossenes Urfehdeverfahren, in dem die selbe Person belangt wurde</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#AnderesUrfehdeverfahren">
+		<skos:prefLabel xml:lang="de">Anderes Urfehdeverfahren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Anderes Urfehdeverfahren Hinweis auf ein weiteres Urfehdeverfahren einer anderen Person</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Untersuchungshaft">
+		<skos:prefLabel xml:lang="de">Untersuchungshaft</skos:prefLabel>
+		<skos:defintion xml:lang="de">Untersuchungshaft Inhaftierung des Täters vor dem Urfehdeeid</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Tat">
+		<skos:prefLabel xml:lang="de">Tat</skos:prefLabel>
+		<skos:defintion xml:lang="de">Tat Straftat</skos:defintion>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatAlkoholmissbrauch">
+		<skos:prefLabel xml:lang="de">Alkoholmissbrauch</skos:prefLabel>
+		<skos:defintion xml:lang="de">Alkoholmissbrauch Übermässiger Alkoholkonsum, Trunkenheit etc.</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatArbeitsverweigerung">
+		<skos:prefLabel xml:lang="de">Arbeitsverweigerung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Arbeitsverweigerung Verweigerung eines Arbeitsauftrages</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatAusdemHausfordern">
+		<skos:prefLabel xml:lang="de">Aus dem Haus fordern</skos:prefLabel>
+		<skos:defintion xml:lang="de">Aus dem Haus fordern Täter fordert Opfer auf, den geschützten Rechtsbereich des Hauses zu verlassen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBewaffneteAuseinandersetzung">
+		<skos:prefLabel xml:lang="de">Bewaffnete Auseinandersetzung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bewaffnete Auseinandersetzung Konflikt, in welchem Waffen eingesetzt werden</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBeihilfe">
+		<skos:prefLabel xml:lang="de">Beihilfe zu XY</skos:prefLabel>
+		<skos:defintion xml:lang="de">Beihilfe zu XY Beihilfe zu einer Straftat (ausgenommen Mord, siehe separate Kategorie)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBeihilfeMord">
+		<skos:prefLabel xml:lang="de">Beihilfe zu Mord</skos:prefLabel>
+		<skos:defintion xml:lang="de">Beihilfe zu Mord Beihilfe zu Mord</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBeleidigungVerleumdung">
+		<skos:prefLabel xml:lang="de">Beleidigung, Verleumdung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Beleidigung, Verleumdung Beleidigung oder Verleumdung</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBestechung">
+		<skos:prefLabel xml:lang="de">Bestechung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bestechung Bestechung mit Geld</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBetrug">
+		<skos:prefLabel xml:lang="de">Betrug</skos:prefLabel>
+		<skos:defintion xml:lang="de">Betrug Betrug im Umgang mit Geld, Preis, Gewicht u.ä.</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBetteln">
+		<skos:prefLabel xml:lang="de">Betteln</skos:prefLabel>
+		<skos:defintion xml:lang="de">Betteln Betteln</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBöswilligesVerlassen">
+		<skos:prefLabel xml:lang="de">Böswilliges Verlassen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Böswilliges Verlassen Mutwilliges Verlassen der Familie</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBrandstiftung">
+		<skos:prefLabel xml:lang="de">Brandstiftung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Brandstiftung Brandstiftung</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatBruchEheversprechen">
+		<skos:prefLabel xml:lang="de">Bruch des Eheversprechens</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bruch des Eheversprechens Bruch der Verlobung/des Heiratsversprechens</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatDiebstahl">
+		<skos:prefLabel xml:lang="de">Diebstahl</skos:prefLabel>
+		<skos:defintion xml:lang="de">Diebstahl Diebstahl von Geld, Sachwerten, Gegenständen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatDrohung">
+		<skos:prefLabel xml:lang="de">Drohung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Drohung Verbale Bedrohung</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatEhebruch">
+		<skos:prefLabel xml:lang="de">Ehebruch</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ehebruch Ehebruch</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatEinbruch">
+		<skos:prefLabel xml:lang="de">Einbruch</skos:prefLabel>
+		<skos:defintion xml:lang="de">Einbruch Einbruch/Einbruchdiebstahl</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatGotteslästerung">
+		<skos:prefLabel xml:lang="de">Gotteslästerung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Gotteslästerung Fluchen, Gotteslästerung</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatHehlerei">
+		<skos:prefLabel xml:lang="de">Hehlerei</skos:prefLabel>
+		<skos:defintion xml:lang="de">Hehlerei Handel mit gestohlener Ware</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatInzest">
+		<skos:prefLabel xml:lang="de">Inzest</skos:prefLabel>
+		<skos:defintion xml:lang="de">Inzest Sexuelle Beziehung mit Verwandten (Eltern, Kinder, Geschwister, Neffen, Nichten etc.)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatKörperverletzung">
+		<skos:prefLabel xml:lang="de">Körperverletzung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Körperverletzung Mutwillige Verletzung eines anderen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatLeichtfertigkeit">
+		<skos:prefLabel xml:lang="de">Leichtfertigkeit</skos:prefLabel>
+		<skos:defintion xml:lang="de">Leichtfertigkeit Unmoralisches sexuelles Verhalten (das nicht in eine der anderen Kategorien passt); leichtfertiger, unmoralischer Umgang mit Eheversprechen oder Ehe</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatMord">
+		<skos:prefLabel xml:lang="de">Mord</skos:prefLabel>
+		<skos:defintion xml:lang="de">Mord Absichtliche, heimtückische Tötung eines anderen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatMordversuch">
+		<skos:prefLabel xml:lang="de">Mordversuch</skos:prefLabel>
+		<skos:defintion xml:lang="de">Mordversuch Versuchte absichtliche, heimtückische Tötung eines anderen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatMüssiggang">
+		<skos:prefLabel xml:lang="de">Müssiggang</skos:prefLabel>
+		<skos:defintion xml:lang="de">Müssiggang Unmoralischer (und arbeitsscheuer) Lebenswandel, der nicht auf die Sicherung des eigenen Auskommens gerichtet ist, z.T. in Verbindung mit Vagieren</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatOrdnungsstörung">
+		<skos:prefLabel xml:lang="de">Ordnungsstörung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ordnungsstörung Störung der öffentlichen Ordnung</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatSachbeschädigung">
+		<skos:prefLabel xml:lang="de">Sachbeschädigung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Sachbeschädigung Sachbeschädigung (von Gegenständen, Immobilien etc.)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatSchlägerei">
+		<skos:prefLabel xml:lang="de">Schlägerei</skos:prefLabel>
+		<skos:defintion xml:lang="de">Schlägerei Körperliche Auseinandersetzung zwischen zwei oder mehr Tätern</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatSchulden">
+		<skos:prefLabel xml:lang="de">Schulden</skos:prefLabel>
+		<skos:defintion xml:lang="de">Schulden Schulden machen (meist jenseits der eigenen finanziellen Möglichkeiten)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatSelbstmordversuch">
+		<skos:prefLabel xml:lang="de">Selbstmordversuch</skos:prefLabel>
+		<skos:defintion xml:lang="de">Selbstmordversuch Selbstmordversuch</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatSpielen">
+		<skos:prefLabel xml:lang="de">Spielen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Spielen Unerlaubtes (Glücks)Spiel</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatTotschlag">
+		<skos:prefLabel xml:lang="de">Totschlag</skos:prefLabel>
+		<skos:defintion xml:lang="de">Totschlag Tötung eines anderen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatÜbertretungUrfehde">
+		<skos:prefLabel xml:lang="de">Übertretung Urfehde</skos:prefLabel>
+		<skos:defintion xml:lang="de">Übertretung Urfehde Missachtung eines früheren gegen dieselbe Person ergangenen Urfehdeurteils</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatÜblesHaushalten">
+		<skos:prefLabel xml:lang="de">Übles Haushalten</skos:prefLabel>
+		<skos:defintion xml:lang="de">Übles Haushalten Vernachlässigung des Haushalts und der Familie</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatUnerlaubterKriegsdienst">
+		<skos:prefLabel xml:lang="de">Unerlaubter Kriegsdienst</skos:prefLabel>
+		<skos:defintion xml:lang="de">Unerlaubter Kriegsdienst Kriegsdienst trotz explizitem Verbot</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatUngehorsam">
+		<skos:prefLabel xml:lang="de">Ungehorsam</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ungehorsam Widerstand/Widersetzlichkeit gegen eine konkrete obrigkeitliche Anweisung (ausgenommen frühere Urfehde, siehe separate Kategorie)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatUngetreueAmtsführung">
+		<skos:prefLabel xml:lang="de">Ungetreue Amtsführung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ungetreue Amtsführung Nicht pflichtgemässe Ausführung eines Amtes</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatUnrechtmässigesEheversprechen">
+		<skos:prefLabel xml:lang="de">Unrechtmässiges Eheversprechen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Unrechtmässiges Eheversprechen Abgabe eines unrechtmässigen Eheversprechens</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatUnterlasseneHilfeleistung">
+		<skos:prefLabel xml:lang="de">Unterlassene Hilfeleistung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Unterlassene Hilfeleistung Unterlassung oder Verweigerung einer Hilfeleistung</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatUnzucht">
+		<skos:prefLabel xml:lang="de">Unzucht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Unzucht Unerlaubte sexuelle Beziehung (ausgenommen Ehebruch bei Verheirateten, siehe separate Kategorie)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatVagieren">
+		<skos:prefLabel xml:lang="de">Vagieren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Vagieren Nichtsesshafte, vagierende Lebensweise</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatVerbaleAuseinandersetzung">
+		<skos:prefLabel xml:lang="de">Verbale Auseinandersetzung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Verbale Auseinandersetzung Verbaler Streit zwischen zwei oder mehr Tätern</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatVerstossArbeitsvorschriften">
+		<skos:prefLabel xml:lang="de">Verstoss gegen Arbeitsvorschriften</skos:prefLabel>
+		<skos:defintion xml:lang="de">Verstoss gegen Arbeitsvorschriften Verstösse gegen Arbeitsvorschriften oder Zunftzwänge</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatVeruntreuung">
+		<skos:prefLabel xml:lang="de">Veruntreuung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Veruntreuung Unterschlagung oder Hinterziehung von Geld</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatVortäuschungFalscherTatsachen">
+		<skos:prefLabel xml:lang="de">Vortäuschung falscher Tatsachen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Vortäuschung falscher Tatsachen Vortäuschung falscher Tatsachen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatVorteilsnahme">
+		<skos:prefLabel xml:lang="de">Vorteilsnahme</skos:prefLabel>
+		<skos:defintion xml:lang="de">Vorteilsnahme Unrechtmässiges Verschaffen eines Vorteils</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatWiderstandgegenObrigkeit">
+		<skos:prefLabel xml:lang="de">Widerstand gegen Obrigkeit</skos:prefLabel>
+		<skos:defintion xml:lang="de">Widerstand gegen Obrigkeit Allgemeiner Widerstand gegen Amtsträger/Obrigkeit (kann auch politisch motiviert sein; Widersetzlichkeit gegen konkrete Anweisung wird als Ungehorsam kategorisiert)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatWilderei">
+		<skos:prefLabel xml:lang="de">Wilderei</skos:prefLabel>
+		<skos:defintion xml:lang="de">Wilderei Unrechtmässiges Jagen von Wild</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#TatZechprellerei">
+		<skos:prefLabel xml:lang="de">Zechprellerei</skos:prefLabel>
+		<skos:defintion xml:lang="de">Zechprellerei Nichtbezahlen der (Wirtshaus)Zeche</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Tat" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Schlagwort">
+		<skos:prefLabel xml:lang="de">Schlagworte</skos:prefLabel>
+		<skos:defintion xml:lang="de">Schlagworte</skos:defintion>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortAndrohungTodesstrafe">
+		<skos:prefLabel xml:lang="de">Androhung Todesstrafe</skos:prefLabel>
+		<skos:defintion xml:lang="de">Androhung Todesstrafe Androhung der Todesstrafe im Falle der Übertretung der Urfehde (ausgenommen Hinrichtungen mit Schwert oder durch Ertränken, siehe seperate Kategorien)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortArmut">
+		<skos:prefLabel xml:lang="de">Armut</skos:prefLabel>
+		<skos:defintion xml:lang="de">Armut Arme, Armut</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortAufdenHalswachsen">
+		<skos:prefLabel xml:lang="de">Auf den Hals wachsen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Auf den Hals wachsen Androhung einer Leibesstrafe</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortAuffällig">
+		<skos:prefLabel xml:lang="de">Auffällig</skos:prefLabel>
+		<skos:defintion xml:lang="de">Auffällig Allgemeiner Hinweis auf einen interessanten oder auffälligen Sachverhalt</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBannherren">
+		<skos:prefLabel xml:lang="de">Bannherren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bannherren Hinweis auf Mitglieder der Banngerichte</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBehinderung">
+		<skos:prefLabel xml:lang="de">Behinderung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Behinderung Hinweis auf eine behinderte Person</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBettelvogt">
+		<skos:prefLabel xml:lang="de">Bettelvogt</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bettelvogt Hinweis auf den Bettelvogt (zuständig für die auswärtigen Bettler)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBettler">
+		<skos:prefLabel xml:lang="de">Bettler</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bettler Betteln, Bettler</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBlutvogt">
+		<skos:prefLabel xml:lang="de">Blutvogt</skos:prefLabel>
+		<skos:defintion xml:lang="de">Blutvogt Hinweis auf den Blutvogt</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBürgerrecht">
+		<skos:prefLabel xml:lang="de">Bürgerrecht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bürgerrecht Hinweis auf Bürgerrechtsfragen/-verfahren (z.B. Einbürgerung)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortBürgermeister">
+		<skos:prefLabel xml:lang="de">Bürgermeister</skos:prefLabel>
+		<skos:defintion xml:lang="de">Bürgermeister Hinweis auf die Bürgermeister</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortDienstmagd">
+		<skos:prefLabel xml:lang="de">Dienstmagd</skos:prefLabel>
+		<skos:defintion xml:lang="de">Dienstmagd Dienstmagd</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortEhegerichtEherichter">
+		<skos:prefLabel xml:lang="de">Ehegericht, Eherichter</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ehegericht, Eherichter Hinweis auf Ehegericht/Eherichter</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortErbstreit">
+		<skos:prefLabel xml:lang="de">Erbstreit</skos:prefLabel>
+		<skos:defintion xml:lang="de">Erbstreit Streit um Erbe</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortErtränken">
+		<skos:prefLabel xml:lang="de">Ertränken</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ertränken Hinweis auf Bestrafung durch Ertränken</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortFoltern">
+		<skos:prefLabel xml:lang="de">Foltern</skos:prefLabel>
+		<skos:defintion xml:lang="de">Foltern Hinweis auf Folterung (meist vor dem Urfehdeeid)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortFühren">
+		<skos:prefLabel xml:lang="de">Führen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Führen Hinweis auf Bestrafung durch Führen (meist gefesselt, galt als ehrenrührig)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortFrauenarbeit">
+		<skos:prefLabel xml:lang="de">Frauenarbeit</skos:prefLabel>
+		<skos:defintion xml:lang="de">Frauenarbeit Hinweis auf gewerbliche, spezifische Frauenarbeit</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortGefängnis">
+		<skos:prefLabel xml:lang="de">Gefängnis</skos:prefLabel>
+		<skos:defintion xml:lang="de">Gefängnis Hinweis auf ein bestimmtes Gefängnis/Haftlokal</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortGeldleihe">
+		<skos:prefLabel xml:lang="de">Geldleihe</skos:prefLabel>
+		<skos:defintion xml:lang="de">Geldleihe Geldleihe (meist im Kontext mit Juden erwähnt)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortHalseisen">
+		<skos:prefLabel xml:lang="de">Halseisen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Halseisen Hinweis auf Bestrafung mit Halseisen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortJuden">
+		<skos:prefLabel xml:lang="de">Juden</skos:prefLabel>
+		<skos:defintion xml:lang="de">Juden Erwähnung von Juden</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortKeinGeständnis">
+		<skos:prefLabel xml:lang="de">Kein Geständnis</skos:prefLabel>
+		<skos:defintion xml:lang="de">Kein Geständnis Fall, in dem explizit kein Geständnis abgelegt wird</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortHeimlicheHerren">
+		<skos:prefLabel xml:lang="de">Heimliche Herren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Heimliche Herren Erwähnung der Heimlichen Herren</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortKnecht">
+		<skos:prefLabel xml:lang="de">Knecht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Knecht Knecht (analog zu Dienstmagd)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortLadenherren">
+		<skos:prefLabel xml:lang="de">Ladenherren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ladenherren Erwähnung der Ladenherren</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortLohnVerdienst">
+		<skos:prefLabel xml:lang="de">Lohn, Verdienst</skos:prefLabel>
+		<skos:defintion xml:lang="de">Lohn, Verdienst Angaben zu Lohn oder Verdienst</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortLonherren">
+		<skos:prefLabel xml:lang="de">Lonherren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Lonherren Erwähnung der Lonherren</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortMeerwunder">
+		<skos:prefLabel xml:lang="de">Meerwunder</skos:prefLabel>
+		<skos:defintion xml:lang="de">Meerwunder Erwähnung eines Meerwunders</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortMeineid">
+		<skos:prefLabel xml:lang="de">Meineid</skos:prefLabel>
+		<skos:defintion xml:lang="de">Meineid Hinweis auf einen Meineid</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortMitgift">
+		<skos:prefLabel xml:lang="de">Mitgift</skos:prefLabel>
+		<skos:defintion xml:lang="de">Mitgift Angaben zu Mitgift</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortNachbar">
+		<skos:prefLabel xml:lang="de">Nachbar</skos:prefLabel>
+		<skos:defintion xml:lang="de">Nachbar Hinweis auf Nachbarn</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortObersterKnecht">
+		<skos:prefLabel xml:lang="de">Oberster Knecht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Oberster Knecht Erwähnung des Obersten Knechts</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortProstitution">
+		<skos:prefLabel xml:lang="de">Prostitution</skos:prefLabel>
+		<skos:defintion xml:lang="de">Prostitution Hinweis auf Prostitution</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortRat">
+		<skos:prefLabel xml:lang="de">Rat</skos:prefLabel>
+		<skos:defintion xml:lang="de">Rat Erwähnung des (Kleinen) Rats, eines spezifischen Ratsherrn</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortRatsknecht">
+		<skos:prefLabel xml:lang="de">Ratsknecht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ratsknecht Erwähnung eines Ratsknechts</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortRuten">
+		<skos:prefLabel xml:lang="de">Ruten</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ruten Hinweis auf Bestrafung mit Ruten</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchulden">
+		<skos:prefLabel xml:lang="de">Schulden</skos:prefLabel>
+		<skos:defintion xml:lang="de">Schulden Hinweis auf Schulden (die nicht als Tatbestand verfolgt werden)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchultheiss">
+		<skos:prefLabel xml:lang="de">Schultheiss</skos:prefLabel>
+		<skos:defintion xml:lang="de">Schultheiss Hinweis auf einen Schultheiss</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchwemmen">
+		<skos:prefLabel xml:lang="de">Schwemmen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Schwemmen Hinweis auf Bestrafung durch Schwemmen</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSchwert">
+		<skos:prefLabel xml:lang="de">Schwert</skos:prefLabel>
+		<skos:defintion xml:lang="de">Schwert Hinweis auf Todesstrafe durch Schwert</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSiebnerherren">
+		<skos:prefLabel xml:lang="de">Siebnerherren</skos:prefLabel>
+		<skos:defintion xml:lang="de">Siebnerherren Hinweis auf die Verhörrichter (Siebnerherren)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSiegelbrief">
+		<skos:prefLabel xml:lang="de">Siegelbrief</skos:prefLabel>
+		<skos:defintion xml:lang="de">Siegelbrief Erwähnung eines besiegelten Briefes/Urkunde</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSpinnen">
+		<skos:prefLabel xml:lang="de">Spinnen</skos:prefLabel>
+		<skos:defintion xml:lang="de">Spinnen Hinweis auf die Tätigkeit des Spinnens (spezifische Unterschichtsfrauenarbeit)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortSpital">
+		<skos:prefLabel xml:lang="de">Spital</skos:prefLabel>
+		<skos:defintion xml:lang="de">Spital Hinweis auf das Spital (Alters- und Armenversorgung)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortStadtgericht">
+		<skos:prefLabel xml:lang="de">Stadtgericht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Stadtgericht Hinweis auf das Stadtgericht (= andere Gerichtsinstanz)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortStadtknecht">
+		<skos:prefLabel xml:lang="de">Stadtknecht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Stadtknecht Hinweis auf einen Stadtknecht</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortStadtwechsel">
+		<skos:prefLabel xml:lang="de">Stadtwechsel</skos:prefLabel>
+		<skos:defintion xml:lang="de">Stadtwechsel Hinweis auf den Stadtwechsel (städtische Bank)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortUnehelichesKind">
+		<skos:prefLabel xml:lang="de">UnehelichesKind</skos:prefLabel>
+		<skos:defintion xml:lang="de">UnehelichesKind Hinweis auf ein uneheliches Kind (= ehrenrührig)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortUnschuldig">
+		<skos:prefLabel xml:lang="de">Unschuldig</skos:prefLabel>
+		<skos:defintion xml:lang="de">Unschuldig Explizite Feststellung der Unschuld im Urfehdeverfahren</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortWelsche">
+		<skos:prefLabel xml:lang="de">Welsche</skos:prefLabel>
+		<skos:defintion xml:lang="de">Welsche Hinweis auf Fremde, meist italienischer oder französischer Herkunft</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortWirtshaus">
+		<skos:prefLabel xml:lang="de">Wirtshaus</skos:prefLabel>
+		<skos:defintion xml:lang="de">Wirtshaus Wirtshaus (Wirtshäuser spielen als Kommunikationsorte eine grosse Rolle)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortZoll">
+		<skos:prefLabel xml:lang="de">Zoll</skos:prefLabel>
+		<skos:defintion xml:lang="de">Zoll Zoll/Zollstelle</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#SchlagwortZunft">
+		<skos:prefLabel xml:lang="de">Zunft</skos:prefLabel>
+		<skos:defintion xml:lang="de">Zunft Hinweise im Zusammenhang mit Zünften</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Schlagwort" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Urfehdeeid">
+		<skos:prefLabel xml:lang="de">Urfehdeeid</skos:prefLabel>
+		<skos:defintion xml:lang="de">Urfehdeeid Erwähnung des Urfehdeeides</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+	</skos:Concept>ß
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Strafe">
+		<skos:prefLabel xml:lang="de">Strafe</skos:prefLabel>
+		<skos:defintion xml:lang="de">Strafe Alles, was im Urfehdeeid als Urteil oder Strafe festgelegt wird</skos:defintion>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeAmtsentlassung">
+		<skos:prefLabel xml:lang="de">Amtsentlassung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Amtsentlassung Entlassung aus einem Amt</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeAusweisung">
+		<skos:prefLabel xml:lang="de">Ausweisung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ausweisung Verbannung aus einem bestimmten Gebiet (meist Stadt Basel oder Basler Herrschaftsgebiet)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeEntschädigungRückzahlung">
+		<skos:prefLabel xml:lang="de">Entschädigung, Rückzahlung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Entschädigung, Rückzahlung Entschädigungszahlung/Rückzahlung von Schulden</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeEntschuldigung">
+		<skos:prefLabel xml:lang="de">Entschuldigung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Entschuldigung Öffentliche oder persönliche Entschuldigung beim Opfer</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeErmahnung">
+		<skos:prefLabel xml:lang="de">Ermahnung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Ermahnung Ermahnung betreffend zukünftigem Verhaltens</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeGefängnis">
+		<skos:prefLabel xml:lang="de">Gefängnisstrafe</skos:prefLabel>
+		<skos:defintion xml:lang="de">Gefängnisstrafe Absitzen einer Gefängnisstrafe nach dem Urfehdeeid</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeGeldstrafe">
+		<skos:prefLabel xml:lang="de">Geldstrafe</skos:prefLabel>
+		<skos:defintion xml:lang="de">Geldstrafe Zahlung einer Geldstrafe an die Obrigkeit</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeHausarrest">
+		<skos:prefLabel xml:lang="de">Hausarrest</skos:prefLabel>
+		<skos:defintion xml:lang="de">Hausarrest Hausarrest</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeKörperstrafe">
+		<skos:prefLabel xml:lang="de">Körperstrafe</skos:prefLabel>
+		<skos:defintion xml:lang="de">Körperstrafe Körperliche Bestrafung</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeStrafandrohung">
+		<skos:prefLabel xml:lang="de">Strafandrohung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Strafandrohung Strafe, die im Falle einer Übertretung der Urfehde angedroht wird</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeAusnahme">
+		<skos:prefLabel xml:lang="de">Strafausnahme</skos:prefLabel>
+		<skos:defintion xml:lang="de">Strafausnahme Einschränkungen und Bedingungen für Gültigkeit/Anwendung der Strafe</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeMilderung">
+		<skos:prefLabel xml:lang="de">Strafmilderung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Strafmilderung Umstände, die zu einer mildernden Strafe führen (z.B. Alter, Fürbitten etc.)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeStrafumwandlung">
+		<skos:prefLabel xml:lang="de">Strafumwandlung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Strafumwandlung Umwandlung einer Strafe in eine andere (meist Geld in Haft)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeUrteilohneStrafe">
+		<skos:prefLabel xml:lang="de">Urteil ohne Strafe</skos:prefLabel>
+		<skos:defintion xml:lang="de">Urteil ohne Strafe Urteil, das keine Strafe beinhaltet</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbot">
+		<skos:prefLabel xml:lang="de">Verbot</skos:prefLabel>
+		<skos:defintion xml:lang="de">Verbot Verbote aller Art (ausgenommen Spielverbot, Tanzverbot, Waffenverbot und Wirtshausverbot, siehe separate Kategorien)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotSpiel">
+		<skos:prefLabel xml:lang="de">Spielverbot</skos:prefLabel>
+		<skos:defintion xml:lang="de">Spielverbot Verbot des unrechtmässigen (Glück)Spiels</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotTanz">
+		<skos:prefLabel xml:lang="de">Tanzverbot</skos:prefLabel>
+		<skos:defintion xml:lang="de">Tanzverbot Verbot des Tanzens</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotWaffen">
+		<skos:prefLabel xml:lang="de">Waffenverbot</skos:prefLabel>
+		<skos:defintion xml:lang="de">Waffenverbot Verbot des Waffentragens</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeVerbotWirtshaus">
+		<skos:prefLabel xml:lang="de">Wirtshausverbot</skos:prefLabel>
+		<skos:defintion xml:lang="de">Wirtshausverbot Verbot des Wirtshausbesuches</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeWeisungananderesGericht">
+		<skos:prefLabel xml:lang="de">Weisung an anderes Gericht</skos:prefLabel>
+		<skos:defintion xml:lang="de">Weisung an anderes Gericht Urteil, das den behandelten Fall an ein anderes Gericht verweist</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#StrafeWiedergutmachung">
+		<skos:prefLabel xml:lang="de">Wiedergutmachung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Wiedergutmachung Wiedergutmachung am Opfer (ausgenommen Entschädigungszahlung/Rückzahlung, siehe separate Katergorie)</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#Datum">
+		<skos:prefLabel xml:lang="de">Datum</skos:prefLabel>
+		<skos:defintion xml:lang="de">Datum</skos:defintion>
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#DatumTat">
+		<skos:prefLabel xml:lang="de">Datum der Tat</skos:prefLabel>
+		<skos:defintion xml:lang="de">Datum der Tat Zeitpunkt, zu welchem die Tat verübt wurde</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Datum" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#DatumUrfehde">
+		<skos:prefLabel xml:lang="de">Datum der Urfehde</skos:prefLabel>
+		<skos:defintion xml:lang="de">Datum der Urfehde Zeitpunkt, zu welchem die Urfehde geschworen wurde</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Datum" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#DatumFrist">
+		<skos:prefLabel xml:lang="de">Datum einer Frist</skos:prefLabel>
+		<skos:defintion xml:lang="de">Datum einer Frist Dauer oder Ablaufdatum einer Frist</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Datum" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#DatumBegnadigung">
+		<skos:prefLabel xml:lang="de">Datum der Begnadigung</skos:prefLabel>
+		<skos:defintion xml:lang="de">Datum der Begnadigung Zeitpunkt, zu welchem eine Person begnadigt wurde</skos:defintion>
+		<skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Datum" />
+	</skos:Concept>
+	<skos:Concept rdf:about="http://gams.uni-graz.at/ufbas/#NotarialSubscription">
+		<skos:prefLabel xml:lang="de">Notariatsunterschrift</skos:prefLabel>
+		<skos:defintion xml:lang="de">Notariatsunterschrift Beglaubigung der Urfehde durch den Notar</skos:defintion>
+	    <skos:broader rdf:resource="http://gams.uni-graz.at/ufbas/#Verfahrensseigenschaften"/>
+	</skos:Concept>
+</rdf:RDF>

@@ -1,0 +1,54 @@
+PREFIX ufbas-ont:<https://gams.uni-graz.at/o:ufbas.ontology#>
+PREFIX ufbas-kat:<http://gams.uni-graz.at/ufbas/#>
+PREFIX gams:<http://gams.uni-graz.at/o:gams-ontology#>
+
+# One row per entry for the Exploration view, read once by the page through getJSON,
+# from the refactored RDF of the domain ontology (knowledge/domain.md#domain-ontology).
+# Every entry documents one proceeding. A fragment documents the proceeding of the entry
+# it continues and has no row of its own, so its annotations count for that entry
+# (ADR-12). The categories are those of every span of the entries of the proceeding, the
+# Urfehde date the earliest coded one, the offenders those of the proceeding with gender
+# and name, and the places of origin those of the offenders in the place list.
+SELECT ?eintrag ?datum ?kategorien ?taeter ?herkunft
+WHERE {
+  ?eintrag a ufbas-ont:Entry ;
+    ufbas-ont:documents ?p .
+  FILTER NOT EXISTS { ?eintrag ufbas-ont:continues ?host }
+  OPTIONAL {
+    SELECT ?p (GROUP_CONCAT(DISTINCT ?id; separator=" ") AS ?kategorien)
+    WHERE {
+      ?x ufbas-ont:documents ?p .
+      ?s gams:isPartOf ?x ;
+        ufbas-ont:category ?c .
+      BIND(STRAFTER(STR(?c), "#") AS ?id)
+    } GROUP BY ?p
+  }
+  OPTIONAL {
+    SELECT ?p (MIN(?d) AS ?datum)
+    WHERE {
+      ?x ufbas-ont:documents ?p .
+      ?s gams:isPartOf ?x .
+      ?t ufbas-ont:derivedFrom ?s ;
+        ufbas-ont:category ufbas-kat:DatumUrfehde ;
+        ufbas-ont:dateAsCoded ?d .
+    } GROUP BY ?p
+  }
+  OPTIONAL {
+    SELECT ?p (GROUP_CONCAT(DISTINCT ?person; separator="|") AS ?taeter)
+    WHERE {
+      ?p ufbas-ont:hasOffender ?o .
+      ?o ufbas-ont:nameAsWritten ?name .
+      OPTIONAL { ?o ufbas-ont:gender ?g }
+      BIND(CONCAT(COALESCE(STRAFTER(STR(?g), "#"), ""), "~", ?name) AS ?person)
+    } GROUP BY ?p
+  }
+  OPTIONAL {
+    SELECT ?p (GROUP_CONCAT(DISTINCT ?ort; separator="|") AS ?herkunft)
+    WHERE {
+      ?p ufbas-ont:hasOffender ?o .
+      ?o ufbas-ont:origin ?place .
+      ?place ufbas-ont:placeName ?ort .
+    } GROUP BY ?p
+  }
+}
+ORDER BY ?datum
