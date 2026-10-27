@@ -19,6 +19,10 @@ GAMS stays the source of truth. The files in `tei/` and `rdf/` are the published
 
 The line endings of the published datastreams are kept as GAMS serves them, so `.gitattributes` excludes every file from line ending conversion.
 
+## Local analysis
+
+The source retrieved again on 2026-10-27 is stored byte for byte in `data/ufbas.1563.xml` and is identical to `tei/ufbas.1563.xml`. [Data knowledge](knowledge/data.md) records the verified structure, annotation examples, open questions and proposed test strategy. [The knowledge index](knowledge/INDEX.md) links the analysis context. Run `uv run scripts/analyze_tei.py data/ufbas.1563.xml --self-check --output generated/tei-analysis.json` to reproduce the inventory and its bounded checks.
+
 ## Provenance
 
 The transcription goes back to a course at the Department of History of the University of Basel in spring 2012, the TEI encoding to a course in spring 2016. The presentation layer, the RDF transformation and the search were built in 2016 and 2017 at the Zentrum für Informationsmodellierung of the University of Graz, today the Institut für Digitale Geisteswissenschaften, and revised in 2026. The project description in `tei/ufbas.about.xml` names everyone involved.
