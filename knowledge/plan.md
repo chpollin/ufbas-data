@@ -20,7 +20,7 @@ related: [specification.md, domain.md, architecture.md, testing.md]
 
 # Plan
 
-Open steps of the 2026 refactoring. Requirements and decisions are in [specification.md](specification.md), where ADR-13 is deferred until after the update. What is done is in [journal.md](journal.md). Every step passes the local simulation, push and look on staging that [AGENTS.md](../AGENTS.md) prescribes, and reaches readers only with the operator's GAMS update.
+Open steps of the 2026 refactoring. Decisions are in [specification.md](specification.md), where ADR-13 is deferred until after the update, and what is done is in [journal.md](journal.md). Every step passes the local simulation, push and look on staging that [AGENTS.md](../AGENTS.md) prescribes, and reaches readers only with the operator's GAMS update.
 
 ## Staging
 
@@ -45,7 +45,7 @@ The view reads the refactored RDF since 2026-10-21 (ADR-21, [testing.md](testing
 
 1. A look at the facsimile viewer on staging, where the tiles come from the object store of the archive as on production ([design.md](design.md#views), [architecture.md](architecture.md#edition-page)).
 2. The header and navigation CSS read `--page-max` through the shared `.container` rule of `template.css`, which a rebuild of the page head may take over.
-3. The phone layout of the edition, drafted on the branch `entwurf-oberflaeche` in both repositories, the pages in gams-www (worktree `ZIMLAB/ufbas-entwurf`) and its checks in ufbas-data, tested together with `UFBAS_WWW` set to that worktree. The draft has the tools in a bar at the bottom of the window, the quick search behind a magnifier and the citation closed, and a browser check that requires the edition text on the first screen. A second round moves the view switch into the bar and the source icons to the citation, then the operator accepts it in the local preview before it is merged.
+3. The phone layout of the edition, drafted on the branch `entwurf-oberflaeche` in both repositories (gams-www as worktree `ZIMLAB/ufbas-entwurf`, tested with `UFBAS_WWW` set to it). The draft puts the tools in a bar at the bottom of the window, the quick search behind a magnifier and the citation closed, with a browser check that requires the edition text on the first screen. A second round moves the view switch into the bar and the source icons to the citation, and the operator accepts it in the local preview before it is merged.
 4. Operator look on staging at the layout below 62rem, at the marks (1.5px, Orte 3px), at page head, entry heading, bookmark and tooltips, and confirmation of the acceptance sheet `op-ufbas-oberflaeche`.
 
 ## Ontology

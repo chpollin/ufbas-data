@@ -24,7 +24,7 @@ The line endings of the published datastreams are kept as GAMS serves them, so `
 
 ### Local analysis
 
-The source retrieved again on 2026-10-27 was byte-identical to `tei/ufbas.1563.xml` before the page images of ADR-34 entered it, and the commit `7624833` keeps that published state. [The TEI analysis](knowledge/tei-analysis.md) records the verified structure, annotation examples, open questions and proposed test strategy. Run `git show 7624833:tei/ufbas.1563.xml > generated/ufbas.1563.published.xml` and then `uv run scripts/analyze_tei.py generated/ufbas.1563.published.xml --self-check --output generated/tei-analysis.json` in a POSIX shell such as Git Bash, whose redirection keeps the bytes, to reproduce the inventory and its bounded checks. The self-check requires the published file. `generated/` is excluded from Git.
+The source retrieved again on 2026-10-27 was byte-identical to `tei/ufbas.1563.xml` before the page images of ADR-34 entered it, and the commit `7624833` keeps that published state. [The independent inventory in the data document](knowledge/data.md#independent-inventory-of-the-published-tei) records the verified structure, annotation examples, open questions and proposed test strategy. Run `git show 7624833:tei/ufbas.1563.xml > generated/ufbas.1563.published.xml` and then `uv run scripts/analyze_tei.py generated/ufbas.1563.published.xml --self-check --output generated/tei-analysis.json` in a POSIX shell such as Git Bash, whose redirection keeps the bytes, to reproduce the inventory and its bounded checks. The self-check requires the published file. `generated/` is excluded from Git.
 
 ### Provenance
 

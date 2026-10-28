@@ -20,29 +20,26 @@ generated-with: Claude Code (Claude Opus 5.5)
 
 # Index
 
-Entry point to the project knowledge of the GAMS presentation layer of the digital edition "Urfehdebücher der Stadt Basel" (https://gams.uni-graz.at/context:ufbas). The knowledge lies in the GitHub repository ufbas-data together with the data package, the local harness, the ingest stylesheets, the queries and the datastream mirrors. The ZimLab repository gams-www holds only the files GAMS serves ([architecture.md](architecture.md#repository-structure)). The `version` field above is the shared document schema version for every file in this folder.
+Entry point to the project knowledge of the GAMS presentation layer of the digital edition "Urfehdebücher der Stadt Basel" (https://gams.uni-graz.at/context:ufbas). The knowledge lies in the GitHub repository ufbas-data with the data package, the local harness, the ingest stylesheets, the queries and the datastream mirrors, while the ZimLab repository gams-www holds only the files GAMS serves ([architecture.md](architecture.md#repository-structure)). The `version` field above is the shared document schema version for every file in this folder.
 
 ## Documents
 
-| File | Question it answers |
-|---|---|
-| [project.md](project.md) | What the edition is, who carries it, what source it publishes, under which licence |
-| [domain.md](domain.md) | What an Urfehde entry records, which research it serves, how institutions, money, marginal notes, sanctions and persons are read, and the ontology with its layers, alignment and derivation |
-| [data.md](data.md) | How TEI, taxonomy, RDF and the exploration dataset are built, and which data findings stay unchanged |
-| [tei-analysis.md](tei-analysis.md) | What an independent analysis of the published TEI, retrieved on 2026-10-27, shows about its structure, annotation and limits, and which checks could test it |
-| [specification.md](specification.md) | What the site has to do, for whom (personas, user stories), what each view does, and which decisions hold or are open |
-| [architecture.md](architecture.md) | Which environments, GAMS objects, Cirilo settings, stylesheets, scripts and queries make up the site, and the constraints of the search channel |
-| [design.md](design.md) | Principles, colours, type, components and view structure of the adopted design |
-| [testing.md](testing.md) | What the local harness guarantees before a change is pushed, and what staging and production checks cover |
-| [plan.md](plan.md) | Which steps are open on staging and for exploration, edition page, ontology, delivery, cleanup and improvements |
-| [journal.md](journal.md) | How the knowledge base came about |
-| [../README.md](../README.md) | Which files the data package holds, where they come from and under which licence, and how both repositories and the harness are laid out |
+| File | Question it answers | Updated when |
+|---|---|---|
+| [project.md](project.md) | What the edition is, who carries it, what source it publishes, under which licence | responsibility, licence or project frame change |
+| [domain.md](domain.md) | What an Urfehde entry records, which research it serves, how institutions, money, marginal notes, sanctions and persons are read, and how the domain ontology models and derives them | a reading rule, the ontology or the literature basis changes |
+| [data.md](data.md) | How TEI, taxonomy, RDF and the exploration dataset are built, which data findings stay unchanged, and what the independent inventory of the published TEI shows with its test strategy for discussion | the TEI, its derivations or `scripts/analyze_tei.py` change, a new data finding appears, or the TEI is retrieved again |
+| [specification.md](specification.md) | What the site has to do, for whom (personas, user stories), what each view does, and which decisions hold | a requirement or view changes or the operator decides (decisions only grow) |
+| [architecture.md](architecture.md) | Which environments, GAMS objects, Cirilo target values, stylesheets, scripts and queries make up the site, and the constraints of the search channel | an object, datastream target, stylesheet, script or query changes |
+| [design.md](design.md) | Which principles, design decisions and accessibility rules the interface follows | a design decision changes |
+| [testing.md](testing.md) | What each local check guarantees before a push, what staging and production checks cover, and what stays unchecked | a test file is added or changes its guarantee, or a story changes its state |
+| [plan.md](plan.md) | Which steps are open on staging, for Exploration, edition page, ontology, delivery and cleanup | a step is done or a new one is accepted |
+| [journal.md](journal.md) | How the knowledge base came about | after every substantive session |
+| [../README.md](../README.md) | Which files the data package holds, where they come from, under which licence, and how both repositories and the harness are laid out | a package release or a change of the repository layout |
 
-The proposed shared rules in [../GAMS.md](../GAMS.md) are binding locally through [../AGENTS.md](../AGENTS.md), which adds the UFBAS rules and their mechanisms. Cross-project adoption and the canonical maintenance location remain open. `CLAUDE.md` only imports both for Claude Code. Dated findings with measurements live in [../snapshots/](../snapshots/), the code audit of 2026-09-23, the research report of 2026-09-24 and the Exploration query on the RDF of 2017 of 2026-09-29. Curated tables of that research, with their provenance, are in [../research-artefacts/](../research-artefacts/README.md).
+The proposed shared rules in [../GAMS.md](../GAMS.md) are binding locally through [../AGENTS.md](../AGENTS.md), which adds the UFBAS rules and their mechanisms. Cross-project adoption and the canonical maintenance location remain open. `CLAUDE.md` only imports both for Claude Code. Dated measurements live in [../snapshots/](../snapshots/), the code audit of 2026-09-23 behind the [parameter channel](architecture.md#parameter-channel), the research report of 2026-09-24 behind [domain.md](domain.md) and [data.md](data.md), and the Exploration query on the RDF of 2017 of 2026-09-29. Curated research tables with their provenance are in [../research-artefacts/](../research-artefacts/README.md).
 
-[tei-analysis.md](tei-analysis.md) is updated when the TEI is retrieved again or `scripts/analyze_tei.py` changes, and it complements [data.md](data.md), which remains the reference of the presentation layer. The README of the data package changes with a release of the package or a change of the repository layout.
-
-The German workshop example [tei-pruefung/SKILL.md](../workshop/tei-pruefung/SKILL.md) binds a TEI review to the local edition rules, taxonomy and existing offline RDF/SHACL check. It targets the UFBAS checkouts of ufbas-data and gams-www; a newly created exercise repository needs its own file and command bindings. The example distinguishes XML parsing, TEI schema validation and RDF validation.
+The German workshop example [tei-pruefung/SKILL.md](../workshop/tei-pruefung/SKILL.md) binds a TEI review to the local edition rules, taxonomy and the offline RDF and SHACL check, for the UFBAS checkouts of ufbas-data and gams-www. A new exercise repository needs its own file and command bindings. The example distinguishes XML parsing, TEI schema validation and RDF validation.
 
 ## Terms
 

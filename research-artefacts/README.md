@@ -18,7 +18,7 @@ The tables `entry-types.tsv` and `editorial-crossrefs.tsv` are oracles of the te
 
 `fine-concordance-srbas.tsv` is the evidence for the fines in the sister edition cited in [domain.md](../knowledge/domain.md#related-editions). No test or derivation reads it.
 
-`category-labels-en.tsv` is a draft that awaits the operator's curation ([plan.md](../knowledge/plan.md#ontology)). No derivation uses it yet.
+`category-labels-en.tsv` holds the English labels the operator curated on 2026-10-28. `ufbas-TORDF-ontology.xsl` writes them as English `skos:prefLabel`, and `test/skos.test.mjs` keeps both equal.
 
 ## Scripts
 

@@ -20,7 +20,11 @@ node make-baseline.mjs           # render baseline/ with the stylesheets of 2017
 npm run compare -- [page ...]    # compare rendered pages with production
 ```
 
-What the checks guarantee, the preview server, the pages of the build and the reads of production are described in [../knowledge/testing.md](../knowledge/testing.md).
+What the checks guarantee and when the harness reads production are described in [../knowledge/testing.md](../knowledge/testing.md). The pages of the build and their inputs are the page table of `build.mjs`.
+
+## Preview
+
+`serve.mjs` answers the GAMS URLs of the site on `127.0.0.1`, by default on port 8771. Pages are rendered from the stylesheets of the gams-www checkout and kept in memory until a stylesheet changes, since the edition page is large. Searches and the JSON of `query:ufbas.exploration` run through `sparql.mjs` on the refactored RDF, `query:ufbas.graph` is answered from production, since the forwarding page does not read it, and the other spreadsheet, XML and JSON exports redirect to production. The preview has no route for the page of `o:ufbas.ontology`, which is the page Ontologie of `context:ufbas`.
 
 ## Comparison with production
 

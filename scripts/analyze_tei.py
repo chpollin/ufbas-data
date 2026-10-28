@@ -4,9 +4,11 @@
 # ///
 """Inventory UFBAS TEI without changing source bytes (standalone script).
 
-Usage: uv run scripts/analyze_tei.py tei/ufbas.1563.xml --output generated/tei-analysis.json
+Usage: git show 7624833:tei/ufbas.1563.xml > generated/ufbas.1563.published.xml
+       uv run scripts/analyze_tei.py generated/ufbas.1563.published.xml --self-check --output generated/tei-analysis.json
+--self-check requires the published file of commit 7624833.
 Strict parsing deliberately overrides recover mode at the validation boundary.
-Entities and DTD loading are disabled. See knowledge/tei-analysis.md for interpretation.
+Entities and DTD loading are disabled. See knowledge/data.md, section Independent inventory of the published TEI, for interpretation.
 """
 
 import argparse

@@ -21,7 +21,7 @@ related: [domain.md, data.md, architecture.md, design.md, plan.md]
 
 # Specification
 
-What the presentation layer has to do and why. Requirements and decisions hold for the whole site, personas and user stories serve the Exploration view, the functional scope describes each view as it stands. Requirements change rarely, stories change their validation status, the scope changes per release, and decisions only grow.
+What the presentation layer has to do and why. Requirements and decisions hold for the whole site, personas and user stories serve the Exploration view, and the functional scope describes each view as it stands. Decisions only grow.
 
 ## Requirements
 
@@ -70,7 +70,7 @@ Research goals:
 
 ## Epics and user stories
 
-Each story is a hypothesis until confirmed. Data states whether the TEI carries it ([data.md](data.md#data-quality)), View names the part of the Exploration view that serves it.
+Each story is a hypothesis until confirmed. Data states whether the TEI carries it ([data.md](data.md#data-quality)), View names the part of the Exploration view that serves it. Which stories the view serves today is kept in [testing.md](testing.md#stories).
 
 ### Epic 1 Sanctioning practice (G1, G2)
 
@@ -113,7 +113,7 @@ Out of scope are person networks, crime rates and comparisons with other books, 
 - Search. Quick search and advanced search with full text, regular expressions, date range and examples, on the refactored RDF, where a place name finds every spelling of the place and date range and excluded terms hold for it as well. Result pages with excerpts, chips, year links, the Datenkorb and a CSV of the hits ([architecture.md](architecture.md#search)).
 - Datenkorb. List with sorting, removal, CSV and clearing.
 - Graph. Forwards to the Exploration view with its category selected, or to the entry list of a category the view has no filter for.
-- Exploration. The entries of the whole book, read from the RDF through `query:ufbas.exploration`, each drawn as one mark coloured by its sanction class, under one selection kept in the fragment of the address. The view "Zeit" sets the marks by month from 1563 to 1569, men above the axis, women below it, mixed and unknown compositions in bands of their own, the cut-out pages hatched and the undated entries in a column of their own. The view "Tatbestand" moves the same marks into a row per offence with its sanction profile, the share of each sanction class among the entries of the row, sortable by a class. A legend of the five sanction classes filters by class, menus above the chart filter by gender composition, offence, sanction, origin with a search, procedure and keyword, each value with its count in the selection over a pale bar of the whole book, and a drag over the time axis chooses months. Marks outside the selection fade instead of vanishing. A click on a mark opens the entry beside it, and a sortable table of the selection with links into the edition, Datenkorb switches, "Alle in den Datenkorb" and a CSV of the selection follows the chart. The view reads the refactored RDF ([data.md](data.md#rdf-as-source-of-the-exploration-view)), which also carries the marginal notes, durations and cross-references of the stories of Epic 3, which query and view do not read yet.
+- Exploration. Every entry of the book as one mark coloured by its sanction class, read from the RDF through `query:ufbas.exploration` ([data.md](data.md#rdf-as-source-of-the-exploration-view)) under one selection kept in the fragment of the address. The view "Zeit" sets the marks by month from 1563 to 1569 with men above and women below the axis, mixed and unknown compositions in bands of their own, the cut-out pages hatched and the undated entries apart. The view "Tatbestand" moves the same marks into a row per offence with its sanction profile. Legend and filter menus (gender composition, offence, sanction, origin, procedure, keyword) count in the selection, a drag over the time axis chooses months, and marks outside the selection fade. A mark opens its entry, and a sortable table of the selection links into the edition and the Datenkorb and exports CSV ([design.md](design.md#views)). The refactored RDF also carries the marginal notes, durations and cross-references of Epic 3, which query and view do not read yet.
 
 ## Decisions
 
