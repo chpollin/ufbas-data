@@ -1,0 +1,360 @@
+# SHACL shapes of the refactored RDF of the Urfehdebücher der Stadt Basel and of the SKOS
+# of the taxonomy Urfehdekodierung (knowledge/domain.md#domain-ontology, ADR-23). The data
+# graph is validated together with the ontology ufbas.ontology.ttl and the SKOS, since
+# sh:class follows rdfs:subClassOf, the units are declared in the ontology and the
+# category checks walk skos:broader. The shapes use SHACL Core only, so the closed-world
+# check is sh:closed per class, and the test adds a namespace check on the data graph.
+# Facts of the published TEI that the derivation must not change, and so cannot repair,
+# are sh:Warning (knowledge/data.md). Everything else is a violation.
+# Prefixes: ufbas-ont: the ontology, ufbas-kat: the categories, gams: the GAMS ontology.
+
+@prefix sh:        <http://www.w3.org/ns/shacl#> .
+@prefix ufbas-sh:  <https://gams.uni-graz.at/o:ufbas.ontology/shapes#> .
+@prefix ufbas-ont: <https://gams.uni-graz.at/o:ufbas.ontology#> .
+@prefix ufbas-kat: <http://gams.uni-graz.at/ufbas/#> .
+@prefix gams:      <http://gams.uni-graz.at/o:gams-ontology#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+
+<https://gams.uni-graz.at/o:ufbas.ontology/shapes>
+    dcterms:creator "Christopher Pollin" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+
+# Record layer
+
+ufbas-sh:Entry a sh:NodeShape ;
+    sh:targetClass ufbas-ont:Entry ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path gams:textualContent ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:message "An entry has exactly one gams:textualContent, a non-empty string." ] ,
+    [
+        sh:path ufbas-ont:documents ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ufbas-ont:UrfehdeProceeding ;
+        sh:message "An entry documents exactly one Urfehde proceeding." ] ,
+    [
+        sh:path ufbas-ont:onPage ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ufbas-ont:Page ;
+        sh:message "An entry is on exactly one page, the page it starts on." ] ,
+    [
+        sh:path gams:isPartOf ; sh:maxCount 1 ; sh:class ufbas-ont:Volume ;
+        sh:message "An entry is part of at most one volume." ] ,
+    [
+        sh:path ufbas-ont:hasMarginalNote ; sh:class ufbas-ont:MarginalNote ;
+        sh:message "ufbas-ont:hasMarginalNote points to a marginal note." ] ,
+    [
+        sh:path ufbas-ont:entryType ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ufbas-ont:urfehde ufbas-ont:urfehdbrief ufbas-ont:aussage ufbas-ont:entwurf ufbas-ont:abgebrochen ufbas-ont:fortsetzung ) ;
+        sh:message "An entry has exactly one entry type of the ontology." ] ,
+    [
+        sh:path ufbas-ont:continues ; sh:maxCount 1 ; sh:class ufbas-ont:Entry ;
+        sh:message "A fragment continues at most one entry." ] ,
+    [
+        sh:path ufbas-ont:relatedEntry ; sh:class ufbas-ont:Entry ;
+        sh:message "ufbas-ont:relatedEntry points to an entry." ] ,
+    [
+        sh:path ufbas-ont:mentionsPlace ; sh:class ufbas-ont:Place ;
+        sh:message "ufbas-ont:mentionsPlace points to a place." ] .
+
+# Only a fragment continues another entry. That it documents the proceeding of that entry
+# (ADR-12) is a path equality SHACL Core cannot state, test/rdf-ontology.test.mjs checks it.
+ufbas-sh:Continuation a sh:NodeShape ;
+    sh:targetSubjectsOf ufbas-ont:continues ;
+    sh:property [
+        sh:path ufbas-ont:entryType ; sh:hasValue ufbas-ont:fortsetzung ;
+        sh:message "Only an entry of type Fortsetzung continues another entry." ] .
+
+ufbas-sh:Page a sh:NodeShape ;
+    sh:targetClass ufbas-ont:Page ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path ufbas-ont:folio ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:message "A page has exactly one folio, a string counted from the page breaks." ] ,
+    [
+        sh:path ufbas-ont:imageNumber ; sh:maxCount 1 ; sh:datatype xsd:integer ;
+        sh:message "A page has at most one image number, an xsd:integer." ] ,
+    [
+        sh:path gams:isPartOf ; sh:maxCount 1 ; sh:class ufbas-ont:Volume ;
+        sh:message "A page is part of at most one volume." ] .
+
+ufbas-sh:Span a sh:NodeShape ;
+    sh:targetClass ufbas-ont:Span ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        # the TEI has annotated elements without content
+        sh:path gams:textualContent ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A span has no gams:textualContent, since its TEI element is empty." ] ,
+    [
+        sh:path gams:textualContent ; sh:maxCount 1 ;
+        sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:message "A span has at most one gams:textualContent, a non-empty string." ] ,
+    [
+        sh:path gams:isPartOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ufbas-ont:Entry ;
+        sh:message "A span is part of exactly one entry." ] ,
+    [
+        # a span that crosses a page break is on both pages
+        sh:path ufbas-ont:onPage ; sh:class ufbas-ont:Page ;
+        sh:message "ufbas-ont:onPage points to a page." ] ,
+    [
+        # the category the element is annotated with, which carries the keywords
+        sh:path ufbas-ont:category ; sh:class skos:Concept ;
+        sh:message "A category is a skos:Concept." ] .
+
+# Proceeding and its parts
+
+ufbas-sh:Proceeding a sh:NodeShape ;
+    sh:targetClass ufbas-ont:UrfehdeProceeding ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        # an entry that breaks off before any coded part
+        sh:path ufbas-ont:hasPart ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A proceeding has no part, since its entry codes none." ] ,
+    [
+        sh:path ufbas-ont:hasPart ; sh:class ufbas-ont:ProceedingPart ;
+        sh:message "Every part of a proceeding is a ufbas-ont:ProceedingPart." ] ,
+    [ sh:path ufbas-ont:hasParticipant ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasOffender ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasAccomplice ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasVictim ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasPlaintiff ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasWitness ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasPresent ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasReceiver ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:hasNotary ; sh:class ufbas-ont:PersonMention ;
+      sh:message "A role of a proceeding points to a person mention." ] ,
+    [ sh:path ufbas-ont:refersToProceeding ; sh:class ufbas-ont:UrfehdeProceeding ;
+      sh:message "ufbas-ont:refersToProceeding points to an Urfehde proceeding." ] ,
+    [ sh:path ufbas-ont:hasTimeSpan ; sh:class ufbas-ont:TimeSpan ;
+      sh:message "ufbas-ont:hasTimeSpan points to a time-span." ] ,
+    [ sh:path ufbas-ont:tookPlaceAt ; sh:class ufbas-ont:Place ;
+      sh:message "ufbas-ont:tookPlaceAt points to a place." ] ,
+    [ sh:path ufbas-ont:concerns ; sh:class ufbas-ont:MonetaryAmount ;
+      sh:message "ufbas-ont:concerns points to a monetary amount." ] ,
+    [ sh:path gams:isPartOf ; sh:maxCount 1 ;
+      sh:message "A proceeding is part of at most one object." ] ,
+    # a proceeding has no annotated element of its own, its evidence is the entry
+    [ sh:path ufbas-ont:derivedFrom ; sh:minCount 1 ;
+      sh:or ( [ sh:class ufbas-ont:Span ] [ sh:class ufbas-ont:Entry ] ) ;
+      sh:message "A proceeding is derived from its entry or from a span." ] .
+
+# The properties every part may carry; the kinds of part are checked below.
+ufbas-sh:ProceedingPart a sh:NodeShape ;
+    sh:targetClass ufbas-ont:ProceedingPart ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:path ufbas-ont:category ; sh:maxCount 1 ; sh:class skos:Concept ;
+                  sh:message "A part of a proceeding has at most one category, a skos:Concept." ] ,
+    [ sh:path ufbas-ont:committedBy ; sh:class ufbas-ont:PersonMention ;
+      sh:message "ufbas-ont:committedBy points to a person mention." ] ,
+    [ sh:path ufbas-ont:appliesTo ; sh:class ufbas-ont:PersonMention ;
+      sh:message "ufbas-ont:appliesTo points to a person mention." ] ,
+    [ sh:path ufbas-ont:deadline ; sh:class ufbas-ont:TimeSpan ;
+      sh:message "ufbas-ont:deadline points to a time-span." ] ,
+    [ sh:path ufbas-ont:hasTimeSpan ; sh:class ufbas-ont:TimeSpan ;
+      sh:message "ufbas-ont:hasTimeSpan points to a time-span." ] ,
+    [ sh:path ufbas-ont:tookPlaceAt ; sh:class ufbas-ont:Place ;
+      sh:message "ufbas-ont:tookPlaceAt points to a place." ] ,
+    [ sh:path ufbas-ont:concerns ; sh:class ufbas-ont:MonetaryAmount ;
+      sh:message "ufbas-ont:concerns points to a monetary amount." ] ,
+    [ sh:path ufbas-ont:derivedFrom ] ,
+    [ sh:path gams:isPartOf ; sh:maxCount 1 ;
+      sh:message "A part of a proceeding is part of at most one object." ] .
+
+ufbas-sh:Offence a sh:NodeShape ;
+    sh:targetClass ufbas-ont:Offence ;
+    sh:property [
+        sh:path ufbas-ont:category ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "An offence has exactly one category." ] ,
+    [
+        # skos:narrower as well, so the check holds whichever direction the SKOS states
+        sh:path ( ufbas-ont:category [ sh:zeroOrMorePath [ sh:alternativePath ( skos:broader [ sh:inversePath skos:narrower ] ) ] ] ) ;
+        sh:hasValue ufbas-kat:Tat ;
+        sh:message "The category of an offence lies under ufbas-kat:Tat." ] .
+
+ufbas-sh:Sanction a sh:NodeShape ;
+    sh:targetClass ufbas-ont:Sanction ;
+    sh:property [
+        sh:path ufbas-ont:category ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "A sanction has exactly one category." ] ,
+    [
+        sh:path ( ufbas-ont:category [ sh:zeroOrMorePath [ sh:alternativePath ( skos:broader [ sh:inversePath skos:narrower ] ) ] ] ) ;
+        sh:hasValue ufbas-kat:Strafe ;
+        sh:message "The category of a sanction lies under ufbas-kat:Strafe." ] .
+
+# rdfs:domain is not inferred, so the properties of one kind of part are held to it here
+ufbas-sh:CommittedByDomain a sh:NodeShape ;
+    sh:targetSubjectsOf ufbas-ont:committedBy ;
+    sh:class ufbas-ont:Offence ;
+    sh:message "Only an offence is committed by a person." .
+
+ufbas-sh:SanctionDomain a sh:NodeShape ;
+    sh:targetSubjectsOf ufbas-ont:appliesTo , ufbas-ont:deadline ;
+    sh:class ufbas-ont:Sanction ;
+    sh:message "Only a sanction applies to a person or has a deadline." .
+
+# Every node derived from the TEI names its evidence, a span or, for an amount outside any
+# annotated element, the entry. Entry, span, page, volume and the places of the place list
+# are the record or shared by all entries, and gender, calendar, units, entry types and
+# date conflicts are individuals of the ontology.
+ufbas-sh:Derived a sh:NodeShape ;
+    sh:targetClass ufbas-ont:ProceedingPart , ufbas-ont:PersonMention , ufbas-ont:TimeSpan ,
+        ufbas-ont:MonetaryAmount , ufbas-ont:MarginalNote ;
+    sh:property [
+        sh:path ufbas-ont:derivedFrom ; sh:minCount 1 ;
+        sh:or ( [ sh:class ufbas-ont:Span ] [ sh:class ufbas-ont:Entry ] ) ;
+        sh:message "A derived node is derived from at least one span or entry of the TEI." ] .
+
+# Persons, places, time, money
+
+ufbas-sh:PersonMention a sh:NodeShape ;
+    sh:targetClass ufbas-ont:PersonMention ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path ufbas-ont:gender ; sh:maxCount 1 ; sh:in ( ufbas-ont:male ufbas-ont:female ) ;
+        sh:message "A person mention has at most one gender, ufbas-ont:male or ufbas-ont:female." ] ,
+    [ sh:path ufbas-ont:forename ; sh:nodeKind sh:Literal ; sh:message "A name part is a literal." ] ,
+    [ sh:path ufbas-ont:surname ; sh:nodeKind sh:Literal ; sh:message "A name part is a literal." ] ,
+    [ sh:path ufbas-ont:byname ; sh:nodeKind sh:Literal ; sh:message "A name part is a literal." ] ,
+    [ sh:path ufbas-ont:nameAsWritten ; sh:nodeKind sh:Literal ; sh:message "A name part is a literal." ] ,
+    [ sh:path ufbas-ont:occupation ; sh:nodeKind sh:Literal ; sh:message "An occupation is a literal." ] ,
+    [ sh:path ufbas-ont:status ; sh:nodeKind sh:Literal ; sh:message "A status is a literal." ] ,
+    [ sh:path ufbas-ont:civilStatus ; sh:nodeKind sh:Literal ; sh:message "A civil status is a literal." ] ,
+    [ sh:path ufbas-ont:kinship ; sh:nodeKind sh:Literal ; sh:message "A kinship is a literal." ] ,
+    [ sh:path ufbas-ont:placeAsWritten ; sh:nodeKind sh:Literal ; sh:message "A place as written is a literal." ] ,
+    [ sh:path ufbas-ont:origin ; sh:class ufbas-ont:Place ; sh:message "An origin is a place." ] ,
+    [ sh:path ufbas-ont:residence ; sh:class ufbas-ont:Place ; sh:message "A residence is a place." ] ,
+    [ sh:path ufbas-ont:possiblySameAs ; sh:class ufbas-ont:PersonMention ;
+      sh:message "ufbas-ont:possiblySameAs links two person mentions." ] ,
+    [ sh:path ufbas-ont:category ; sh:class skos:Concept ;
+      sh:message "A category is a skos:Concept." ] ,
+    [ sh:path ufbas-ont:derivedFrom ] ,
+    [ sh:path gams:isPartOf ; sh:maxCount 1 ;
+      sh:message "A person mention is part of at most one object." ] .
+
+# A place of the place list carries its modern name, a place of one mention the text as
+# written and its span.
+ufbas-sh:Place a sh:NodeShape ;
+    sh:targetClass ufbas-ont:Place ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path ufbas-ont:placeName ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ;
+        sh:message "A place has at most one place name, a non-empty string." ] ,
+    [ sh:path ufbas-ont:placeAsWritten ; sh:maxCount 1 ; sh:nodeKind sh:Literal ;
+      sh:message "A place has at most one place as written, a literal." ] ,
+    [ sh:path ufbas-ont:derivedFrom ; sh:class ufbas-ont:Span ;
+      sh:message "A place is derived from a span." ] .
+
+ufbas-sh:TimeSpan a sh:NodeShape ;
+    sh:targetClass ufbas-ont:TimeSpan ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        # xsd:string and never xsd:date, which assumes the Gregorian calendar
+        sh:path ufbas-ont:dateAsCoded ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:pattern "^\\d{4}(-\\d{2}(-\\d{2})?)?$" ;
+        sh:message "A date as coded is one xsd:string of the form YYYY, YYYY-MM or YYYY-MM-DD, never an xsd:date." ] ,
+    [
+        sh:path ufbas-ont:dateSuggested ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:pattern "^\\d{4}(-\\d{2}(-\\d{2})?)?$" ;
+        sh:message "A suggested date is one xsd:string of the form YYYY, YYYY-MM or YYYY-MM-DD, never an xsd:date." ] ,
+    [
+        sh:path ufbas-ont:dateConflict ;
+        sh:in ( ufbas-ont:writtenDateConfirmed ufbas-ont:codedDateConfirmed ufbas-ont:writtenDateDiffers ufbas-ont:yearOutsideBook ufbas-ont:deedAfterOath ) ;
+        sh:message "A date conflict is one of the kinds the ontology declares." ] ,
+    [
+        sh:path ufbas-ont:calendar ; sh:maxCount 1 ; sh:in ( ufbas-ont:julian ) ;
+        sh:message "The calendar of a time-span is ufbas-ont:julian." ] ,
+    [
+        sh:path ufbas-ont:duration ; sh:maxCount 1 ; sh:datatype xsd:duration ;
+        sh:message "A duration is one xsd:duration." ] ,
+    [
+        # the kind of date, Urfehde, deed or deadline
+        sh:path ufbas-ont:category ; sh:maxCount 1 ; sh:class skos:Concept ;
+        sh:message "A time-span has at most one category, a skos:Concept." ] ,
+    [ sh:path ufbas-ont:derivedFrom ] ,
+    [ sh:path gams:isPartOf ; sh:maxCount 1 ;
+      sh:message "A time-span is part of at most one object." ] .
+
+ufbas-sh:MonetaryAmount a sh:NodeShape ;
+    sh:targetClass ufbas-ont:MonetaryAmount ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    # the TEI has measures without @quantity or @unit
+    sh:property [
+        sh:path ufbas-ont:quantity ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A monetary amount has no quantity, since its measure has no @quantity." ] ,
+    [
+        sh:path ufbas-ont:unitAsWritten ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A monetary amount has no unit, since its measure has no @unit." ] ,
+    [
+        sh:path ufbas-ont:quantity ; sh:maxCount 1 ; sh:datatype xsd:decimal ;
+        sh:message "A monetary amount has at most one quantity, an xsd:decimal." ] ,
+    [
+        # the units the ontology declares; test/ontology.test.mjs keeps this list equal to them
+        sh:path ufbas-ont:unitAsWritten ; sh:maxCount 1 ;
+        sh:in ( ufbas-ont:unit-lbd ufbas-ont:unit-lb ufbas-ont:unit-fl ufbas-ont:unit-ß ufbas-ont:unit-ß-w
+                ufbas-ont:unit-d ufbas-ont:unit-d-st ufbas-ont:unit-d-rp ufbas-ont:unit-kr ufbas-ont:unit-tlr
+                ufbas-ont:unit-bz ufbas-ont:unit-dck ufbas-ont:unit-plp ufbas-ont:unit-rss ufbas-ont:unit-pao
+                ufbas-ont:unit-sna ufbas-ont:unit-tol ) ;
+        sh:message "A monetary amount has at most one unit as written, a currency unit declared in the ontology." ] ,
+    [ sh:path ufbas-ont:derivedFrom ] ,
+    [ sh:path gams:isPartOf ; sh:maxCount 1 ;
+      sh:message "A monetary amount is part of at most one object." ] .
+
+ufbas-sh:MarginalNote a sh:NodeShape ;
+    sh:targetClass ufbas-ont:MarginalNote ;
+    sh:closed true ; sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:path ufbas-ont:claimant ; sh:class ufbas-ont:PersonMention ;
+                  sh:message "The claimant of a marginal note is a person mention." ] ,
+    [ sh:path ufbas-ont:releasedCount ; sh:maxCount 1 ; sh:datatype xsd:nonNegativeInteger ;
+      sh:message "A marginal note has at most one number released, an xsd:nonNegativeInteger." ] ,
+    [ sh:path ufbas-ont:placeAsWritten ; sh:nodeKind sh:Literal ; sh:message "A place as written is a literal." ] ,
+    [ sh:path ufbas-ont:tookPlaceAt ; sh:class ufbas-ont:Place ; sh:message "ufbas-ont:tookPlaceAt points to a place." ] ,
+    [ sh:path ufbas-ont:category ; sh:class skos:Concept ; sh:message "A category is a skos:Concept." ] ,
+    [ sh:path ufbas-ont:derivedFrom ] ,
+    [ sh:path gams:isPartOf ; sh:maxCount 1 ;
+      sh:message "A marginal note is part of at most one object." ] .
+
+# SKOS of the taxonomy
+
+# The focus node is the class itself, so its instances are counted over the whole graph.
+ufbas-sh:OneConceptScheme a sh:NodeShape ;
+    sh:targetNode skos:ConceptScheme ;
+    sh:property [
+        sh:path [ sh:inversePath rdf:type ] ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "The SKOS has exactly one skos:ConceptScheme." ] .
+
+ufbas-sh:Concept a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:qualifiedValueShape [ sh:languageIn ( "de" ) ] ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "A concept has exactly one German skos:prefLabel." ] ,
+    [
+        sh:path skos:inScheme ; sh:minCount 1 ; sh:class skos:ConceptScheme ;
+        sh:message "A concept is in the concept scheme." ] ,
+    [
+        sh:path skos:broader ; sh:class skos:Concept ;
+        sh:message "skos:broader points to a concept." ] .
+
+# the misspelling of the 2017 SKOS, which no reader of skos:definition finds
+ufbas-sh:NoDefintion a sh:NodeShape ;
+    sh:targetSubjectsOf skos:defintion ;
+    sh:property [
+        sh:path skos:defintion ; sh:maxCount 0 ;
+        sh:message "skos:defintion is misspelt, a definition is skos:definition." ] .
+
+ufbas-sh:Collection a sh:NodeShape ;
+    sh:targetClass skos:Collection ;
+    sh:property [
+        sh:path skos:member ; sh:minCount 1 ; sh:class skos:Concept ;
+        sh:message "A collection has members, and every member is a concept." ] .

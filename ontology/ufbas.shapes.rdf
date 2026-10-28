@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:its="http://www.w3.org/2005/11/its">
+	<rdf:Description rdf:nodeID="b35f691f467f36b9a">
+		<message xmlns="http://www.w3.org/ns/shacl#">A collection has members, and every member is a concept.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Collection">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b35f691f467f36b9a"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b35f691f467f36b9a">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#member"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Collection">
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1b4021e2f2570065">
+		<message xmlns="http://www.w3.org/ns/shacl#">skos:defintion is misspelt, a definition is skos:definition.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#NoDefintion">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b1b4021e2f2570065"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1b4021e2f2570065">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#defintion"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#NoDefintion">
+		<targetSubjectsOf xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#defintion"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc71b79e655d2c9a5">
+		<message xmlns="http://www.w3.org/ns/shacl#">skos:broader points to a concept.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Concept">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bc71b79e655d2c9a5"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc71b79e655d2c9a5">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc9f95cfa4be48591">
+		<message xmlns="http://www.w3.org/ns/shacl#">A concept is in the concept scheme.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Concept">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bc9f95cfa4be48591"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc9f95cfa4be48591">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b73ed67492f22f9f8">
+		<message xmlns="http://www.w3.org/ns/shacl#">A concept has exactly one German skos:prefLabel.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Concept">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b73ed67492f22f9f8"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b73ed67492f22f9f8">
+		<qualifiedMaxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</qualifiedMaxCount>
+		<qualifiedMinCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</qualifiedMinCount>
+		<qualifiedValueShape xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b0c7e3919aa067da6"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd51a73b3c4bcca47">
+		<rdf:first>de</rdf:first>
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b0c7e3919aa067da6">
+		<languageIn xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bd51a73b3c4bcca47"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b73ed67492f22f9f8">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Concept">
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="badc85f67facf40dc">
+		<message xmlns="http://www.w3.org/ns/shacl#">The SKOS has exactly one skos:ConceptScheme.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#OneConceptScheme">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="badc85f67facf40dc"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="badc85f67facf40dc">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b6527b4d93883136b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6527b4d93883136b">
+		<inversePath xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#OneConceptScheme">
+		<targetNode xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b314136ff01f1d1b5">
+		<message xmlns="http://www.w3.org/ns/shacl#">A marginal note is part of at most one object.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b314136ff01f1d1b5"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b314136ff01f1d1b5">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b49b023c77826eeb1"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b49b023c77826eeb1">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b66ccb228be919675">
+		<message xmlns="http://www.w3.org/ns/shacl#">A category is a skos:Concept.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b66ccb228be919675"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b66ccb228be919675">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b15087bb59a9e95a5">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:tookPlaceAt points to a place.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b15087bb59a9e95a5"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b15087bb59a9e95a5">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#tookPlaceAt"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb025b8fa0ef28bb9">
+		<message xmlns="http://www.w3.org/ns/shacl#">A place as written is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bb025b8fa0ef28bb9"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb025b8fa0ef28bb9">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#placeAsWritten"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9fe7bcea509e2941">
+		<message xmlns="http://www.w3.org/ns/shacl#">A marginal note has at most one number released, an xsd:nonNegativeInteger.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b9fe7bcea509e2941"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9fe7bcea509e2941">
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#releasedCount"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba013c74fff8929c6">
+		<message xmlns="http://www.w3.org/ns/shacl#">The claimant of a marginal note is a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="ba013c74fff8929c6"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba013c74fff8929c6">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#claimant"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b390b88e90dbee77c">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b390b88e90dbee77c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b390b88e90dbee77c">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MarginalNote">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MarginalNote"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc44e3e37af0cb697">
+		<message xmlns="http://www.w3.org/ns/shacl#">A monetary amount is part of at most one object.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bc44e3e37af0cb697"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc44e3e37af0cb697">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bdd9841e6dd111a3c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bdd9841e6dd111a3c">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b867b046596df1486">
+		<message xmlns="http://www.w3.org/ns/shacl#">A monetary amount has at most one unit as written, a currency unit declared in the ontology.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b867b046596df1486"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b847b30daf1afb496">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba59fe954d89dc0aa">
+		<rdf:rest rdf:nodeID="b847b30daf1afb496"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b847b30daf1afb496">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-tol"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd5d8026cc59e9747">
+		<rdf:rest rdf:nodeID="ba59fe954d89dc0aa"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba59fe954d89dc0aa">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-sna"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b70bcf8be4858f39e">
+		<rdf:rest rdf:nodeID="bd5d8026cc59e9747"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd5d8026cc59e9747">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-pao"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bec4e7f981964a3e3">
+		<rdf:rest rdf:nodeID="b70bcf8be4858f39e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b70bcf8be4858f39e">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-rss"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b312b16645ca86dd9">
+		<rdf:rest rdf:nodeID="bec4e7f981964a3e3"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bec4e7f981964a3e3">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-plp"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb41fb0a58cd68233">
+		<rdf:rest rdf:nodeID="b312b16645ca86dd9"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b312b16645ca86dd9">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-dck"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4354114df0cd2c50">
+		<rdf:rest rdf:nodeID="bb41fb0a58cd68233"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb41fb0a58cd68233">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-bz"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc968067c08b8c5ce">
+		<rdf:rest rdf:nodeID="b4354114df0cd2c50"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4354114df0cd2c50">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-tlr"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf9261462f4592833">
+		<rdf:rest rdf:nodeID="bc968067c08b8c5ce"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc968067c08b8c5ce">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-kr"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb9bfd5a61634dfed">
+		<rdf:rest rdf:nodeID="bf9261462f4592833"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf9261462f4592833">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-d-rp"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b23a4e7a504a00d50">
+		<rdf:rest rdf:nodeID="bb9bfd5a61634dfed"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb9bfd5a61634dfed">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-d-st"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baa4fd23f00bb7594">
+		<rdf:rest rdf:nodeID="b23a4e7a504a00d50"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b23a4e7a504a00d50">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-d"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b551683aee23c8267">
+		<rdf:rest rdf:nodeID="baa4fd23f00bb7594"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baa4fd23f00bb7594">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-ß-w"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baff5a2da4e653212">
+		<rdf:rest rdf:nodeID="b551683aee23c8267"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b551683aee23c8267">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-ß"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b3a8332a8e94f2739">
+		<rdf:rest rdf:nodeID="baff5a2da4e653212"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baff5a2da4e653212">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-fl"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd5a41ffc10a2c3ef">
+		<rdf:rest rdf:nodeID="b3a8332a8e94f2739"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b3a8332a8e94f2739">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-lb"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b867b046596df1486">
+		<in xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bd5a41ffc10a2c3ef"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd5a41ffc10a2c3ef">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-lbd"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b867b046596df1486">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unitAsWritten"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b25c59b50aa0a0ff4">
+		<message xmlns="http://www.w3.org/ns/shacl#">A monetary amount has at most one quantity, an xsd:decimal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b25c59b50aa0a0ff4"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b25c59b50aa0a0ff4">
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#quantity"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baf7d72691acf1f39">
+		<message xmlns="http://www.w3.org/ns/shacl#">A monetary amount has no unit, since its measure has no @unit.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="baf7d72691acf1f39"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baf7d72691acf1f39">
+		<severity xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Warning"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unitAsWritten"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6ea0c765bded5eec">
+		<message xmlns="http://www.w3.org/ns/shacl#">A monetary amount has no quantity, since its measure has no @quantity.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b6ea0c765bded5eec"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6ea0c765bded5eec">
+		<severity xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Warning"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#quantity"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb326434f35dbe256">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bb326434f35dbe256"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb326434f35dbe256">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#MonetaryAmount">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6bf8623fb983e2d0">
+		<message xmlns="http://www.w3.org/ns/shacl#">A time-span is part of at most one object.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b6bf8623fb983e2d0"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6bf8623fb983e2d0">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b54415af7f9877ea7"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b54415af7f9877ea7">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd139a4dca8cf2f8e">
+		<message xmlns="http://www.w3.org/ns/shacl#">A time-span has at most one category, a skos:Concept.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bd139a4dca8cf2f8e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd139a4dca8cf2f8e">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd52c659493f10346">
+		<message xmlns="http://www.w3.org/ns/shacl#">A duration is one xsd:duration.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bd52c659493f10346"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd52c659493f10346">
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#duration"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be3cd565a8b173cbc">
+		<message xmlns="http://www.w3.org/ns/shacl#">The calendar of a time-span is ufbas-ont:julian.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="be3cd565a8b173cbc"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc3f2f31f7136d991">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be3cd565a8b173cbc">
+		<in xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bc3f2f31f7136d991"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc3f2f31f7136d991">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#julian"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be3cd565a8b173cbc">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#calendar"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b72fffc2f32bfabf3">
+		<message xmlns="http://www.w3.org/ns/shacl#">A date conflict is one of the kinds the ontology declares.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b72fffc2f32bfabf3"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b7eb7e0dfef38eee6">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b3229450bd1f1022a">
+		<rdf:rest rdf:nodeID="b7eb7e0dfef38eee6"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b7eb7e0dfef38eee6">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#deedAfterOath"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b984593548d485c9f">
+		<rdf:rest rdf:nodeID="b3229450bd1f1022a"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b3229450bd1f1022a">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#yearOutsideBook"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8ad91e05dd8df2b7">
+		<rdf:rest rdf:nodeID="b984593548d485c9f"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b984593548d485c9f">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#writtenDateDiffers"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b3b25864cd3e131fa">
+		<rdf:rest rdf:nodeID="b8ad91e05dd8df2b7"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8ad91e05dd8df2b7">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#codedDateConfirmed"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b72fffc2f32bfabf3">
+		<in xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b3b25864cd3e131fa"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b3b25864cd3e131fa">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#writtenDateConfirmed"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b72fffc2f32bfabf3">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#dateConflict"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b611ea4806dcf4d40">
+		<message xmlns="http://www.w3.org/ns/shacl#">A suggested date is one xsd:string of the form YYYY, YYYY-MM or YYYY-MM-DD, never an xsd:date.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b611ea4806dcf4d40"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b611ea4806dcf4d40">
+		<pattern xmlns="http://www.w3.org/ns/shacl#">^\d{4}(-\d{2}(-\d{2})?)?$</pattern>
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#dateSuggested"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bdd8bbc003a246325">
+		<message xmlns="http://www.w3.org/ns/shacl#">A date as coded is one xsd:string of the form YYYY, YYYY-MM or YYYY-MM-DD, never an xsd:date.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bdd8bbc003a246325"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bdd8bbc003a246325">
+		<pattern xmlns="http://www.w3.org/ns/shacl#">^\d{4}(-\d{2}(-\d{2})?)?$</pattern>
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#dateAsCoded"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b25f3fb694456fe45">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b25f3fb694456fe45"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b25f3fb694456fe45">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#TimeSpan">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be57aa79e935aa8dd">
+		<message xmlns="http://www.w3.org/ns/shacl#">A place is derived from a span.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Place">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="be57aa79e935aa8dd"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be57aa79e935aa8dd">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Span"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="befdf4f6ad74d949b">
+		<message xmlns="http://www.w3.org/ns/shacl#">A place has at most one place as written, a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Place">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="befdf4f6ad74d949b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="befdf4f6ad74d949b">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#placeAsWritten"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b814f7790c7abcf74">
+		<message xmlns="http://www.w3.org/ns/shacl#">A place has at most one place name, a non-empty string.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Place">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b814f7790c7abcf74"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b814f7790c7abcf74">
+		<minLength xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minLength>
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#placeName"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1df7a5b5e6714cca">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Place">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b1df7a5b5e6714cca"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1df7a5b5e6714cca">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Place">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb389824ebc2d0c0b">
+		<message xmlns="http://www.w3.org/ns/shacl#">A person mention is part of at most one object.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bb389824ebc2d0c0b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb389824ebc2d0c0b">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b03182a781b4bb407"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b03182a781b4bb407">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8fd0f2c18042dbdc">
+		<message xmlns="http://www.w3.org/ns/shacl#">A category is a skos:Concept.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b8fd0f2c18042dbdc"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8fd0f2c18042dbdc">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be32e1374839433d8">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:possiblySameAs links two person mentions.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="be32e1374839433d8"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be32e1374839433d8">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#possiblySameAs"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b649f48400a2dd171">
+		<message xmlns="http://www.w3.org/ns/shacl#">A residence is a place.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b649f48400a2dd171"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b649f48400a2dd171">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#residence"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd8947e6626f6448e">
+		<message xmlns="http://www.w3.org/ns/shacl#">An origin is a place.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bd8947e6626f6448e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd8947e6626f6448e">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#origin"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b20c9cc881ddd29a1">
+		<message xmlns="http://www.w3.org/ns/shacl#">A place as written is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b20c9cc881ddd29a1"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b20c9cc881ddd29a1">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#placeAsWritten"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6f4d0e46094aca92">
+		<message xmlns="http://www.w3.org/ns/shacl#">A kinship is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b6f4d0e46094aca92"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6f4d0e46094aca92">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#kinship"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b2dded37f0325dd58">
+		<message xmlns="http://www.w3.org/ns/shacl#">A civil status is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b2dded37f0325dd58"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b2dded37f0325dd58">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#civilStatus"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9ddc489b84fe2374">
+		<message xmlns="http://www.w3.org/ns/shacl#">A status is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b9ddc489b84fe2374"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9ddc489b84fe2374">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#status"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf44b712887957b8b">
+		<message xmlns="http://www.w3.org/ns/shacl#">An occupation is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bf44b712887957b8b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf44b712887957b8b">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#occupation"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b238e5424141db2c8">
+		<message xmlns="http://www.w3.org/ns/shacl#">A name part is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b238e5424141db2c8"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b238e5424141db2c8">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#nameAsWritten"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf90e279f639dfa04">
+		<message xmlns="http://www.w3.org/ns/shacl#">A name part is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bf90e279f639dfa04"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf90e279f639dfa04">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#byname"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bcb11fd2a2e554d1b">
+		<message xmlns="http://www.w3.org/ns/shacl#">A name part is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bcb11fd2a2e554d1b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bcb11fd2a2e554d1b">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#surname"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b42d9bc5c7de70098">
+		<message xmlns="http://www.w3.org/ns/shacl#">A name part is a literal.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b42d9bc5c7de70098"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b42d9bc5c7de70098">
+		<nodeKind xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#forename"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b45bddd1fba79ec4b">
+		<message xmlns="http://www.w3.org/ns/shacl#">A person mention has at most one gender, ufbas-ont:male or ufbas-ont:female.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b45bddd1fba79ec4b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bbe1b09d26b16cc0f">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bafdf538470dddd7b">
+		<rdf:rest rdf:nodeID="bbe1b09d26b16cc0f"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bbe1b09d26b16cc0f">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#female"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b45bddd1fba79ec4b">
+		<in xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bafdf538470dddd7b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bafdf538470dddd7b">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#male"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b45bddd1fba79ec4b">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#gender"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8509c976d8a98857">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b8509c976d8a98857"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8509c976d8a98857">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#PersonMention">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4015af7a5b68df94">
+		<message xmlns="http://www.w3.org/ns/shacl#">A derived node is derived from at least one span or entry of the TEI.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Derived">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b4015af7a5b68df94"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b94a748edb63f83ba">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		<rdf:first rdf:nodeID="bdc50c2b6e5c960ca"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bdc50c2b6e5c960ca">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8af404db6fdd17db">
+		<rdf:rest rdf:nodeID="b94a748edb63f83ba"/>
+		<rdf:first rdf:nodeID="beee6ed33be5b6fab"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="beee6ed33be5b6fab">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Span"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4015af7a5b68df94">
+		<or xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b8af404db6fdd17db"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Derived">
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MarginalNote"/>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount"/>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#SanctionDomain">
+		<message xmlns="http://www.w3.org/ns/shacl#">Only a sanction applies to a person or has a deadline.</message>
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Sanction"/>
+		<targetSubjectsOf xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#deadline"/>
+		<targetSubjectsOf xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#appliesTo"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#CommittedByDomain">
+		<message xmlns="http://www.w3.org/ns/shacl#">Only an offence is committed by a person.</message>
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Offence"/>
+		<targetSubjectsOf xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#committedBy"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba47a7d669731ec8e">
+		<message xmlns="http://www.w3.org/ns/shacl#">The category of a sanction lies under ufbas-kat:Strafe.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Sanction">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="ba47a7d669731ec8e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba47a7d669731ec8e">
+		<hasValue xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/ufbas/#Strafe"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6c5ec188eb7d8ac2">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		<rdf:first rdf:nodeID="b9211cea260a5d3d7"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9211cea260a5d3d7">
+		<zeroOrMorePath xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b4cd781e1db7f0659"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b2d2e093cfc596476">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		<rdf:first rdf:nodeID="b1a04a2ccd6dbbd7c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1a04a2ccd6dbbd7c">
+		<inversePath xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bac4f34efc71cfa4d">
+		<rdf:rest rdf:nodeID="b2d2e093cfc596476"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4cd781e1db7f0659">
+		<alternativePath xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bac4f34efc71cfa4d"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bac4f34efc71cfa4d">
+		<rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bcfb2dd7655445d64">
+		<rdf:rest rdf:nodeID="b6c5ec188eb7d8ac2"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba47a7d669731ec8e">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bcfb2dd7655445d64"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bcfb2dd7655445d64">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bafeaff6d43c309bf">
+		<message xmlns="http://www.w3.org/ns/shacl#">A sanction has exactly one category.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Sanction">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bafeaff6d43c309bf"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bafeaff6d43c309bf">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Sanction">
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Sanction"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baf6038575317dc1e">
+		<message xmlns="http://www.w3.org/ns/shacl#">The category of an offence lies under ufbas-kat:Tat.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Offence">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="baf6038575317dc1e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baf6038575317dc1e">
+		<hasValue xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/ufbas/#Tat"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b02e247855c644b23">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		<rdf:first rdf:nodeID="b06447336514c68b6"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b06447336514c68b6">
+		<zeroOrMorePath xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b1416e9b99228435c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="ba15b4e75d2236997">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		<rdf:first rdf:nodeID="b878109b24f90cbb5"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b878109b24f90cbb5">
+		<inversePath xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8efb5bad8edf8c2b">
+		<rdf:rest rdf:nodeID="ba15b4e75d2236997"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1416e9b99228435c">
+		<alternativePath xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b8efb5bad8edf8c2b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8efb5bad8edf8c2b">
+		<rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b5dce366d02f47309">
+		<rdf:rest rdf:nodeID="b02e247855c644b23"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="baf6038575317dc1e">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b5dce366d02f47309"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b5dce366d02f47309">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b48752d2688a7ae66">
+		<message xmlns="http://www.w3.org/ns/shacl#">An offence has exactly one category.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Offence">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b48752d2688a7ae66"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b48752d2688a7ae66">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Offence">
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Offence"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bad3dbd72eac4ab6c">
+		<message xmlns="http://www.w3.org/ns/shacl#">A part of a proceeding is part of at most one object.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bad3dbd72eac4ab6c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bad3dbd72eac4ab6c">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b75d926f1c57eb5a6"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b75d926f1c57eb5a6">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b43a2907e5bc56010">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:concerns points to a monetary amount.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b43a2907e5bc56010"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b43a2907e5bc56010">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#concerns"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b97a36fde697773cb">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:tookPlaceAt points to a place.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b97a36fde697773cb"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b97a36fde697773cb">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#tookPlaceAt"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b7ec0a25d738bea58">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:hasTimeSpan points to a time-span.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b7ec0a25d738bea58"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b7ec0a25d738bea58">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasTimeSpan"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd70c5533b7c67ec7">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:deadline points to a time-span.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bd70c5533b7c67ec7"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd70c5533b7c67ec7">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#deadline"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1eb4905efab55766">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:appliesTo points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b1eb4905efab55766"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b1eb4905efab55766">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#appliesTo"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b87998e1d8697593c">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:committedBy points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b87998e1d8697593c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b87998e1d8697593c">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#committedBy"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfaa9d8a8cba6ef36">
+		<message xmlns="http://www.w3.org/ns/shacl#">A part of a proceeding has at most one category, a skos:Concept.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bfaa9d8a8cba6ef36"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfaa9d8a8cba6ef36">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6cf26ef15e3f917c">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b6cf26ef15e3f917c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6cf26ef15e3f917c">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#ProceedingPart">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b642dc3a709ac59e5">
+		<message xmlns="http://www.w3.org/ns/shacl#">A proceeding is derived from its entry or from a span.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b642dc3a709ac59e5"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bcdff4321a061071f">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+		<rdf:first rdf:nodeID="bdc74e000201a25ca"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bdc74e000201a25ca">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b98611802defcb7b8">
+		<rdf:rest rdf:nodeID="bcdff4321a061071f"/>
+		<rdf:first rdf:nodeID="b3285986344cd90ec"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b3285986344cd90ec">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Span"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b642dc3a709ac59e5">
+		<or xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b98611802defcb7b8"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b473765ad07d52b19">
+		<message xmlns="http://www.w3.org/ns/shacl#">A proceeding is part of at most one object.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b473765ad07d52b19"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b473765ad07d52b19">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b889c1939fdc3b032">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:concerns points to a monetary amount.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b889c1939fdc3b032"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b889c1939fdc3b032">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#concerns"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b08dada89c77cf7fc">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:tookPlaceAt points to a place.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b08dada89c77cf7fc"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b08dada89c77cf7fc">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#tookPlaceAt"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9189c3c9f9b81029">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:hasTimeSpan points to a time-span.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b9189c3c9f9b81029"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9189c3c9f9b81029">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasTimeSpan"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b67400449d2840532">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:refersToProceeding points to an Urfehde proceeding.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b67400449d2840532"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b67400449d2840532">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#refersToProceeding"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb61c7620f0f602c5">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bb61c7620f0f602c5"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bb61c7620f0f602c5">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasNotary"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf21b32f428345822">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bf21b32f428345822"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bf21b32f428345822">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasReceiver"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bef96688a3f70e139">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bef96688a3f70e139"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bef96688a3f70e139">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasPresent"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b0ff819b653fb973d">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b0ff819b653fb973d"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b0ff819b653fb973d">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasWitness"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b746dfb21a3052d6e">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b746dfb21a3052d6e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b746dfb21a3052d6e">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasPlaintiff"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b24e1a0a775bed166">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b24e1a0a775bed166"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b24e1a0a775bed166">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasVictim"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b96c698cc3bf219d4">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b96c698cc3bf219d4"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b96c698cc3bf219d4">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasAccomplice"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc3ea1b870c95c4a9">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bc3ea1b870c95c4a9"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bc3ea1b870c95c4a9">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasOffender"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b805e0a6e0e27ac3e">
+		<message xmlns="http://www.w3.org/ns/shacl#">A role of a proceeding points to a person mention.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b805e0a6e0e27ac3e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b805e0a6e0e27ac3e">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9109dff021a68422">
+		<message xmlns="http://www.w3.org/ns/shacl#">Every part of a proceeding is a ufbas-ont:ProceedingPart.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b9109dff021a68422"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9109dff021a68422">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasPart"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b105b8c0e85c8eb06">
+		<message xmlns="http://www.w3.org/ns/shacl#">A proceeding has no part, since its entry codes none.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b105b8c0e85c8eb06"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b105b8c0e85c8eb06">
+		<severity xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Warning"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasPart"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b33646f3fab903e4e">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b33646f3fab903e4e"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b33646f3fab903e4e">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Proceeding">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b0f55d1e1c47e56f8">
+		<message xmlns="http://www.w3.org/ns/shacl#">A category is a skos:Concept.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Span">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b0f55d1e1c47e56f8"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b0f55d1e1c47e56f8">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#category"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4572c62480d245ac">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:onPage points to a page.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Span">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b4572c62480d245ac"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4572c62480d245ac">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Page"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#onPage"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b7a211faa77cc94ce">
+		<message xmlns="http://www.w3.org/ns/shacl#">A span is part of exactly one entry.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Span">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b7a211faa77cc94ce"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b7a211faa77cc94ce">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd6458fb1f467f9bd">
+		<message xmlns="http://www.w3.org/ns/shacl#">A span has at most one gams:textualContent, a non-empty string.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Span">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bd6458fb1f467f9bd"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bd6458fb1f467f9bd">
+		<minLength xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minLength>
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#textualContent"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6ae4dd1557f97cd3">
+		<message xmlns="http://www.w3.org/ns/shacl#">A span has no gams:textualContent, since its TEI element is empty.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Span">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b6ae4dd1557f97cd3"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b6ae4dd1557f97cd3">
+		<severity xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/ns/shacl#Warning"/>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#textualContent"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b30602c2074428ac6">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Span">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b30602c2074428ac6"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b30602c2074428ac6">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Span">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Span"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b30785e66d2545245">
+		<message xmlns="http://www.w3.org/ns/shacl#">A page is part of at most one volume.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Page">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b30785e66d2545245"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b30785e66d2545245">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Volume"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b25876ef404d5af89">
+		<message xmlns="http://www.w3.org/ns/shacl#">A page has at most one image number, an xsd:integer.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Page">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b25876ef404d5af89"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b25876ef404d5af89">
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#imageNumber"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bbe614e9df6d0f3d4">
+		<message xmlns="http://www.w3.org/ns/shacl#">A page has exactly one folio, a string counted from the page breaks.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Page">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bbe614e9df6d0f3d4"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bbe614e9df6d0f3d4">
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#folio"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bac39b42baef77d72">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Page">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bac39b42baef77d72"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bac39b42baef77d72">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Page">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Page"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b37948dc0439c849b">
+		<message xmlns="http://www.w3.org/ns/shacl#">Only an entry of type Fortsetzung continues another entry.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Continuation">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b37948dc0439c849b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b37948dc0439c849b">
+		<hasValue xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#fortsetzung"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#entryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Continuation">
+		<targetSubjectsOf xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#continues"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9552f30f7e1c8e5d">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:mentionsPlace points to a place.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b9552f30f7e1c8e5d"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9552f30f7e1c8e5d">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#mentionsPlace"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b31df85d010a594ed">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:relatedEntry points to an entry.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b31df85d010a594ed"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b31df85d010a594ed">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#relatedEntry"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b772c6ed7bd958fb1">
+		<message xmlns="http://www.w3.org/ns/shacl#">A fragment continues at most one entry.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b772c6ed7bd958fb1"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b772c6ed7bd958fb1">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#continues"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b740d6479a9d728cb">
+		<message xmlns="http://www.w3.org/ns/shacl#">An entry has exactly one entry type of the ontology.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b740d6479a9d728cb"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfcddb623ec501a01">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b805534bb67e3c3e0">
+		<rdf:rest rdf:nodeID="bfcddb623ec501a01"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfcddb623ec501a01">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#fortsetzung"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9a3b4aa95f14a2c2">
+		<rdf:rest rdf:nodeID="b805534bb67e3c3e0"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b805534bb67e3c3e0">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#abgebrochen"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bdf53ba38fa5cda8b">
+		<rdf:rest rdf:nodeID="b9a3b4aa95f14a2c2"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b9a3b4aa95f14a2c2">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#entwurf"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be40af6a206323903">
+		<rdf:rest rdf:nodeID="bdf53ba38fa5cda8b"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bdf53ba38fa5cda8b">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#aussage"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b31359e8d54157936">
+		<rdf:rest rdf:nodeID="be40af6a206323903"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="be40af6a206323903">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#urfehdbrief"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b740d6479a9d728cb">
+		<in xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b31359e8d54157936"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b31359e8d54157936">
+		<rdf:first rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#urfehde"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b740d6479a9d728cb">
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#entryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bcfaa439b4f695f91">
+		<message xmlns="http://www.w3.org/ns/shacl#">ufbas-ont:hasMarginalNote points to a marginal note.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bcfaa439b4f695f91"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bcfaa439b4f695f91">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MarginalNote"/>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasMarginalNote"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8056cb10a04bb598">
+		<message xmlns="http://www.w3.org/ns/shacl#">An entry is part of at most one volume.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b8056cb10a04bb598"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b8056cb10a04bb598">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Volume"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#isPartOf"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b0e9b5dfe23cedca6">
+		<message xmlns="http://www.w3.org/ns/shacl#">An entry is on exactly one page, the page it starts on.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b0e9b5dfe23cedca6"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b0e9b5dfe23cedca6">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Page"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#onPage"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfc9f8e26320b7054">
+		<message xmlns="http://www.w3.org/ns/shacl#">An entry documents exactly one Urfehde proceeding.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bfc9f8e26320b7054"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfc9f8e26320b7054">
+		<class xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#documents"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b5ee15dc717e07d22">
+		<message xmlns="http://www.w3.org/ns/shacl#">An entry has exactly one gams:textualContent, a non-empty string.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b5ee15dc717e07d22"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b5ee15dc717e07d22">
+		<minLength xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minLength>
+		<datatype xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<maxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</maxCount>
+		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#textualContent"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfbddb2aab61b0f5c">
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<ignoredProperties xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bfbddb2aab61b0f5c"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bfbddb2aab61b0f5c">
+		<rdf:first rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Entry">
+		<closed xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</closed>
+		<targetClass xmlns="http://www.w3.org/ns/shacl#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes">
+		<license xmlns="http://purl.org/dc/terms/" rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+		<creator xmlns="http://purl.org/dc/terms/">Christopher Pollin</creator>
+	</rdf:Description>
+</rdf:RDF>

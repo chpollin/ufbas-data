@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:its="http://www.w3.org/2005/11/its">
+	<Entry xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Steck - 1 Bastean Doldter der kupfferschmidt burger inn mindren Basell Demnach er und Hanns Üle der waffenschmidt, von Lorentzen dem scherer am vischmerckt hundert pfundt entlehnet und imme zwey hüser ingsetzt, hat er uff dem einen huss hundert pfundt verschwygen, als man im auch desshalben für recht gebotten, hatt er den amptlüthen zuo antwort geben, wann man im schon piete so wölle er nit kommen, dorumb er inn gfenckniss gleyt und uff sontag den dritten tag jenners ditz 63 jors, mit gmeyner urphet gnediglichen wider usglossen, hatt dorby auch geschworen das er inn monats frist nechtkünfftig den bemelten scherer anclagbar machen, und wann man im hinfürt für gericht oder rhat bütet, das er gehörig und gehorsam sin solle. Niclaus Im Hoff Notarius subscripsit</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Urfehdebuch-X"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<entryType xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#urfehde"/>
+		<documents xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0"/>
+		<mentionsPlace xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Kleinbasel"/>
+	</Entry>
+	<UrfehdeProceeding xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+	</UrfehdeProceeding>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Eingangsnotiz-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Steck - 1</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+	</Span>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#SchlagwortRatsknecht-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Steck</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#SchlagwortRatsknecht"/>
+	</Span>
+	<PersonMention xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-SchlagwortRatsknecht-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#SchlagwortRatsknecht"/>
+		<nameAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Steck</nameAsWritten>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#SchlagwortRatsknecht-0"/>
+	</PersonMention>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#PersonTäter-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Bastean Doldter der kupfferschmidt burger inn mindren Basell</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonTäter"/>
+	</Span>
+	<PersonMention xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonTäter-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonTäter"/>
+		<nameAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Bastean Doldter der kupfferschmidt burger inn mindren Basell</nameAsWritten>
+		<forename xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Bastean</forename>
+		<surname xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Doldter</surname>
+		<gender xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#male"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#PersonTäter-0"/>
+	</PersonMention>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasOffender xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#person-PersonTäter-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#male-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Bastean</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+	</Span>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Beruf-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">kupfferschmidt</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Beruf"/>
+	</Span>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonTäter-0">
+		<occupation xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">kupfferschmidt</occupation>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Status-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">burger</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Status"/>
+	</Span>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonTäter-0">
+		<status xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">burger</status>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#OrtWohnort-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">mindren Basell</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#OrtWohnort"/>
+	</Span>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonTäter-0">
+		<residence xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Kleinbasel"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#PersonMittäter-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Hanns Üle der waffenschmidt</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonMittäter"/>
+	</Span>
+	<PersonMention xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonMittäter-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonMittäter"/>
+		<nameAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Hanns Üle der waffenschmidt</nameAsWritten>
+		<forename xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Hanns</forename>
+		<surname xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Üle</surname>
+		<gender xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#male"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#PersonMittäter-0"/>
+	</PersonMention>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasAccomplice xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#person-PersonMittäter-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#male-1">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Hanns</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+	</Span>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Beruf-1">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">waffenschmidt</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Beruf"/>
+	</Span>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonMittäter-0">
+		<occupation xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">waffenschmidt</occupation>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#PersonOpfer-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Lorentzen dem scherer am vischmerckt</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonOpfer"/>
+	</Span>
+	<PersonMention xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonOpfer-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonOpfer"/>
+		<nameAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Lorentzen dem scherer am vischmerckt</nameAsWritten>
+		<forename xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Lorentzen</forename>
+		<gender xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#male"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#PersonOpfer-0"/>
+	</PersonMention>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasVictim xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#person-PersonOpfer-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#male-2">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Lorentzen</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+	</Span>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Beruf-2">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">scherer</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Beruf"/>
+	</Span>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonOpfer-0">
+		<occupation xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">scherer</occupation>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#OrtWohnort-1">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">vischmerckt</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#OrtWohnort"/>
+	</Span>
+	<Place xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#place-OrtWohnort-1">
+		<placeAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">vischmerckt</placeAsWritten>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#OrtWohnort-1"/>
+	</Place>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonOpfer-0">
+		<residence xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#place-OrtWohnort-1"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#SchlagwortGeldleihe-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">hundert pfundt entlehnet</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#SchlagwortGeldleihe"/>
+	</Span>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#TatBetrug-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">hundert pfundt verschwygen</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#TatBetrug"/>
+	</Span>
+	<Offence xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#offence-TatBetrug-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#TatBetrug"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#TatBetrug-0"/>
+	</Offence>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasPart xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#offence-TatBetrug-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#TatUngehorsam-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">wann man im schon piete so wölle er nit kommen</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#TatUngehorsam"/>
+	</Span>
+	<Offence xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#offence-TatUngehorsam-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#TatUngehorsam"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#TatUngehorsam-0"/>
+	</Offence>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasPart xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#offence-TatUngehorsam-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Untersuchungshaft-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">dorumb er inn gfenckniss gleyt</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Untersuchungshaft"/>
+	</Span>
+	<Detention xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#detention-Untersuchungshaft-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Untersuchungshaft"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Untersuchungshaft-0"/>
+	</Detention>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasPart xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#detention-Untersuchungshaft-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#DatumUrfehde-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">sontag den dritten tag jenners ditz 63 jors</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#DatumUrfehde"/>
+	</Span>
+	<TimeSpan xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#time-DatumUrfehde-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#DatumUrfehde"/>
+		<dateAsCoded xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">1563-01-03</dateAsCoded>
+		<calendar xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#julian"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#DatumUrfehde-0"/>
+	</TimeSpan>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#oath-Urfehdeeid-0">
+		<hasTimeSpan xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#time-DatumUrfehde-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Urfehdeeid-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">mit gmeyner urphet gnediglichen wider usglossen</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Urfehdeeid"/>
+	</Span>
+	<Oath xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#oath-Urfehdeeid-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Urfehdeeid"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Urfehdeeid-0"/>
+	</Oath>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasPart xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#oath-Urfehdeeid-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#StrafeErmahnung-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">das er inn monats frist nechtkünfftig den bemelten scherer anclagbar machen, und wann man im hinfürt für gericht oder rhat bütet, das er gehörig und gehorsam sin solle</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#StrafeErmahnung"/>
+	</Span>
+	<Sanction xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#sanction-StrafeErmahnung-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#StrafeErmahnung"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#StrafeErmahnung-0"/>
+	</Sanction>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasPart xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#sanction-StrafeErmahnung-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#DatumFrist-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">inn monats fris</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#DatumFrist"/>
+	</Span>
+	<TimeSpan xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#time-DatumFrist-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#DatumFrist"/>
+		<duration xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">P1M</duration>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#DatumFrist-0"/>
+	</TimeSpan>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#sanction-StrafeErmahnung-0">
+		<deadline xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#time-DatumFrist-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#NotarialSubscription-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Niclaus Im Hoff Notarius subscripsit</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#NotarialSubscription"/>
+	</Span>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#PersonNotar-0">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Niclaus Im Hoff Notarius</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonNotar"/>
+	</Span>
+	<PersonMention xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonNotar-0">
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#PersonNotar"/>
+		<nameAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Niclaus Im Hoff Notarius</nameAsWritten>
+		<forename xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Niclaus</forename>
+		<surname xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Im Hoff</surname>
+		<gender xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#male"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#PersonNotar-0"/>
+	</PersonMention>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#proceeding-Eintrag-0">
+		<hasNotary xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#person-PersonNotar-0"/>
+	</rdf:Description>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#male-3">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Niclaus</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+	</Span>
+	<Span xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Beruf-3">
+		<textualContent xmlns="http://gams.uni-graz.at/o:gams-ontology#">Notarius</textualContent>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0"/>
+		<onPage xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#page-1r"/>
+		<category xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/ufbas/#Beruf"/>
+	</Span>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#person-PersonNotar-0">
+		<occupation xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Notarius</occupation>
+	</rdf:Description>
+	<MarginalNote xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#marginalnote-SchlagwortRatsknecht-0">
+		<claimant xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#person-SchlagwortRatsknecht-0"/>
+		<releasedCount xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</releasedCount>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Eingangsnotiz-0"/>
+	</MarginalNote>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Eintrag-0">
+		<hasMarginalNote xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#marginalnote-SchlagwortRatsknecht-0"/>
+	</rdf:Description>
+	<MonetaryAmount xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#amount-SchlagwortGeldleihe-0-1">
+		<quantity xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</quantity>
+		<unitAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-lbd"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#SchlagwortGeldleihe-0"/>
+	</MonetaryAmount>
+	<MonetaryAmount xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#amount-TatBetrug-0-1">
+		<quantity xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</quantity>
+		<unitAsWritten xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#unit-lbd"/>
+		<derivedFrom xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#TatBetrug-0"/>
+	</MonetaryAmount>
+	<rdf:Description rdf:about="http://gams.uni-graz.at/o:ufbas.1563#offence-TatBetrug-0">
+		<concerns xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#amount-TatBetrug-0-1"/>
+	</rdf:Description>
+	<Page xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#page-1r">
+		<folio xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">1r</folio>
+		<imageNumber xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</imageNumber>
+		<isPartOf xmlns="http://gams.uni-graz.at/o:gams-ontology#" rdf:resource="http://gams.uni-graz.at/o:ufbas.1563#Urfehdebuch-X"/>
+	</Page>
+	<Place xmlns="https://gams.uni-graz.at/o:ufbas.ontology#" rdf:about="http://gams.uni-graz.at/o:ufbas.1563#Kleinbasel">
+		<placeName xmlns="https://gams.uni-graz.at/o:ufbas.ontology#">Kleinbasel</placeName>
+	</Place>
+</rdf:RDF>

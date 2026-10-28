@@ -1,0 +1,392 @@
+# Ontology of the Urfehdebücher der Stadt Basel (knowledge/domain.md#domain-ontology,
+# ADR-17, ADR-23). The data of the refactored RDF use only terms of this ontology,
+# which states once how they relate to CIDOC CRM, RiC, PROV and the GAMS ontology.
+# Prefixes: ufbas: data (o:ufbas.1563), ufbas-ont: this ontology, ufbas-kat: the
+# categories of the taxonomy Urfehdekodierung, gams: the GAMS ontology.
+
+@prefix ufbas-ont: <https://gams.uni-graz.at/o:ufbas.ontology#> .
+@prefix gams:    <http://gams.uni-graz.at/o:gams-ontology#> .
+@prefix crm:     <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rico:    <https://www.ica.org/standards/RiC/ontology#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://gams.uni-graz.at/o:ufbas.ontology> a owl:Ontology ;
+    rdfs:label "Ontologie der Urfehdebücher der Stadt Basel"@de , "Ontology of the Urfehdebücher der Stadt Basel"@en ;
+    dcterms:description "Domain model of the Urfehde proceedings in Urfehdebuch X (1563–1569), derived deterministically from the TEI of the edition."@en ;
+    dcterms:creator "Christopher Pollin" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:versionInfo "0.1" .
+
+# Record layer: volume, entry, page, span, marginal note
+
+ufbas-ont:Volume a owl:Class ;
+    rdfs:label "Band"@de , "volume"@en ;
+    rdfs:subClassOf rico:RecordSet , gams:GAMSObject .
+
+ufbas-ont:Entry a owl:Class ;
+    rdfs:label "Eintrag"@de , "entry"@en ;
+    rdfs:comment "One entry of the book, a regular Urfehde or a special entry."@en ;
+    rdfs:subClassOf rico:Record , gams:Text .
+
+ufbas-ont:Page a owl:Class ;
+    rdfs:label "Seite"@de , "page"@en .
+
+ufbas-ont:Span a owl:Class ;
+    rdfs:label "Textstelle"@de , "text span"@en ;
+    rdfs:comment "An annotated element of the TEI, the evidence of a derived node."@en ;
+    rdfs:subClassOf gams:Text .
+
+ufbas-ont:MarginalNote a owl:Class ;
+    rdfs:label "Randnotiz"@de , "marginal note"@en ;
+    rdfs:comment "Claim of the Turmlöse, the guard entitled to the fee and the number of released prisoners, after Schmid 2016."@en .
+
+ufbas-ont:EntryType a owl:Class ;
+    rdfs:label "Eintragstyp"@de , "entry type"@en ;
+    rdfs:comment "Type of an entry after the introduction of the edition, which the TEI does not encode. The derivation assigns it by five rules on the editors' notes, the wording and the inserted leaf 32a, which reproduce research-artefacts/entry-types.tsv."@en .
+
+# the entry types, as the introduction of the edition counts them
+ufbas-ont:urfehde a ufbas-ont:EntryType ;
+    rdfs:label "Urfehde"@de , "Urfehde"@en ;
+    rdfs:comment "A regular Urfehde, dated or not."@en .
+ufbas-ont:urfehdbrief a ufbas-ont:EntryType ;
+    rdfs:label "Urfehdbrief"@de , "written oath of Urfehde"@en ;
+    rdfs:comment "An Urfehde written as a letter in the first person."@en .
+ufbas-ont:aussage a ufbas-ont:EntryType ;
+    rdfs:label "Aussage"@de , "statement"@en ;
+    rdfs:comment "The statement of an accused person, which belongs to the proceeding of another entry."@en .
+ufbas-ont:entwurf a ufbas-ont:EntryType ;
+    rdfs:label "Entwurf"@de , "draft"@en ;
+    rdfs:comment "A draft on the inserted leaf 32a."@en .
+ufbas-ont:abgebrochen a ufbas-ont:EntryType ;
+    rdfs:label "abgebrochen"@de , "broken off"@en ;
+    rdfs:comment "An entry the scribe broke off, after the editors' note."@en .
+ufbas-ont:fortsetzung a ufbas-ont:EntryType ;
+    rdfs:label "Fortsetzung"@de , "continuation"@en ;
+    rdfs:comment "A fragment that continues another entry and documents its proceeding (ADR-12)."@en .
+
+# Proceeding and its parts
+
+ufbas-ont:UrfehdeProceeding a owl:Class ;
+    rdfs:label "Urfehdeverfahren"@de , "Urfehde proceeding"@en ;
+    rdfs:subClassOf crm:E7_Activity , gams:Event .
+
+ufbas-ont:ProceedingPart a owl:Class ;
+    rdfs:label "Verfahrensteil"@de , "part of a proceeding"@en ;
+    rdfs:subClassOf crm:E7_Activity .
+
+ufbas-ont:Offence a owl:Class ;
+    rdfs:label "Tat"@de , "offence"@en ;
+    rdfs:subClassOf ufbas-ont:ProceedingPart .
+
+ufbas-ont:Detention a owl:Class ;
+    rdfs:label "Haft"@de , "detention"@en ;
+    rdfs:subClassOf ufbas-ont:ProceedingPart .
+
+ufbas-ont:Sanction a owl:Class ;
+    rdfs:label "Strafe"@de , "sanction"@en ;
+    rdfs:comment "Everything the group Strafe of the taxonomy codes, sanctions, modalities, procedural outcomes and obligations. The kind is its category."@en ;
+    rdfs:subClassOf ufbas-ont:ProceedingPart .
+
+ufbas-ont:Oath a owl:Class ;
+    rdfs:label "Urfehdeeid"@de , "oath of Urfehde"@en ;
+    rdfs:subClassOf ufbas-ont:ProceedingPart .
+
+ufbas-ont:Pardon a owl:Class ;
+    rdfs:label "Begnadigung"@de , "pardon"@en ;
+    rdfs:subClassOf ufbas-ont:ProceedingPart .
+
+ufbas-ont:PriorInstance a owl:Class ;
+    rdfs:label "Vorinstanz"@de , "prior instance"@en ;
+    rdfs:subClassOf ufbas-ont:ProceedingPart .
+
+ufbas-ont:ProceedingReference a owl:Class ;
+    rdfs:label "Verweis auf ein anderes Verfahren"@de , "reference to another proceeding"@en ;
+    rdfs:comment "The categories FrüheresUrfehdeverfahren and AnderesUrfehdeverfahren, a reference in the text itself. The proceeding it names is resolved only where the editors' notes cite it, as ufbas-ont:refersToProceeding."@en ;
+    rdfs:subClassOf ufbas-ont:ProceedingPart .
+
+# Persons, places, time, money
+
+ufbas-ont:PersonMention a owl:Class ;
+    rdfs:label "Personenerwähnung"@de , "person mention"@en ;
+    rdfs:comment "A person as named in one place of the book. Identity across mentions is not asserted."@en ;
+    rdfs:subClassOf crm:E21_Person , gams:Person .
+
+ufbas-ont:Gender a owl:Class ;
+    rdfs:label "Geschlecht"@de , "gender"@en .
+
+ufbas-ont:male a ufbas-ont:Gender ;
+    rdfs:label "männlich"@de , "male"@en .
+
+ufbas-ont:female a ufbas-ont:Gender ;
+    rdfs:label "weiblich"@de , "female"@en .
+
+ufbas-ont:Place a owl:Class ;
+    rdfs:label "Ort"@de , "place"@en ;
+    rdfs:subClassOf crm:E53_Place , gams:Place .
+
+ufbas-ont:TimeSpan a owl:Class ;
+    rdfs:label "Zeitspanne"@de , "time-span"@en ;
+    rdfs:subClassOf crm:E52_Time-Span , gams:TimeSpan .
+
+ufbas-ont:Calendar a owl:Class ;
+    rdfs:label "Kalender"@de , "calendar"@en .
+
+ufbas-ont:julian a ufbas-ont:Calendar ;
+    rdfs:label "julianisch"@de , "Julian"@en .
+
+ufbas-ont:MonetaryAmount a owl:Class ;
+    rdfs:label "Geldbetrag"@de , "monetary amount"@en ;
+    rdfs:subClassOf crm:E97_Monetary_Amount .
+
+ufbas-ont:CurrencyUnit a owl:Class ;
+    rdfs:label "Währungseinheit"@de , "currency unit"@en ;
+    rdfs:comment "A unit as the TEI writes it in measure/@unit. Sums are converted only with a documented rate (knowledge/domain.md#money)."@en ;
+    rdfs:subClassOf crm:E98_Currency .
+
+# the units of measure/@unit in the TEI, named after their code
+ufbas-ont:unit-lbd a ufbas-ont:CurrencyUnit ; skos:notation "lbd" ;
+    rdfs:comment "Pound, in the TEI also used for gulden."@en .
+ufbas-ont:unit-lb a ufbas-ont:CurrencyUnit ; skos:notation "lb" .
+ufbas-ont:unit-fl a ufbas-ont:CurrencyUnit ; skos:notation "fl" ; rdfs:comment "Gulden."@en .
+ufbas-ont:unit-ß a ufbas-ont:CurrencyUnit ; skos:notation "ß" ; rdfs:comment "Schilling."@en .
+ufbas-ont:unit-ß-w a ufbas-ont:CurrencyUnit ; skos:notation "ß-w" .
+ufbas-ont:unit-d a ufbas-ont:CurrencyUnit ; skos:notation "d" ;
+    rdfs:comment "Pfennig, in the TEI also used for Dickpfennig."@en .
+ufbas-ont:unit-d-st a ufbas-ont:CurrencyUnit ; skos:notation "d-st" ; rdfs:comment "Pounds in Stebler money."@en .
+ufbas-ont:unit-d-rp a ufbas-ont:CurrencyUnit ; skos:notation "d-rp" .
+ufbas-ont:unit-kr a ufbas-ont:CurrencyUnit ; skos:notation "kr" ; rdfs:comment "Kronen, not Kreuzer."@en .
+ufbas-ont:unit-tlr a ufbas-ont:CurrencyUnit ; skos:notation "tlr" ; rdfs:comment "Taler."@en .
+ufbas-ont:unit-bz a ufbas-ont:CurrencyUnit ; skos:notation "bz" ; rdfs:comment "Batzen."@en .
+ufbas-ont:unit-dck a ufbas-ont:CurrencyUnit ; skos:notation "dck" ; rdfs:comment "Dicken."@en .
+ufbas-ont:unit-plp a ufbas-ont:CurrencyUnit ; skos:notation "plp" ; rdfs:comment "Plappart."@en .
+ufbas-ont:unit-rss a ufbas-ont:CurrencyUnit ; skos:notation "rss" ; rdfs:comment "Rössler."@en .
+ufbas-ont:unit-pao a ufbas-ont:CurrencyUnit ; skos:notation "pao" ; rdfs:comment "Mönchskopf."@en .
+ufbas-ont:unit-sna a ufbas-ont:CurrencyUnit ; skos:notation "sna" ; rdfs:comment "Schnapphahn."@en .
+ufbas-ont:unit-tol a ufbas-ont:CurrencyUnit ; skos:notation "tol" .
+
+# Record properties
+
+ufbas-ont:documents a owl:ObjectProperty ;
+    rdfs:label "dokumentiert"@de , "documents"@en ;
+    rdfs:domain ufbas-ont:Entry ; rdfs:range ufbas-ont:UrfehdeProceeding ;
+    rdfs:subPropertyOf crm:P70_documents .
+
+ufbas-ont:onPage a owl:ObjectProperty ;
+    rdfs:label "auf Seite"@de , "on page"@en ;
+    rdfs:range ufbas-ont:Page .
+
+ufbas-ont:folio a owl:DatatypeProperty ;
+    rdfs:label "Folio"@de , "folio"@en ;
+    rdfs:comment "Counted from the page breaks, as uf:folio of the presentation layer."@en ;
+    rdfs:domain ufbas-ont:Page ; rdfs:range xsd:string .
+
+ufbas-ont:imageNumber a owl:DatatypeProperty ;
+    rdfs:label "Bildnummer"@de , "image number"@en ;
+    rdfs:comment "Number of the image in the Staatsarchiv Basel-Stadt, from pb/@facs, not a folio."@en ;
+    rdfs:domain ufbas-ont:Page ; rdfs:range xsd:integer .
+
+ufbas-ont:hasMarginalNote a owl:ObjectProperty ;
+    rdfs:label "hat Randnotiz"@de , "has marginal note"@en ;
+    rdfs:domain ufbas-ont:Entry ; rdfs:range ufbas-ont:MarginalNote .
+
+ufbas-ont:claimant a owl:ObjectProperty ;
+    rdfs:label "Anspruchsberechtigter"@de , "claimant"@en ;
+    rdfs:domain ufbas-ont:MarginalNote ; rdfs:range ufbas-ont:PersonMention .
+
+ufbas-ont:releasedCount a owl:DatatypeProperty ;
+    rdfs:label "Zahl der Entlassenen"@de , "number released"@en ;
+    rdfs:domain ufbas-ont:MarginalNote ; rdfs:range xsd:nonNegativeInteger .
+
+ufbas-ont:entryType a owl:ObjectProperty ;
+    rdfs:label "Eintragstyp"@de , "entry type"@en ;
+    rdfs:domain ufbas-ont:Entry ; rdfs:range ufbas-ont:EntryType .
+
+ufbas-ont:continues a owl:ObjectProperty ;
+    rdfs:label "setzt fort"@de , "continues"@en ;
+    rdfs:comment "The entry of type Fortsetzung that this fragment continues, named by the editors' note in the fragment."@en ;
+    rdfs:domain ufbas-ont:Entry ; rdfs:range ufbas-ont:Entry .
+
+ufbas-ont:mentionsPlace a owl:ObjectProperty ;
+    rdfs:label "nennt Ort"@de , "mentions place"@en ;
+    rdfs:comment "A place of the place list that the entry names, in any role and spelling. The full-text search finds every spelling of a place by its name."@en ;
+    rdfs:domain ufbas-ont:Entry ; rdfs:range ufbas-ont:Place ;
+    rdfs:subPropertyOf crm:P67_refers_to .
+
+ufbas-ont:relatedEntry a owl:ObjectProperty ;
+    rdfs:label "zugehöriger Eintrag"@de , "related entry"@en ;
+    rdfs:comment "An entry that an editors' note of this entry names as belonging to it, a statement and its Urfehde or a continuation, resolved by the cited folio and heading. Stated in the direction of the note."@en ;
+    rdfs:domain ufbas-ont:Entry ; rdfs:range ufbas-ont:Entry .
+
+# Proceeding properties
+
+ufbas-ont:hasPart a owl:ObjectProperty ;
+    rdfs:label "hat Teil"@de , "has part"@en ;
+    rdfs:domain ufbas-ont:UrfehdeProceeding ; rdfs:range ufbas-ont:ProceedingPart ;
+    rdfs:subPropertyOf crm:P9_consists_of .
+
+ufbas-ont:hasParticipant a owl:ObjectProperty ;
+    rdfs:label "hat Beteiligte"@de , "has participant"@en ;
+    rdfs:domain ufbas-ont:UrfehdeProceeding ; rdfs:range ufbas-ont:PersonMention ;
+    rdfs:subPropertyOf crm:P11_had_participant .
+
+ufbas-ont:hasOffender a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Täter"@de , "offender"@en .
+ufbas-ont:hasAccomplice a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Mittäter"@de , "accomplice"@en .
+ufbas-ont:hasVictim a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Opfer"@de , "victim"@en .
+ufbas-ont:hasPlaintiff a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Kläger"@de , "plaintiff"@en .
+ufbas-ont:hasWitness a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Zeuge"@de , "witness"@en .
+ufbas-ont:hasPresent a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Anwesende"@de , "person present"@en .
+ufbas-ont:hasReceiver a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Hehler"@de , "receiver of stolen goods"@en .
+ufbas-ont:hasNotary a owl:ObjectProperty ; rdfs:subPropertyOf ufbas-ont:hasParticipant ;
+    rdfs:label "Notar"@de , "notary"@en .
+
+ufbas-ont:refersToProceeding a owl:ObjectProperty ;
+    rdfs:label "verweist auf Verfahren"@de , "refers to proceeding"@en ;
+    rdfs:comment "Another Urfehde proceeding of a person, after an editors' note \"kommt in einem anderen Urfehdeverfahren vor\", resolved to the entry on the cited folio whose heading matches the cited one. Stated in the direction of the note, not transitive."@en ;
+    rdfs:domain ufbas-ont:UrfehdeProceeding ; rdfs:range ufbas-ont:UrfehdeProceeding .
+
+# Part properties
+
+ufbas-ont:committedBy a owl:ObjectProperty ;
+    rdfs:label "begangen von"@de , "committed by"@en ;
+    rdfs:comment "Only where the entry names the offender of this offence."@en ;
+    rdfs:domain ufbas-ont:Offence ; rdfs:range ufbas-ont:PersonMention ;
+    rdfs:subPropertyOf crm:P14_carried_out_by .
+
+ufbas-ont:appliesTo a owl:ObjectProperty ;
+    rdfs:label "betrifft"@de , "applies to"@en ;
+    rdfs:domain ufbas-ont:Sanction ; rdfs:range ufbas-ont:PersonMention ;
+    rdfs:subPropertyOf crm:P11_had_participant .
+
+ufbas-ont:tookPlaceAt a owl:ObjectProperty ;
+    rdfs:label "fand statt in"@de , "took place at"@en ;
+    rdfs:range ufbas-ont:Place ;
+    rdfs:subPropertyOf crm:P7_took_place_at .
+
+ufbas-ont:hasTimeSpan a owl:ObjectProperty ;
+    rdfs:label "hat Zeitspanne"@de , "has time-span"@en ;
+    rdfs:range ufbas-ont:TimeSpan ;
+    rdfs:subPropertyOf crm:P4_has_time-span .
+
+ufbas-ont:deadline a owl:ObjectProperty ;
+    rdfs:label "Frist"@de , "deadline"@en ;
+    rdfs:domain ufbas-ont:Sanction ; rdfs:range ufbas-ont:TimeSpan .
+
+ufbas-ont:concerns a owl:ObjectProperty ;
+    rdfs:label "betrifft Betrag"@de , "concerns amount"@en ;
+    rdfs:range ufbas-ont:MonetaryAmount .
+
+# Person properties
+
+ufbas-ont:forename a owl:DatatypeProperty ; rdfs:label "Vorname"@de , "forename"@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:subPropertyOf gams:hasName .
+ufbas-ont:surname a owl:DatatypeProperty ; rdfs:label "Nachname"@de , "surname"@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:subPropertyOf gams:hasName .
+ufbas-ont:byname a owl:DatatypeProperty ; rdfs:label "Beiname"@de , "byname"@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:subPropertyOf gams:hasName .
+ufbas-ont:nameAsWritten a owl:DatatypeProperty ; rdfs:label "Name wie geschrieben"@de , "name as written"@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:subPropertyOf gams:hasName .
+
+ufbas-ont:gender a owl:ObjectProperty ; rdfs:label "Geschlecht"@de , "gender"@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:range ufbas-ont:Gender .
+
+ufbas-ont:occupation a owl:DatatypeProperty ; rdfs:label "Beruf"@de , "occupation"@en ;
+    rdfs:domain ufbas-ont:PersonMention .
+ufbas-ont:status a owl:DatatypeProperty ; rdfs:label "Status"@de , "status"@en ;
+    rdfs:domain ufbas-ont:PersonMention .
+ufbas-ont:civilStatus a owl:DatatypeProperty ; rdfs:label "Zivilstand"@de , "civil status"@en ;
+    rdfs:domain ufbas-ont:PersonMention .
+ufbas-ont:kinship a owl:DatatypeProperty ; rdfs:label "Verwandtschaftsgrad"@de , "kinship"@en ;
+    rdfs:domain ufbas-ont:PersonMention .
+
+ufbas-ont:origin a owl:ObjectProperty ; rdfs:label "Herkunft"@de , "origin"@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:range ufbas-ont:Place .
+ufbas-ont:residence a owl:ObjectProperty ; rdfs:label "Wohnort"@de , "residence"@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:range ufbas-ont:Place .
+ufbas-ont:placeAsWritten a owl:DatatypeProperty ; rdfs:label "Ort wie geschrieben"@de , "place as written"@en ;
+    rdfs:comment "An origin, residence or place of deed without a reference into the place list, as the text writes it."@en .
+
+ufbas-ont:placeName a owl:DatatypeProperty ; rdfs:label "Ortsname"@de , "place name"@en ;
+    rdfs:comment "The modern name the place list of the TEI gives a place."@en ;
+    rdfs:domain ufbas-ont:Place ; rdfs:subPropertyOf gams:hasName .
+
+ufbas-ont:possiblySameAs a owl:ObjectProperty , owl:SymmetricProperty ;
+    rdfs:label "möglicherweise dieselbe Person"@de , "possibly the same person as"@en ;
+    rdfs:comment "Candidate link from an editors' cross-reference, never owl:sameAs and not transitive. It joins the person the note names in its entry with the person of that name in the entry the note cites, where both names match the name of the note. Stated in the direction of the note."@en ;
+    rdfs:domain ufbas-ont:PersonMention ; rdfs:range ufbas-ont:PersonMention .
+
+# Time and money properties
+
+ufbas-ont:dateAsCoded a owl:DatatypeProperty ;
+    rdfs:label "Datum wie codiert"@de , "date as coded"@en ;
+    rdfs:comment "The @when of the TEI as published, in the calendar named by ufbas-ont:calendar, not an xsd:date, which assumes the Gregorian calendar."@en ;
+    rdfs:domain ufbas-ont:TimeSpan ; rdfs:range xsd:string .
+
+ufbas-ont:dateSuggested a owl:DatatypeProperty ;
+    rdfs:label "vorgeschlagenes Datum"@de , "suggested date"@en ;
+    rdfs:comment "A date beside the published value where @when contradicts the written form (knowledge/data.md#data-quality): the written date where its weekday confirms it, or, for a year outside the sixteenth century, the coded day and month in the year that puts a deed before and a deadline after the Urfehde of the entry."@en ;
+    rdfs:domain ufbas-ont:TimeSpan ; rdfs:range xsd:string .
+
+ufbas-ont:dateConflict a owl:ObjectProperty ;
+    rdfs:label "Datumswiderspruch"@de , "date conflict"@en ;
+    rdfs:comment "How the coded date contradicts its written form or its entry. The published value stays, ADR-06."@en ;
+    rdfs:domain ufbas-ont:TimeSpan ; rdfs:range ufbas-ont:DateConflict .
+
+ufbas-ont:DateConflict a owl:Class ;
+    rdfs:label "Datumswiderspruch"@de , "date conflict"@en ;
+    rdfs:comment "A kind of contradiction between a coded date and its written form, read with the Julian weekday of the written date."@en .
+
+ufbas-ont:writtenDateConfirmed a ufbas-ont:DateConflict ;
+    rdfs:label "geschriebenes Datum durch Wochentag bestätigt"@de , "written date confirmed by its weekday"@en ;
+    rdfs:comment "The written date differs from the coded one, and the written weekday falls on the written date."@en .
+ufbas-ont:codedDateConfirmed a ufbas-ont:DateConflict ;
+    rdfs:label "codiertes Datum durch Wochentag bestätigt"@de , "coded date confirmed by the weekday"@en ;
+    rdfs:comment "The written date differs from the coded one, and the written weekday falls on the coded date."@en .
+ufbas-ont:writtenDateDiffers a ufbas-ont:DateConflict ;
+    rdfs:label "geschriebenes Datum weicht ab"@de , "written date differs"@en ;
+    rdfs:comment "The written date differs from the coded one, and no written weekday decides between them."@en .
+ufbas-ont:yearOutsideBook a ufbas-ont:DateConflict ;
+    rdfs:label "Jahr ausserhalb des Buchs"@de , "year outside the book"@en ;
+    rdfs:comment "The coded year lies outside the sixteenth century."@en .
+ufbas-ont:deedAfterOath a ufbas-ont:DateConflict ;
+    rdfs:label "Tat nach der Urfehde"@de , "deed after the oath"@en ;
+    rdfs:comment "The coded date of a deed lies after the Urfehde date of its entry."@en .
+
+ufbas-ont:calendar a owl:ObjectProperty ; rdfs:label "Kalender"@de , "calendar"@en ;
+    rdfs:domain ufbas-ont:TimeSpan ; rdfs:range ufbas-ont:Calendar .
+
+ufbas-ont:duration a owl:DatatypeProperty ; rdfs:label "Dauer"@de , "duration"@en ;
+    rdfs:domain ufbas-ont:TimeSpan ; rdfs:range xsd:duration .
+
+ufbas-ont:quantity a owl:DatatypeProperty ; rdfs:label "Menge"@de , "quantity"@en ;
+    rdfs:domain ufbas-ont:MonetaryAmount ; rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf crm:P181_has_amount .
+
+ufbas-ont:unitAsWritten a owl:ObjectProperty ; rdfs:label "Einheit wie geschrieben"@de , "unit as written"@en ;
+    rdfs:domain ufbas-ont:MonetaryAmount ; rdfs:range ufbas-ont:CurrencyUnit ;
+    rdfs:subPropertyOf crm:P180_has_currency .
+
+# Category and evidence
+
+ufbas-ont:category a owl:ObjectProperty ;
+    rdfs:label "Kategorie"@de , "category"@en ;
+    rdfs:comment "The concept of the taxonomy Urfehdekodierung a node was coded with."@en ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf crm:P2_has_type .
+
+ufbas-ont:derivedFrom a owl:ObjectProperty ;
+    rdfs:label "abgeleitet aus"@de , "derived from"@en ;
+    rdfs:comment "The evidence is a text span, or the entry itself for a proceeding and for an amount outside any annotated element. Both are gams:Text."@en ;
+    rdfs:range gams:Text ;
+    rdfs:subPropertyOf prov:wasDerivedFrom .

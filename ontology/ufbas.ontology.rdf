@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:its="http://www.w3.org/2005/11/its">
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#derivedFrom">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#Text"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The evidence is a text span, or the entry itself for a proceeding and for an amount outside any annotated element. Both are gams:Text.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">derived from</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">abgeleitet aus</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#category">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The concept of the taxonomy Urfehdekodierung a node was coded with.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">category</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Kategorie</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unitAsWritten">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P180_has_currency"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">unit as written</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Einheit wie geschrieben</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#quantity">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P181_has_amount"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">quantity</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Menge</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#duration">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">duration</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Dauer</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#calendar">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Calendar"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">calendar</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Kalender</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#deedAfterOath">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The coded date of a deed lies after the Urfehde date of its entry.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">deed after the oath</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Tat nach der Urfehde</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#DateConflict"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#yearOutsideBook">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The coded year lies outside the sixteenth century.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">year outside the book</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Jahr ausserhalb des Buchs</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#DateConflict"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#writtenDateDiffers">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The written date differs from the coded one, and no written weekday decides between them.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">written date differs</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">geschriebenes Datum weicht ab</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#DateConflict"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#codedDateConfirmed">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The written date differs from the coded one, and the written weekday falls on the coded date.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">coded date confirmed by the weekday</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">codiertes Datum durch Wochentag bestätigt</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#DateConflict"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#writtenDateConfirmed">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The written date differs from the coded one, and the written weekday falls on the written date.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">written date confirmed by its weekday</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">geschriebenes Datum durch Wochentag bestätigt</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#DateConflict"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#DateConflict">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A kind of contradiction between a coded date and its written form, read with the Julian weekday of the written date.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">date conflict</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Datumswiderspruch</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#dateConflict">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#DateConflict"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">How the coded date contradicts its written form or its entry. The published value stays, ADR-06.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">date conflict</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Datumswiderspruch</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#dateSuggested">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A date beside the published value where @when contradicts the written form (knowledge/data.md#data-quality): the written date where its weekday confirms it, or, for a year outside the sixteenth century, the coded day and month in the year that puts a deed before and a deadline after the Urfehde of the entry.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">suggested date</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">vorgeschlagenes Datum</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#dateAsCoded">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The @when of the TEI as published, in the calendar named by ufbas-ont:calendar, not an xsd:date, which assumes the Gregorian calendar.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">date as coded</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Datum wie codiert</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#possiblySameAs">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Candidate link from an editors&apos; cross-reference, never owl:sameAs and not transitive. It joins the person the note names in its entry with the person of that name in the entry the note cites, where both names match the name of the note. Stated in the direction of the note.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">possibly the same person as</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">möglicherweise dieselbe Person</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#placeName">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#hasName"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The modern name the place list of the TEI gives a place.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">place name</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Ortsname</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#placeAsWritten">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">An origin, residence or place of deed without a reference into the place list, as the text writes it.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">place as written</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Ort wie geschrieben</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#residence">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">residence</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Wohnort</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#origin">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">origin</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Herkunft</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#kinship">
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">kinship</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Verwandtschaftsgrad</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#civilStatus">
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">civil status</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Zivilstand</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#status">
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">status</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Status</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#occupation">
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">occupation</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Beruf</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#gender">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Gender"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">gender</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Geschlecht</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#nameAsWritten">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#hasName"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">name as written</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Name wie geschrieben</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#byname">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#hasName"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">byname</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Beiname</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#surname">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#hasName"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">surname</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Nachname</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#forename">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#hasName"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">forename</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Vorname</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#concerns">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">concerns amount</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">betrifft Betrag</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#deadline">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Sanction"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">deadline</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Frist</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasTimeSpan">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">has time-span</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">hat Zeitspanne</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#tookPlaceAt">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">took place at</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">fand statt in</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#appliesTo">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P11_had_participant"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Sanction"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">applies to</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">betrifft</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#committedBy">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Offence"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Only where the entry names the offender of this offence.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">committed by</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">begangen von</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#refersToProceeding">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Another Urfehde proceeding of a person, after an editors&apos; note &quot;kommt in einem anderen Urfehdeverfahren vor&quot;, resolved to the entry on the cited folio whose heading matches the cited one. Stated in the direction of the note, not transitive.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">refers to proceeding</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">verweist auf Verfahren</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasNotary">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">notary</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Notar</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasReceiver">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">receiver of stolen goods</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Hehler</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasPresent">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">person present</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Anwesende</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasWitness">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">witness</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Zeuge</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasPlaintiff">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">plaintiff</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Kläger</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasVictim">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">victim</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Opfer</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasAccomplice">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">accomplice</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Mittäter</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasOffender">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">offender</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Täter</label>
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasParticipant">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P11_had_participant"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">has participant</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">hat Beteiligte</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasPart">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P9_consists_of"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">has part</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">hat Teil</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#relatedEntry">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">An entry that an editors&apos; note of this entry names as belonging to it, a statement and its Urfehde or a continuation, resolved by the cited folio and heading. Stated in the direction of the note.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">related entry</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">zugehöriger Eintrag</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#mentionsPlace">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Place"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A place of the place list that the entry names, in any role and spelling. The full-text search finds every spelling of a place by its name.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">mentions place</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">nennt Ort</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#continues">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The entry of type Fortsetzung that this fragment continues, named by the editors&apos; note in the fragment.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">continues</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">setzt fort</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#entryType">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#EntryType"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">entry type</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Eintragstyp</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#releasedCount">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MarginalNote"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">number released</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Zahl der Entlassenen</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#claimant">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MarginalNote"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">claimant</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Anspruchsberechtigter</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#hasMarginalNote">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#MarginalNote"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">has marginal note</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">hat Randnotiz</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#imageNumber">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Page"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Number of the image in the Staatsarchiv Basel-Stadt, from pb/@facs, not a folio.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">image number</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Bildnummer</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#folio">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Page"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Counted from the page breaks, as uf:folio of the presentation layer.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">folio</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Folio</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#onPage">
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Page"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">on page</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">auf Seite</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#documents">
+		<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P70_documents"/>
+		<range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding"/>
+		<domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Entry"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">documents</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">dokumentiert</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-tol">
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">tol</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-sna">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Schnapphahn.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">sna</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-pao">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Mönchskopf.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">pao</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-rss">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Rössler.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">rss</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-plp">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Plappart.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">plp</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-dck">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Dicken.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">dck</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-bz">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Batzen.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">bz</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-tlr">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Taler.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">tlr</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-kr">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Kronen, not Kreuzer.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">kr</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-d-rp">
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">d-rp</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-d-st">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Pounds in Stebler money.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">d-st</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-d">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Pfennig, in the TEI also used for Dickpfennig.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">d</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-ß-w">
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">ß-w</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-ß">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Schilling.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">ß</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-fl">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Gulden.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">fl</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-lb">
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">lb</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#unit-lbd">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Pound, in the TEI also used for gulden.</comment>
+		<notation xmlns="http://www.w3.org/2004/02/skos/core#">lbd</notation>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#CurrencyUnit">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E98_Currency"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A unit as the TEI writes it in measure/@unit. Sums are converted only with a documented rate (knowledge/domain.md#money).</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">currency unit</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Währungseinheit</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#MonetaryAmount">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E97_Monetary_Amount"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">monetary amount</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Geldbetrag</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#julian">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Julian</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">julianisch</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Calendar"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Calendar">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">calendar</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Kalender</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#TimeSpan">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#TimeSpan"/>
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">time-span</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Zeitspanne</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Place">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#Place"/>
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">place</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Ort</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#female">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">female</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">weiblich</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Gender"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#male">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">male</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">männlich</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#Gender"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Gender">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">gender</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Geschlecht</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#PersonMention">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#Person"/>
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A person as named in one place of the book. Identity across mentions is not asserted.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">person mention</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Personenerwähnung</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingReference">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The categories FrüheresUrfehdeverfahren and AnderesUrfehdeverfahren, a reference in the text itself. The proceeding it names is resolved only where the editors&apos; notes cite it, as ufbas-ont:refersToProceeding.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">reference to another proceeding</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Verweis auf ein anderes Verfahren</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#PriorInstance">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">prior instance</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Vorinstanz</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Pardon">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">pardon</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Begnadigung</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Oath">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">oath of Urfehde</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Urfehdeeid</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Sanction">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Everything the group Strafe of the taxonomy codes, sanctions, modalities, procedural outcomes and obligations. The kind is its category.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">sanction</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Strafe</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Detention">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">detention</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Haft</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Offence">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">offence</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Tat</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#ProceedingPart">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">part of a proceeding</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Verfahrensteil</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#UrfehdeProceeding">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#Event"/>
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Urfehde proceeding</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Urfehdeverfahren</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#fortsetzung">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A fragment that continues another entry and documents its proceeding (ADR-12).</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">continuation</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Fortsetzung</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#EntryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#abgebrochen">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">An entry the scribe broke off, after the editors&apos; note.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">broken off</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">abgebrochen</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#EntryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#entwurf">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A draft on the inserted leaf 32a.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">draft</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Entwurf</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#EntryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#aussage">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">The statement of an accused person, which belongs to the proceeding of another entry.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">statement</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Aussage</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#EntryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#urfehdbrief">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">An Urfehde written as a letter in the first person.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">written oath of Urfehde</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Urfehdbrief</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#EntryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#urfehde">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">A regular Urfehde, dated or not.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Urfehde</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Urfehde</label>
+		<rdf:type rdf:resource="https://gams.uni-graz.at/o:ufbas.ontology#EntryType"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#EntryType">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Type of an entry after the introduction of the edition, which the TEI does not encode. The derivation assigns it by five rules on the editors&apos; notes, the wording and the inserted leaf 32a, which reproduce research-artefacts/entry-types.tsv.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">entry type</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Eintragstyp</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#MarginalNote">
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Claim of the Turmlöse, the guard entitled to the fee and the number of released prisoners, after Schmid 2016.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">marginal note</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Randnotiz</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Span">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#Text"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">An annotated element of the TEI, the evidence of a derived node.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">text span</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Textstelle</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Page">
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">page</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Seite</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Entry">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#Text"/>
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://www.ica.org/standards/RiC/ontology#Record"/>
+		<comment xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">One entry of the book, a regular Urfehde or a special entry.</comment>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">entry</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Eintrag</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology#Volume">
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://gams.uni-graz.at/o:gams-ontology#GAMSObject"/>
+		<subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="https://www.ica.org/standards/RiC/ontology#RecordSet"/>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">volume</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Band</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology">
+		<versionInfo xmlns="http://www.w3.org/2002/07/owl#">0.1</versionInfo>
+		<license xmlns="http://purl.org/dc/terms/" rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+		<creator xmlns="http://purl.org/dc/terms/">Christopher Pollin</creator>
+		<description xmlns="http://purl.org/dc/terms/" xml:lang="en">Domain model of the Urfehde proceedings in Urfehdebuch X (1563–1569), derived deterministically from the TEI of the edition.</description>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Ontology of the Urfehdebücher der Stadt Basel</label>
+		<label xmlns="http://www.w3.org/2000/01/rdf-schema#" xml:lang="de">Ontologie der Urfehdebücher der Stadt Basel</label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	</rdf:Description>
+</rdf:RDF>
