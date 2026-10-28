@@ -340,6 +340,11 @@ ufbas-sh:Concept a sh:NodeShape ;
         sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
         sh:message "A concept has exactly one German skos:prefLabel." ] ,
     [
+        sh:path skos:prefLabel ;
+        sh:qualifiedValueShape [ sh:languageIn ( "en" ) ] ;
+        sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ;
+        sh:message "A concept has exactly one English skos:prefLabel." ] ,
+    [
         sh:path skos:inScheme ; sh:minCount 1 ; sh:class skos:ConceptScheme ;
         sh:message "A concept is in the concept scheme." ] ,
     [

@@ -50,6 +50,27 @@
 		<minCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</minCount>
 		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
 	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4e27acc027fdde0d">
+		<message xmlns="http://www.w3.org/ns/shacl#">A concept has exactly one English skos:prefLabel.</message>
+	</rdf:Description>
+	<rdf:Description rdf:about="https://gams.uni-graz.at/o:ufbas.ontology/shapes#Concept">
+		<property xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b4e27acc027fdde0d"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4e27acc027fdde0d">
+		<qualifiedMaxCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</qualifiedMaxCount>
+		<qualifiedMinCount xmlns="http://www.w3.org/ns/shacl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</qualifiedMinCount>
+		<qualifiedValueShape xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="b61c30f63892d9fdc"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="bbb18af9b2e331efc">
+		<rdf:first>en</rdf:first>
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b61c30f63892d9fdc">
+		<languageIn xmlns="http://www.w3.org/ns/shacl#" rdf:nodeID="bbb18af9b2e331efc"/>
+	</rdf:Description>
+	<rdf:Description rdf:nodeID="b4e27acc027fdde0d">
+		<path xmlns="http://www.w3.org/ns/shacl#" rdf:resource="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+	</rdf:Description>
 	<rdf:Description rdf:nodeID="b73ed67492f22f9f8">
 		<message xmlns="http://www.w3.org/ns/shacl#">A concept has exactly one German skos:prefLabel.</message>
 	</rdf:Description>

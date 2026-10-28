@@ -2,8 +2,8 @@
 // from the TEI in tei/ with exploration-data.xsl. The Exploration view reads the RDF
 // through query:ufbas.exploration; this derivation reads the TEI directly and is the
 // independent reference test/exploration-rdf.test.mjs compares the query with. Run as a
-// script it writes build/ufbas-exploration.json, the file the ufbas-data package
-// publishes.
+// script it writes derived/ufbas-exploration.json of the data package, which
+// test/exploration-data.test.mjs keeps equal to this derivation.
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, resolve } from 'node:path';
@@ -12,7 +12,7 @@ import { pathToFileURL } from 'node:url';
 import SaxonJS from 'saxon-js';
 import { here, dataRoot, compileSEF, datastream, derived, parse } from './gams.mjs';
 
-export const outFile = resolve(here, 'build/ufbas-exploration.json');
+export const outFile = resolve(dataRoot, 'derived/ufbas-exploration.json');
 
 // The SEF goes to a temporary folder, the stylesheet compiles in about a second.
 function compile() {

@@ -1,6 +1,6 @@
 # The concepts Eintrag-0 is coded with and their broader concepts, as SKOS of the taxonomy
 # Urfehdekodierung in tei/ufbas.kategorien.xml: the category ids as IRIs, catDesc/term
-# as label, and the nesting of category elements as skos:broader.
+# as German label and the curated English label (ADR-30), and the nesting of category elements as skos:broader.
 
 @prefix ufbas-kat: <http://gams.uni-graz.at/ufbas/#> .
 @prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
@@ -8,49 +8,49 @@
 ufbas-kat:Urfehdekodierung a skos:ConceptScheme ;
     skos:hasTopConcept ufbas-kat:Tat , ufbas-kat:Strafe , ufbas-kat:Untersuchungshaft , ufbas-kat:Urfehdeeid , ufbas-kat:Person , ufbas-kat:Beruf , ufbas-kat:Status , ufbas-kat:Ort , ufbas-kat:Datum , ufbas-kat:Schlagwort , ufbas-kat:NotarialSubscription .
 
-ufbas-kat:Tat a skos:Concept ; skos:prefLabel "Tat"@de ;
+ufbas-kat:Tat a skos:Concept ; skos:prefLabel "Tat"@de , "offence"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:TatBetrug a skos:Concept ; skos:prefLabel "Betrug"@de ;
+ufbas-kat:TatBetrug a skos:Concept ; skos:prefLabel "Betrug"@de , "fraud"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Tat .
-ufbas-kat:TatUngehorsam a skos:Concept ; skos:prefLabel "Ungehorsam"@de ;
+ufbas-kat:TatUngehorsam a skos:Concept ; skos:prefLabel "Ungehorsam"@de , "disobedience"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Tat .
-ufbas-kat:Strafe a skos:Concept ; skos:prefLabel "Strafe"@de ;
+ufbas-kat:Strafe a skos:Concept ; skos:prefLabel "Strafe"@de , "sanction"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:StrafeErmahnung a skos:Concept ; skos:prefLabel "Ermahnung"@de ;
+ufbas-kat:StrafeErmahnung a skos:Concept ; skos:prefLabel "Ermahnung"@de , "admonition"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Strafe .
-ufbas-kat:Untersuchungshaft a skos:Concept ; skos:prefLabel "Untersuchungshaft"@de ;
+ufbas-kat:Untersuchungshaft a skos:Concept ; skos:prefLabel "Untersuchungshaft"@de , "detention before the oath"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:Urfehdeeid a skos:Concept ; skos:prefLabel "Urfehdeeid"@de ;
+ufbas-kat:Urfehdeeid a skos:Concept ; skos:prefLabel "Urfehdeeid"@de , "oath of Urfehde"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:Person a skos:Concept ; skos:prefLabel "Person"@de ;
+ufbas-kat:Person a skos:Concept ; skos:prefLabel "Person"@de , "person"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:PersonTäter a skos:Concept ; skos:prefLabel "Täter"@de ;
+ufbas-kat:PersonTäter a skos:Concept ; skos:prefLabel "Täter"@de , "offender"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Person .
-ufbas-kat:PersonMittäter a skos:Concept ; skos:prefLabel "Mittäter"@de ;
+ufbas-kat:PersonMittäter a skos:Concept ; skos:prefLabel "Mittäter"@de , "accomplice"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Person .
-ufbas-kat:PersonOpfer a skos:Concept ; skos:prefLabel "Opfer"@de ;
+ufbas-kat:PersonOpfer a skos:Concept ; skos:prefLabel "Opfer"@de , "victim"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Person .
-ufbas-kat:PersonNotar a skos:Concept ; skos:prefLabel "Notar"@de ;
+ufbas-kat:PersonNotar a skos:Concept ; skos:prefLabel "Notar"@de , "notary"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Person .
-ufbas-kat:Beruf a skos:Concept ; skos:prefLabel "Beruf"@de ;
+ufbas-kat:Beruf a skos:Concept ; skos:prefLabel "Beruf"@de , "occupation"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:Status a skos:Concept ; skos:prefLabel "Status"@de ;
+ufbas-kat:Status a skos:Concept ; skos:prefLabel "Status"@de , "status"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:Ort a skos:Concept ; skos:prefLabel "Ort"@de ;
+ufbas-kat:Ort a skos:Concept ; skos:prefLabel "Ort"@de , "place"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:OrtWohnort a skos:Concept ; skos:prefLabel "Wohnort"@de ;
+ufbas-kat:OrtWohnort a skos:Concept ; skos:prefLabel "Wohnort"@de , "place of residence"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Ort .
-ufbas-kat:Datum a skos:Concept ; skos:prefLabel "Datum"@de ;
+ufbas-kat:Datum a skos:Concept ; skos:prefLabel "Datum"@de , "date"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:DatumUrfehde a skos:Concept ; skos:prefLabel "Datum der Urfehde"@de ;
+ufbas-kat:DatumUrfehde a skos:Concept ; skos:prefLabel "Datum der Urfehde"@de , "date of the Urfehde"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Datum .
-ufbas-kat:DatumFrist a skos:Concept ; skos:prefLabel "Datum einer Frist"@de ;
+ufbas-kat:DatumFrist a skos:Concept ; skos:prefLabel "Datum einer Frist"@de , "deadline"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Datum .
-ufbas-kat:Schlagwort a skos:Concept ; skos:prefLabel "Schlagworte"@de ;
+ufbas-kat:Schlagwort a skos:Concept ; skos:prefLabel "Schlagworte"@de , "keywords"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .
-ufbas-kat:SchlagwortGeldleihe a skos:Concept ; skos:prefLabel "Geldleihe"@de ;
+ufbas-kat:SchlagwortGeldleihe a skos:Concept ; skos:prefLabel "Geldleihe"@de , "moneylending"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Schlagwort .
-ufbas-kat:SchlagwortRatsknecht a skos:Concept ; skos:prefLabel "Ratsknecht"@de ;
+ufbas-kat:SchlagwortRatsknecht a skos:Concept ; skos:prefLabel "Ratsknecht"@de , "council servant (Ratsknecht)"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:broader ufbas-kat:Schlagwort .
-ufbas-kat:NotarialSubscription a skos:Concept ; skos:prefLabel "Notariatsunterschrift"@de ;
+ufbas-kat:NotarialSubscription a skos:Concept ; skos:prefLabel "Notariatsunterschrift"@de , "notarial subscription"@en ;
     skos:inScheme ufbas-kat:Urfehdekodierung ; skos:topConceptOf ufbas-kat:Urfehdekodierung .

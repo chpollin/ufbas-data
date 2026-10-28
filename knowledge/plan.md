@@ -52,9 +52,8 @@ The view reads the refactored RDF since 2026-10-21 (ADR-21, [testing.md](testing
 
 What is built is in [domain.md](domain.md#domain-ontology). Open:
 
-1. Curation of the English labels drafted in `research-artefacts/category-labels-en.tsv` by the operator, after which they enter the ontology and the concept scheme (ADR-30).
-2. Publication as `o:ufbas.ontology` of model `cm:Ontology`, with only the `ONTOLOGY` datastream from `ontology/ufbas.ontology.rdf` and its `STYLESHEET` redirect (ADR-33), and of the refactored RDF of the edition derived under it (ADR-17), by ingest and re-ingest of the operator ([Delivery](#delivery)). Whether the default view of `cm:Ontology` hands `ONTOLOGY` to the stylesheet is unverified. The page renders without it, but then the navigation item is not marked. Until the ingest the page Ontologie is expected to fail on GAMS, since it reads only that datastream, so the ingest follows the push of gams-www closely. After it, `localDatastreams` of `local-test-build/gams.mjs` goes.
-3. After the re-ingest, the downloads of the refactored data and concept scheme on the page "Ontologie", and a look whether Saxon on GAMS gives the triples that `local-test-build/saxon-check.mjs` gives locally.
+1. Publication as `o:ufbas.ontology` of model `cm:Ontology`, with only the `ONTOLOGY` datastream from `ontology/ufbas.ontology.rdf` and its `STYLESHEET` redirect (ADR-33), and of the refactored RDF of the edition derived under it (ADR-17), by ingest and re-ingest of the operator ([Delivery](#delivery)). Whether the default view of `cm:Ontology` hands `ONTOLOGY` to the stylesheet is unverified. The page renders without it, but then the navigation item is not marked. Until the ingest the page Ontologie is expected to fail on GAMS, since it reads only that datastream, so the ingest follows the push of gams-www closely. After it, `localDatastreams` of `local-test-build/gams.mjs` goes.
+2. After the re-ingest, the downloads of the refactored data and concept scheme on the page "Ontologie", and a look whether Saxon on GAMS gives the triples that `local-test-build/saxon-check.mjs` gives locally.
 
 ## Delivery
 

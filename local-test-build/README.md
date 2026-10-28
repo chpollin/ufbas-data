@@ -14,7 +14,7 @@ node abnahme.mjs abnahme.json    # acceptance sheet from the running preview
 SAXON_JAR=… node saxon-check.mjs # stylesheets and ingest in Saxon-HE for Java, needs Java and the Saxon jar
 node make-ontology.mjs           # write the RDF/XML and JSON-LD of the ontology and ufbas.shapes.rdf in ../ontology/ from its Turtle
 node derive-rdf.mjs              # write ../ontology/ufbas.example.rdf, build/ufbas.1563.ontology.rdf and build/ufbas.kategorien.skos.rdf
-node make-exploration-data.mjs   # write build/ufbas-exploration.json, the TEI reference of the Exploration view
+node make-exploration-data.mjs   # write derived/ufbas-exploration.json, the TEI reference of the Exploration view
 node make-facsimile-tei.mjs      # write the page images into ../tei/ufbas.1563.xml from the Lesesaal manifest, after a storage move with --manifest=<file> --retrieved=<date>
 node make-baseline.mjs           # render baseline/ with the stylesheets of 2017, run by npm test when missing
 npm run compare -- [page ...]    # compare rendered pages with production

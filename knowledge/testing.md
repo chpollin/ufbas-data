@@ -282,7 +282,7 @@ The Datenkorb page is checked filled with two entries of the edition. Screenshot
 
 ### Exploration dataset
 
-`node make-exploration-data.mjs` in `local-test-build/` compiles `exploration-data.xsl`, runs it on the TEI of edition and taxonomy and writes `build/ufbas-exploration.json`, the TEI reference of the Exploration view ([data.md](data.md#rdf-as-source-of-the-exploration-view)), for the ufbas-data package. The tests derive it in memory.
+`node make-exploration-data.mjs` in `local-test-build/` compiles `exploration-data.xsl`, runs it on the TEI of edition and taxonomy and writes `derived/ufbas-exploration.json` of the data package, the TEI reference of the Exploration view ([data.md](data.md#rdf-as-source-of-the-exploration-view)). The tests derive it in memory and fail when the committed file differs.
 
 ### Ontology and refactored RDF
 

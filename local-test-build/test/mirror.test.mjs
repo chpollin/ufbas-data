@@ -17,6 +17,8 @@ const copies = readdirSync(resolve(dataRoot, 'gams', 'datastreams')).map((file) 
   return { file: `gams/datastreams/${file}`, pid: `${prefix}:${name}`, ds, target: TARGET_VALUES[file] };
 });
 copies.push({ file: 'gams/ufbas-TOTEI.xsl', pid: 'cirilo:TEI.ufbas', ds: 'TOTEI' }, { file: 'gams/ufbas-TORDF.xsl', pid: 'cirilo:ufbas', ds: 'TORDF' });
+// copies of the data package that duplicate a published datastream
+copies.push({ file: 'rdf/ufbas.schema.owl', pid: 'o:ufbas.schema', ds: 'ONTOLOGY' }, { file: 'tei/ufbas.kategorien.xml', pid: 'o:ufbas.kategorien', ds: 'TEI_SOURCE' });
 
 const norm = (text) => text.replace(/\r\n/g, '\n').trim();
 

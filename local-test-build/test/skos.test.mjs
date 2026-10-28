@@ -49,10 +49,21 @@ await test('the concepts are those of the published taxonomy RDF', async () => {
 // Eintrag and Eingangsnotiz have no catDesc; their label is their id, as in o:ufbas.schema.
 await test('the prefLabel of every concept is its term, or its id where the taxonomy gives none', () => {
   const labels = new Map(select('SELECT ?c ?l WHERE { ?c skos:prefLabel ?l FILTER(lang(?l) = "de") }').map((r) => [r.c, r.l]));
-  const counts = select('SELECT ?c (COUNT(?l) AS ?n) WHERE { ?c a skos:Concept ; skos:prefLabel ?l } GROUP BY ?c');
+  const counts = select('SELECT ?c (COUNT(?l) AS ?n) WHERE { ?c a skos:Concept ; skos:prefLabel ?l FILTER(lang(?l) = "de") } GROUP BY ?c');
   assert.deepEqual(counts.filter((r) => r.n !== '1').map((r) => r.c), []);
   const wrong = categories.filter((c) => labels.get(iri(c)) !== (text(c, 'term') || c.getAttribute('xml:id').replace(/^uf_/, '')));
   assert.deepEqual(wrong.map(iri), []);
+});
+
+// The English labels are the operator's curated table, one per concept (ADR-30).
+await test('every concept has exactly the English prefLabel of research-artefacts/category-labels-en.tsv', () => {
+  const table = new Map(readFileSync(resolve(dataRoot, 'research-artefacts/category-labels-en.tsv'), 'utf8').trim().split('\n').slice(1)
+    .map((line) => line.split('\t')).map(([id, , , en]) => [`${KAT}${id.replace(/^uf_/, '')}`, en]));
+  const en = select('SELECT ?c ?l WHERE { ?c a skos:Concept ; skos:prefLabel ?l FILTER(lang(?l) = "en") }');
+  const labels = new Map(en.map((r) => [r.c, r.l]));
+  assert.equal(en.length, labels.size, 'a concept with more than one English prefLabel');
+  assert.deepEqual([...table].filter(([c, l]) => labels.get(c) !== l).map(([c]) => c), []);
+  assert.deepEqual([...labels.keys()].filter((c) => !table.has(c)), []);
 });
 
 // The nine glosses of knowledge/domain.md that carry a coding rule beside the definition,

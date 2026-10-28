@@ -3,8 +3,8 @@ import json
 from collections import Counter
 from pathlib import Path
 REPO = Path(__file__).resolve().parents[3]  # repository root
-# data/ufbas-exploration.json on 2026-09-24, now written by local-test-build/make-exploration-data.mjs
-d = json.load(open(REPO / "local-test-build/build/ufbas-exploration.json", encoding="utf-8"))
+# data/ufbas-exploration.json on 2026-09-24, now derived/ufbas-exploration.json, written by local-test-build/make-exploration-data.mjs
+d = json.load(open(REPO / "derived/ufbas-exploration.json", encoding="utf-8"))
 grp = {c["id"]: c["group"] for c in d["categories"]}
 tat = {"m": Counter(), "f": Counter()}; strafe = {"m": Counter(), "f": Counter()}; n = Counter()
 for e in d["entries"]:

@@ -214,6 +214,175 @@
     <xsl:variable name="taxonomy" select="/t:TEI/t:teiHeader/t:encodingDesc/t:classDecl/t:taxonomy[@xml:id = 'Urfehdekodierung']"/>
 
     <!-- The sanction groups of ufbas-context.xsl ($sanctionGroups). -->
+    <!-- English labels of the categories, curated by the operator on 2026-10-28 from
+         research-artefacts/category-labels-en.tsv (ADR-30). Source concepts without an
+         English equivalent keep their German term. Written out here because the
+         transformation reads nothing but its input at the ingest, and test/skos.test.mjs
+         keeps it equal to the table. -->
+    <xsl:variable name="labelsEn" as="element()*">
+        <d:label id="Eintrag" en="entry"/>
+        <d:label id="Eingangsnotiz" en="marginal note"/>
+        <d:label id="Person" en="person"/>
+        <d:label id="PersonTäter" en="offender"/>
+        <d:label id="PersonMittäter" en="accomplice"/>
+        <d:label id="PersonOpfer" en="victim"/>
+        <d:label id="PersonKläger" en="plaintiff"/>
+        <d:label id="PersonZeuge" en="witness"/>
+        <d:label id="PersonAnwesende" en="person present at the offence"/>
+        <d:label id="PersonHehler" en="receiver of stolen goods"/>
+        <d:label id="PersonNotar" en="notary"/>
+        <d:label id="male" en="male"/>
+        <d:label id="female" en="female"/>
+        <d:label id="Beiname" en="byname"/>
+        <d:label id="Beruf" en="occupation"/>
+        <d:label id="Zivilstand" en="marital status"/>
+        <d:label id="Status" en="status"/>
+        <d:label id="Verwandtschaftsgrad" en="kinship relation"/>
+        <d:label id="Ort" en="place"/>
+        <d:label id="OrtHerkunft" en="place of origin"/>
+        <d:label id="OrtWohnort" en="place of residence"/>
+        <d:label id="OrtTatort" en="place of the offence"/>
+        <d:label id="Vorinstanz" en="prior instance"/>
+        <d:label id="FrüheresUrfehdeverfahren" en="earlier Urfehde proceeding"/>
+        <d:label id="AnderesUrfehdeverfahren" en="other Urfehde proceeding"/>
+        <d:label id="Untersuchungshaft" en="detention before the oath"/>
+        <d:label id="Tat" en="offence"/>
+        <d:label id="TatAlkoholmissbrauch" en="drunkenness"/>
+        <d:label id="TatArbeitsverweigerung" en="refusal to work"/>
+        <d:label id="TatAusdemHausfordern" en="calling someone out of their house"/>
+        <d:label id="TatBewaffneteAuseinandersetzung" en="armed fight"/>
+        <d:label id="TatBeihilfe" en="aiding and abetting"/>
+        <d:label id="TatBeihilfeMord" en="aiding and abetting murder"/>
+        <d:label id="TatBeleidigungVerleumdung" en="insult, defamation"/>
+        <d:label id="TatBestechung" en="bribery"/>
+        <d:label id="TatBetrug" en="fraud"/>
+        <d:label id="TatBetteln" en="begging"/>
+        <d:label id="TatBöswilligesVerlassen" en="malicious desertion"/>
+        <d:label id="TatBrandstiftung" en="arson"/>
+        <d:label id="TatBruchEheversprechen" en="breach of promise of marriage"/>
+        <d:label id="TatDiebstahl" en="theft"/>
+        <d:label id="TatDrohung" en="threat"/>
+        <d:label id="TatEhebruch" en="adultery"/>
+        <d:label id="TatEinbruch" en="burglary"/>
+        <d:label id="TatGotteslästerung" en="blasphemy"/>
+        <d:label id="TatHehlerei" en="receiving stolen goods"/>
+        <d:label id="TatInzest" en="incest"/>
+        <d:label id="TatKörperverletzung" en="bodily injury"/>
+        <d:label id="TatLeichtfertigkeit" en="Leichtfertigkeit"/>
+        <d:label id="TatMord" en="murder"/>
+        <d:label id="TatMordversuch" en="attempted murder"/>
+        <d:label id="TatMüssiggang" en="idleness"/>
+        <d:label id="TatOrdnungsstörung" en="disturbance of public order"/>
+        <d:label id="TatSachbeschädigung" en="damage to property"/>
+        <d:label id="TatSchlägerei" en="brawl"/>
+        <d:label id="TatSchulden" en="incurring debts"/>
+        <d:label id="TatSelbstmordversuch" en="attempted suicide"/>
+        <d:label id="TatSpielen" en="gambling"/>
+        <d:label id="TatTotschlag" en="homicide"/>
+        <d:label id="TatÜbertretungUrfehde" en="breach of Urfehde"/>
+        <d:label id="TatÜblesHaushalten" en="bad householding"/>
+        <d:label id="TatUnerlaubterKriegsdienst" en="forbidden military service"/>
+        <d:label id="TatUngehorsam" en="disobedience"/>
+        <d:label id="TatUngetreueAmtsführung" en="misconduct in office"/>
+        <d:label id="TatUnrechtmässigesEheversprechen" en="unlawful promise of marriage"/>
+        <d:label id="TatUnterlasseneHilfeleistung" en="failure to render assistance"/>
+        <d:label id="TatUnzucht" en="Unzucht"/>
+        <d:label id="TatVagieren" en="vagrancy"/>
+        <d:label id="TatVerbaleAuseinandersetzung" en="verbal quarrel"/>
+        <d:label id="TatVerstossArbeitsvorschriften" en="breach of trade or guild regulations"/>
+        <d:label id="TatVeruntreuung" en="embezzlement"/>
+        <d:label id="TatVortäuschungFalscherTatsachen" en="false pretences"/>
+        <d:label id="TatVorteilsnahme" en="obtaining an unlawful advantage"/>
+        <d:label id="TatWiedertaeuferei" en="Anabaptism"/>
+        <d:label id="TatWiderstandgegenObrigkeit" en="resistance to authority"/>
+        <d:label id="TatWilderei" en="poaching"/>
+        <d:label id="TatZechprellerei" en="leaving a tavern bill unpaid"/>
+        <d:label id="Schlagwort" en="keywords"/>
+        <d:label id="SchlagwortAndrohungTodesstrafe" en="threat of the death penalty"/>
+        <d:label id="SchlagwortArmut" en="poverty"/>
+        <d:label id="SchlagwortAufdenHalswachsen" en="auf den Hals wachsen"/>
+        <d:label id="SchlagwortAuffällig" en="notable"/>
+        <d:label id="SchlagwortBannherren" en="Bannherren"/>
+        <d:label id="SchlagwortBehinderung" en="disability"/>
+        <d:label id="SchlagwortBettelvogt" en="beggars' bailiff (Bettelvogt)"/>
+        <d:label id="SchlagwortBettler" en="beggar"/>
+        <d:label id="SchlagwortBlutvogt" en="Blutvogt"/>
+        <d:label id="SchlagwortBürgerrecht" en="citizenship"/>
+        <d:label id="SchlagwortBürgermeister" en="burgomaster"/>
+        <d:label id="SchlagwortDienstmagd" en="maidservant"/>
+        <d:label id="SchlagwortEhegerichtEherichter" en="marriage court, marriage judges"/>
+        <d:label id="SchlagwortErbstreit" en="inheritance dispute"/>
+        <d:label id="SchlagwortErtränken" en="execution by drowning"/>
+        <d:label id="SchlagwortFoltern" en="torture"/>
+        <d:label id="SchlagwortFühren" en="being led bound"/>
+        <d:label id="SchlagwortFrauenarbeit" en="women's work"/>
+        <d:label id="SchlagwortGefängnis" en="prison"/>
+        <d:label id="SchlagwortGeldleihe" en="moneylending"/>
+        <d:label id="SchlagwortHalseisen" en="iron collar (Halseisen)"/>
+        <d:label id="SchlagwortJuden" en="Jews"/>
+        <d:label id="SchlagwortKeinGeständnis" en="no confession"/>
+        <d:label id="SchlagwortHeimlicheHerren" en="Heimliche Herren"/>
+        <d:label id="SchlagwortKnecht" en="manservant"/>
+        <d:label id="SchlagwortLadenherren" en="Ladenherren"/>
+        <d:label id="SchlagwortLohnVerdienst" en="wages, earnings"/>
+        <d:label id="SchlagwortLonherren" en="Lohnherren"/>
+        <d:label id="SchlagwortMeerwunder" en="Meerwunder"/>
+        <d:label id="SchlagwortMeineid" en="perjury"/>
+        <d:label id="SchlagwortMitgift" en="dowry"/>
+        <d:label id="SchlagwortNachbar" en="neighbour"/>
+        <d:label id="SchlagwortObersterKnecht" en="chief council servant (Oberstknecht)"/>
+        <d:label id="SchlagwortProstitution" en="prostitution"/>
+        <d:label id="SchlagwortRat" en="council"/>
+        <d:label id="SchlagwortRatsknecht" en="council servant (Ratsknecht)"/>
+        <d:label id="SchlagwortRuten" en="flogging with rods"/>
+        <d:label id="SchlagwortSchulden" en="debts"/>
+        <d:label id="SchlagwortSchultheiss" en="Schultheiss"/>
+        <d:label id="SchlagwortSchwemmen" en="ducking"/>
+        <d:label id="SchlagwortSchwert" en="execution by the sword"/>
+        <d:label id="SchlagwortSiebnerherren" en="Siebnerherren"/>
+        <d:label id="SchlagwortSiegelbrief" en="sealed letter"/>
+        <d:label id="SchlagwortSpinnen" en="spinning"/>
+        <d:label id="SchlagwortSpital" en="hospital (Spital)"/>
+        <d:label id="SchlagwortStadtgericht" en="city court"/>
+        <d:label id="SchlagwortStadtknecht" en="city servant (Stadtknecht)"/>
+        <d:label id="SchlagwortStadtwechsel" en="municipal exchange bank (Stadtwechsel)"/>
+        <d:label id="SchlagwortUnehelichesKind" en="illegitimate child"/>
+        <d:label id="SchlagwortUnschuldig" en="innocent"/>
+        <d:label id="SchlagwortWelsche" en="Romance-speaking foreigners (Welsche)"/>
+        <d:label id="SchlagwortWirtshaus" en="tavern"/>
+        <d:label id="SchlagwortZoll" en="toll"/>
+        <d:label id="SchlagwortZunft" en="guild"/>
+        <d:label id="Urfehdeeid" en="oath of Urfehde"/>
+        <d:label id="Strafe" en="sanction"/>
+        <d:label id="StrafeAmtsentlassung" en="dismissal from office"/>
+        <d:label id="StrafeAusweisung" en="banishment"/>
+        <d:label id="StrafeEntschädigungRückzahlung" en="compensation, repayment"/>
+        <d:label id="StrafeEntschuldigung" en="apology"/>
+        <d:label id="StrafeErmahnung" en="admonition"/>
+        <d:label id="StrafeGefängnis" en="imprisonment"/>
+        <d:label id="StrafeGeldstrafe" en="fine"/>
+        <d:label id="StrafeHausarrest" en="house arrest"/>
+        <d:label id="StrafeKörperstrafe" en="corporal punishment"/>
+        <d:label id="StrafeStrafandrohung" en="threatened punishment"/>
+        <d:label id="StrafeAusnahme" en="exception to the sanction"/>
+        <d:label id="StrafeMilderung" en="mitigation of the sanction"/>
+        <d:label id="StrafeStrafumwandlung" en="commutation of the sanction"/>
+        <d:label id="StrafeUrteilohneStrafe" en="judgment without sanction"/>
+        <d:label id="StrafeVerbot" en="prohibition"/>
+        <d:label id="StrafeVerbotSpiel" en="ban on gambling"/>
+        <d:label id="StrafeVerbotTanz" en="ban on dancing"/>
+        <d:label id="StrafeVerbotWaffen" en="ban on bearing arms"/>
+        <d:label id="StrafeVerbotWirtshaus" en="ban on visiting taverns"/>
+        <d:label id="StrafeWeisungananderesGericht" en="referral to another court"/>
+        <d:label id="StrafeWiedergutmachung" en="amends to the victim"/>
+        <d:label id="Datum" en="date"/>
+        <d:label id="DatumTat" en="date of the offence"/>
+        <d:label id="DatumUrfehde" en="date of the Urfehde"/>
+        <d:label id="DatumFrist" en="deadline"/>
+        <d:label id="DatumBegnadigung" en="date of pardon"/>
+        <d:label id="NotarialSubscription" en="notarial subscription"/>
+    </xsl:variable>
+
     <xsl:variable name="collections" as="element()*">
         <d:group key="sanktion" label="Sanktionen" members="StrafeAusweisung StrafeGeldstrafe StrafeKörperstrafe StrafeGefängnis StrafeAmtsentlassung StrafeHausarrest StrafeVerbotWirtshaus StrafeVerbotWaffen StrafeVerbotSpiel StrafeVerbotTanz StrafeVerbot"/>
         <d:group key="modalitaet" label="Modalitäten" members="StrafeStrafandrohung StrafeErmahnung StrafeAusnahme StrafeMilderung StrafeStrafumwandlung"/>
@@ -314,6 +483,9 @@
             <!-- Eintrag and Eingangsnotiz have no catDesc. Their id is the German label that
                  o:ufbas.schema already gives them as rdfs:label, so it is no invented value. -->
             <skos:prefLabel xml:lang="de"><xsl:value-of select="if ($term != '') then $term else $id"/></skos:prefLabel>
+            <xsl:for-each select="$labelsEn[@id = $id]">
+                <skos:prefLabel xml:lang="en"><xsl:value-of select="@en"/></skos:prefLabel>
+            </xsl:for-each>
             <xsl:if test="$definition != '' and $gloss != $term">
                 <skos:definition xml:lang="de"><xsl:value-of select="$definition"/></skos:definition>
             </xsl:if>

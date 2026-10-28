@@ -1,7 +1,7 @@
 # Data profile of Urfehdebuch X from the edition TEI (o:ufbas.1563) and the exploration JSON.
 # Read-only on the repository; prints a plain-text report to stdout.
 # The exploration JSON was data/ufbas-exploration.json on 2026-09-24. It is now written by
-# local-test-build/make-exploration-data.mjs to local-test-build/build/, and may differ from that day's file.
+# local-test-build/make-exploration-data.mjs to derived/, and may differ from that day's file.
 import json
 import re
 from collections import Counter, defaultdict
@@ -15,7 +15,7 @@ XID = "{http://www.w3.org/XML/1998/namespace}id"
 
 doc = etree.parse(str(REPO / "tei/ufbas.1563.xml"))
 kat = etree.parse(str(REPO / "tei/ufbas.kategorien.xml"))
-data = json.load(open(REPO / "local-test-build/build/ufbas-exploration.json", encoding="utf-8"))
+data = json.load(open(REPO / "derived/ufbas-exploration.json", encoding="utf-8"))
 
 # taxonomy: id -> (term, group)
 GROUPS = {"uf_Person", "uf_Tat", "uf_Strafe", "uf_Ort", "uf_Schlagwort", "uf_Datum"}

@@ -7,7 +7,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { JSDOM } from 'jsdom';
 import { here, root, dataRoot } from '../gams.mjs';
-import { explorationData } from '../make-exploration-data.mjs';
+import { explorationData, outFile } from '../make-exploration-data.mjs';
 import { fragmentHosts, runner, tsv } from './lib.mjs';
 
 const data = JSON.parse(await explorationData({ generated: 'test' }));
@@ -44,6 +44,11 @@ await test('every folio equals the start of the folio in the entry heading of th
   const differ = data.entries.filter((e) => headings.get(e.id) !== e.folio).map((e) => `${e.id} ${e.folio} / ${headings.get(e.id)}`);
   assert.equal(headings.size, data.entries.length + fragments.size);
   assert.deepEqual(differ, []);
+});
+
+await test('derived/ufbas-exploration.json of the data package is the current derivation', () => {
+  const committed = JSON.parse(readFileSync(outFile, 'utf8'));
+  assert.deepEqual(committed.entries, data.entries, `${outFile} is stale, run node make-exploration-data.mjs`);
 });
 
 done();
