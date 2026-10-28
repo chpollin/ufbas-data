@@ -12,7 +12,7 @@ template:
   url: https://dhcraft.org/Promptotyping/promptotyping-document/data
 status: draft
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-28
 ---
 
 # TEI analysis
@@ -21,12 +21,13 @@ The published TEI encodes Urfehdebuch X, archival reference StABS Ratsbücher O 
 
 ## Source and reproduction
 
-[TEI_SOURCE](https://gams.uni-graz.at/archive/objects/o:ufbas.1563/datastreams/TEI_SOURCE/content) was retrieved on 2026-10-27 into the package copy, without serialisation or line-ending conversion. Its SHA-256 is `8b3aaac90296eae8f347df396ad1d0777ea47a8aa5aada536b8a207aafbee1af`. It is byte-identical to [tei/ufbas.1563.xml](../tei/ufbas.1563.xml), which remains the only copy in the repository. The repository's CC BY-NC-SA 4.0 licence continues to apply to the data.
+[TEI_SOURCE](https://gams.uni-graz.at/archive/objects/o:ufbas.1563/datastreams/TEI_SOURCE/content) was retrieved on 2026-10-27 into the package copy, without serialisation or line-ending conversion. Its SHA-256 is `8b3aaac90296eae8f347df396ad1d0777ea47a8aa5aada536b8a207aafbee1af`. It was byte-identical to [tei/ufbas.1563.xml](../tei/ufbas.1563.xml) until the page images of ADR-34 entered that file on 2026-10-28. The commit `7624833` keeps the published state, and the analysis below concerns it. The repository's CC BY-NC-SA 4.0 licence continues to apply to the data.
 
-Run the standalone inventory with its inline dependency metadata:
+Run the standalone inventory with its inline dependency metadata, in a POSIX shell such as Git Bash, whose redirection keeps the bytes of the file:
 
-```powershell
-uv run scripts/analyze_tei.py tei/ufbas.1563.xml --self-check --output generated/tei-analysis.json
+```sh
+git show 7624833:tei/ufbas.1563.xml > generated/ufbas.1563.published.xml
+uv run scripts/analyze_tei.py generated/ufbas.1563.published.xml --self-check --output generated/tei-analysis.json
 ```
 
 The generated JSON is the source of truth for counts and anomaly lists. It records the source hash, source line numbers, element IDs, attributes and example XML. It is a reproducible output and is excluded from version control. Strict parsing succeeds with external entity expansion disabled. No RELAX NG, ODD or Schematron validation has been performed. The script deliberately uses strict parsing at this validation boundary, overriding the general recovery default.

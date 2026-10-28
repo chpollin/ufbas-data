@@ -11,9 +11,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import SHACLValidator from 'rdf-validate-shacl';
-import { here, root } from '../gams.mjs';
+import { here } from '../gams.mjs';
 import { ontologyRDF, taxonomySKOS } from '../derive-rdf.mjs';
-import { jsonldFile, ontologyJSONLD, ontologyRDFXML, ontologyStore, outFile, relabelBlankNodes, shapesQuads as canonicalShapes, shapesRDFXML, shapesRdfFile, ttlFile } from '../make-ontology.mjs';
+import { jsonldFile, ontologyJSONLD, ontologyRDFXML, ontologyStore, outFile, relabelBlankNodes, shapesFile, shapesQuads as canonicalShapes, shapesRDFXML, shapesRdfFile, ttlFile } from '../make-ontology.mjs';
 import { oxigraph, rows as answer, runner } from './lib.mjs';
 
 const ONT = 'https://gams.uni-graz.at/o:ufbas.ontology#';
@@ -38,7 +38,7 @@ const load = (parts) => parts.flatMap(([text, format]) => oxigraph.parse(text, {
 
 const ontologyQuads = load([[readFileSync(ttlFile, 'utf8'), 'text/turtle']]);
 const ontology = ontologyStore();
-const shapesQuads = load([[readFileSync(resolve(root, 'data/ontology/ufbas.shapes.ttl'), 'utf8'), 'text/turtle']]);
+const shapesQuads = load([[readFileSync(shapesFile, 'utf8'), 'text/turtle']]);
 const shapesStore = new oxigraph.Store(shapesQuads);
 const validator = new SHACLValidator(shapesQuads);
 
@@ -86,9 +86,9 @@ await test('ufbas.ontology.rdf is the graph of ufbas.ontology.ttl', () => {
   assert.deepEqual(differ, [], `${outFile} differs from ${ttlFile}, run node make-ontology.mjs and review the difference`);
 });
 
-// The page of the ontology offers JSON-LD and reads the shapes as RDF/XML, so both derived
-// files have to be the graphs of their Turtle sources, and a fresh conversion has to give
-// the committed file. The blank nodes of the shapes are compared by their canonical labels.
+// The JSON-LD and the RDF/XML of the shapes belong to the data package in ontology/, so both
+// derived files have to be the graphs of their Turtle sources, and a fresh conversion has to
+// give the committed file. The blank nodes of the shapes are compared by their canonical labels.
 await test('ufbas.ontology.jsonld is the graph of ufbas.ontology.ttl', () => {
   const committed = ntriples(load([[readFileSync(jsonldFile, 'utf8'), 'application/ld+json']]));
   const fresh = ntriples(load([[ontologyJSONLD(), 'application/ld+json']]));

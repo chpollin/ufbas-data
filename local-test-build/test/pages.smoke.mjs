@@ -46,7 +46,7 @@ const expectations = {
   ontologie: (doc) => {
     check('ontologie', doc.querySelector('[aria-current="page"]')?.textContent === 'Ontologie', 'Ontologie not current');
     check('ontologie', doc.querySelector('.onto-model svg a.onto-node'), 'model diagram missing');
-    check('ontologie', doc.querySelector('.onto-downloads').getAttribute('role') === 'list' && doc.querySelector('.onto-shapes ul').getAttribute('role') === 'list', 'unstyled lists without role list');
+    check('ontologie', doc.querySelector('.onto-downloads').getAttribute('role') === 'list', 'unstyled list without role list');
   },
   kategorien: (doc) => {
     // floors against a page that lost its groups or links; categories.test.mjs checks both against the taxonomy
@@ -77,8 +77,8 @@ const expectations = {
       && annotated.every((e) => e.querySelector('.index-toggle')), 'annotation index switch for every entry with annotations only');
     check('edition', doc.querySelector('.tools > button.toc-toggle[hidden][aria-controls="edition-toc"]') && doc.getElementById('edition-toc'), 'table of contents button');
     const pane = doc.querySelector('.with-tools > section.facsimile[hidden]');
-    check('edition', pane && pane.getAttribute('data-images') === '/ufbas/data/ufbas-facsimile.json'
-      && pane.getAttribute('data-viewer') === '/ufbas/js/openseadragon-6.1.1/openseadragon.min.js', 'page image pane with its dataset and viewer');
+    check('edition', pane && !pane.hasAttribute('data-images')
+      && pane.getAttribute('data-viewer') === '/ufbas/js/openseadragon-6.1.1/openseadragon.min.js', 'page image pane with its viewer and without a dataset');
     check('edition', pane && pane.querySelector('.facsimile-missing[hidden] a[href^="https://dls.staatsarchiv.bs.ch/records/"]'), 'page image pane without the link to the Lesesaal');
     check('edition', !doc.querySelector('script[src*="openseadragon"]'), 'OpenSeadragon loaded before the view asks for it');
     const scripts = [...doc.querySelectorAll('script[src]')].map((s) => s.getAttribute('src').split('/').pop());
@@ -86,6 +86,7 @@ const expectations = {
     const folios = [...doc.querySelectorAll('.folio')];
     // one folio label per page break of the TEI
     check('edition', folios.length === editionTEI().match(/<pb\b/g).length && folios.every((f) => /^\d+$/.test(f.getAttribute('data-facs') || '')), 'folio label without its image number, or not one per page break');
+    check('edition', folios.every((f) => /^https:\/\/\S+Ratsbuecher_O_10_\d{4}$/.test(f.getAttribute('data-image') || '') && Number(f.getAttribute('data-width')) > 0 && Number(f.getAttribute('data-height')) > 0), 'folio label without the image service and size of its page');
     check('edition', doc.querySelector('[aria-current="page"]')?.textContent === 'Urfehdebuch', 'Urfehdebuch not current');
     const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember', 'ohne Monat'];
     const badMonths = [...doc.querySelectorAll('.toc-month')].filter((p) => !months.includes(p.textContent.trim()));
@@ -93,6 +94,13 @@ const expectations = {
     const switches = [...doc.querySelectorAll('.mark-switches input[type="checkbox"][name="markierung"]')].map((r) => r.value);
     check('edition', switches.join() === groups.join(), `mark switches: ${switches.join()}`);
     check('edition', [...doc.querySelectorAll('.editor-note')].every((n) => /^Anmerkung: \S/.test(n.getAttribute('aria-label'))), 'editorial note without label');
+  },
+  // the TEI GAMS serves until the re-ingest of ADR-34: the text alone, with a note in place of the switch
+  'edition-ohne-bild': (doc) => {
+    check('edition-ohne-bild', !doc.querySelector('.facsimile, .view-switch'), 'page image pane or view switch without page images');
+    check('edition-ohne-bild', doc.querySelector('.head-tools > p.view-note')?.textContent.includes('Seitenbild'), 'note in place of the view switch missing');
+    const folios = [...doc.querySelectorAll('.folio')];
+    check('edition-ohne-bild', folios.length === editionTEI().match(/<pb\b/g).length && folios.every((f) => !f.hasAttribute('data-facs')), 'folio label naming an image the TEI does not carry');
   }
 };
 

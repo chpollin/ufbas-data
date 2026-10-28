@@ -47,7 +47,7 @@ uf_TatGotteslästerung	uf_Tat	Gotteslästerung	blasphemy	The gloss includes curs
 uf_TatHehlerei	uf_Tat	Hehlerei	receiving stolen goods	
 uf_TatInzest	uf_Tat	Inzest	incest	
 uf_TatKörperverletzung	uf_Tat	Körperverletzung	bodily injury	Assault is an alternative, but the gloss requires an injury.
-uf_TatLeichtfertigkeit	uf_Tat	Leichtfertigkeit	lewdness	Leichtfertigkeit is a source term for loose sexual conduct, and the gloss adds frivolous dealing with marriage promises. No English word covers both.
+uf_TatLeichtfertigkeit	uf_Tat	Leichtfertigkeit	Leichtfertigkeit	Leichtfertigkeit is a source term for loose sexual conduct, and the gloss adds frivolous dealing with marriage promises. No English word covers both. Kept in German by the operator's decision of 2026-10-28, as a source concept without an English equivalent.
 uf_TatMord	uf_Tat	Mord	murder	Mord is treacherous killing, as against Totschlag.
 uf_TatMordversuch	uf_Tat	Mordversuch	attempted murder	
 uf_TatMüssiggang	uf_Tat	Müssiggang	idleness	
@@ -65,7 +65,7 @@ uf_TatUngehorsam	uf_Tat	Ungehorsam	disobedience
 uf_TatUngetreueAmtsführung	uf_Tat	Ungetreue Amtsführung	misconduct in office	
 uf_TatUnrechtmässigesEheversprechen	uf_Tat	Unrechtmässiges Eheversprechen	unlawful promise of marriage	
 uf_TatUnterlasseneHilfeleistung	uf_Tat	Unterlassene Hilfeleistung	failure to render assistance	
-uf_TatUnzucht	uf_Tat	Unzucht	fornication	The taxonomy means illicit sexual relations other than adultery. In the source unzucht also means breaches of the peace (knowledge/domain.md).
+uf_TatUnzucht	uf_Tat	Unzucht	Unzucht	The taxonomy means illicit sexual relations other than adultery. In the source unzucht also means breaches of the peace (knowledge/domain.md). Kept in German by the operator's decision of 2026-10-28, as a source concept without an English equivalent.
 uf_TatVagieren	uf_Tat	Vagieren	vagrancy	
 uf_TatVerbaleAuseinandersetzung	uf_Tat	Verbale Auseinandersetzung	verbal quarrel	
 uf_TatVerstossArbeitsvorschriften	uf_Tat	Verstoss gegen Arbeitsvorschriften	breach of trade or guild regulations	
@@ -79,7 +79,7 @@ uf_TatZechprellerei	uf_Tat	Zechprellerei	leaving a tavern bill unpaid
 uf_Schlagwort	uf_Schlagwort	Schlagworte	keywords	The term is plural, Schlagworte.
 uf_SchlagwortAndrohungTodesstrafe	uf_Schlagwort	Androhung Todesstrafe	threat of the death penalty	
 uf_SchlagwortArmut	uf_Schlagwort	Armut	poverty	
-uf_SchlagwortAufdenHalswachsen	uf_Schlagwort	Auf den Hals wachsen	threat of corporal punishment (auf den Hals wachsen)	A formula of the source. The gloss says threat of a corporal punishment, while the idiom points to the neck and so to capital punishment (inference).
+uf_SchlagwortAufdenHalswachsen	uf_Schlagwort	Auf den Hals wachsen	auf den Hals wachsen	A formula of the source. The gloss says threat of a corporal punishment, while the idiom points to the neck and so to capital punishment (inference). Kept in German by the operator's decision of 2026-10-28, as a source concept without an English equivalent.
 uf_SchlagwortAuffällig	uf_Schlagwort	Auffällig	notable	
 uf_SchlagwortBannherren	uf_Schlagwort	Bannherren	Bannherren	Office name kept. Parish officials of the church discipline (knowledge/domain.md).
 uf_SchlagwortBehinderung	uf_Schlagwort	Behinderung	disability	
@@ -105,7 +105,7 @@ uf_SchlagwortKnecht	uf_Schlagwort	Knecht	manservant	Analogous to Dienstmagd afte
 uf_SchlagwortLadenherren	uf_Schlagwort	Ladenherren	Ladenherren	Office name kept. Keepers of the city chest (knowledge/domain.md).
 uf_SchlagwortLohnVerdienst	uf_Schlagwort	Lohn, Verdienst	wages, earnings	
 uf_SchlagwortLonherren	uf_Schlagwort	Lonherren	Lohnherren	Office name kept, spelled Lonherren in the TEI. Probably the heads of the city building office (Lohnamt), which knowledge/domain.md does not yet confirm.
-uf_SchlagwortMeerwunder	uf_Schlagwort	Meerwunder	sea monster	Meerwunder, a marvel or monster of the sea. The context of the entry should decide.
+uf_SchlagwortMeerwunder	uf_Schlagwort	Meerwunder	Meerwunder	Meerwunder, a marvel or monster of the sea. The context of the entry should decide. Kept in German by the operator's decision of 2026-10-28, as a source concept without an English equivalent.
 uf_SchlagwortMeineid	uf_Schlagwort	Meineid	perjury	
 uf_SchlagwortMitgift	uf_Schlagwort	Mitgift	dowry	
 uf_SchlagwortNachbar	uf_Schlagwort	Nachbar	neighbour	

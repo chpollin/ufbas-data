@@ -2,8 +2,8 @@
 <!--
     Project: ufbas, refactored RDF of the edition and concept scheme of the taxonomy
     Turns the TEI of o:ufbas.1563 into RDF/XML whose data use only the terms of
-    data/ontology/ufbas.ontology.ttl and the GAMS ontology (knowledge/domain.md#domain-ontology,
-    ADR-17, ADR-23), held to data/ontology/ufbas.shapes.ttl, and the TEI of o:ufbas.kategorien
+    ontology/ufbas.ontology.ttl and the GAMS ontology (knowledge/domain.md#domain-ontology,
+    ADR-17, ADR-23), held to ontology/ufbas.shapes.ttl, and the TEI of o:ufbas.kategorien
     into the SKOS of the taxonomy. Meant to run in Cirilo as the TORDF transformation of
     cirilo:ufbas, which both objects inherit, so it reads nothing but its input document.
 
@@ -64,6 +64,7 @@
     <xsl:key name="spans" match="*[d:is-span(.)]" use="generate-id(d:entry(.))"/>
     <xsl:key name="places" match="t:back//t:place" use="@xml:id"/>
     <xsl:key name="entry" match="t:div[@ana = '#uf_Eintrag']" use="@xml:id"/>
+    <xsl:key name="surface" match="t:facsimile/t:surface" use="@xml:id"/>
     <xsl:variable name="root" select="/"/>
 
     <!-- Folio and position of every page break, computed once, since the cross-references
@@ -723,7 +724,7 @@
     </xsl:template>
 
     <xsl:template match="t:pb" mode="page">
-        <xsl:variable name="image" select="substring-after(normalize-space(@facs), '#')"/>
+        <xsl:variable name="image" select="d:image(.)"/>
         <rdf:Description rdf:about="{d:page(.)}">
             <rdf:type rdf:resource="{$ont}Page"/>
             <ufbas-ont:folio>
@@ -880,7 +881,16 @@
     <xsl:function name="d:page" as="xs:string">
         <xsl:param name="pb" as="element()"/>
         <xsl:sequence select="concat($data, 'page-', d:folio($pb),
-            if ($pb/@n = 'kA') then concat('-', substring-after(normalize-space($pb/@facs), '#')) else '')"/>
+            if ($pb/@n = 'kA') then concat('-', d:image($pb)) else '')"/>
+    </xsl:function>
+
+    <!-- The image number of a page: @n of the surface pb/@facs points to (ADR-34), or the
+         number after # of the former viewer URL in the TEI ingested before. -->
+    <xsl:function name="d:image" as="xs:string">
+        <xsl:param name="pb" as="element()"/>
+        <xsl:variable name="ref" select="substring-after(normalize-space($pb/@facs), '#')"/>
+        <xsl:variable name="surface" select="key('surface', $ref, root($pb))"/>
+        <xsl:sequence select="if ($surface) then string($surface[1]/@n) else $ref"/>
     </xsl:function>
 
     <!-- as uf:folio of ufbas-object.xsl, without the "fol. " prefix -->
@@ -909,7 +919,7 @@
         <xsl:variable name="head" select="if ($entry/t:head) then d:label($entry/t:head[1]) else ''"/>
         <xsl:variable name="tokens" select="for $e in $entry//*[@ana] return tokenize(normalize-space($e/@ana), ' ')"/>
         <xsl:variable name="dated" select="$tokens = '#uf_DatumUrfehde'"/>
-        <xsl:variable name="image" select="substring-after(normalize-space($entry/preceding::t:pb[1]/@facs), '#')"/>
+        <xsl:variable name="image" select="if ($entry/preceding::t:pb) then d:image($entry/preceding::t:pb[1]) else ''"/>
         <xsl:sequence select="
             if (some $n in $notes satisfies starts-with($n, 'Fortsetzung des Eintrags')) then 'fortsetzung'
             else if (not($entry/t:head) and not($dated) and matches($full, 'hab ich .{0,120}notari', 'i')) then 'fortsetzung'

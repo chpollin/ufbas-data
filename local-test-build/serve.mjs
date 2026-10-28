@@ -5,7 +5,7 @@
 import { createServer } from 'node:http';
 import { existsSync, readFileSync } from 'node:fs';
 import { extname, resolve } from 'node:path';
-import { GAMS, datastream, fetchCached, newestStylesheet, paramsFromQuery, queryResult, render, root } from './gams.mjs';
+import { GAMS, datastream, fetchCached, localDatastreams, newestStylesheet, paramsFromQuery, queryResult, render, root } from './gams.mjs';
 import { queryJSON, queryXML } from './sparql.mjs';
 
 const port = Number(process.argv[2] || 8771);
@@ -62,6 +62,11 @@ async function route(url) {
     const file = resolve(root, path.slice('/ufbas/'.length));
     if (!file.startsWith(root) || !existsSync(file)) { return { status: 404 }; }
     return { body: readFileSync(file), type: types[extname(file)] || 'application/octet-stream' };
+  }
+  // the ONTOLOGY datastream of o:ufbas.ontology from ontology/ until its ingest, the
+  // deliberate shortcut of localDatastreams in gams.mjs, removed with it
+  if ((m = path.match(/^\/archive\/objects\/([^/]+)\/datastreams\/([^/]+)\/content$/)) && localDatastreams[`${m[1]}/${m[2]}`]) {
+    return { body: readFileSync(localDatastreams[`${m[1]}/${m[2]}`]), type: 'application/rdf+xml' };
   }
   if (path.startsWith('/assets/') || path.startsWith('/lib/') || path.startsWith('/templates/') || /^\/archive\/objects\/[^/]+\/datastreams\/[^/]+\/content$/.test(path)) {
     const { body, type } = await fetchCached(GAMS + url.pathname, { binary: true });

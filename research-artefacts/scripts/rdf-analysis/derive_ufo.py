@@ -6,7 +6,7 @@ that every rule is deterministic over the existing annotation.
 
 Reads the edition TEI (argument 1) and writes Turtle (argument 2), named ufbas-ufo.ttl
 for entry_ufo.py, g.py and queries.py. Superseded by ufbas-TORDF-ontology.xsl, which
-derives the refactored RDF against data/ontology/ufbas.ontology.ttl.
+derives the refactored RDF against ontology/ufbas.ontology.ttl.
 """
 import re
 import sys

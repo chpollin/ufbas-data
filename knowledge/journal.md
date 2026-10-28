@@ -12,7 +12,7 @@ template:
   url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
 status: active
 created: 2026-09-23
-updated: 2026-10-27
+updated: 2026-10-28
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
 related: [project.md, specification.md, plan.md]
@@ -180,3 +180,11 @@ From the operator's decision of 2026-10-27 to align gams-www with the ZimLab tem
 ## 2026-10-27 entschieden, fonts from GAMS
 
 The operator decided to use the best font GAMS serves instead of fonts of the project's own (ADR-32). Probing the files the ZimLab template references and a set of common names found Open Sans, Droid Serif, Junicode and Cardo under `/assets/fonts/` on production and staging. A coverage check of `tei/ufbas.1563.xml` against their TrueType files showed all four covering the edition text except ✤ and ⊕, Cardo except ✤ only. Droid Serif with Open Sans was chosen as the pairing of the template, drawn for screens. `ufbas-static.xsl` links both from `$gamsAssetsRootPath`, `css/fonts/` is gone, and both local servers read `/assets/` once from production like `/lib/`. GAMS.md gained the shared assets.
+
+## 2026-10-28 entschieden, ontology as GAMS object only
+
+From the operator's decision of 2026-10-28 (ADR-33) into both repositories. The domain ontology is a finished static product, published as `o:ufbas.ontology` with only its `ONTOLOGY` datastream and the `STYLESHEET` redirect. The six files of `data/ontology/` moved byte for byte from gams-www to `ontology/` of ufbas-data, whose `ufbas.ontology.rdf` is the ingest source. The page Ontologie reads the datastream from its host-relative path and lost the shapes, the example of `Eintrag-0`, the Turtle, JSON-LD and shapes downloads and their styles, keeping the RDF/XML of the datastream as its one download. The harness answers the datastream from `ontology/` until the ingest, and the SHACL validation of the derived RDF stays in the harness ([architecture.md](architecture.md#repository-structure), [testing.md](testing.md#guarantees)).
+
+## 2026-10-28 entschieden, page images in the TEI
+
+From the operator's decision of 2026-10-28 after reviewer feedback (ADR-34) into both repositories. `tei/ufbas.1563.xml` carries a `facsimile` with one `surface` per image a page break names, holding the IIIF image service of the archive and the canvas id of the Lesesaal, and `pb/@facs` points to it. `local-test-build/make-facsimile-tei.mjs` writes the change as text from the saved manifest and replaces `make-facsimile-data.mjs`, and `data/ufbas-facsimile.json` of gams-www and `derived/ufbas-facsimile.json` are gone. `ufbas-object.xsl` writes the image service onto each folio label, `edition-views.js` reads it from there, and a TEI without facsimile, as GAMS serves it until the re-ingest, gives the text alone with a note. `test/facsimile-tei.test.mjs` checks the TEI against the manifest and, with the change undone, against the hash of the published datastream. The refactored RDF of `gams/ufbas-TORDF-ontology.xsl` reads the image number from `pb/@facs` and loses it with the new pointers, which an adjustment of that stylesheet by the operator's decision restores ([data.md](data.md#edition-tei), [plan.md](plan.md#delivery)).

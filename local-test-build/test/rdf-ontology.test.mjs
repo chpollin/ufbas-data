@@ -12,11 +12,11 @@
 // TEI by XPath, independently of the stylesheet.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { explorationData } from '../make-exploration-data.mjs';
 import { exampleFile, exampleStore, ontologyRDF } from '../derive-rdf.mjs';
 import SaxonJS from 'saxon-js';
-import { datastream, parse, root } from '../gams.mjs';
+import { datastream, parse } from '../gams.mjs';
+import { ttlFile } from '../make-ontology.mjs';
 import { filterCategories, fragmentHosts, genderClass, oxigraph, rows, runner, tsv } from './lib.mjs';
 
 const DATA = 'http://gams.uni-graz.at/o:ufbas.1563#';
@@ -38,7 +38,7 @@ const store = new oxigraph.Store();
 // strict, so an IRI the stylesheet writes badly fails here
 store.load(rdf, { format: 'application/rdf+xml', base_iri: DATA });
 const ontology = new oxigraph.Store();
-ontology.load(readFileSync(resolve(root, 'data/ontology/ufbas.ontology.ttl'), 'utf8'), { format: 'text/turtle' });
+ontology.load(readFileSync(ttlFile, 'utf8'), { format: 'text/turtle' });
 
 // the curated tables of the research of 2026-09-24, which the derivation has to reproduce
 const entryTypes = tsv('entry-types.tsv');
@@ -324,7 +324,7 @@ await test('the coded dates that contradict their written form or their entry ca
   assert.deepEqual(select('SELECT ?t WHERE { ?t ufbas-ont:dateSuggested ?d FILTER NOT EXISTS { ?t ufbas-ont:dateAsCoded ?c } }'), []);
 });
 
-await test('the example of the page Ontologie is the current derivation of Eintrag-0', async () => {
+await test('the example entry in ontology/ is the current derivation of Eintrag-0', async () => {
   const committed = oxigraph.parse(readFileSync(exampleFile, 'utf8'), { format: 'application/rdf+xml' }).map(String);
   const fresh = new Set((await exampleStore()).match().map(String));
   assert.ok(committed.length > 100);

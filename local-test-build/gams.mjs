@@ -49,13 +49,19 @@ export async function fetchCached(url, { binary = false } = {}) {
   return { body: binary ? readFileSync(file) : readFileSync(file, 'utf8'), type: readFileSync(file + '.type', 'utf8') };
 }
 
+// Deliberate shortcut until the operator ingests o:ufbas.ontology (ADR-33): its ONTOLOGY
+// datastream, which GAMS does not serve yet, is answered from its ingest source in
+// ontology/. Upgrade path: once the object is on GAMS, delete this entry and its uses in
+// serve.mjs and test/browser.test.mjs, so the datastream comes from cache/ like any other.
+export const localDatastreams = { 'o:ufbas.ontology/ONTOLOGY': resolve(dataRoot, 'ontology', 'ufbas.ontology.rdf') };
+
 // A datastream is read from the repository when it exists there, so that fixtures
 // stay reviewable, and from the cached production copy otherwise. The TEI of an
 // object is its ingest source in tei/, named after the PID without "o:".
 export async function datastream(pid, ds) {
-  const local = ds === 'TEI_SOURCE'
+  const local = localDatastreams[`${pid}/${ds}`] ?? (ds === 'TEI_SOURCE'
     ? resolve(dataRoot, 'tei', `${pid.replace(/^o:/, '')}.xml`)
-    : resolve(mirrorDir, `${pid.replace(':', '-')}.${ds}.xml`);
+    : resolve(mirrorDir, `${pid.replace(':', '-')}.${ds}.xml`));
   if (existsSync(local)) { return readFileSync(local, 'utf8'); }
   return (await fetchCached(`${GAMS}/archive/objects/${pid}/datastreams/${ds}/content`)).body;
 }
@@ -64,10 +70,8 @@ export async function datastream(pid, ds) {
 // against the stylesheet URI, of production or staging, and answered from this pool.
 const poolDatastreams = [
   ['context:ufbas', 'ABOUT'], ['context:ufbas', 'DC'], ['context:ufbas', 'IMPRINT'],
-  ['context:templates', 'SEARCH_HELP'], ['o:ufbas.kategorien', 'TEI_SOURCE']
+  ['context:templates', 'SEARCH_HELP'], ['o:ufbas.kategorien', 'TEI_SOURCE'], ['o:ufbas.ontology', 'ONTOLOGY']
 ];
-
-const servedDocuments = ['data/ontology/ufbas.ontology.rdf', 'data/ontology/ufbas.shapes.rdf', 'data/ontology/ufbas.example.rdf'];
 
 let pool;
 async function documentPool() {
@@ -83,13 +87,6 @@ async function documentPool() {
       pool[`${host}/${pid}/${ds}`] = doc;
       pool[`${host}/archive/objects/${pid}/datastreams/${ds}/content`] = doc;
     }
-  }
-  // files of the served folder that a stylesheet reads through $server, under the folder
-  // of production and of staging
-  for (const file of servedDocuments) {
-    const doc = await parse(readFileSync(resolve(root, file), 'utf8'));
-    pool[`${GAMS}/ufbas/${file}`] = doc;
-    pool[`${STAGING}/gamsdev/pollin/ufbas/gams-www/${file}`] = doc;
   }
   return pool;
 }

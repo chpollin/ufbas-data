@@ -1,23 +1,22 @@
-// Writes the derived forms of the ontology from the Turtle files, which are the ones that
-// are edited: data/ontology/ufbas.ontology.rdf, the target value of the ONTOLOGY datastream
+// Writes the derived forms of the ontology in ontology/ from the Turtle files, which are
+// the ones that are edited: ufbas.ontology.rdf, the ingest source of the ONTOLOGY datastream
 // of o:ufbas.ontology, since GAMS publishes ontologies as RDF/XML (knowledge/domain.md,
-// section Domain ontology), ufbas.ontology.jsonld for the download of the ontology page,
-// and ufbas.shapes.rdf, which ufbas-context.xsl reads for the validation section of that
-// page, since XSLT cannot read Turtle. test/ontology.test.mjs fails when they drift apart.
+// section Domain ontology), and ufbas.ontology.jsonld and ufbas.shapes.rdf, which belong to
+// the data package beside it (ADR-33). test/ontology.test.mjs fails when they drift apart.
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
-import { root } from './gams.mjs';
+import { dataRoot } from './gams.mjs';
 
 const oxigraph = createRequire(import.meta.url)('oxigraph');
 
-export const ttlFile = resolve(root, 'data/ontology/ufbas.ontology.ttl');
-export const outFile = resolve(root, 'data/ontology/ufbas.ontology.rdf');
-export const jsonldFile = resolve(root, 'data/ontology/ufbas.ontology.jsonld');
-export const shapesFile = resolve(root, 'data/ontology/ufbas.shapes.ttl');
-export const shapesRdfFile = resolve(root, 'data/ontology/ufbas.shapes.rdf');
+export const ttlFile = resolve(dataRoot, 'ontology/ufbas.ontology.ttl');
+export const outFile = resolve(dataRoot, 'ontology/ufbas.ontology.rdf');
+export const jsonldFile = resolve(dataRoot, 'ontology/ufbas.ontology.jsonld');
+export const shapesFile = resolve(dataRoot, 'ontology/ufbas.shapes.ttl');
+export const shapesRdfFile = resolve(dataRoot, 'ontology/ufbas.shapes.rdf');
 
 export function ontologyStore(text = readFileSync(ttlFile, 'utf8')) {
   const store = new oxigraph.Store();

@@ -12,7 +12,7 @@ template:
   url: https://dhcraft.org/Promptotyping/promptotyping-document/architecture
 status: draft
 created: 2026-09-23
-updated: 2026-10-27
+updated: 2026-10-28
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
 topics: ["[[GAMS]]", "[[GAMS Entwicklung]]", "[[XSLT]]", "[[SPARQL]]"]
@@ -58,7 +58,7 @@ The site is an XSLT application layer on GAMS. Fedora holds the TEI objects, a c
 | `query:ufbas.exploration` | Query | One row per entry for the Exploration view, read as JSON from the refactored RDF. New, its `QUERY` is a target value the operator sets on staging and production. The text set on staging on 2026-09-29 is the earlier one on the RDF of 2017, which the text of `gams/query/` replaces. |
 | `query:ufbas.properties` | Query | Further statements about one category, read only by the 2017 graph script `buildgraph.js`, on the RDF of 2017 like the text of `query:ufbas.graph` |
 | `query:ufbas.alkohol` | Query | A 2017 analysis of offences involving alcohol, linked from no page. It stays on production and is carried into neither repository nor onto staging. |
-| `o:ufbas.ontology` | Ontology (`cm:Ontology`) | The domain ontology with its `ONTOLOGY` datastream (ADR-17), not yet ingested |
+| `o:ufbas.ontology` | Ontology (`cm:Ontology`) | The domain ontology, a finished static product with only its `ONTOLOGY` datastream beside the `STYLESHEET` redirect (ADR-17, ADR-33), not yet ingested |
 | `cirilo:ufbas` | Cirilo configuration | Ingest defaults of the project, among them `TORDF` |
 | `cirilo:TEI.ufbas` | Cirilo configuration | Defaults for new TEI objects |
 | `cirilo:Context.ufbas` | Cirilo configuration | Defaults for new context objects |
@@ -84,18 +84,20 @@ Target values. A redirect names a file of the served folder, whose base is `http
 | `query:ufbas.graph` | `STYLESHEET` | Redirect | base + `ufbas-graph.xsl` |
 | `query:ufbas.properties` | `STYLESHEET` | Redirect | base + `ufbas-search.xsl`, as on production, though no page links it |
 | `query:ufbas.search`, `query:ufbas.kategorien`, `query:ufbas.volltext`, `query:ufbas.graph`, `query:ufbas.properties`, `query:ufbas.exploration` | `QUERY` | Content | `gams/query/ufbas.<name>.sparql` |
-| `o:ufbas.ontology` | `ONTOLOGY` | Content | `data/ontology/ufbas.ontology.rdf` of gams-www |
+| `o:ufbas.ontology` | `ONTOLOGY` | Content | `ontology/ufbas.ontology.rdf` of ufbas-data |
 | `o:ufbas.ontology` | `STYLESHEET` | Redirect | base + `ufbas-ontology.xsl` |
 
 Production deviates from these targets in three references, read on 2026-09-29. `query:ufbas.graph` points to `http://glossa.uni-graz.at/gamsdev/pollin/ufbas/trunk/ufbas-graph.xsl` and `o:ufbas.1563/TORDF` to `http://gams.uni-graz.at/gamsdev/pollin/ufbas/trunk/TORDF.xsl`, both in the SVN working copy, and `cirilo:Context.ufbas/STYLESHEET` to the generic `CONTEXTtoHTML` of `cirilo:ufbas`. They are set with the GAMS update ([plan.md](plan.md#delivery)), after which the SVN working copy can go.
 
 ### Ingest
 
-The TEI of the two TEI objects lies in `tei/` of ufbas-data, one file per object named after its PID without `o:`, and Cirilo ingests both with the content model `cirilo:TEI.ufbas`. Each file carries its PID in `idno[@type='PID']`. The taxonomy comes first where both cannot be ingested at once, since the edition page reads it. Since Cirilo ingests every file of the chosen folder ([GAMS.md](../GAMS.md#knowledge)), `tei/` holds only these two files and is the ingest folder as it is. The `ABOUT` of `context:ufbas` is mirrored in `gams/datastreams/context-ufbas.ABOUT.xml`. Cirilo writes `ingest.log` into the folder and `mets.xml` into folders with images, which `.gitignore` excludes.
+The TEI of the two TEI objects lies in `tei/` of ufbas-data, one file per object named after its PID without `o:`, and Cirilo ingests both with the content model `cirilo:TEI.ufbas`. Each file carries its PID in `idno[@type='PID']`. The taxonomy comes first where both cannot be ingested at once, since the edition page reads it. Since Cirilo ingests every file of the chosen folder ([GAMS.md](../GAMS.md#knowledge)), `tei/` holds only these two files and is the ingest folder as it is. The `ABOUT` of `context:ufbas` is mirrored in `gams/datastreams/context-ufbas.ABOUT.xml`. Cirilo writes `ingest.log` into the folder, which `.gitignore` excludes together with `mets.xml`, which Cirilo writes only for a METS ingest from an image folder ([GAMS.md](../GAMS.md#knowledge)).
+
+Since ADR-34 `tei/ufbas.1563.xml` carries the page images in a `facsimile` and differs from its published datastream by that change alone, which makes it a prepared target value until the operator re-ingests it ([plan.md](plan.md#delivery)). Its `graphic/@url` are IIIF image services of the archive without `xml:id` and `mimeType`. Following the GAMS documentation (How to ingest objects), Cirilo stores no image referenced by URL in the object and uses the reference to display it, while it uploads a local file named with `xml:id` and `mimeType` as datastream. For the TEI model the first `graphic` of the source is scaled down to the `THUMBNAIL` (Content models in Cirilo), so the re-ingest may give `o:ufbas.1563` the image of fol. 1r as thumbnail. Whether Cirilo fetches an external image for that is not documented and is checked after the ingest on staging.
 
 At ingest `ufbas-TOTEI.xsl` gives every element with an `@ana` pointer and every `persName` and `placeName` an `xml:id` where it has none and sets `xml:space="preserve"` on `text`, and the `TORDF` of `cirilo:ufbas` derives the `RDF` datastream. `ufbas-TOTEI.xsl` and `ufbas-TORDF.xsl` are taken over unchanged from `cirilo:TEI.ufbas` and `cirilo:ufbas` of production. A change of either changes published data and takes effect only after the file is copied into its Cirilo datastream again and the objects are re-ingested.
 
-With the update `ufbas-TORDF-ontology.xsl` takes the place of `ufbas-TORDF.xsl` in `cirilo:ufbas`. It is one stylesheet for both TEI objects, which inherit it through `cirilo:TEI.ufbas`. It derives the refactored RDF of the edition under the domain ontology from `o:ufbas.1563` and the SKOS concept scheme of the taxonomy from `o:ufbas.kategorien`, reads nothing but its input document, and writes only terms of `data/ontology/ufbas.ontology.ttl` of gams-www and the GAMS ontology ([domain.md](domain.md#domain-ontology)). The re-ingest of both objects then replaces the RDF of 2017, which the search queries and the Exploration view of the refactored site no longer read.
+With the update `ufbas-TORDF-ontology.xsl` takes the place of `ufbas-TORDF.xsl` in `cirilo:ufbas`. It is one stylesheet for both TEI objects, which inherit it through `cirilo:TEI.ufbas`. It derives the refactored RDF of the edition under the domain ontology from `o:ufbas.1563` and the SKOS concept scheme of the taxonomy from `o:ufbas.kategorien`, reads nothing but its input document, and writes only terms of `ontology/ufbas.ontology.ttl` and the GAMS ontology ([domain.md](domain.md#domain-ontology)). The re-ingest of both objects then replaces the RDF of 2017, which the search queries and the Exploration view of the refactored site no longer read.
 
 ### RDF transformation
 
@@ -117,7 +119,7 @@ Every page stylesheet includes `ufbas-static.xsl`, declares `$pageCss` and suppl
 | `ufbas-category.xsl` | `o:ufbas.kategorien` | `categories` | Category page with links to the entry list and, where the view has a filter, to the Exploration view |
 | `ufbas-search.xsl` | the three search queries | `search` | Empty advanced form, result pages, category browse |
 | `ufbas-graph.xsl` | `query:ufbas.graph` | `search` | Forward to the Exploration view |
-| `ufbas-ontology.xsl` | `o:ufbas.ontology` | `ontology`, from `ufbas-context.xsl` | The page Ontologie, which `ufbas-ontology.xsl` imports from `ufbas-context.xsl` with the mode `ontologie`. The input, the `ONTOLOGY` datastream, only marks the navigation item. |
+| `ufbas-ontology.xsl` | `o:ufbas.ontology` | `ontology`, from `ufbas-context.xsl` | The page Ontologie, which `ufbas-ontology.xsl` imports from `ufbas-context.xsl` with the mode `ontologie`. On both objects the page reads the `ONTOLOGY` datastream of `o:ufbas.ontology` with `document()` from the host-relative path `/archive/objects/o:ufbas.ontology/datastreams/ONTOLOGY/content`, the same on staging and production, and renders from it alone (ADR-33). |
 
 The shell builds, in order, the head with `css/template.css`, `css/{$pageCss}.css`, the print styles and the three shared scripts with `defer`, a skip link, the green header, the navigation `nav.site-nav` with the quick search `#volltextsuche` and the Datenkorb count in `#datenkorbstatic`, `main#main`, and the footer. It derives the current page from the input document (TEI PID, `mode` of `context:ufbas`, a `params` value with the project namespace for category browse and graph, every other query page as search) and marks it with `aria-current="page"` and the body class `page-<name>`.
 
@@ -129,7 +131,7 @@ The page head of `ufbas-static.xsl` links Droid Serif and Open Sans from the fon
 | `js/buildquery.js` | every page | Builds `params` from both search forms, reports errors at the form, fills the example searches, restores the form state on the result page |
 | `js/highlighting.js` | every page, effective on the edition | The "Im Text markieren" switches, the tip with the labels of marked annotations, the annotation index of an entry built on demand, tips of the editorial notes, table of contents following the reading position |
 | `js/edition-views.js` | edition page, after `highlighting.js` | The views "Text" and "Text und Bild" with the default by width and their state in the fragment of the address, the table of contents behind a button where the tools are a bar, the page image pane following the reading line, the folio labels as buttons |
-| `js/openseadragon-6.1.1/openseadragon.min.js`, `data/ufbas-facsimile.json` | loaded by `edition-views.js` when "Text und Bild" is first chosen | Viewer and image services of the page images |
+| `js/openseadragon-6.1.1/openseadragon.min.js` | loaded by `edition-views.js` when "Text und Bild" is first chosen | Viewer of the page images, whose image services the folio labels carry |
 | `js/results.js` | result pages of search and category browse | The collapsed form on narrow screens, the CSV of the hits, and on a category browse one year at a time |
 | `js/exploration.js` | Exploration page | Reads `query:ufbas.exploration` once, keeps the selection in the fragment, draws the marks of the entries in SVG, the filter menus, the legend and the entry table, CSV of the selection |
 
@@ -137,7 +139,7 @@ No generated page contains inline JavaScript. Script data travels as `<script ty
 
 ### Edition page
 
-Every annotated element of the groups Person, Tat, Strafe, Ort and Schlagwort becomes `span.ann` with its group in `data-group` and the terms of its categories in `data-label`, and an element in several groups nests one span per group, since a span carries one mark. An annotated note is itself the annotation span, because a float takes no underline from its parent. The switches "Im Text markieren" set a class `mark-<group>` on `.edition-body`, and `edition.css` draws the marks in fixed slots and gives the labels to screen readers as visually hidden generated content. The heading row of an entry with annotations holds `button.index-toggle`, which builds `div.entry-index` after the entry text on first use. Page breaks carry the image number of `pb/@facs` in `data-facs`. The page head `div.edition-head` sets title and dates beside `div.head-side`, which holds the view switch `fieldset.view-switch` of the named template `view-switch`, the source icons and the citation with its handle. The pane `section.facsimile` inside `.edition-layout` names the dataset and the viewer in `data-images` and `data-viewer`, and `edition-views.js` sets `data-ansicht` on `.edition-layout`. The view and the marked groups travel in the fragment as `#Eintrag-12&ansicht=bild&markierung=Person,Strafe`, since GAMS answers the edition URL with a query parameter by 404 (short form) or 500 (`sdef:TEI/get`), checked on 2026-09-24. The images are IIIF Image API 2 level 0 on an object store that sends CORS headers for `gams.uni-graz.at` only, so the viewer uses the canvas drawer, which shows tiles as plain images on every host. The width of every container is `--page-max` of `template.css`, 75rem, which `edition.css` raises to 120rem on `body.page-edition`.
+Every annotated element of the groups Person, Tat, Strafe, Ort and Schlagwort becomes `span.ann` with its group in `data-group` and the terms of its categories in `data-label`, and an element in several groups nests one span per group, since a span carries one mark. An annotated note is itself the annotation span, because a float takes no underline from its parent. The switches "Im Text markieren" set a class `mark-<group>` on `.edition-body`, and `edition.css` draws the marks in fixed slots and gives the labels to screen readers as visually hidden generated content. The heading row of an entry with annotations holds `button.index-toggle`, which builds `div.entry-index` after the entry text on first use. Page breaks carry the image number of the surface `pb/@facs` points to in `data-facs`, and its image service and size in `data-image`, `data-width` and `data-height` (ADR-34). A TEI without `facsimile`, as GAMS serves it until the re-ingest, gives a page without image pane and view switch, with a short note in place of the switch. The page head `div.edition-head` sets title and dates beside `div.head-side`, which holds the view switch `fieldset.view-switch` of the named template `view-switch`, the source icons and the citation with its handle. The pane `section.facsimile` inside `.edition-layout` names the dataset and the viewer in `data-images` and `data-viewer`, and `edition-views.js` sets `data-ansicht` on `.edition-layout`. The view and the marked groups travel in the fragment as `#Eintrag-12&ansicht=bild&markierung=Person,Strafe`, since GAMS answers the edition URL with a query parameter by 404 (short form) or 500 (`sdef:TEI/get`), checked on 2026-09-24. The images are IIIF Image API 2 level 0 on an object store that sends CORS headers for `gams.uni-graz.at` only, so the viewer uses the canvas drawer, which shows tiles as plain images on every host. The width of every container is `--page-max` of `template.css`, 75rem, which `edition.css` raises to 120rem on `body.page-edition`.
 
 ### Graph page
 
@@ -187,7 +189,7 @@ The value of `params` is `$1|…;$2|…`, tested on 2026-09-24 and 2026-09-23 ([
 
 ## Repository structure
 
-The project has two repositories since 2026-10-27, following the ZimLab template for `gams-www`. gams-www holds only what GAMS serves, ufbas-data everything that describes, checks or feeds it. Paths in the knowledge documents are relative to ufbas-data, except the page stylesheets `ufbas-*.xsl`, `css/`, `js/`, `img/`, `data/ufbas-facsimile.json` and `data/ontology/`, which lie in gams-www.
+The project has two repositories since 2026-10-27, following the ZimLab template for `gams-www`. gams-www holds only what GAMS serves, ufbas-data everything that describes, checks or feeds it. Paths in the knowledge documents are relative to ufbas-data, except the page stylesheets `ufbas-*.xsl`, `css/`, `js/` and `img/`, which lie in gams-www.
 
 gams-www, https://zimlab.uni-graz.at/gams/projects/ufbas/gams-www, whose root is the served folder `/ufbas/`:
 
@@ -195,15 +197,14 @@ gams-www, https://zimlab.uni-graz.at/gams/projects/ufbas/gams-www, whose root is
 |---|---|
 | `ufbas-static.xsl`, `ufbas-context.xsl`, `ufbas-object.xsl`, `ufbas-search.xsl`, `ufbas-category.xsl`, `ufbas-graph.xsl`, `ufbas-ontology.xsl` | The page stylesheets, referenced by the `STYLESHEET` datastreams |
 | `css/`, `js/`, `img/` | Styles, scripts with the vendored OpenSeadragon, images |
-| `data/ufbas-facsimile.json` | The image services of the page images, read at runtime through `$server` |
-| `data/ontology/` | The ontology in Turtle, its RDF/XML as target value of the `ONTOLOGY` datastream of `o:ufbas.ontology` and its JSON-LD, the SHACL shapes in Turtle and RDF/XML, and `ufbas.example.rdf`, the derivation of `Eintrag-0` shown on the page Ontologie. `local-test-build/make-ontology.mjs` writes the RDF/XML and JSON-LD from the Turtle, and `local-test-build/derive-rdf.mjs` writes the example. The page Ontologie reads the ontology, the shapes and the example through `$server` with `document()` and offers them as downloads, the first page that reads files of the served folder. On staging on 2026-09-29 the page rendered completely through the reads of ontology and shapes, and GAMS served `.ttl` as `text/turtle` and `.jsonld` as `application/ld+json`. The read of the example, added on 2026-10-21, is not yet checked there |
 | `README.md`, `LICENSE` | Project description after the ZimLab template, MIT licence of the code |
 
 ufbas-data, https://github.com/chpollin/ufbas-data:
 
 | Path | Content |
 |---|---|
-| `tei/` | The TEI of `o:ufbas.1563` and `o:ufbas.kategorien`, byte for byte the published datastreams, one file per object and the ingest source of its object ([Ingest](#ingest)) |
+| `tei/` | The TEI of `o:ufbas.1563` and `o:ufbas.kategorien`, one file per object and the ingest source of its object, byte for byte the published datastreams except the page images of ADR-34 in `ufbas.1563.xml` until the re-ingest ([Ingest](#ingest)) |
+| `ontology/` | The domain ontology in Turtle, its RDF/XML as ingest source of the `ONTOLOGY` datastream of `o:ufbas.ontology` and its JSON-LD, the SHACL shapes in Turtle and RDF/XML, and `ufbas.example.rdf`, the derivation of `Eintrag-0`, all of the data package (ADR-33). `local-test-build/make-ontology.mjs` writes the RDF/XML and JSON-LD from the Turtle, `local-test-build/derive-rdf.mjs` the example |
 | `rdf/`, `derived/`, `generated/` | The published RDF of 2017, the derived datasets and the untracked output of the TEI analysis, all of the data package ([README.md](../README.md#files)) |
 | `gams/ufbas-TOTEI.xsl`, `gams/ufbas-TORDF.xsl` | The ingest transformations of `cirilo:TEI.ufbas` and `cirilo:ufbas` as production runs them |
 | `gams/ufbas-TORDF-ontology.xsl` | The `TORDF` of `cirilo:ufbas` after the update, deriving the refactored RDF of the edition and the concept scheme of the taxonomy ([Ingest](#ingest)) |

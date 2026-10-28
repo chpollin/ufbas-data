@@ -2,9 +2,7 @@
 // build.mjs: the marking of the annotation groups with their tips and index, the views of
 // text and page image, and the editorial notes.
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { root } from '../gams.mjs';
+import { manifestImages } from '../make-facsimile-tei.mjs';
 import { ORIGIN, built, open, runner } from './lib.mjs';
 
 const { test, done } = runner('marking-views', 'tests');
@@ -128,14 +126,16 @@ await test('boxes the browser restored are applied on load', async () => {
 });
 
 // Views and page image. OpenSeadragon and fetch are stubbed; the stub records what
-// the page asks of the viewer.
-const facsimileData = JSON.parse(readFileSync(resolve(root, 'data/ufbas-facsimile.json'), 'utf8'));
-function stubs({ dataOk = true } = {}) {
+// the page asks of the viewer. The page images come from the TEI through the folio
+// labels, and the expected services from the manifest the TEI was written from.
+const images = manifestImages().images;
+const service = (n) => images.get(Number(n)).service;
+function stubs() {
   const calls = { fetched: [], created: [], opened: [], zoom: [], home: 0, scrolled: [], handlers: {} };
   calls.before = (window) => {
     window.fetch = (url) => {
       calls.fetched.push(url);
-      return Promise.resolve(dataOk ? { ok: true, json: () => Promise.resolve(facsimileData) } : { ok: false, status: 404 });
+      return Promise.resolve({ ok: false, status: 404 });
     };
     window.OpenSeadragon = (options) => {
       calls.created.push(options);
@@ -251,7 +251,7 @@ await test('where the tools shrink to a bar, the table of contents opens behind 
   assert.equal(doc.activeElement, button);
 });
 
-await test('Text und Bild loads dataset and viewer once and follows the page at the reading line', async () => {
+await test('Text und Bild loads the viewer once and follows the page at the reading line', async () => {
   const calls = stubs();
   const window = await open(built('edition'), { scripts: ['highlighting.js', 'edition-views.js'], before: calls.before });
   const { doc, pane, view, markers } = views(window);
@@ -259,30 +259,30 @@ await test('Text und Bild loads dataset and viewer once and follows the page at 
   readAt(window, markers[0]);
   view('bild');
   await settle();
-  assert.deepEqual(calls.fetched, ['/ufbas/data/ufbas-facsimile.json']);
+  assert.deepEqual(calls.fetched, [], 'the page images stand in the page, nothing is fetched');
   assert.equal(calls.created.length, 1);
   const options = calls.created[0];
   assert.equal(options.drawer, 'canvas', 'tiles as plain images, the store allows CORS for gams.uni-graz.at only');
   assert.equal(options.showNavigationControl, false);
   assert.ok(pane.contains(options.element));
   const source = calls.opened.at(-1);
-  assert.equal(source['@id'], facsimileData.images[19].service);
+  assert.equal(source['@id'], service(19));
   assert.deepEqual([source.width, source.height, source.profile[0], JSON.stringify(source.tiles)],
-    [facsimileData.images[19].width, facsimileData.images[19].height, 'http://iiif.io/api/image/2/level0.json', '[{"width":2048,"scaleFactors":[1,2]}]']);
-  assert.equal(pane.querySelector('.facsimile-credit a').textContent, facsimileData.source.credit);
+    [images.get(19).width, images.get(19).height, 'http://iiif.io/api/image/2/level0.json', '[{"width":2048,"scaleFactors":[1,2]}]']);
+  assert.equal(pane.querySelector('.facsimile-credit a').textContent, 'Staatsarchiv Basel-Stadt, Ratsbücher O 10');
   // scrolling moves the page break of image 47 above the reading line
   readAt(window, byImage(47));
   await settle();
-  assert.equal(calls.opened.at(-1)['@id'], facsimileData.images[47].service);
+  assert.equal(calls.opened.at(-1)['@id'], service(47));
   assert.equal(pane.querySelector('.facsimile-folio').textContent, byImage(47).textContent);
   assert.deepEqual(markers.filter((m) => m.getAttribute('aria-current')).map((m) => m.getAttribute('data-facs')), ['47']);
   // a folio label opens its page by Enter and by click
   const leaf = byImage(85);
   assert.deepEqual([leaf.getAttribute('role'), leaf.getAttribute('tabindex'), leaf.getAttribute('aria-label')], ['button', '0', 'Seitenbild fol. 32ar']);
   leaf.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
-  assert.equal(calls.opened.at(-1)['@id'], facsimileData.images[85].service);
+  assert.equal(calls.opened.at(-1)['@id'], service(85));
   byImage(20).click();
-  assert.equal(calls.opened.at(-1)['@id'], facsimileData.images[20].service);
+  assert.equal(calls.opened.at(-1)['@id'], service(20));
   // own zoom buttons, usable once the viewer has opened the page
   assert.equal(pane.querySelector('[data-zoom="in"]').disabled, true);
   calls.handlers.open();
@@ -296,19 +296,35 @@ await test('Text und Bild loads dataset and viewer once and follows the page at 
   assert.equal(doc.querySelectorAll('.folio[role], .folio[tabindex], .folio[aria-current]').length, 0);
   view('bild');
   await settle();
-  assert.equal(calls.fetched.length, 1);
+  assert.equal(calls.fetched.length, 0);
   assert.equal(calls.created.length, 1);
 });
 
-await test('without the dataset the page image area links to the Lesesaal instead of a viewer', async () => {
-  const calls = stubs({ dataOk: false });
-  const window = await open(built('edition'), { url: ORIGIN + '/o:ufbas.1563#ansicht=bild', scripts: ['highlighting.js', 'edition-views.js'], before: calls.before });
+await test('a folio label without its image service links to the Lesesaal instead of a viewer', async () => {
+  const calls = stubs();
+  const html = built('edition').replace(/ data-image="[^"]*"/, '');
+  const window = await open(html, { scripts: ['highlighting.js', 'edition-views.js'], before: calls.before });
+  const { pane, view, markers } = views(window);
+  readAt(window, markers[0]);
+  view('bild');
   await settle();
-  const { pane } = views(window);
   assert.equal(pane.querySelector('.facsimile-missing').hidden, false);
   assert.equal(pane.querySelector('.facsimile-missing a').getAttribute('href'), 'https://dls.staatsarchiv.bs.ch/records/315538');
   assert.equal(pane.querySelector('.facsimile-zoom').hidden, true, 'no zoom buttons without a viewer');
-  assert.equal(calls.created.length, 0);
+  assert.equal(calls.opened.length, 0);
+});
+
+await test('a TEI without page images gives the text alone, whatever view the address asks for', async () => {
+  const wide = (window) => {
+    stubs().before(window);
+    window.matchMedia = (query) => ({ matches: query === '(min-width: 86rem)' });
+  };
+  const window = await open(built('edition-ohne-bild'), { url: ORIGIN + '/o:ufbas.1563#Eintrag-5&ansicht=bild&markierung=Person', scripts: ['highlighting.js', 'edition-views.js'], before: wide });
+  const doc = window.document;
+  assert.equal(doc.querySelector('.edition-layout').getAttribute('data-ansicht'), 'text');
+  assert.ok(doc.querySelector('.edition-body').classList.contains('mark-Person'), 'the marking of the address still applies');
+  doc.querySelector('.mark-switches input[value="Ort"]').click();
+  assert.equal(window.location.hash, '#Eintrag-5&markierung=Person,Ort');
 });
 
 await test('an image that does not load gives way to the link, the next page tries again', async () => {
@@ -325,7 +341,7 @@ await test('an image that does not load gives way to the link, the next page tri
   await settle();
   assert.equal(pane.querySelector('.facsimile-missing').hidden, true);
   assert.equal(pane.querySelector('.facsimile-viewer').hidden, false);
-  assert.equal(calls.opened.at(-1)['@id'], facsimileData.images[markers[3].getAttribute('data-facs')].service);
+  assert.equal(calls.opened.at(-1)['@id'], service(markers[3].getAttribute('data-facs')));
 });
 
 await test('an editorial note shows its text on focus and hides on Escape', async () => {

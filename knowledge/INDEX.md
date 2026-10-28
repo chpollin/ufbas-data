@@ -13,7 +13,7 @@ template:
 status: draft
 version: 0.1
 created: 2026-09-23
-updated: 2026-10-27
+updated: 2026-10-28
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
 ---
@@ -71,7 +71,7 @@ PID
 : Persistent identifier of a GAMS object, here `context:ufbas`, `o:ufbas.1563`, `o:ufbas.kategorien`, `o:ufbas.schema`, the query objects `query:ufbas.search`, `query:ufbas.volltext`, `query:ufbas.kategorien`, `query:ufbas.graph`, `query:ufbas.properties` and `query:ufbas.exploration`, the Cirilo configurations `cirilo:ufbas`, `cirilo:TEI.ufbas` and `cirilo:Context.ufbas`, and the planned `o:ufbas.ontology`.
 
 Folio
-: A leaf of the book, recto or verso. The edition counts it over the page breaks from fol. 1r, which differs from the image number of `pb/@facs`.
+: A leaf of the book, recto or verso. The edition counts it over the page breaks from fol. 1r, which differs from the image number of the surface `pb/@facs` points to.
 
 Eingangsnotiz
 : The marginal note beside an entry with a guard's name or a tower and a number, read as the accounting of the Turmlöse.
@@ -86,4 +86,4 @@ Eintragstyp
 : Urfehde, Urfehdbrief, Aussage, Entwurf or abgebrochen, assigned by rule after the introduction of the edition, since the TEI does not encode it.
 
 Ontologie
-: The domain model of the edition in `data/ontology/` of gams-www, with the prefixes `ufbas:` for data, `ufbas-ont:` for the ontology, `ufbas-kat:` for the categories and `gams:` for the GAMS ontology, validated by SHACL shapes and shown on the page Ontologie.
+: The domain model of the edition in `ontology/`, with the prefixes `ufbas:` for data, `ufbas-ont:` for the ontology, `ufbas-kat:` for the categories and `gams:` for the GAMS ontology. The derived RDF is validated by SHACL shapes beside it, and the page Ontologie shows the `ONTOLOGY` datastream of `o:ufbas.ontology`.

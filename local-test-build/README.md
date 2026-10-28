@@ -2,7 +2,7 @@
 
 Local rendering of the UFBAS pages, checked before a change of gams-www is pushed to ZimLab `main` and reaches staging. The harness has two roots, set in `gams.mjs`. `dataRoot` is ufbas-data, the parent of this folder. `root` is the gams-www checkout with the page stylesheets and the served files, by default `ZIMLAB/ufbas` beside the ufbas-data folder and otherwise the path in the environment variable `UFBAS_WWW`, and the harness stops when it finds no `ufbas-static.xsl` there.
 
-SaxonJS runs the page stylesheets of gams-www with their production URI as static base URI, so the server-relative `document()` calls resolve against a pool of datastreams and served files. The TEI comes from `../tei/`, other datastreams from `../gams/datastreams/` where a mirror exists and otherwise once from production into `cache/`. `derive-rdf.mjs` derives the refactored RDF and the SKOS of the taxonomy from the TEI with `../gams/ufbas-TORDF-ontology.xsl`, and `sparql.mjs` runs the query texts of `../gams/query/` on it with Oxigraph, so the preview and the tests answer the search and Exploration queries as GAMS will after the update. The preview serves `/ufbas/` from the gams-www checkout.
+SaxonJS runs the page stylesheets of gams-www with their production URI as static base URI, so the server-relative `document()` calls resolve against a pool of datastreams. The TEI comes from `../tei/`, other datastreams from `../gams/datastreams/` where a mirror exists and otherwise once from production into `cache/`. Until the operator ingests `o:ufbas.ontology`, its `ONTOLOGY` datastream comes from `../ontology/ufbas.ontology.rdf`, in the pool and in both local servers, a deliberate shortcut named `localDatastreams` in `gams.mjs` and removed after the ingest. `derive-rdf.mjs` derives the refactored RDF and the SKOS of the taxonomy from the TEI with `../gams/ufbas-TORDF-ontology.xsl`, and `sparql.mjs` runs the query texts of `../gams/query/` on it with Oxigraph, so the preview and the tests answer the search and Exploration queries as GAMS will after the update. The preview serves `/ufbas/` from the gams-www checkout.
 
 ```
 npm install
@@ -12,10 +12,10 @@ npm run browser -- [page ...]    # only the check in headless Chrome or Edge, on
 npm run serve                    # local preview on http://127.0.0.1:8771/context:ufbas
 node abnahme.mjs abnahme.json    # acceptance sheet from the running preview
 SAXON_JAR=… node saxon-check.mjs # stylesheets and ingest in Saxon-HE for Java, needs Java and the Saxon jar
-node make-ontology.mjs           # write the RDF/XML and JSON-LD of the ontology and ufbas.shapes.rdf in data/ontology/ of gams-www from its Turtle
-node derive-rdf.mjs              # write data/ontology/ufbas.example.rdf in gams-www, build/ufbas.1563.ontology.rdf and build/ufbas.kategorien.skos.rdf
+node make-ontology.mjs           # write the RDF/XML and JSON-LD of the ontology and ufbas.shapes.rdf in ../ontology/ from its Turtle
+node derive-rdf.mjs              # write ../ontology/ufbas.example.rdf, build/ufbas.1563.ontology.rdf and build/ufbas.kategorien.skos.rdf
 node make-exploration-data.mjs   # write build/ufbas-exploration.json, the TEI reference of the Exploration view
-node make-facsimile-data.mjs     # regenerate data/ufbas-facsimile.json in gams-www from the Lesesaal manifest
+node make-facsimile-tei.mjs      # write the page images into ../tei/ufbas.1563.xml from the Lesesaal manifest, after a storage move with --manifest=<file> --retrieved=<date>
 node make-baseline.mjs           # render baseline/ with the stylesheets of 2017, run by npm test when missing
 npm run compare -- [page ...]    # compare rendered pages with production
 ```

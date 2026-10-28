@@ -11,7 +11,7 @@ import { tmpdir } from 'node:os';
 import { extname, resolve } from 'node:path';
 import { createRequire } from 'node:module';
 import { findBrowser } from '../abnahme.mjs';
-import { GAMS, fetchCached, here, root } from '../gams.mjs';
+import { GAMS, fetchCached, here, localDatastreams, root } from '../gams.mjs';
 import { queryJSON } from '../sparql.mjs';
 import { teiEntryCount } from './lib.mjs';
 
@@ -32,7 +32,7 @@ const types = { '.css': 'text/css', '.js': 'application/javascript', '.png': 'im
 const widths = [320, 390, 640, 768, 1024, 1200, 1440];
 // the edition is audited at one width, axe needs long on its size and the other widths
 // only change the layout, which the overflow check covers
-const auditWidths = { edition: [1440], 'edition-bild': [390, 1440], 'edition-text': [1440] };
+const auditWidths = { edition: [1440], 'edition-bild': [390, 1440], 'edition-text': [1440], 'edition-ohne-bild': [1440] };
 // The edition is checked again in both views with every group marked; the plain page
 // shows the default view of each width. The view lives in the fragment; the width in the query makes every visit a
 // full load, which a change of the fragment alone would not be.
@@ -59,6 +59,10 @@ const server = createServer(async (req, res) => {
     } else if (url.pathname === '/archive/objects/query:ufbas.exploration/methods/sdef:Query/getJSON') {
       body = JSON.stringify(await queryJSON('query:ufbas.exploration'));
       type = 'text/plain;charset=UTF-8';
+    } else if (url.pathname === '/archive/objects/o:ufbas.ontology/datastreams/ONTOLOGY/content') {
+      // the deliberate shortcut of localDatastreams in gams.mjs until the ingest, removed with it
+      body = readFileSync(localDatastreams['o:ufbas.ontology/ONTOLOGY']);
+      type = 'application/rdf+xml';
     } else if (url.pathname.startsWith('/templates/') || url.pathname.startsWith('/assets/')) {
       ({ body, type } = await fetchCached(GAMS + url.pathname, { binary: true }));
     } else {

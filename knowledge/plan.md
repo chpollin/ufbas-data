@@ -12,7 +12,7 @@ template:
   url: https://dhcraft.org/Promptotyping/promptotyping-document/plan
 status: active
 created: 2026-09-23
-updated: 2026-10-27
+updated: 2026-10-28
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
 related: [specification.md, domain.md, architecture.md, testing.md]
@@ -53,7 +53,7 @@ The view reads the refactored RDF since 2026-10-21 (ADR-21, [testing.md](testing
 What is built is in [domain.md](domain.md#domain-ontology). Open:
 
 1. Curation of the English labels drafted in `research-artefacts/category-labels-en.tsv` by the operator, after which they enter the ontology and the concept scheme (ADR-30).
-2. Publication as `o:ufbas.ontology` of model `cm:Ontology` and the refactored RDF of the edition derived under it (ADR-17), by ingest and re-ingest of the operator ([Delivery](#delivery)). Whether the default view of `cm:Ontology` hands `ONTOLOGY` to the stylesheet is unverified. The page renders without it, but then the navigation item is not marked.
+2. Publication as `o:ufbas.ontology` of model `cm:Ontology`, with only the `ONTOLOGY` datastream from `ontology/ufbas.ontology.rdf` and its `STYLESHEET` redirect (ADR-33), and of the refactored RDF of the edition derived under it (ADR-17), by ingest and re-ingest of the operator ([Delivery](#delivery)). Whether the default view of `cm:Ontology` hands `ONTOLOGY` to the stylesheet is unverified. The page renders without it, but then the navigation item is not marked. Until the ingest the page Ontologie is expected to fail on GAMS, since it reads only that datastream, so the ingest follows the push of gams-www closely. After it, `localDatastreams` of `local-test-build/gams.mjs` goes.
 3. After the re-ingest, the downloads of the refactored data and concept scheme on the page "Ontologie", and a look whether Saxon on GAMS gives the triples that `local-test-build/saxon-check.mjs` gives locally.
 
 ## Delivery
@@ -63,10 +63,10 @@ Production still renders the 2017 site. The update waits until the Exploration v
 1. Push of gams-www to ZimLab `main`, after a passing `npm test` in ufbas-data, and sync of the gamsdev mirror.
 2. The settings of [Staging](#staging).
 3. `cirilo:ufbas/TORDF` on staging inline with the content of `gams/ufbas-TORDF-ontology.xsl` of ufbas-data, which derives the data of the edition and the concept scheme of the taxonomy.
-4. Re-ingest of `o:ufbas.kategorien` and `o:ufbas.1563` on staging from `tei/ufbas.kategorien.xml` and `tei/ufbas.1563.xml` of ufbas-data ([architecture.md](architecture.md#ingest)), then `STYLESHEET` of `o:ufbas.kategorien` by hand to base + `ufbas-category.xsl`.
-5. Ingest of `o:ufbas.ontology` on staging with `ONTOLOGY` from `data/ontology/ufbas.ontology.rdf` of gams-www and `STYLESHEET` as redirect to base + `ufbas-ontology.xsl`.
+4. Re-ingest of `o:ufbas.kategorien` and `o:ufbas.1563` on staging from `tei/ufbas.kategorien.xml` and `tei/ufbas.1563.xml` of ufbas-data, the latter changed by the page images of ADR-34 ([architecture.md](architecture.md#ingest)), then `STYLESHEET` of `o:ufbas.kategorien` by hand to base + `ufbas-category.xsl`. Before the ingest the operator sets in the Cirilo preferences of TEI uploads "Upload images" off, "Create METS datastream" off and "Overwrite source document with expanded content" off. After it `ingest.log` names no image upload, and `TEI_SOURCE` of `o:ufbas.1563` keeps the external `graphic/@url` unchanged, so no image datastream was created. `THUMBNAIL` of `o:ufbas.1563` is read too, which the first `graphic` may have replaced. The edition page then shows the view "Text und Bild" instead of the note that stands in for it until the re-ingest.
+5. Ingest of `o:ufbas.ontology` on staging with `ONTOLOGY` from `ontology/ufbas.ontology.rdf` of ufbas-data and `STYLESHEET` as redirect to base + `ufbas-ontology.xsl`.
 6. `QUERY` of `query:ufbas.search`, `query:ufbas.volltext`, `query:ufbas.kategorien` and `query:ufbas.exploration` with the texts of `gams/query/` of ufbas-data, `query:ufbas.exploration` created where it does not exist.
-7. Look at staging on a quick search (Dieb), a place name with a date range (Riehen, 1566), a category browse (Diebstahl), the Exploration view, the page "Ontologie" with its example, `/o:ufbas.ontology#Offence`, and the downloads of `/o:ufbas.1563/RDF` and `/o:ufbas.kategorien/RDF`.
+7. Look at staging on a quick search (Dieb), a place name with a date range (Riehen, 1566), a category browse (Diebstahl), the Exploration view, the page "Ontologie" with its download, `/o:ufbas.ontology#Offence`, and the downloads of `/o:ufbas.1563/RDF` and `/o:ufbas.kategorien/RDF`.
 8. Operator acceptance on staging at full width and at phone width.
 9. On production in one step, the GAMS update of `/ufbas/` from ZimLab `main`, steps 3 to 6, the Cirilo settings of [architecture.md](architecture.md#cirilo-configuration) including `STYLESHEET` of `query:ufbas.graph` and `cirilo:Context.ufbas`, and the revised `IMPRINT` ([architecture.md](architecture.md#switching-the-graph-page)).
 10. Check of production on the home page, the project page, the imprint, the edition (an entry with categories, a marking switch, an editorial note, the table of contents, folio labels), the category page, a category browse, the Exploration page, the view "Text und Bild" with the tiles of a page image loading and a folio label opening its page, a quick search, an advanced search with a regular expression and with a date range only, the Datenkorb with an entry from before the update, the TEI and RDF icons, and whether the pages load Droid Serif and Open Sans from `/assets/fonts/`.
@@ -76,7 +76,7 @@ Production still renders the 2017 site. The update waits until the Exploration v
 
 What remains of the audit of 2026-10-26.
 
-1. Where work continues on these files, the ontology page of `ufbas-context.xsl` as a module of its own, included without loading `ufbas-static.xsl` twice through `ufbas-ontology.xsl`, and the pure part of `js/exploration.js` (parsing, selection, profile, frame) apart from drawing and interaction, with `placeDetail` marking its fallback by a flag.
+1. Where work continues on this file, the pure part of `js/exploration.js` (parsing, selection, profile, frame) apart from drawing and interaction, with `placeDetail` marking its fallback by a flag.
 2. After the GAMS update, `compare-production.mjs` and `npm run compare` after one last run against the updated production, `local-test-build/abnahme.json` once `op-ufbas-oberflaeche` is closed, and `gams/query/ufbas.properties.sparql` once the 2017 shell of the graph page no longer answers on production.
 
 ## Open improvements

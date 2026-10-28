@@ -3,7 +3,7 @@
 // TORDF transformation meant for cirilo:ufbas, which turns each of the two TEI objects
 // into its RDF. test/rdf-ontology.test.mjs checks the data against the TEI reference of
 // make-exploration-data.mjs, test/skos.test.mjs the concept scheme. Run as a script it
-// writes data/ontology/ufbas.example.rdf, the example of the page Ontologie, and
+// writes ontology/ufbas.example.rdf, the example entry of the data package, and
 // build/ufbas.1563.ontology.rdf and build/ufbas.kategorien.skos.rdf, the files the
 // operator ingests ahead of the re-ingest.
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -12,7 +12,7 @@ import { dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 import SaxonJS from 'saxon-js';
-import { here, root, dataRoot, compileSEF, datastream, derived, parse } from './gams.mjs';
+import { here, dataRoot, compileSEF, datastream, derived, parse } from './gams.mjs';
 
 const oxigraph = createRequire(import.meta.url)('oxigraph');
 
@@ -45,11 +45,11 @@ export async function taxonomySKOS({ taxonomyText } = {}) {
   return tordf('ufbas.kategorien.skos.rdf', taxonomyText ?? await datastream('o:ufbas.kategorien', 'TEI_SOURCE'));
 }
 
-// The example of the page Ontologie, Eintrag-0 as the derivation gives it: the entry with
-// its spans, every node derived from them or from the entry, the proceeding, the page and
-// the places of the place list these nodes refer to. The page reads it as RDF/XML from the
-// served folder, test/rdf-ontology.test.mjs compares the file with a fresh derivation.
-export const exampleFile = resolve(root, 'data/ontology/ufbas.example.rdf');
+// The example entry of the data package in ontology/ (ADR-33), Eintrag-0 as the derivation
+// gives it: the entry with its spans, every node derived from them or from the entry, the
+// proceeding, the page and the places of the place list these nodes refer to.
+// test/rdf-ontology.test.mjs compares the file with a fresh derivation.
+export const exampleFile = resolve(dataRoot, 'ontology/ufbas.example.rdf');
 export const EXAMPLE = 'Eintrag-0';
 
 export async function exampleStore() {

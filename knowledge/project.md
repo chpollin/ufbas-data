@@ -12,7 +12,7 @@ template:
   url: https://dhcraft.org/Promptotyping/promptotyping-document/project
 status: draft
 created: 2026-09-23
-updated: 2026-10-27
+updated: 2026-10-28
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
 related: [domain.md, specification.md, data.md, ../README.md]
@@ -37,7 +37,7 @@ The transcription goes back to a course at the Department of History of the Univ
 
 ## Source
 
-The Urfehdebücher are held by the Staatsarchiv Basel-Stadt under the signatures Ratsbücher O 1 to O 42 and are digitised there. The edition covers only volume O 10. Its `pb/@facs` links point to the archive's former image viewer at `dokumente.stabs.ch`, which no longer answers. The edition page shows the page images from the Digitaler Lesesaal of the archive instead ([data.md](data.md#edition-tei)).
+The Urfehdebücher are held by the Staatsarchiv Basel-Stadt under the signatures Ratsbücher O 1 to O 42 and are digitised there. The edition covers only volume O 10. Its `pb/@facs` links pointed to the archive's former image viewer at `dokumente.stabs.ch`, which no longer answers. Since ADR-34 the TEI carries the page images of the Digitaler Lesesaal of the archive, which the edition page shows ([data.md](data.md#edition-tei)).
 
 ## Licence
 

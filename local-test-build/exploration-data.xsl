@@ -26,7 +26,7 @@
     xmlns:d="urn:x-ufbas:tordf-ontology"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all" version="2.0">
 
-    <xsl:import href="../ufbas-TORDF-ontology.xsl"/>
+    <xsl:import href="../gams/ufbas-TORDF-ontology.xsl"/>
 
     <xsl:output method="text" encoding="UTF-8"/>
 

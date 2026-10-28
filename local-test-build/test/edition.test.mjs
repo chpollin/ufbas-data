@@ -162,6 +162,16 @@ await test('folio labels name their page image, also for unfoliated pages and th
   const byText = (text) => folios.filter((f) => f.textContent === text).map((f) => f.getAttribute('data-facs'));
   assert.deepEqual(byText('unfoliiert'), ['45', '46']);
   assert.deepEqual(byText('fol. 32ar').concat(byText('fol. 32av')), ['85', '86']);
+  // the image service and size come from the surface the page break points to (ADR-34)
+  assert.match(folios[0].getAttribute('data-image'), /^https:\/\/sos-ch-dk-2\.exo\.io\/hfp-stabs-dls\/.+\/Ratsbuecher_O_10_0019$/);
+  assert.deepEqual([folios[0].getAttribute('data-width'), folios[0].getAttribute('data-height')], ['3047', '4275']);
+});
+
+await test('the page of a TEI without facsimile shows the text alone and says why', () => {
+  const plain = new JSDOM(built('edition-ohne-bild')).window.document;
+  assert.equal(plain.querySelector('.facsimile, .view-switch'), null);
+  assert.equal(plain.querySelector('.head-tools > p.view-note').textContent, 'Das Seitenbild neben dem Text ist in Kürze hier verfügbar.');
+  assert.equal(plain.querySelectorAll('.folio').length, doc.querySelectorAll('.folio').length);
 });
 
 await test('the Datenkorb switch of an entry is a labelled checkbox shown as an icon', () => {

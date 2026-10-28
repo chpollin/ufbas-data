@@ -1,12 +1,13 @@
 // The page "Ontologie" (mode=ontologie of ufbas-context.xsl) against the ontology in
-// data/ontology/: every class, property and individual has its anchor, the diagram draws
-// every class once as a node and every object property with domain and range among the
-// classes as an edge, every in-page link resolves, and every download is a served file.
+// ontology/: every class, property and individual has its anchor, the diagram draws every
+// class once as a node and every object property with domain and range among the classes
+// as an edge, every in-page link resolves, and the one download is the ONTOLOGY datastream
+// of o:ufbas.ontology, from which alone the page renders (ADR-33).
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { JSDOM } from 'jsdom';
-import { here, root } from '../gams.mjs';
+import { here, localDatastreams } from '../gams.mjs';
 import { ttlFile } from '../make-ontology.mjs';
 import { oxigraph, rows, runner } from './lib.mjs';
 
@@ -59,31 +60,24 @@ test('every in-page link resolves, the terms of the ontology link their anchors'
   assert.equal(internalByIri.length, 0, 'a term of the ontology links its IRI instead of its anchor');
 });
 
-test('every download is a file of the served folder, and the data links are server-relative', () => {
-  const downloads = [...doc.querySelectorAll('.onto-downloads a[download]')];
-  assert.deepEqual(downloads.map((a) => a.getAttribute('download')), ['ufbas.ontology.ttl', 'ufbas.ontology.rdf', 'ufbas.ontology.jsonld', 'ufbas.shapes.ttl']);
-  for (const a of downloads) {
-    const href = a.getAttribute('href');
-    assert.ok(href.startsWith('/ufbas/'), `${href} is not in the served folder`);
-    assert.ok(existsSync(resolve(root, href.slice('/ufbas/'.length))), `${href} does not exist`);
-    assert.ok(a.getAttribute('data-tip') && a.querySelector('.visually-hidden')?.textContent.trim(), `${href} without tip or name`);
-    assert.ok(!a.hasAttribute('title'), `${href} has a title beside its tip`);
-  }
+test('the one download is the ONTOLOGY datastream, and the data links are server-relative', () => {
+  const downloads = [...doc.querySelectorAll('main a[download]')].filter((a) => !a.closest('.onto-ns'));
+  assert.deepEqual(downloads.map((a) => [a.getAttribute('href'), a.getAttribute('download')]),
+    [['/archive/objects/o:ufbas.ontology/datastreams/ONTOLOGY/content', 'ufbas.ontology.rdf']]);
+  const [a] = downloads;
+  assert.ok(a.closest('.onto-downloads'), 'the download is not in the page head');
+  // the harness answers the datastream from ontology/ until the ingest (gams.mjs, localDatastreams)
+  assert.ok(existsSync(localDatastreams['o:ufbas.ontology/ONTOLOGY']), 'the datastream has no local answer');
+  assert.ok(a.getAttribute('data-tip') && a.querySelector('.visually-hidden')?.textContent.trim(), 'download without tip or name');
+  assert.ok(!a.hasAttribute('title'), 'download has a title beside its tip');
   const data = [...doc.querySelectorAll('.onto-ns a')].map((a) => a.getAttribute('href'));
   assert.deepEqual(data, ['/o:ufbas.1563/RDF', '/o:ufbas.kategorien/RDF', '/archive/objects/o:gams-ontology/methods/sdef:Ontology/get']);
   assert.ok(![...doc.querySelectorAll('main a[href]')].some((a) => /^https?:\/\/gams\.uni-graz\.at\//.test(a.getAttribute('href'))), 'a GAMS link with host');
 });
 
-test('the example shows every node of data/ontology/ufbas.example.rdf, the entry and its proceeding first, and is a download', () => {
-  const example = new oxigraph.Store();
-  example.load(readFileSync(resolve(root, 'data/ontology/ufbas.example.rdf'), 'utf8'), { format: 'application/rdf+xml' });
-  const subjects = example.query('SELECT DISTINCT ?s WHERE { ?s ?p ?o }').map((r) => r.get('s').value.replace(/^.*#/, ''));
-  const blocks = [...doc.querySelectorAll('section[aria-labelledby="beispiel"] .onto-example-node')].map((n) => n.id.replace(/^beispiel-/, ''));
-  assert.ok(subjects.length > 20);
-  assert.deepEqual([...blocks].sort(), subjects.sort());
-  assert.deepEqual(blocks.slice(0, 2), ['Eintrag-0', 'proceeding-Eintrag-0']);
-  const link = doc.querySelector('section[aria-labelledby="beispiel"] a[download="ufbas.example.rdf"]');
-  assert.equal(link?.getAttribute('href'), '/ufbas/data/ontology/ufbas.example.rdf');
+test('the page shows neither SHACL shapes nor an example entry', () => {
+  assert.equal(doc.querySelector('#validierung, #beispiel, .onto-shapes, .onto-example-node'), null);
+  assert.ok(!doc.querySelector('main').textContent.includes('·'), 'middle dot in the page');
 });
 
 // o:ufbas.ontology renders its ONTOLOGY datastream with ufbas-ontology.xsl, so that its
@@ -93,15 +87,6 @@ test('the page of o:ufbas.ontology is the page Ontologie with its navigation ite
   assert.equal(object.querySelector('main').innerHTML, doc.querySelector('main').innerHTML);
   assert.equal(object.querySelector('[aria-current="page"]')?.textContent.trim(), 'Ontologie');
   assert.equal(object.title, doc.title);
-});
-
-test('the validation section has one row per node shape with a message', () => {
-  const shapes = new oxigraph.Store();
-  shapes.load(readFileSync(resolve(root, 'data/ontology/ufbas.shapes.ttl'), 'utf8'), { format: 'text/turtle' });
-  const count = shapes.query(`PREFIX sh: <http://www.w3.org/ns/shacl#> SELECT (COUNT(DISTINCT ?s) AS ?n) WHERE {
-    ?s a sh:NodeShape { ?s sh:message ?m } UNION { ?s sh:property/sh:message ?m } }`)[0].get('n').value;
-  assert.equal(doc.querySelectorAll('.onto-shapes > div').length, Number(count));
-  assert.ok(!doc.querySelector('main').textContent.includes('·'), 'middle dot in the page');
 });
 
 done();

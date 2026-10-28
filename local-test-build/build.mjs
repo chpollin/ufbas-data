@@ -5,6 +5,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { datastream, here, queryResult, render, root } from './gams.mjs';
+import { publishedForm } from './make-facsimile-tei.mjs';
 import { queryXML } from './sparql.mjs';
 
 export function buildParams(state) {
@@ -48,8 +49,10 @@ export async function build(only = []) {
     ontologie: () => render('ufbas-context', context, { mode: 'ontologie' }),
     kategorien: async () => render('ufbas-category', await datastream('o:ufbas.kategorien', 'TEI_SOURCE'), { mode: '' }),
     edition: async () => render('ufbas-object', await datastream('o:ufbas.1563', 'TEI_SOURCE'), { mode: '' }),
-    // o:ufbas.ontology with its ONTOLOGY datastream, the target value of the ingest
-    'ontologie-objekt': () => render('ufbas-ontology', readFileSync(resolve(root, 'data/ontology/ufbas.ontology.rdf'), 'utf8'), { mode: '' })
+    // the TEI GAMS serves until the operator re-ingests it with its page images (ADR-34)
+    'edition-ohne-bild': async () => render('ufbas-object', publishedForm(await datastream('o:ufbas.1563', 'TEI_SOURCE')), { mode: '' }),
+    // o:ufbas.ontology with its ONTOLOGY datastream, answered from ontology/ until the ingest
+    'ontologie-objekt': async () => render('ufbas-ontology', await datastream('o:ufbas.ontology', 'ONTOLOGY'), { mode: '' })
   };
   pages.graph = async () => render('ufbas-graph', (await queryResult('query:ufbas.graph', category('TatDiebstahl'))).xml,
     { params: decodeURIComponent(category('TatDiebstahl')), mode: '' });
