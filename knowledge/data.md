@@ -12,7 +12,7 @@ template:
   url: https://dhcraft.org/Promptotyping/promptotyping-document/data
 status: draft
 created: 2026-09-23
-updated: 2026-10-28
+updated: 2026-10-31
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
 topics: ["[[TEI XML]]", "[[RDF]]", "[[SKOS]]"]
@@ -30,7 +30,7 @@ The whole book is one TEI document, the `TEI_SOURCE` of `o:ufbas.1563`, kept as 
 
 ## Sources
 
-- The edition TEI goes back to a Basel course of 2012 (transcription) and one of 2016 (encoding), whose TEI part files are kept in `source-material/course-2016/`. The edition combined them into one document and inherited their slips ([Data quality](#data-quality)). Content licence CC BY-NC-SA 4.0.
+- The edition TEI goes back to a Basel course of 2012 (transcription) and one of 2016 (encoding), whose TEI part files are kept in `source-material/course-2016/`. The edition combined them into one document and inherited their slips ([Data quality](#data-quality)). Content licence CC BY-NC-SA 4.0, stated in the project imprint (`gams/datastreams/context-ufbas.IMPRINT.xml`). The TEI has no `availability` or `licence` element, so the file alone carries no reuse terms.
 - `o:ufbas.kategorien` is the canonical taxonomy. `source-material/kategorien.xml` and `kategorien.skos.xml` are older SVN states. Compared by category id, `kategorien.xml` lacks `uf_SchlagwortAndrohungTodesstrafe`, `uf_SchlagwortMeerwunder` and `uf_TatWiedertaeuferei`, and `kategorien.skos.xml` lacks `uf_TatWiedertaeuferei` and has two group concepts of its own, `Personeneigenschaften` and `Verfahrensseigenschaften`.
 - The `RDF` datastream of `o:ufbas.1563` was produced at ingest by `ufbas-TORDF.xsl` in 2017. With the update `ufbas-TORDF-ontology.xsl` becomes the `TORDF` of `cirilo:ufbas`, and the re-ingest replaces the RDF of both TEI objects ([architecture.md](architecture.md#ingest)).
 - The `ONTOLOGY` datastream of `o:ufbas.schema` is an OWL and RDFS declaration of the `uf:` vocabulary from 2017, which no transformation references.
@@ -39,17 +39,17 @@ ufbas-data packages these datastreams byte for byte as GAMS served them on 2026-
 
 ## Edition TEI
 
-The root is `TEI` in the TEI namespace, with a header for title, publication, manuscript and encoding, `text/body` with entries, year headings, page breaks and marginal material, and `text/back/listPlace`, whose places carry a modern name and editorial notes only. The manuscript description gives the period 1563-01-03 to 1569-12-04. The text is transcribed diplomatically with `lb` (also `lb[@break="no"]`), `ex`, marginal notes (`note[@rend='margin']`), additions, deletions and hand shifts.
+The root is `TEI` in the TEI namespace, with a header for title, publication, manuscript and encoding, `text/body` with entries, year headings, page breaks and marginal material, and `text/back/listPlace`, whose places carry a modern name and editorial notes only. The manuscript description gives the period 1563-01-03 to 1569-12-04. The text is transcribed diplomatically with `lb` (also `lb[@break="no"]`), `ex`, marginal notes (`note[@rend='margin']`), additions, deletions and hand shifts. `handShift/@scribe` names eight hands, `s1` to `s8`, which no `handDesc` defines, so a hand is a local label without description.
 
 Each entry is `div[@ana='#uf_Eintrag']` with `xml:id="Eintrag-N"`, a heading naming the accused, narrative paragraphs and often a notarial subscription. Inside it `@ana` on `persName`, `placeName`, `roleName`, `forename`, `seg`, `term`, `date`, `note` and `p` points to categories, and each annotated element carries an `xml:id` of the form `<Category>-N`. All `xml:id` values are unique. `@ana` is a whitespace-separated token set (`Eintrag-2` has a term marked `#uf_SchlagwortFrauenarbeit #uf_SchlagwortSpinnen`), so exact-string matching misses categories. The `#uf_…` tokens are defined in the taxonomy TEI, whose contents the inventory of 2026-10-27 did not validate, so a token without a definition in the edition alone is no broken reference. Dates carry `@when` and `@calendar="Julian"`, as the oath date of `Eintrag-2` with `when="1563-01-19"`, so a record can retain both the encoded date and its source wording, while calendar conversion requires an explicit rule. Durations carry `@dur`, amounts are `measure` with `@quantity`, `@unit` and `@type="currency"`, and `placeName/@ref` points into `listPlace`. Origin, residence and offence place are distinct place roles (`#uf_OrtHerkunft`, `#uf_OrtWohnort` in `Eintrag-2`). A `persName/@xml:id` anchors one mention and gives no identity across entries. Person mentions nest, as the spouse inside the description of the accused in `Eintrag-3`, so descendant text and gender tokens cannot be attributed wholesale to the outer person.
 
-Page breaks carried `pb/@facs` with a URL of the former image viewer, `http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#N`, and since ADR-34 point to the surface of that image in the `facsimile`, `#imgNNNN` with the four-digit image number. A page break may precede an entry as a sibling in the body, so the first page of an entry comes from document order. The image number `N` is no folio, since the images include two unfoliated pages (`@n="kA"`), the inserted leaf 32a (`@n="32ar"`, `"32av"`) and a gap of two images after fol. 99v. The edition page counts the page breaks without `@n` from fol. 1r and shows `@n` where it exists (ADR-09). This count agrees with every folio the editors cite in their cross-reference notes and with fol. 69r and fol. 3r of the About page. The label `N - 18` shown until 2026-09-24 was wrong on every page.
+Page breaks carried `pb/@facs` with a URL of the former image viewer, `http://dokumente.stabs.ch/view/2010/Ratsbuecher_O_10/#N`, and since ADR-34 point to the surface of that image in the `facsimile`, `#imgNNNN` with the four-digit image number. A page break may precede an entry as a sibling in the body, so the first page of an entry comes from document order. The image number `N` is no folio, since the images include two unfoliated pages (`@n="kA"`), the inserted leaf 32a (`@n="32ar"`, `"32av"`) and a gap of two images between fol. 98v and fol. 99r, images 219 and 220, to which no page break points. The edition page counts the page breaks without `@n` from fol. 1r and shows `@n` where it exists (ADR-09). This count agrees with every folio the editors cite in their cross-reference notes and with fol. 69r and fol. 3r of the About page. The label `N - 18` shown until 2026-09-24 was wrong on every page.
 
 The former viewer no longer answers. The Digitaler Lesesaal of the Staatsarchiv holds the volume as record 315538 and answers every non-interactive request with a proof-of-work block. Its IIIF manifest, saved from a browser on 2026-09-24, is `source-material/dls-manifest-245856.json`. Canvas `N` shows the image `Ratsbuecher_O_10_NNNN` for every `N`, continuing the former image numbers (checked at images 19 and 30, the first text page and a blank page). The images are served outside the block from a public object store as IIIF Image API 2 level 0, under hash-prefixed paths only the manifest gives and with the content type `application/binary`. The rights statement is StABS gemeinfrei. The Lesesaal permalinks address the volume only, so no persistent URL per page exists.
 
 Since ADR-34 `facsimile/@source` names the manifest, and one `surface` per image a page break names, in page-break order, carries `xml:id="imgNNNN"`, the image number in `@n`, the canvas size in `@lrx` and `@lry` and the canvas id in `@corresp`. Its `graphic/@url` is the IIIF image service without `/info.json`, with `@width` and `@height` and without `xml:id` and `mimeType`, so Cirilo references the image and uploads nothing ([architecture.md](architecture.md#ingest)). `msDesc/additional/surrogates` states the source, the retrieval day and the rights. `@corresp` links the canvas because the TEI Guidelines reserve `@sameAs` for an element identical to the current one. The canvas id survives a storage move of the archive, and `make-facsimile-tei.mjs` finds each surface again by it ([testing.md](testing.md#how-to-run)). An older copy of the images without images 23 to 50 is the HTR ground truth set on Zenodo (doi:10.5281/zenodo.5153263).
 
-The TEI does not encode the type of an entry. Five rules reproduce the special types the About page counts (Urfehdbrief, Aussage, Entwurf, abgebrochen, and two fragments that continue another entry), listed in `research-artefacts/entry-types.tsv` and derived as `ufbas-ont:entryType`. The About page counts 597 regular Urfehden where the TEI holds 604, and no criterion reproducing 597 was found.
+The TEI does not encode the type of an entry. Five rules reproduce the special types the About page counts (Urfehdbrief, Aussage, Entwurf, abgebrochen, and two fragments that continue another entry), listed in `research-artefacts/entry-types.tsv` and derived as `ufbas-ont:entryType`. The About page counts 597 regular Urfehden where the TEI holds 604, and no criterion reproducing 597 was found. `Eintrag-14`, typed Aussage, is a witness statement whose link to the Urfehde it belongs to is an editorial note (`note resp="#editor"`) naming the accused and fol. 3v, so the relation exists as prose and no reference resolves it.
 
 ## Category taxonomy
 
@@ -130,6 +130,23 @@ uv run scripts/analyze_tei.py generated/ufbas.1563.published.xml --self-check --
 The generated JSON, excluded from Git, is the source of truth for counts and anomaly lists, with source hash, line numbers, element ids, attributes and example XML. Its whitespace-collapsed snippets are diagnostic previews and no transcription export. Parsing is strict with external entities disabled, a deliberate override of the general recovery default at this validation boundary. No RELAX NG, ODD or Schematron validation has been run. `--self-check` exercises repeatability, unchanged source bytes, the documented anomalies and the rejection of malformed XML, a wrong namespace and DTD declarations against the frozen hash, and requires the published file. It implements no segmentation, text rendering, schema validation or test of historical accuracy.
 
 The source supports exploration of annotated offence and sanction co-occurrence, coded oath dates, origin and residence, and the relation of diplomatic text to page images. Claims about crime prevalence, individual careers, causes or complete populations need further source criticism and identity work. A first derived record could keep source hash, entry anchor, source order, page context, original date attributes, annotation tokens and span anchors, with person and place mentions as separate linked records, pending agreement on the research question.
+
+### Measured properties of the published state
+
+A separate read-only inspection of the published state (SHA-256 `8b3aaac90296eae8f347df396ad1d0777ea47a8aa5aada536b8a207aafbee1af`), made on 2026-10-26 in a local exploration repository deleted on 2026-10-31 and repeated independently on 2026-10-31, measured properties that `analyze_tei.py` does not report. They hold for that byte state only. Coverage counts entries in which a category occurs on the entry or a descendant, so a missing annotation does not establish that the phenomenon was absent from the record, and the yearly distribution counts encoded oath dates, whose variation depends on manuscript coverage and documentary practice.
+
+| Property | Value |
+|---|---|
+| Entry markers | 625, `Eintrag-0` to `Eintrag-624` without gaps, 624 `div` and the `p` `Eintrag-133` |
+| `xml:id` values | 15,224, all distinct |
+| Entries with `#uf_DatumUrfehde` | 611 |
+| Entries with `#uf_PersonTäter` | 621 |
+| Entries with `#uf_Urfehdeeid` | 604, the number set against the About page's 597 |
+| Entries with `#uf_NotarialSubscription` | 584 |
+| Entries with `#uf_Untersuchungshaft` | 565 |
+| Page breaks | 226, images 19 to 246 without 219 and 220 |
+| `place` in `listPlace` | 369 |
+| Encoded oath dates by year | 18 (1563), 74 (1564), 149 (1565), 108 (1566), 76 (1567), 98 (1568), 88 (1569) |
 
 ### Test strategy for discussion
 
